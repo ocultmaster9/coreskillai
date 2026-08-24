@@ -267,6 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     obs.observe(el);
   });
-  // push all adsense slots
-  document.querySelectorAll('.adsbygoogle').forEach(() => pushAds());
+  // Ad slots are pushed inline, immediately after each <ins> in the HTML -
+  // the same shape that got calculator-free.com approved. Doing it here as
+  // well would push each slot twice and AdSense throws
+  // "All ins elements in the DOM with class=adsbygoogle already have ads in them".
 });

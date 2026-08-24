@@ -123,6 +123,33 @@ jobs:
           # 4) ads.txt must name our publisher id.
           grep -q 'pub-5798786176755576' _stage/ads.txt || { echo "::error::ads.txt wrong or missing"; fail=1; }
 
+          # 4b) MONETISATION INVARIANT. Every <ins class="adsbygoogle"> must be
+          #     followed by its own push({}). Break the pairing and the page looks
+          #     perfectly fine while earning nothing - that is exactly why
+          #     worldunscrambler's best page served no ads for weeks.
+          #     This mirrors calculator-free.com, the one approved site.
+          python3 - <<'ADS'
+          import re, io, glob, os, sys
+          INS  = re.compile(r'<ins class="adsbygoogle"[^>]*>\s*</ins>')
+          PUSH = re.compile(r'adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\s*\)\s*\.push')
+          bad = ins_total = 0
+          for f in glob.glob('_stage/**/*.html', recursive=True):
+              rel = os.path.relpath(f, '_stage')
+              h = io.open(f, encoding='utf-8', errors='replace').read()
+              n_ins, n_push = len(INS.findall(h)), len(PUSH.findall(h))
+              if rel == '404.html':
+                  if n_ins or 'googlesyndication' in h:
+                      print(f'::error::404.html carries ads - breaches Google policy'); bad = 1
+                  continue
+              if n_ins != n_push:
+                  print(f'::error::{rel} has {n_ins} ad slot(s) but {n_push} push call(s) - '
+                        f'unpaired slots earn nothing'); bad = 1
+              ins_total += n_ins
+          print(f'  ad slots paired with a push: {ins_total}')
+          sys.exit(bad)
+          ADS
+          [ $? -eq 0 ] || fail=1
+
           # 5) Every test page must load its own script, and every script must parse.
           #    On 2026-08-24 a broken pick() shipped that skipped questions and threw
           #    after the last one. A syntax gate is the cheapest guard against a repeat.
