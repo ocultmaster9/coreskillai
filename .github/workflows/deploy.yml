@@ -257,7 +257,9 @@ jobs:
           [ "$c" = 301 ] || [ "$c" = 308 ] && echo "OK ($c)" || { echo "FAIL ($c)"; fail=1; }
 
           chk "canonical-fix Worker still rewrites to www"
-          curl -s "$S/tests/iq/" | grep -q 'rel="canonical" href="https://www.coreskillai.com/tests/iq/"' \
+          # -L is essential: Pages 301s between /x/ and /x, and without it curl
+          # returns the empty redirect body and this check fails for no reason.
+          curl -sL "$S/tests/iq/" | grep -q 'rel="canonical" href="https://www.coreskillai.com/tests/iq/"' \
             && echo OK || { echo "FAIL - Worker not rewriting"; fail=1; }
 
           # All nine tests must be reachable and serve their script.
