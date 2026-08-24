@@ -53,12 +53,43 @@ jobs:
           set -uo pipefail
           fail=0
 
-          # 1) Binary assets must not contain HTML. A mirror script on 2026-07-02
+          # 1) Assets must actually be what their extension claims. A mirror script
           #    wrote the homepage over favicon/og images on three sites and shipped.
-          for f in favicon.ico favicon.png og-image.png og.png apple-touch-icon.png; do
-            p="_stage/$f"; [ -f "$p" ] || continue
-            head -c 20 "$p" | grep -qiE '<!doctype|<html' && { echo "::error::$f contains HTML"; fail=1; }
-          done
+          #    On 2026-08-24 this caught SIX such files here - including manifest.json,
+          #    which the old hardcoded list missed. So: check EVERY file by extension,
+          #    never a fixed list.
+          python3 - <<'ASSETS'
+          import glob, io, json, os, sys
+          bad = 0
+          def head(p, n=512):
+              return io.open(p, 'rb').read(n)
+          for f in glob.glob('_stage/**/*', recursive=True):
+              if not os.path.isfile(f): continue
+              ext = os.path.splitext(f)[1].lower()
+              rel = os.path.relpath(f, '_stage')
+              h = head(f)
+              if ext in ('.png', '.ico', '.jpg', '.jpeg', '.gif', '.webp'):
+                  if h[:20].lstrip().lower().startswith((b'<!doctype', b'<html')):
+                      print(f'::error::{rel} has a {ext} extension but contains HTML'); bad = 1
+                      continue
+                  magic = {'.png': b'\x89PNG', '.ico': b'\x00\x00\x01\x00',
+                           '.gif': b'GIF8', '.webp': b'RIFF'}
+                  if ext in magic and not h.startswith(magic[ext]):
+                      print(f'::error::{rel} is not a valid {ext} (bad magic bytes)'); bad = 1
+                  if ext in ('.jpg', '.jpeg') and not h.startswith(b'\xff\xd8'):
+                      print(f'::error::{rel} is not a valid JPEG'); bad = 1
+              elif ext == '.svg':
+                  if b'<svg' not in h:
+                      print(f'::error::{rel} has no <svg> element'); bad = 1
+              elif ext in ('.json', '.webmanifest'):
+                  try:
+                      json.load(io.open(f, encoding='utf-8'))
+                  except Exception as e:
+                      print(f'::error::{rel} is not valid JSON: {e}'); bad = 1
+          print('  every asset matches its extension' if not bad else '')
+          sys.exit(bad)
+          ASSETS
+          [ $? -eq 0 ] || fail=1
 
           # 2) 404.html: no ads (Google policy forbids ads on error pages), must be noindex.
           if [ -f _stage/404.html ]; then
