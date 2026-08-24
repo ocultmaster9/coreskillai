@@ -1,0 +1,8 @@
+_stage/
+node_modules/
+.wrangler/
+*.bak
+.DS_Store
+Thumbs.db
+.cf-credentials.ps1
+*.log

@@ -1,0 +1,253 @@
+name: Deploy coreskillai.com
+
+# Push to main = deploy to production. This is the ONLY path to production.
+# This pipeline belongs to coreskillai.com ALONE. Never merge it with another
+# site's workflow - each site deploys independently so one can never break another.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-coreskillai
+  cancel-in-progress: false
+
+env:
+  PROJECT: coreskillai
+  SERVED: https://www.coreskillai.com   # what visitors get (apex 301s here)
+  ORIGIN: https://coreskillai.com       # what the HTML itself contains - see note below
+  ADSENSE: ca-pub-5798786176755576
+  GA4: G-RKSK3LMNKN                     # coreskillai.com's OWN measurement ID
+
+# NOTE ON THE TWO HOSTS
+# The Pages origin ships canonicals on the APEX (https://coreskillai.com/...).
+# The `coreskillai-canonical-fix` Worker rewrites them to www at the edge, which is
+# why the live page shows a www canonical while coreskillai.pages.dev shows the apex.
+# So preflight checks the ORIGIN form and the live checks confirm the Worker still
+# does its job. Do NOT "fix" the canonicals to www without also retiring that Worker,
+# or the rewrite will double-apply.
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build ID
+        id: build
+        run: echo "id=$(date -u +'%Y%m%d-%H%M%S')" >> "$GITHUB_OUTPUT"
+
+      - name: Stage clean copy
+        run: |
+          set -euo pipefail
+          rm -rf _stage && mkdir -p _stage
+          rsync -a ./ _stage/ \
+            --exclude '.git' --exclude '.github' --exclude '_stage' \
+            --exclude '*.bak' --exclude 'node_modules' --exclude '.wrangler'
+          echo "  staged $(find _stage -type f | wc -l) files"
+
+      - name: Preflight checks
+        run: |
+          set -uo pipefail
+          fail=0
+
+          # 1) Binary assets must not contain HTML. A mirror script on 2026-07-02
+          #    wrote the homepage over favicon/og images on three sites and shipped.
+          for f in favicon.ico favicon.png og-image.png og.png apple-touch-icon.png; do
+            p="_stage/$f"; [ -f "$p" ] || continue
+            head -c 20 "$p" | grep -qiE '<!doctype|<html' && { echo "::error::$f contains HTML"; fail=1; }
+          done
+
+          # 2) 404.html: no ads (Google policy forbids ads on error pages), must be noindex.
+          if [ -f _stage/404.html ]; then
+            grep -qE '<ins[^>]*adsbygoogle|googlesyndication' _stage/404.html \
+              && { echo "::error::404.html carries AdSense - breaches Google programme policy"; fail=1; }
+            grep -qi 'noindex' _stage/404.html || { echo "::error::404.html missing noindex"; fail=1; }
+          fi
+
+          # 3) Every real page carries monetisation + THIS SITE'S analytics, and a
+          #    canonical matching its own path on the origin host.
+          python3 - <<'PAGES'
+          import glob, io, os, sys
+          ORIGIN='https://coreskillai.com'; ADS='pub-5798786176755576'; GA='G-RKSK3LMNKN'
+          bad=0; n=0
+          for f in glob.glob('_stage/**/*.html', recursive=True):
+              rel=os.path.relpath(f,'_stage')
+              if rel=='404.html': continue
+              h=io.open(f,encoding='utf-8',errors='replace').read(); n+=1
+              if ADS not in h: print(f'::error::{rel} missing AdSense'); bad=1
+              if GA  not in h: print(f'::error::{rel} missing GA4 {GA}'); bad=1
+              want=ORIGIN+'/'+(os.path.dirname(rel).replace(os.sep,'/')+'/' if os.path.dirname(rel) else '')
+              tag=f'rel="canonical" href="{want}"'
+              if tag not in h:
+                  got=h.split('rel="canonical" href="')[1].split('"')[0] if 'rel="canonical" href="' in h else '(none)'
+                  print(f'::error::{rel} canonical is {got}, expected {want}'); bad=1
+          print(f'  pages checked: {n}')
+          sys.exit(bad)
+          PAGES
+          [ $? -eq 0 ] || fail=1
+
+          # 4) ads.txt must name our publisher id.
+          grep -q 'pub-5798786176755576' _stage/ads.txt || { echo "::error::ads.txt wrong or missing"; fail=1; }
+
+          # 5) Every test page must load its own script, and every script must parse.
+          #    On 2026-08-24 a broken pick() shipped that skipped questions and threw
+          #    after the last one. A syntax gate is the cheapest guard against a repeat.
+          for j in _stage/js/*.js _stage/js/tests/*.js; do
+            node --check "$j" || { echo "::error::$j is not valid JavaScript"; fail=1; }
+          done
+          for t in iq reaction-time memory pattern color-vision big-five eq focus typing; do
+            p="_stage/tests/$t/index.html"
+            [ -f "$p" ] || { echo "::error::missing test page $t"; fail=1; continue; }
+            grep -q "/js/tests/$t.js" "$p" || { echo "::error::$t page does not load /js/tests/$t.js"; fail=1; }
+          done
+
+          # 6) ROOT-CAUSE GUARD for the 2026-08-24 result-panel bugs.
+          #    Cause: translation VALUES carried punctuation/emoji that the template
+          #    also printed ("3% % of people", doubled clipboard icon), and keys were
+          #    reused for a second meaning (the Category card rendered "Score Breakdown").
+          python3 - <<'I18N'
+          import re, io, glob, os, sys
+          bad=0
+
+          def parse_block(b):
+              """Walk the object body skipping string literals, so prose inside a
+              value (e.g. "the sequence: ...") is never mistaken for a key."""
+              out={}; i=0; n=len(b)
+              while i<n:
+                  if b[i]=='"':
+                      i+=1
+                      while i<n and b[i]!='"': i+= 2 if b[i]=='\\' else 1
+                      i+=1; continue
+                  m=re.match(r'([A-Za-z_]\w*)\s*:\s*"', b[i:])
+                  if m:
+                      j=i+m.end(); v=''
+                      while j<n and b[j]!='"':
+                          v+=b[j]; j+= 2 if b[j]=='\\' else 1
+                      out[m.group(1)]=v; i=j+1; continue
+                  i+=1
+              return out
+
+          src=io.open('_stage/js/translations.js',encoding='utf-8').read()
+          langs=dict(re.findall(r'\n  ([a-z]{2}): \{(.*?)\n  \}', src, re.S))
+          if len(langs)<2:
+              print('::error::could not parse translations.js'); sys.exit(1)
+          parsed={l:parse_block(b) for l,b in langs.items()}
+
+          # a) every language must define every English key
+          base=set(parsed['en'])
+          for l,d in parsed.items():
+              miss=base-set(d)
+              if miss:
+                  print(f'::error::translations[{l}] missing key(s): {sorted(miss)[:6]}'); bad=1
+
+          vals={}
+          for l,d in parsed.items():
+              for k,v in d.items(): vals.setdefault(k,{})[l]=v
+
+          # b) a value must not repeat decoration the template already prints
+          #    ("${p}% ${_t('percentile_suffix')}" where the value starts with '%')
+          for f in glob.glob('_stage/js/**/*.js', recursive=True):
+              s=io.open(f,encoding='utf-8',errors='replace').read()
+              for pre,key in re.findall(r"(\S)\s*\$\{_t\('(\w+)'", s):
+                  for l,v in vals.get(key,{}).items():
+                      if v[:1] and v[:1]==pre:
+                          print(f'::error::{os.path.basename(f)}: template prints "{pre}" then _t({key}) '
+                                f'whose {l} value also starts with it -> doubled'); bad=1
+
+          # c) no fabricated ordinals ("3th")
+          for f in glob.glob('_stage/js/**/*.js', recursive=True):
+              s=io.open(f,encoding='utf-8',errors='replace').read()
+              for m in re.findall(r'\$\{[^}]+\}th\b', s):
+                  print(f'::error::{os.path.basename(f)}: {m} builds a bogus ordinal - use window.ordinal()'); bad=1
+
+          print('  translation/template integrity OK' if not bad else '')
+          sys.exit(bad)
+          I18N
+          [ $? -eq 0 ] || fail=1
+
+          # 7) Sitemap must parse and every URL must map to a real file.
+          python3 - <<'SM'
+          import re, io, os, sys
+          import xml.etree.ElementTree as ET
+          ET.parse('_stage/sitemap.xml')
+          locs=re.findall(r'<loc>([^<]+)</loc>', io.open('_stage/sitemap.xml',encoding='utf-8').read())
+          bad=0
+          for u in locs:
+              path=re.sub(r'^https?://[^/]+','',u).strip('/')
+              target=os.path.join('_stage', path, 'index.html') if path else '_stage/index.html'
+              if not os.path.isfile(target):
+                  print(f'::error::sitemap lists {u} but {target} does not exist'); bad=1
+          if not locs: print('::error::sitemap has no urls'); bad=1
+          print(f'  sitemap urls: {len(locs)}')
+          sys.exit(bad)
+          SM
+          [ $? -eq 0 ] || fail=1
+
+          [ "$fail" -eq 0 ] || exit 1
+          echo "  all preflight checks passed"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _stage --project-name=${{ env.PROJECT }} --branch=main --commit-dirty=true
+
+      - name: Purge edge cache
+        run: |
+          set -euo pipefail
+          curl -sS -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}' | tee /tmp/purge.json
+          grep -q '"success":true' /tmp/purge.json || echo "::warning::cache purge did not report success"
+          sleep 10
+
+      - name: Verify live
+        run: |
+          set -uo pipefail
+          S="${{ env.SERVED }}"; V="${{ steps.build.outputs.id }}"; fail=0
+          chk(){ printf '  %-46s' "$1"; }
+
+          code=$(curl -s -o /tmp/h.html -w '%{http_code}' "$S/?v=$V")
+          chk "homepage 200"; [ "$code" = 200 ] && echo OK || { echo "FAIL ($code)"; fail=1; }
+          chk "homepage AdSense"; grep -q "$ADSENSE" /tmp/h.html && echo OK || { echo FAIL; fail=1; }
+          chk "homepage GA4 ($GA4)"; grep -q "$GA4" /tmp/h.html && echo OK || { echo FAIL; fail=1; }
+
+          chk "ads.txt correct"
+          curl -s "$S/ads.txt" | grep -q 'pub-5798786176755576' && echo OK || { echo FAIL; fail=1; }
+
+          chk "apex 301s to www"
+          c=$(curl -s -o /dev/null -w '%{http_code}' "https://coreskillai.com/tests/iq/")
+          [ "$c" = 301 ] || [ "$c" = 308 ] && echo "OK ($c)" || { echo "FAIL ($c)"; fail=1; }
+
+          chk "canonical-fix Worker still rewrites to www"
+          curl -s "$S/tests/iq/" | grep -q 'rel="canonical" href="https://www.coreskillai.com/tests/iq/"' \
+            && echo OK || { echo "FAIL - Worker not rewriting"; fail=1; }
+
+          # All nine tests must be reachable and serve their script.
+          for t in iq reaction-time memory pattern color-vision big-five eq focus typing; do
+            chk "test page /tests/$t/"
+            c=$(curl -s -o /dev/null -w '%{http_code}' "$S/tests/$t/")
+            j=$(curl -s -o /dev/null -w '%{http_code}' "$S/js/tests/$t.js")
+            if [ "$c" = 200 ] && [ "$j" = 200 ]; then echo OK; else echo "FAIL (page $c, js $j)"; fail=1; fi
+          done
+
+          chk "iq.js carries the double-click guard"
+          curl -s "$S/js/tests/iq.js" | grep -q "answers\[current\]!==undefined" \
+            && echo OK || { echo "FAIL - regression, pick() is re-entrant again"; fail=1; }
+
+          chk "no doubled percent in served translations"
+          curl -s "$S/js/translations.js" | grep -q 'percentile_suffix:"%' \
+            && { echo "FAIL - percentile_suffix carries a % again"; fail=1; } || echo OK
+
+          chk "404 page has no ads"
+          curl -s "$S/definitely-not-a-page-xyz" | grep -qE '<ins[^>]*adsbygoogle' && { echo FAIL; fail=1; } || echo OK
+
+          [ "$fail" -eq 0 ] || { echo "::error::live verification failed"; exit 1; }
+          echo ""
+          echo "  build $V verified live"
