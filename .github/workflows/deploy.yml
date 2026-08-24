@@ -257,10 +257,20 @@ jobs:
           [ "$c" = 301 ] || [ "$c" = 308 ] && echo "OK ($c)" || { echo "FAIL ($c)"; fail=1; }
 
           chk "canonical-fix Worker still rewrites to www"
-          # -L is essential: Pages 301s between /x/ and /x, and without it curl
-          # returns the empty redirect body and this check fails for no reason.
-          curl -sL "$S/tests/iq/" | grep -q 'rel="canonical" href="https://www.coreskillai.com/tests/iq/"' \
-            && echo OK || { echo "FAIL - Worker not rewriting"; fail=1; }
+          # Two things this check needs, both learned the hard way:
+          #  -L        Pages 301s between /x/ and /x; without it curl greps an empty body.
+          #  Accept/UA the Worker only rewrites HTML responses, so a bare "Accept: */*"
+          #            request comes back unrewritten and the check fails for no reason.
+          curl -sL -H 'Accept: text/html,application/xhtml+xml' \
+               -A 'Mozilla/5.0 (compatible; coreskillai-deploy-check)' \
+               "$S/tests/iq/" > /tmp/canon.html
+          if grep -q 'rel="canonical" href="https://www.coreskillai.com/tests/iq/"' /tmp/canon.html; then
+            echo OK
+          else
+            echo "FAIL - Worker not rewriting"
+            echo "::warning::canonical actually served: $(grep -o 'rel=\"canonical\" href=\"[^\"]*\"' /tmp/canon.html | head -1)"
+            fail=1
+          fi
 
           # All nine tests must be reachable and serve their script.
           for t in iq reaction-time memory pattern color-vision big-five eq focus typing; do
