@@ -115,6 +115,13 @@ jobs:
               if tag not in h:
                   got=h.split('rel="canonical" href="')[1].split('"')[0] if 'rel="canonical" href="' in h else '(none)'
                   print(f'::error::{rel} canonical is {got}, expected {want}'); bad=1
+              # Trust pages. calculator-free.com - the one AdSense approved - links
+              # About, Privacy, Terms and Contact from every page. Reviewers look for
+              # a contact route; losing these links is a silent regression.
+              pre = '/' + rel.split('/')[0] if rel.split('/')[0] in ('es','pt','fr','de') else ''
+              for slug in ('privacy', 'terms', 'contact'):
+                  if f'href="{pre}/{slug}/"' not in h:
+                      print(f'::error::{rel} footer is missing the {slug} link'); bad=1
           print(f'  pages checked: {n}')
           sys.exit(bad)
           PAGES
