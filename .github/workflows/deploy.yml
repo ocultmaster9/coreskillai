@@ -45,6 +45,7 @@ jobs:
           rm -rf _stage && mkdir -p _stage
           rsync -a ./ _stage/ \
             --exclude '.git' --exclude '.github' --exclude '_stage' \
+            --exclude '_build' \
             --exclude '*.bak' --exclude 'node_modules' --exclude '.wrangler'
           echo "  staged $(find _stage -type f | wc -l) files"
 
@@ -101,7 +102,7 @@ jobs:
           # 3) Every real page carries monetisation + THIS SITE'S analytics, and a
           #    canonical matching its own path on the origin host.
           python3 - <<'PAGES'
-          import glob, io, os, sys
+          import glob, io, os, re, sys
           ORIGIN='https://coreskillai.com'; ADS='pub-5798786176755576'; GA='G-RKSK3LMNKN'
           bad=0; n=0
           for f in glob.glob('_stage/**/*.html', recursive=True):
@@ -118,10 +119,44 @@ jobs:
               # Trust pages. calculator-free.com - the one AdSense approved - links
               # About, Privacy, Terms and Contact from every page. Reviewers look for
               # a contact route; losing these links is a silent regression.
-              pre = '/' + rel.split('/')[0] if rel.split('/')[0] in ('es','pt','fr','de') else ''
+              # any two-letter directory is a language, not just the original four
+              _first = rel.split('/')[0]
+              pre = '/' + _first if re.fullmatch(r'[a-z]{2}', _first) else ''
               for slug in ('privacy', 'terms', 'contact'):
                   if f'href="{pre}/{slug}/"' not in h:
                       print(f'::error::{rel} footer is missing the {slug} link'); bad=1
+          # Every page must have a UNIQUE title. Before 2026-08-25 all four language
+          # versions shipped the ENGLISH title and description - 13-14 of 15 pages
+          # per language - so /es/ /pt/ /fr/ /de/ announced themselves to Google as
+          # English pages and read as near-duplicates of the English site. That is
+          # the thin/duplicate pattern behind "low value content".
+          # Titles must be unique WITHIN a language. Across languages they may
+          # legitimately coincide - "Kontakt" is the same word in German, Polish,
+          # Swedish, Danish and Norwegian - and hreflang already tells Google those
+          # pages are alternates of each other, not duplicates.
+          import collections
+          titles = collections.defaultdict(list)
+          for f in glob.glob('_stage/**/*.html', recursive=True):
+              rel = os.path.relpath(f, '_stage')
+              if rel == '404.html': continue
+              h = io.open(f, encoding='utf-8', errors='replace').read()
+              mt = re.search(r'<title>(.*?)</title>', h, re.S)
+              if not mt:
+                  print(f'::error::{rel} has no <title>'); bad = 1; continue
+              first = rel.split('/')[0]
+              lg = first if re.fullmatch(r'[a-z]{2}', first) else 'en'
+              titles[(lg, mt.group(1).strip())].append(rel)
+          for (lg, t), files in titles.items():
+              if len(files) > 1:
+                  print(f'::error::[{lg}] duplicate <title> on {len(files)} pages: {files[:4]} -> {t[:60]}')
+                  bad = 1
+          # And every non-English page must NOT reuse the English title.
+          en_titles = {t for (lg, t) in titles if lg == 'en'}
+          for (lg, t), files in titles.items():
+              if lg != 'en' and t in en_titles:
+                  print(f'::error::[{lg}] page still carries the ENGLISH title: {files[0]} -> {t[:60]}')
+                  bad = 1
+          print(f'  title/language pairs: {len(titles)}')
           print(f'  pages checked: {n}')
           sys.exit(bad)
           PAGES
@@ -195,11 +230,18 @@ jobs:
                   i+=1
               return out
 
-          src=io.open('_stage/js/translations.js',encoding='utf-8').read()
-          langs=dict(re.findall(r'\n  ([a-z]{2}): \{(.*?)\n  \}', src, re.S))
-          if len(langs)<2:
-              print('::error::could not parse translations.js'); sys.exit(1)
-          parsed={l:parse_block(b) for l,b in langs.items()}
+          # One file per language under js/i18n/ - a visitor loads only English plus
+          # their own language, never all 43 (that would have been 338 KB).
+          parsed={}
+          for f in sorted(glob.glob('_stage/js/i18n/*.js')):
+              lg=os.path.basename(f)[:-3]
+              body=io.open(f,encoding='utf-8').read()
+              m=re.search(r'window\.TRANSLATIONS\.%s = \{\n(.*?)\n\};'%lg, body, re.S)
+              if not m:
+                  print('::error::%s does not define window.TRANSLATIONS.%s'%(f,lg)); sys.exit(1)
+              parsed[lg]=parse_block(m.group(1))
+          if 'en' not in parsed:
+              print('::error::js/i18n/en.js missing'); sys.exit(1)
 
           # a) every language must define every English key
           base=set(parsed['en'])

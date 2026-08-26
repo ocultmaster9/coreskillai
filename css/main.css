@@ -630,3 +630,20 @@ footer ul a:hover { color: var(--primary); }
 .mt-24 { margin-top: 24px; }
 .hidden { display: none !important; }
 .fade-in { animation: fadeUp .4s ease; }
+
+
+/* ── RTL ──────────────────────────────────────────────────
+   The layout is flexbox/grid with no left/right properties, so direction
+   mirrors automatically once dir="rtl" is set on <html> (I18n.applyDir).
+   These are the few things that do not mirror on their own. */
+[dir="rtl"] { text-align: right; }
+[dir="rtl"] .nav-logo,
+[dir="rtl"] .footer-brand { text-align: right; }
+[dir="rtl"] .q-progress-fill,
+[dir="rtl"] .trait-bar-fill { direction: ltr; }
+[dir="rtl"] .iq-choice,
+[dir="rtl"] .pattern-choice { direction: ltr; }
+/* numbers, sequences and scores stay left-to-right even in RTL copy */
+[dir="rtl"] .b-val,
+[dir="rtl"] .score-ring-num,
+[dir="rtl"] .result-percentile { direction: ltr; unicode-bidi: isolate; }

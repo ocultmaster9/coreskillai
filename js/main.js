@@ -23,12 +23,26 @@ const Theme = {
 };
 
 /* ── Language / i18n ────────────────────────────────────── */
+// Right-to-left scripts. Everything else is LTR.
+const RTL_LANGS = ['ar','fa','he','ur'];
+
 const I18n = {
   lang: 'en',
+  // SINGLE SOURCE OF TRUTH. The old code hardcoded the language list in three
+  // separate places, so adding a language meant editing all three or getting
+  // silent breakage. Derive it from the translations file instead.
+  // Languages with real pages. Translations are loaded per-page (only en +
+  // the current language), so Object.keys(TRANSLATIONS) is NOT the list.
+  codes() {
+    const reg = window.LANGS || {};
+    const ready = Object.keys(reg).filter(c => reg[c].ready);
+    return ready.length ? ready : Object.keys(window.TRANSLATIONS || { en: 1 });
+  },
+  prefixes() { return this.codes().filter(c => c !== 'en'); },
   init() {
-    const VALID = ['en','es','pt','fr','de'];
-    // 1. URL path wins (e.g. /es/tests/ → 'es')
-    const urlLang = location.pathname.split('/').find(s => ['es','pt','fr','de'].includes(s)) || null;
+    const VALID = this.codes();
+    // 1. URL path wins (e.g. /es/tests/ -> 'es')
+    const urlLang = location.pathname.split('/').find(s => this.prefixes().includes(s)) || null;
     // 2. window.PAGE_LANG set by template for lang pages
     const pageLang = (window.PAGE_LANG && VALID.includes(window.PAGE_LANG)) ? window.PAGE_LANG : null;
     // 3. localStorage, then browser
@@ -36,15 +50,38 @@ const I18n = {
     const browser = (navigator.language || 'en').slice(0, 2);
     this.lang = urlLang || pageLang || (VALID.includes(saved) ? saved : (VALID.includes(browser) ? browser : 'en'));
     localStorage.setItem('csa-lang', this.lang);
+    this.applyDir();
+    this.buildSelector();
     this.apply();
     const sel = document.getElementById('lang-select');
     if (sel) sel.value = this.lang;
+  },
+  // Render the language <select> from window.LANGS so adding a market never
+  // requires touching the HTML. Falls back to whatever is already in the markup.
+  buildSelector() {
+    const sel = document.getElementById('lang-select');
+    const reg = window.LANGS;
+    if (!sel || !reg) return;
+    const have = this.codes();
+    // Alphabetical by the name the user actually reads (the endonym), not by
+    // language code - a Dutch speaker looks for "Nederlands", not "nl". Sorted
+    // here at build time so the order can never drift out of the registry.
+    sel.innerHTML = Object.keys(reg)
+      .filter(c => have.includes(c))
+      .sort((a, b) => reg[a].name.localeCompare(reg[b].name, 'en', { sensitivity: 'base' }))
+      .map(c => `<option value="${c}" lang="${c}"${c === this.lang ? ' selected' : ''}>${reg[c].name}</option>`)
+      .join('');
+  },
+  applyDir() {
+    const rtl = RTL_LANGS.includes(this.lang);
+    document.documentElement.setAttribute('dir', rtl ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute('lang', this.lang);
   },
   set(lang) {
     localStorage.setItem('csa-lang', lang);
     // Navigate to language-prefixed version of current page
     const parts    = location.pathname.split('/').filter(Boolean);
-    const hasLang  = ['es','pt','fr','de'].includes(parts[0]);
+    const hasLang  = this.prefixes().includes(parts[0]);
     const base     = hasLang ? parts.slice(1) : parts;
     const newPath  = lang === 'en'
       ? '/' + (base.length ? base.join('/') + '/' : '')

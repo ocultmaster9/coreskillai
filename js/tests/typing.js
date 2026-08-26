@@ -63,15 +63,46 @@ function getPassage(){
 
 let passage='', typed='', startTime=0, endTime=0, phase='idle', timerInterval=null, timeLimit=60;
 
-function wpm(chars, seconds){ return Math.round((chars/5)/(seconds/60)); }
+// ── Script-aware speed metric ─────────────────────────────
+// "chars / 5" is the LATIN typing convention (a "word" = 5 characters) and the
+// percentile table below it was built from ENGLISH norms. Applying either to
+// CJK is meaningless: Japanese and Chinese are typed through an IME where one
+// character costs several keystrokes, so a fast typist would score ~15 "WPM"
+// and be told they are in the 1st percentile. Those scripts are measured in
+// characters per minute instead, against their own norms.
+//
+// alpha : Latin, Cyrillic, Greek, Arabic, Hebrew, Devanagari - words ~5 chars
+// direct: Hangul and Thai - typed directly, no conversion step, high CPM
+// ime   : Japanese and Chinese - romaji/pinyin then conversion, lower CPM
+const SPEED_FAMILY = { ja:'ime', zh:'ime', ko:'direct', th:'direct' };
+function familyFor(lang){ return SPEED_FAMILY[lang] || 'alpha'; }
+
+const SPEED_NORMS = {
+  // [score, percentile]
+  alpha:  [[0,1],[20,5],[30,15],[40,35],[55,50],[70,65],[85,78],[100,88],[120,95],[140,98],[160,99]],
+  // IME scripts: characters/min. Average pinyin or romaji input lands near 50-70.
+  ime:    [[0,1],[15,5],[25,15],[35,35],[50,50],[70,65],[90,78],[120,88],[150,95],[200,98],[250,99]],
+  // Hangul and Thai are entered directly, so raw character rates run much higher.
+  direct: [[0,1],[60,5],[100,15],[150,35],[200,50],[260,65],[320,78],[400,88],[500,95],[600,98],[700,99]],
+};
+
+function speedUnitKey(lang){ return familyFor(lang)==='alpha' ? 'typ_wpm' : 'typ_cpm'; }
+
+function wpm(chars, seconds, lang){
+  const l = lang || window.I18n?.lang || window.PAGE_LANG || 'en';
+  return familyFor(l)==='alpha'
+    ? Math.round((chars/5)/(seconds/60))   // words per minute
+    : Math.round(chars/(seconds/60));      // characters per minute
+}
 function accuracy(original, input){
   let correct=0;
   const len=Math.min(original.length,input.length);
   for(let i=0;i<len;i++) if(original[i]===input[i]) correct++;
   return input.length>0?Math.round((correct/input.length)*100):100;
 }
-function pct(w){
-  const map=[[0,1],[20,5],[30,15],[40,35],[55,50],[70,65],[85,78],[100,88],[120,95],[140,98],[160,99]];
+function pct(w, lang){
+  const l = lang || window.I18n?.lang || window.PAGE_LANG || 'en';
+  const map = SPEED_NORMS[familyFor(l)];
   for(let i=0;i<map.length-1;i++){
     const [w1,p1]=map[i],[w2,p2]=map[i+1];
     if(w<=w2){const t=(w-w1)/(w2-w1);return Math.round(p1+(p2-p1)*t);}
@@ -103,7 +134,7 @@ function renderShell(){
       <span class="test-ui-title">⌨️ ${_t('typ_title','Typing Speed')}</span>
       <div style="display:flex;gap:16px;font-size:.82rem;color:var(--text-3)">
         <span>⏱ <span id="typ-timer">60</span>s</span>
-        <span><span id="typ-wpm-live">0</span> ${_t('typ_wpm','WPM')}</span>
+        <span><span id="typ-wpm-live">0</span> ${_t(speedUnitKey(window.I18n?.lang),'WPM')}</span>
       </div>
     </div>
     <div class="test-ui-body" style="flex-direction:column;gap:16px;align-items:stretch">
@@ -176,7 +207,8 @@ function endTest(){
   const p=pct(w);
   const {text,color}=label(w);
   const circ=2*Math.PI*55;
-  const wpmLabel=_t('typ_wpm','WPM');
+  const lang=window.I18n?.lang||window.PAGE_LANG||'en';
+  const wpmLabel=_t(speedUnitKey(lang), familyFor(lang)==='alpha'?'WPM':'CPM');
 
   document.getElementById('typ-input').disabled=true;
 
@@ -193,7 +225,10 @@ function endTest(){
     </div>
     <div class="result-info">
       <h2>${text}</h2>
-      <p class="result-desc">${w>=90?`Impressive speed! ${w} ${wpmLabel} puts you well above the professional threshold. Accuracy: ${acc}%.`:w>=55?`Solid typing speed at ${w} ${wpmLabel}. Above the global average of ~40 WPM. With practice, 80+ WPM is very achievable.`:`Your ${w} ${wpmLabel} is below average, but everyone starts somewhere. Daily 10-minute practice can double your speed within weeks.`}</p>
+      <p class="result-desc">${(p>=88?_t('typ_res_fast','Impressive speed. {n} {u} puts you well above the professional threshold. Accuracy: {a}%.')
+         :p>=50?_t('typ_res_mid','Solid speed at {n} {u} — above average for your language. With practice you can go noticeably faster.')
+         :_t('typ_res_slow','{n} {u} is below average, but everyone starts somewhere. Ten focused minutes a day can double your speed in weeks.'))
+         .replace('{n}',w).replace('{u}',wpmLabel).replace('{a}',acc)}</p>
       <div class="result-percentile" style="background:${color}22;color:${color}">${_t('percentile_prefix','Faster than')} ${p}% ${_t('percentile_suffix','of typists')}</div>
     </div>
   </div>
@@ -219,8 +254,8 @@ function endTest(){
 
 window.TypTest={
   reset(){phase='idle';typed='';startTime=0;endTime=0;clearInterval(timerInterval);renderShell();},
-  copy(){const r=window._typResult;if(!r)return;const t=`Typing speed: ${r.wpm} ${_t('typ_wpm','WPM')}, ${r.acc}% accuracy — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile) ⌨️ coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ Copied!';setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
-  tweet(){const r=window._typResult;if(!r)return;const t=`My typing speed: ${r.wpm} ${_t('typ_wpm','WPM')} at ${r.acc}% accuracy — ${r.text} ⌨️`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
+  copy(){const r=window._typResult;if(!r)return;const t=`Typing speed: ${r.wpm} ${_t(speedUnitKey(window.I18n?.lang),'WPM')}, ${r.acc}% accuracy — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile) ⌨️ coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ Copied!';setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
+  tweet(){const r=window._typResult;if(!r)return;const t=`My typing speed: ${r.wpm} ${_t(speedUnitKey(window.I18n?.lang),'WPM')} at ${r.acc}% accuracy — ${r.text} ⌨️`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);
 })();

@@ -1,0 +1,62 @@
+{
+ "home": {
+  "title": "CoreSkillAI — Free IQ Test &amp; Brain Tests | Compare Globally",
+  "desc": "Take a free IQ test and 8 other scientific tests — reaction time, memory, color vision, Big Five personality, EQ and more. See how you compare worldwide."
+ },
+ "about": {
+  "title": "About CoreSkillAI &#8212; Science-Backed Free Tests",
+  "desc": "CoreSkillAI offers 9 free scientific cognitive and personality tests with global comparison data. No account, no tracking, always free."
+ },
+ "privacy": {
+  "title": "Privacy Policy &#8212; CoreSkillAI",
+  "desc": "CoreSkillAI privacy policy. We collect no personal data. All tests run in your browser."
+ },
+ "terms": {
+  "title": "Terms of Use &#8212; CoreSkillAI",
+  "desc": "Terms of use for CoreSkillAI. Free cognitive tests provided for self-assessment and entertainment, not clinical diagnosis."
+ },
+ "contact": {
+  "title": "Contact &#8212; CoreSkillAI",
+  "desc": "Get in touch with CoreSkillAI. Questions, feedback, corrections or press enquiries."
+ },
+ "tests": {
+  "title": "All Free Brain &amp; IQ Tests — CoreSkillAI",
+  "desc": "9 free scientific tests: IQ test, reaction time, memory, pattern recognition, color vision, Big Five personality, emotional intelligence, focus, and typing speed."
+ },
+ "tests/iq": {
+  "title": "IQ Test &#8212; Free Online Test | CoreSkillAI",
+  "desc": "Measure your cognitive reasoning with 40 questions across 3 domains. Free, instant results with global percentile comparison. No signup required."
+ },
+ "tests/reaction-time": {
+  "title": "Reaction Time Test &#8212; Free Online Test | CoreSkillAI",
+  "desc": "How fast is your brain's response to visual stimuli? Free, instant results with global percentile comparison. No signup required."
+ },
+ "tests/memory": {
+  "title": "Working Memory Test &#8212; Free Online Test | CoreSkillAI",
+  "desc": "How many digits can you hold in your short-term memory? Free, instant results with global percentile comparison. No signup required."
+ },
+ "tests/pattern": {
+  "title": "Pattern Recognition Test &#8212; Free Online Test | CoreSkillAI",
+  "desc": "Can you spot the hidden rule in abstract visual sequences? Free, instant results with global percentile comparison. No signup required."
+ },
+ "tests/color-vision": {
+  "title": "Color Vision Test &#8212; Free Online Test | CoreSkillAI",
+  "desc": "How precisely does your brain perceive and order colors? Free, instant results with global percentile comparison. No signup required."
+ },
+ "tests/big-five": {
+  "title": "Big Five Personality Test &#8212; Free Online Test | CoreSkillAI",
+  "desc": "Which of the 5 core personality dimensions define you? Free, instant results with global percentile comparison. No signup required."
+ },
+ "tests/eq": {
+  "title": "Emotional Intelligence Test &#8212; Free Online Test | CoreSkillAI",
+  "desc": "How accurately do you perceive, understand and manage emotions? Free, instant results with global percentile comparison. No signup required."
+ },
+ "tests/focus": {
+  "title": "Focus & Attention Test &#8212; Free Online Test | CoreSkillAI",
+  "desc": "Measure your cognitive control with the classic Stroop test. Free, instant results with global percentile comparison. No signup required."
+ },
+ "tests/typing": {
+  "title": "Typing Speed Test &#8212; Free Online Test | CoreSkillAI",
+  "desc": "How fast do you type? Find out your WPM and global ranking. Free, instant results with global percentile comparison. No signup required."
+ }
+}
