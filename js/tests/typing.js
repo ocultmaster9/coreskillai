@@ -53,6 +53,36 @@ const PASSAGES={
     "Wissenschaft baut Wissen auf und testet Ideen gegen die beobachtbare Realität mit Experimenten und sorgfältig gesammelten Daten über einen langen Zeitraum.",
     "Galaxien erstrecken sich über das hinaus, was wir sehen können, und jeder Stern könnte Welten haben, die ihn umkreisen und darauf warten, entdeckt zu werden.",
   ],
+  it:[
+    "La scienza non è altro che un modo di guardare il mondo con occhi curiosi e mani pazienti, verificando ogni idea contro la realtà.",
+    "Leggere è per la mente ciò che l'esercizio è per il corpo: ogni libro finito è una conversazione con una mente brillante attraverso il tempo.",
+    "La più grande ricchezza è vivere contenti con poco. La saggezza comincia nella meraviglia, e sapere ciò che non si sa è già conoscenza.",
+    "L'universo non ha alcun obbligo di avere senso per noi, ma ogni domanda che poniamo ci avvicina di un passo al suo vasto mistero.",
+    "La tecnologia dà il meglio quando avvicina le persone. La rete ha dato voce a chiunque sul pianeta, nel bene e nel male.",
+    "La creatività è l'intelligenza che si diverte. Il segreto della buona ricerca è restare un poco sotto impegnati, lasciando spazio alla mente per vagare.",
+    "In principio era la parola. Il linguaggio dà forma al pensiero, e il pensiero dà forma al mondo che abitiamo ogni giorno.",
+    "Ogni grande idea è nata come una frase nella mente di qualcuno, scritta di fretta su un foglio prima che potesse svanire.",
+  ],
+  nl:[
+    "Wetenschap is niets anders dan een manier om naar de wereld te kijken met nieuwsgierige ogen en geduldige handen, waarbij elk idee aan de werkelijkheid wordt getoetst.",
+    "Lezen is voor de geest wat beweging is voor het lichaam: elk boek dat je uitleest is een gesprek met een scherpe geest dwars door de tijd heen.",
+    "De grootste rijkdom is tevreden leven met weinig. Wijsheid begint bij verwondering, en weten wat je niet weet is al een vorm van kennis.",
+    "Het heelal is niet verplicht om logisch te zijn voor ons, maar elke vraag die we stellen brengt ons een stap dichter bij dat enorme mysterie.",
+    "Techniek is op haar best wanneer ze mensen samenbrengt. Het internet gaf iedereen op deze planeet een stem, ten goede en ten kwade.",
+    "Creativiteit is intelligentie die plezier maakt. Het geheim van goed onderzoek is een beetje onderbezet blijven, zodat je geest ruimte houdt om te dwalen.",
+    "In het begin was het woord. Taal geeft vorm aan het denken, en het denken geeft vorm aan de wereld waarin we elke dag leven.",
+    "Elk groot idee begon als een zin in iemands hoofd, haastig opgeschreven op een vel papier voordat het weer kon verdwijnen.",
+  ],
+  pl:[
+    "Nauka to nic innego jak sposób patrzenia na świat ciekawymi oczami i cierpliwymi rękami, sprawdzając każdy pomysł w zderzeniu z rzeczywistością.",
+    "Czytanie jest dla umysłu tym, czym ruch dla ciała: każda skończona książka to rozmowa z bystrym umysłem ponad czasem i przestrzenią.",
+    "Największym bogactwem jest żyć w zadowoleniu z niewielu rzeczy. Mądrość zaczyna się od zdziwienia, a wiedza o tym, czego nie wiemy, też jest wiedzą.",
+    "Wszechświat nie ma obowiązku być dla nas zrozumiały, ale każde zadane pytanie przybliża nas o krok do jego ogromnej tajemnicy.",
+    "Technologia jest najlepsza wtedy, gdy zbliża ludzi. Internet dał głos każdemu na tej planecie, i na dobre, i na złe.",
+    "Kreatywność to inteligencja, która dobrze się bawi. Sekret dobrych badań polega na byciu odrobinę niedociążonym, by umysł miał miejsce na wędrowanie.",
+    "Na początku było słowo. Język nadaje kształt myśleniu, a myślenie nadaje kształt światu, w którym żyjemy każdego dnia.",
+    "Każdy wielki pomysł zaczął się jako zdanie w czyjejś głowie, zapisane w pośpiechu na kartce, zanim zdążyło zniknąć.",
+  ],
 };
 
 function getPassage(){
