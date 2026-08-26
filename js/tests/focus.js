@@ -12,11 +12,11 @@ const COLORS=[
 
 // Stroop words in each language — uppercase for interference effect
 const WORDS={
-  Red:   {en:'RED',   es:'ROJO',     pt:'VERMELHO', fr:'ROUGE', de:'ROT', it:'ROSSO', nl:'ROOD', pl:'CZERWONY', ru:'КРАСНЫЙ', tr:'KIRMIZI', ro:'ROȘU', sv:'RÖD', da:'RØD', no:'RØD', fi:'PUNAINEN'},
-  Blue:  {en:'BLUE',  es:'AZUL',     pt:'AZUL',     fr:'BLEU',  de:'BLAU', it:'BLU', nl:'BLAUW', pl:'NIEBIESKI', ru:'СИНИЙ', tr:'MAVİ', ro:'ALBASTRU', sv:'BLÅ', da:'BLÅ', no:'BLÅ', fi:'SININEN'},
-  Green: {en:'GREEN', es:'VERDE',    pt:'VERDE',     fr:'VERT',  de:'GRÜN', it:'VERDE', nl:'GROEN', pl:'ZIELONY', ru:'ЗЕЛЁНЫЙ', tr:'YEŞİL', ro:'VERDE', sv:'GRÖN', da:'GRØN', no:'GRØNN', fi:'VIHREÄ'},
-  Yellow:{en:'YELLOW',es:'AMARILLO', pt:'AMARELO',   fr:'JAUNE', de:'GELB', it:'GIALLO', nl:'GEEL', pl:'ŻÓŁTY', ru:'ЖЁЛТЫЙ', tr:'SARI', ro:'GALBEN', sv:'GUL', da:'GUL', no:'GUL', fi:'KELTAINEN'},
-  Purple:{en:'PURPLE',es:'PÚRPURA',  pt:'ROXO',      fr:'VIOLET',de:'LILA', it:'VIOLA', nl:'PAARS', pl:'FIOLETOWY', ru:'ФИОЛЕТОВЫЙ', tr:'MOR', ro:'MOV', sv:'LILA', da:'LILLA', no:'LILLA', fi:'VIOLETTI'},
+  Red:   {en:'RED',   es:'ROJO',     pt:'VERMELHO', fr:'ROUGE', de:'ROT', it:'ROSSO', nl:'ROOD', pl:'CZERWONY', ru:'КРАСНЫЙ', tr:'KIRMIZI', ro:'ROȘU', sv:'RÖD', da:'RØD', no:'RØD', fi:'PUNAINEN', id:'MERAH'},
+  Blue:  {en:'BLUE',  es:'AZUL',     pt:'AZUL',     fr:'BLEU',  de:'BLAU', it:'BLU', nl:'BLAUW', pl:'NIEBIESKI', ru:'СИНИЙ', tr:'MAVİ', ro:'ALBASTRU', sv:'BLÅ', da:'BLÅ', no:'BLÅ', fi:'SININEN', id:'BIRU'},
+  Green: {en:'GREEN', es:'VERDE',    pt:'VERDE',     fr:'VERT',  de:'GRÜN', it:'VERDE', nl:'GROEN', pl:'ZIELONY', ru:'ЗЕЛЁНЫЙ', tr:'YEŞİL', ro:'VERDE', sv:'GRÖN', da:'GRØN', no:'GRØNN', fi:'VIHREÄ', id:'HIJAU'},
+  Yellow:{en:'YELLOW',es:'AMARILLO', pt:'AMARELO',   fr:'JAUNE', de:'GELB', it:'GIALLO', nl:'GEEL', pl:'ŻÓŁTY', ru:'ЖЁЛТЫЙ', tr:'SARI', ro:'GALBEN', sv:'GUL', da:'GUL', no:'GUL', fi:'KELTAINEN', id:'KUNING'},
+  Purple:{en:'PURPLE',es:'PÚRPURA',  pt:'ROXO',      fr:'VIOLET',de:'LILA', it:'VIOLA', nl:'PAARS', pl:'FIOLETOWY', ru:'ФИОЛЕТОВЫЙ', tr:'MOR', ro:'MOV', sv:'LILA', da:'LILLA', no:'LILLA', fi:'VIOLETTI', id:'UNGU'},
 };
 function colorWord(name){
   const lang=window.I18n?.lang||window.PAGE_LANG||'en';

@@ -137,3 +137,93 @@ def add_meta(lang, meta):
         changed += 1
     print('  %s: meta on %d pages' % (lang, changed))
     return changed
+
+
+def new_language(lang, keys):
+    """Bootstrap a market that has no strings file yet. Refuses unless the key
+    set matches English exactly, so a new language can never ship half-built."""
+    import json
+    en_src = io.open('js/i18n/en.js', encoding='utf-8').read()
+    en_body = re.search(r'window\.TRANSLATIONS\.en = \{\n(.*?)\n\};', en_src, re.S).group(1)
+    en = {}
+    i = 0; n = len(en_body)
+    while i < n:
+        if en_body[i] == '"':
+            i += 1
+            while i < n and en_body[i] != '"': i += 2 if en_body[i] == '\\' else 1
+            i += 1; continue
+        m = re.match(r'([A-Za-z_]\w*)\s*:\s*"', en_body[i:])
+        if m:
+            j = i + m.end(); v = ''
+            while j < n and en_body[j] != '"':
+                v += en_body[j]; j += 2 if en_body[j] == '\\' else 1
+            en[m.group(1)] = v; i = j + 1; continue
+        i += 1
+    missing = [k for k in en if k not in keys]
+    extra = [k for k in keys if k not in en]
+    if missing:
+        print('  %s: MISSING %d keys: %s' % (lang, len(missing), missing[:8])); sys.exit(1)
+    if extra:
+        print('  %s: UNKNOWN keys: %s' % (lang, extra[:8])); sys.exit(1)
+    mixed_script_guard(lang, list(keys.values()))
+    body = "".join('    %s:"%s",\n' % (k, keys[k].replace('\\', '\\\\').replace('"', '\\"')) for k in en)
+    out = ("/* CoreSkillAI - %s strings. One file per language: a visitor loads only\n"
+           "   English (fallback) plus their own language, never all 43. */\n"
+           "window.TRANSLATIONS = window.TRANSLATIONS || {};\n"
+           "window.TRANSLATIONS.%s = {\n%s};\n") % (lang, lang, body)
+    io.open('js/i18n/%s.js' % lang, 'w', encoding='utf-8', newline='\n').write(out)
+    print('  %s: new strings file with %d keys' % (lang, len(keys)))
+
+
+ASSET = re.compile(r'^/(css|js|favicon|og|og-image|apple-touch-icon|ads\.txt|robots\.txt|sitemap\.xml|cdn-cgi)')
+
+def direction(lang):
+    s = io.open('js/languages.js', encoding='utf-8').read()
+    m = re.search(r'  %s: \{ name: "[^"]+", dir: "(\w+)"' % lang, s)
+    return m.group(1) if m else 'ltr'
+
+def generate_pages(lang):
+    """Clone the English page set into /<lang>/ with the right lang, dir,
+    canonical, PAGE_LANG, strings file and internal link prefixes."""
+    d = direction(lang)
+    made = 0
+    for page in PAGES:
+        src, dst = path_for('en', page), path_for(lang, page)
+        if not os.path.isfile(src): continue
+        os.makedirs(os.path.dirname(dst) or '.', exist_ok=True)
+        h = io.open(src, encoding='utf-8').read()
+        h = re.sub(r'<html lang="en">',
+                   '<html lang="%s"%s>' % (lang, ' dir="rtl"' if d == 'rtl' else ''), h, count=1)
+        sub = '' if page == 'home' else page + '/'
+        h = re.sub(r'<link rel="canonical" href="[^"]*">',
+                   '<link rel="canonical" href="https://coreskillai.com/%s/%s">' % (lang, sub), h, count=1)
+        h = h.replace('<script src="/js/languages.js"></script>',
+                      '<script>window.PAGE_LANG="%s";</script><script src="/js/languages.js"></script>' % lang, 1)
+        h = h.replace('<script src="/js/i18n/en.js"></script>',
+                      '<script src="/js/i18n/en.js"></script><script src="/js/i18n/%s.js"></script>' % lang, 1)
+        h = re.sub(r'href="(/[^"]*)"',
+                   lambda m: 'href="%s"' % m.group(1) if ASSET.match(m.group(1)) else 'href="/%s%s"' % (lang, m.group(1)), h)
+        io.open(dst, 'w', encoding='utf-8', newline='\n').write(h)
+        made += 1
+    print('  %s: %d pages generated' % (lang, made))
+    return made
+
+STROOP_NAMES = ["Red", "Blue", "Green", "Yellow", "Purple"]
+
+def add_stroop(lang, words):
+    """Colour words for the Stroop task. Not cosmetic: the effect only exists if
+    the reader automatically reads the word, so an untranslated market returns a
+    score that measures nothing."""
+    mixed_script_guard(lang, words)
+    if len(words) != 5:
+        print('  %s: need exactly 5 colour words' % lang); sys.exit(1)
+    p = 'js/tests/focus.js'; s = io.open(p, encoding='utf-8').read()
+    n = 0
+    for name, val in zip(STROOP_NAMES, words):
+        m = re.search(r"(%s:\s*\{[^}]*?)(\}),", name and (name + r"") or "", ) if False else re.search(r"(%s:\s*\{[^}]*?)(\}),"%name, s)
+        if not m: continue
+        if re.search(r"\b%s:" % lang, m.group(1)): continue
+        s = s[:m.end(1)] + ", %s:'%s'" % (lang, val.replace("'", "\\'")) + s[m.end(1):]
+        n += 1
+    io.open(p, 'w', encoding='utf-8', newline='\n').write(s)
+    print('  %s: %d Stroop colour words' % (lang, n))

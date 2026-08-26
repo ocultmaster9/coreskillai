@@ -8,7 +8,7 @@
 // never produce a 404 in the dropdown.
 window.LANGS = {
   af: { name: "Afrikaans", dir: "ltr" },
-  id: { name: "Bahasa Indonesia", dir: "ltr" },
+  id: { name: "Bahasa Indonesia", dir: "ltr", ready: true },
   ms: { name: "Bahasa Melayu", dir: "ltr" },
   cs: { name: "Čeština", dir: "ltr" },
   da: { name: "Dansk", dir: "ltr", ready: true },

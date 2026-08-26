@@ -153,6 +153,16 @@ const PASSAGES={
     "Alussa oli sana. Kieli muovaa ajattelua, ja ajattelu muovaa maailmaa jossa elämme joka päivä.",
     "Jokainen suuri ajatus alkoi lauseena jonkun mielessä, kiireesti paperille raapustettuna ennen kuin se ehti kadota.",
   ],
+  id:[
+    "Ilmu pengetahuan tidak lain adalah cara memandang dunia dengan mata yang ingin tahu dan tangan yang sabar, menguji setiap gagasan pada kenyataan.",
+    "Membaca bagi pikiran sama seperti olahraga bagi tubuh: setiap buku yang tamat adalah percakapan dengan pikiran cemerlang menembus waktu.",
+    "Kekayaan terbesar adalah hidup berkecukupan dengan yang sedikit. Kebijaksanaan bermula dari rasa takjub, dan menyadari apa yang belum kita tahu juga sebuah pengetahuan.",
+    "Alam semesta tidak berkewajiban masuk akal bagi kita, tetapi setiap pertanyaan yang kita ajukan membawa kita selangkah lebih dekat pada misterinya yang luas.",
+    "Teknologi paling bermakna ketika mendekatkan manusia. Internet memberi suara kepada setiap orang di planet ini, untuk baik maupun buruk.",
+    "Kreativitas adalah kecerdasan yang sedang bersenang-senang. Rahasia penelitian yang baik adalah tetap sedikit longgar, memberi ruang bagi pikiran untuk mengembara.",
+    "Pada mulanya adalah kata. Bahasa membentuk pikiran, dan pikiran membentuk dunia tempat kita hidup setiap hari.",
+    "Setiap gagasan besar bermula sebagai satu kalimat di kepala seseorang, ditulis tergesa di selembar kertas sebelum sempat menghilang.",
+  ],
 };
 
 function getPassage(){
