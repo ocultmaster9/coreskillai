@@ -2,9 +2,9 @@
 """Re-derive ready markets, then rebuild hreflang, robots and the sitemap.
 Run after any market changes state. One command so the three can never drift."""
 import io, os, re, sys
-HERE=os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0,HERE); sys.path.insert(0,'/tmp')
+HERE=os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0,HERE)
 import sync_ready
-from applymeta import PAGES, path_for, url_for, ready_langs
+from tools import PAGES, path_for, url_for, ready_langs
 
 def main():
     done = sync_ready.sync()

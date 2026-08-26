@@ -81,6 +81,11 @@ def stroop(lang):
 def audit():
     EN=strings('en'); nkeys=len(EN)
     en_titles=set()
+    EN_LEN={}
+    for pg in PAGES:
+        f=path_for('en',pg)
+        if os.path.isfile(f):
+            EN_LEN[pg]=len(body_text(io.open(f,encoding='utf-8').read()))
     EN_SCI=set()
     for slug in TESTS:
         f=path_for('en','tests/'+slug)
@@ -116,7 +121,14 @@ def audit():
                     txt=re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',ms.group(1))).strip()
                     if lang!='en' and txt[:120] in EN_SCI:
                         sci_english+=1
-                if len(body_text(h).split())<250: thin+=1
+                # Thin-ness must be measured against the ENGLISH equivalent, in
+                # CHARACTERS. A word-count threshold is English-calibrated and
+                # wrong for agglutinative languages: the Finnish IQ page carries
+                # 263 words but 2,191 characters against English's 336 words /
+                # 2,179 characters - MORE text, 22% fewer words. Characters are
+                # comparable across alphabetic scripts; words are not.
+                en_chars = EN_LEN.get(pg, 0)
+                if en_chars and len(body_text(h)) < en_chars * 0.80: thin+=1
         rows.append(dict(lang=lang, keys=len(T), keys_ok=keys_ok, pages=pages_ok,
                          eng_title=eng_title, sci_missing=sci_missing, sci_english=sci_english,
                          thin=thin, passages=passages(lang),
