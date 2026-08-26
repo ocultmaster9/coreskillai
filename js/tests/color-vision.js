@@ -1,5 +1,6 @@
 /* CoreSkillAI — Color Vision Test (Hue Arrangement) */
 (function(){
+function _t(k,fb){return window.I18n?.t(k)||fb||k;}
 // Farnsworth-Munsell style hue arrangement test
 // 4 rows, each row has 2 fixed anchors + 8 moveable chips to sort
 
@@ -71,21 +72,21 @@ function renderShell(){
   ROWS.forEach((_,ri)=>{ rowOrder[ri]=shuffle(ROWS[ri].hues); });
   document.getElementById('test-root').innerHTML=`
   <div class="instruction-card">
-    <h3>How It Works</h3>
+    <h3>${_t('cv_how_title',"How It Works")}</h3>
     <ul>
-      <li>Each row shows colors between two fixed anchors.</li>
-      <li><strong>Drag the colored chips</strong> to arrange them in smooth hue order from left to right.</li>
-      <li>4 rows total. Perfect arrangement = perfect color vision.</li>
+      <li>${_t('cv_how1',"Each row shows colors between two fixed anchors.")}</li>
+      <li>${_t('cv_how_drag',"Drag the coloured chips to arrange them in smooth hue order from left to right.")}</li>
+      <li>${_t('cv_how3',"4 rows in total. A perfect arrangement means perfect colour vision.")}</li>
     </ul>
   </div>
   <div class="test-card-ui">
     <div class="test-ui-header">
       <span class="test-ui-title">🌈 Color Vision</span>
-      <span class="badge badge-primary">Drag to sort</span>
+      <span class="badge badge-primary">${_t('cv_badge_drag',"Drag to sort")}</span>
     </div>
     <div class="test-ui-body" style="flex-direction:column;align-items:flex-start;gap:8px" id="cv-body">
       <div id="cv-rows">${ROWS.map((_,ri)=>buildRow(ri)).join('')}</div>
-      <button class="btn btn-primary" style="margin-top:16px;align-self:center" onclick="CVTest.submit()">Check My Results</button>
+      <button class="btn btn-primary" style="margin-top:16px;align-self:center" onclick="CVTest.submit()">${_t('cv_submit',"Check My Results")}</button>
     </div>
   </div>
   <div class="results-panel" id="cv-results"></div>`;
@@ -152,13 +153,13 @@ function showResults(){
     </div>
     <div class="result-info">
       <h2>${text}</h2>
-      <p class="result-desc">${totalErr===0?'Perfect score! Your color discrimination is exceptional — you placed all 32 chips in exact order.':totalErr<=18?'Your color vision is well above average. Small errors are common even in people with clinically normal vision.':'Some difficulty with hue discrimination was detected. About 8% of males and 0.5% of females have some form of color vision deficiency.'}</p>
+      <p class="result-desc">${totalErr===0?_t('cv_res_high',"Perfect score. Your colour discrimination is exceptional — every chip placed in exact order."):totalErr<=18?_t('cv_res_mid',"Your colour vision is well above average. Small errors are common even in people with clinically normal vision."):_t('cv_res_low',"Some difficulty with hue discrimination was detected. About 8% of men and 0.5% of women have some form of colour vision deficiency.")}</p>
       <div class="result-percentile" style="background:${color}22;color:${color}">Better than ${p}% of people</div>
     </div>
   </div>
   <div class="bell-curve-wrap"><canvas id="cv-bell" style="width:100%;display:block"></canvas></div>
   <div class="result-breakdown">${breakdown}</div>
-  <p style="font-size:.75rem;color:var(--text-3);margin-top:8px;text-align:center">Note: This test is for informational purposes only. For clinical color vision assessment, consult an optometrist.</p>
+  <p style="font-size:.75rem;color:var(--text-3);margin-top:8px;text-align:center">${_t('cv_note',"Note: This test is for informational purposes only. For clinical color vision assessment, consult an optometrist.")}</p>
   <div class="share-row">
     <button class="share-btn" id="share-copy" onclick="CVTest.copy()">📋 Copy Result</button>
     <button class="share-btn" onclick="CVTest.tweet()">𝕏 Share on X</button>

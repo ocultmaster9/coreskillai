@@ -1,5 +1,6 @@
 /* CoreSkillAI — Pattern Recognition Test (Matrix Reasoning) */
 (function(){
+function _t(k,fb){return window.I18n?.t(k)||fb||k;}
 // Each question: 8 cells shown (shapes as SVG strings) + 4 choices
 // Shapes encoded: circle, square, triangle, diamond | sizes: s/m/l | fill: empty/half/full
 const S={
@@ -69,9 +70,9 @@ function renderQ(){
   ).join('');
 
   document.getElementById('test-root').querySelector('#pat-body').innerHTML=`
-  <p class="pattern-question" style="margin-bottom:16px">Which piece completes the pattern?</p>
+  <p class="pattern-question" style="margin-bottom:16px">${_t('pat_question',"Which piece completes the pattern?")}</p>
   <div class="pattern-grid">${cells}</div>
-  <p style="font-size:.8rem;color:var(--text-3);margin:12px 0 8px">Choose the missing piece:</p>
+  <p style="font-size:.8rem;color:var(--text-3);margin:12px 0 8px">${_t('pat_choose',"Choose the missing piece:")}</p>
   <div class="pattern-choices">${choices}</div>`;
 
   document.getElementById('pat-q-num').textContent=`Q${current+1} / ${QUESTIONS.length}`;
@@ -89,10 +90,10 @@ function renderShell(){
   const dots=QUESTIONS.map((_,i)=>`<div class="progress-dot" id="pat-dot-${i}"></div>`).join('');
   document.getElementById('test-root').innerHTML=`
   <div class="instruction-card">
-    <h3>How It Works</h3>
+    <h3>${_t('pat_how_title',"How It Works")}</h3>
     <ul>
-      <li>Each puzzle shows a 3×3 grid with the last piece missing.</li>
-      <li>Find the logical rule and pick the correct answer from 4 options.</li>
+      <li>${_t('pat_how1',"Each puzzle shows a 3×3 grid with the last piece missing.")}</li>
+      <li>${_t('pat_how2',"Find the logical rule and pick the correct answer from 4 options.")}</li>
       <li>${QUESTIONS.length} questions, increasing difficulty.</li>
     </ul>
   </div>
@@ -105,7 +106,7 @@ function renderShell(){
       </div>
     </div>
     <div class="test-ui-body" id="pat-body" style="flex-direction:column;gap:16px">
-      <p style="color:var(--text-2)">Test your fluid intelligence with abstract visual patterns.</p>
+      <p style="color:var(--text-2)">${_t('pat_desc',"Test your fluid intelligence with abstract visual patterns.")}</p>
       <button class="btn btn-primary" onclick="PatTest.start()">Start Test</button>
     </div>
     <div style="padding:12px 24px;border-top:1px solid var(--border)">
@@ -146,7 +147,7 @@ function showResults(){
     <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div></div>
     <div class="breakdown-item"><div class="b-label">Average</div><div class="b-val">7/12</div><div class="b-sub">global mean</div></div>
   </div>
-  <p style="font-size:.75rem;color:var(--text-3);margin-top:8px;text-align:center">Note: This is a brief screening measure, not a certified IQ test. For clinical IQ assessment, consult a psychologist.</p>
+  <p style="font-size:.75rem;color:var(--text-3);margin-top:8px;text-align:center">${_t('pat_note',"Note: This is a brief screening measure, not a certified IQ test. For clinical IQ assessment, consult a psychologist.")}</p>
   <div class="share-row">
     <button class="share-btn" id="share-copy" onclick="PatTest.copy()">📋 Copy Result</button>
     <button class="share-btn" onclick="PatTest.tweet()">𝕏 Share on X</button>

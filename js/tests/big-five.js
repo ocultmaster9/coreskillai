@@ -1,9 +1,13 @@
 /* CoreSkillAI — Big Five Personality Test (IPIP-50) */
 (function(){
+function _t(k,fb){return window.I18n?.t(k)||fb||k;}
 // 50 items from the public-domain IPIP Big-Five Factor Markers (Goldberg, 1992)
 // Format: [text, trait, reverse(bool)]
 // Traits: E=Extraversion, A=Agreeableness, C=Conscientiousness, N=Neuroticism, O=Openness
-const ITEMS=[
+// English master list. Translations live in ITEMS_I18N below; a market with
+// no entry falls back to English. Note this is a FALLBACK, not a feature:
+// a personality item a reader cannot understand produces a meaningless answer.
+const ITEMS_EN=[
   ["Am the life of the party","E",false],
   ["Feel little concern for others","A",true],
   ["Am always prepared","C",false],
@@ -56,12 +60,129 @@ const ITEMS=[
   ["Am full of ideas","O",false],
 ];
 
+const ITEMS_I18N = {};
+
+function itemsFor(lang){
+  const t = ITEMS_I18N[lang];
+  if (!t) return ITEMS_EN;
+  // keep the trait/branch coding from the English master, swap only the text
+  return ITEMS_EN.map((it, i) => [t[i] != null ? t[i] : it[0], it[1], it[2]]);
+}
+let ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
+document.addEventListener('DOMContentLoaded', () => {
+  ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
+});
+
 const TRAIT_INFO={
   E:{name:'Extraversion',       color:'#f59e0b',low:'Reserved & reflective — you gain energy from solitude and deep one-on-one connections.',     high:'Outgoing & energized by social interaction. You thrive in groups and love being the center of attention.'},
   A:{name:'Agreeableness',      color:'#10b981',low:'Analytical and objective — you prioritize facts over feelings and can be bluntly honest.',   high:'Warm, cooperative, and empathetic — you value harmony and the wellbeing of others.'},
   C:{name:'Conscientiousness',  color:'#6366f1',low:'Flexible and spontaneous — you adapt on the fly rather than following strict plans.',         high:'Organized, reliable, and goal-driven. You take your commitments seriously.'},
   N:{name:'Neuroticism',        color:'#ef4444',low:'Emotionally stable and resilient — you stay calm under pressure and recover quickly from stress.', high:'More emotionally reactive — you experience stress, anxiety, and mood shifts more intensely.'},
   O:{name:'Openness',           color:'#8b5cf6',low:'Practical and conventional — you prefer established methods and concrete, familiar ideas.',    high:'Curious, imaginative, and open to new experiences. You love exploring ideas and aesthetics.'},
+  de: [
+    "Bin der Mittelpunkt jeder Feier",
+    "Kümmere mich wenig um andere",
+    "Bin immer vorbereitet",
+    "Gerate leicht unter Stress",
+    "Habe einen großen Wortschatz",
+    "Rede nicht viel",
+    "Interessiere mich für Menschen",
+    "Lasse meine Sachen herumliegen",
+    "Bin meistens entspannt",
+    "Habe Mühe, abstrakte Ideen zu verstehen",
+    "Fühle mich in Gesellschaft wohl",
+    "Beleidige andere",
+    "Achte auf Details",
+    "Mache mir viele Sorgen",
+    "Habe eine lebhafte Fantasie",
+    "Halte mich im Hintergrund",
+    "Fühle mit anderen mit",
+    "Bringe Dinge durcheinander",
+    "Bin selten niedergeschlagen",
+    "Interessiere mich nicht für abstrakte Ideen",
+    "Beginne Gespräche",
+    "Interessiere mich nicht wirklich für andere",
+    "Erledige Aufgaben sofort",
+    "Bin schnell aufgebracht",
+    "Habe ausgezeichnete Ideen",
+    "Habe wenig zu sagen",
+    "Habe ein weiches Herz",
+    "Vergesse oft, Dinge an ihren Platz zurückzulegen",
+    "Lasse mich nicht leicht aus der Ruhe bringen",
+    "Habe keine gute Vorstellungskraft",
+    "Rede auf Feiern mit vielen verschiedenen Leuten",
+    "Andere Menschen lassen mich eher kalt",
+    "Mag Ordnung",
+    "Meine Stimmung wechselt oft",
+    "Verstehe Dinge schnell",
+    "Ziehe ungern Aufmerksamkeit auf mich",
+    "Nehme mir Zeit für andere",
+    "Drücke mich vor meinen Pflichten",
+    "Habe häufige Stimmungsschwankungen",
+    "Verwende anspruchsvolle Wörter",
+    "Stehe gern im Mittelpunkt",
+    "Spüre die Gefühle anderer",
+    "Halte mich an einen Zeitplan",
+    "Bin schnell gereizt",
+    "Denke viel über Dinge nach",
+    "Bin unter Fremden still",
+    "Gebe anderen ein gutes Gefühl",
+    "Arbeite sehr genau",
+    "Bin oft niedergeschlagen",
+    "Stecke voller Ideen",
+  ],
+  es: [
+    "Soy el alma de la fiesta",
+    "Me preocupo poco por los demás",
+    "Estoy siempre preparado",
+    "Me estreso con facilidad",
+    "Tengo un vocabulario rico",
+    "No hablo mucho",
+    "Me intereso por la gente",
+    "Dejo mis cosas tiradas",
+    "Estoy relajado la mayor parte del tiempo",
+    "Me cuesta entender ideas abstractas",
+    "Me siento cómodo entre la gente",
+    "Insulto a los demás",
+    "Presto atención a los detalles",
+    "Me preocupo por las cosas",
+    "Tengo una imaginación vívida",
+    "Me mantengo en segundo plano",
+    "Comprendo los sentimientos de los demás",
+    "Lo desordeno todo",
+    "Rara vez me siento decaído",
+    "No me interesan las ideas abstractas",
+    "Inicio conversaciones",
+    "No me interesan realmente los demás",
+    "Hago las tareas de inmediato",
+    "Me altero con facilidad",
+    "Tengo ideas excelentes",
+    "Tengo poco que decir",
+    "Tengo buen corazón",
+    "Olvido a menudo devolver las cosas a su sitio",
+    "No me molestan fácilmente las cosas",
+    "No tengo buena imaginación",
+    "Hablo con mucha gente distinta en las fiestas",
+    "Los demás me resultan bastante indiferentes",
+    "Me gusta el orden",
+    "Mi estado de ánimo cambia mucho",
+    "Entiendo las cosas rápido",
+    "No me gusta llamar la atención",
+    "Saco tiempo para los demás",
+    "Eludo mis obligaciones",
+    "Tengo cambios de humor frecuentes",
+    "Uso palabras complicadas",
+    "No me importa ser el centro de atención",
+    "Percibo las emociones de los demás",
+    "Sigo un horario",
+    "Me irrito con facilidad",
+    "Dedico tiempo a reflexionar",
+    "Estoy callado con desconocidos",
+    "Hago que la gente se sienta a gusto",
+    "Soy muy meticuloso en mi trabajo",
+    "Me siento decaído a menudo",
+    "Estoy lleno de ideas",
+  ],
 };
 
 const TRAIT_ORDER=['O','C','E','A','N'];
@@ -74,11 +195,11 @@ function pct(raw){ // raw 10-50 per trait → percentile (based on normative dat
 function renderShell(){
   document.getElementById('test-root').innerHTML=`
   <div class="instruction-card">
-    <h3>How It Works</h3>
+    <h3>${_t('b5_how_title',"How It Works")}</h3>
     <ul>
-      <li>${ITEMS.length} short statements. Rate how accurately each describes you.</li>
-      <li>There are no right or wrong answers — be honest for the most accurate result.</li>
-      <li>Takes about 7 minutes.</li>
+      <li>${_t('b5_how0',"{n} short statements. Rate how accurately each describes you.").replace('{n}',ITEMS.length)}</li>
+      <li>${_t('b5_how1',"There are no right or wrong answers — be honest for the most accurate result.")}</li>
+      <li>${_t('b5_how2',"Takes about 7 minutes.")}</li>
     </ul>
   </div>
   <div class="test-card-ui">
@@ -87,7 +208,7 @@ function renderShell(){
       <span id="b5-counter" class="q-counter">Question 1 of ${ITEMS.length}</span>
     </div>
     <div class="test-ui-body" id="b5-body">
-      <p style="color:var(--text-2)">The most accurate personality model in psychology, used by researchers worldwide.</p>
+      <p style="color:var(--text-2)">${_t('b5_start_desc',"The most accurate personality model in psychology, used by researchers worldwide.")}</p>
       <button class="btn btn-primary" onclick="B5Test.start()">Start Test</button>
     </div>
     <div style="padding:12px 24px;border-top:1px solid var(--border)">
@@ -147,8 +268,8 @@ function showResults(){
 
   document.getElementById('b5-results').innerHTML=`
   <div style="text-align:center;margin-bottom:24px">
-    <h2 style="font-size:1.4rem;font-weight:800">Your Personality Profile</h2>
-    <p style="color:var(--text-2);font-size:.9rem;margin-top:6px">Dominant trait: <strong style="color:${domInfo.color}">${domInfo.name}</strong></p>
+    <h2 style="font-size:1.4rem;font-weight:800">${_t('b5_profile',"Your Personality Profile")}</h2>
+    <p style="color:var(--text-2);font-size:.9rem;margin-top:6px">${_t('b5_dominant',"Dominant trait:")} <strong style="color:${domInfo.color}">${domInfo.name}</strong></p>
   </div>
   <div class="trait-bars">${bars}</div>
   <canvas id="b5-radar" style="max-width:320px;width:100%;display:block;margin:24px auto"></canvas>

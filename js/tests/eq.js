@@ -1,7 +1,11 @@
 /* CoreSkillAI — Emotional Intelligence Test (4-Branch Model) */
 (function(){
+function _t(k,fb){return window.I18n?.t(k)||fb||k;}
 // 28 questions across 4 branches of Mayer-Salovey-Caruso EI model
-const ITEMS=[
+// English master list. Translations live in ITEMS_I18N below; a market with
+// no entry falls back to English. Note this is a FALLBACK, not a feature:
+// a personality item a reader cannot understand produces a meaningless answer.
+const ITEMS_EN=[
   // Branch 1: Perceiving Emotions (7 items)
   ["I can tell how someone is feeling just by looking at their face.","P",false],
   ["I notice when friends are upset even when they don't say so.","P",false],
@@ -35,11 +39,84 @@ const ITEMS=[
   ["I can resolve conflicts in a way that satisfies all parties.","M",false],
   ["I feel overwhelmed by strong negative emotions and can't manage them well.","M",true],
 ];
+
+const ITEMS_I18N = {};
+
+function itemsFor(lang){
+  const t = ITEMS_I18N[lang];
+  if (!t) return ITEMS_EN;
+  // keep the trait/branch coding from the English master, swap only the text
+  return ITEMS_EN.map((it, i) => [t[i] != null ? t[i] : it[0], it[1], it[2]]);
+}
+let ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
+document.addEventListener('DOMContentLoaded', () => {
+  ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
+});
 const BRANCHES={
   P:{name:'Perceiving Emotions', color:'#f97316', desc:'Your ability to accurately read emotions in faces, voices, and surroundings.'},
   U:{name:'Using Emotions',      color:'#f59e0b', desc:'How well you leverage emotional states to enhance thinking and creativity.'},
   N:{name:'Understanding Emotions', color:'#6366f1', desc:'Your knowledge of emotional dynamics — how they blend, evolve, and influence behavior.'},
   M:{name:'Managing Emotions',   color:'#10b981', desc:'Your capacity to regulate your own emotions and positively influence others.'},
+  de: [
+    "Ich erkenne an einem Gesicht, wie sich jemand fühlt.",
+    "Ich merke, wenn Freunde bedrückt sind, auch wenn sie nichts sagen.",
+    "Es fällt mir schwer, die Stimmung in einem Raum zu erfassen.",
+    "An der Stimme höre ich meist, in welcher Stimmung jemand ist.",
+    "Feine emotionale Signale im Gespräch entgehen mir oft.",
+    "Ich lese Gefühle gut an der Körpersprache ab.",
+    "Ich erkenne Gefühle in Kunst, Musik oder Geschichten treffsicher.",
+    "Bei guter Laune habe ich mehr kreative Einfälle.",
+    "Ich nutze meine Gefühle, um zu entscheiden, worauf ich mich konzentriere.",
+    "Es fällt mir schwer, mich über meine Gefühle zu motivieren.",
+    "Meine Gefühle helfen mir, komplexe Probleme klarer zu durchdenken.",
+    "Ich schaffe es kaum, positive Gefühle in Arbeitsenergie umzusetzen.",
+    "Ich stimme meine Stimmung auf die Aufgabe ab, etwa Ruhe für Präzisionsarbeit.",
+    "Ich kann Begeisterung gezielt in Leistung umsetzen.",
+    "Ich verstehe, wie Gefühle sich mit der Zeit entwickeln, etwa von Ärger zu Wut.",
+    "Ich kann erklären, warum ein komplexes Gefühl wie Eifersucht entsteht.",
+    "Es fällt mir schwer zu erklären, wodurch gemischte Gefühle entstehen.",
+    "Ich verstehe, wie Stolz und Scham mit dem Selbstbild zusammenhängen.",
+    "Oft verstehe ich nicht, warum Menschen so fühlen, wie sie fühlen.",
+    "Ich benenne feine Unterschiede zwischen Gefühlen genau, etwa unruhig und ängstlich.",
+    "Ich verstehe, wie leise Hintergrundgefühle wie Sorge das Denken mit der Zeit beeinflussen.",
+    "Wenn ich aufgewühlt bin, beruhige ich mich recht schnell.",
+    "Ich weiß, wie ich jemanden aufheitere, der traurig ist.",
+    "Ich grüble und bleibe in schlechter Stimmung hängen.",
+    "Auch unter Druck bleibe ich gefasst und denke klar.",
+    "Es fällt mir schwer, anderen mit ihren negativen Gefühlen zu helfen.",
+    "Ich löse Konflikte so, dass alle Beteiligten zufrieden sind.",
+    "Starke negative Gefühle überwältigen mich und ich komme schlecht damit zurecht.",
+  ],
+  es: [
+    "Sé cómo se siente alguien con solo mirarle la cara.",
+    "Noto cuando un amigo está mal aunque no lo diga.",
+    "Me cuesta captar el clima emocional de una sala.",
+    "Por la voz suelo saber de qué humor está alguien.",
+    "A menudo se me escapan las señales emocionales sutiles en una conversación.",
+    "Se me da bien entender lo que sienten los demás por su lenguaje corporal.",
+    "Identifico con precisión las emociones en el arte, la música o los relatos.",
+    "Cuando estoy de buen humor se me ocurren más ideas creativas.",
+    "Uso mis emociones para decidir en qué centrarme.",
+    "Me cuesta usar mis emociones para motivarme.",
+    "Mis emociones me ayudan a pensar con más claridad en problemas complejos.",
+    "Me cuesta convertir las emociones positivas en energía para trabajar.",
+    "Ajusto mi estado de ánimo a la tarea, por ejemplo calma para un trabajo de precisión.",
+    "Sé canalizar el entusiasmo para rendir más.",
+    "Entiendo cómo evolucionan las emociones con el tiempo, por ejemplo del fastidio a la ira.",
+    "Sé explicar por qué surge una emoción compleja como los celos.",
+    "Me cuesta explicar qué provoca las emociones mezcladas.",
+    "Entiendo cómo el orgullo y la vergüenza se relacionan con la imagen de uno mismo.",
+    "A menudo no entiendo por qué la gente siente lo que siente.",
+    "Distingo con precisión matices entre emociones, por ejemplo inquietud y ansiedad.",
+    "Entiendo cómo las emociones de fondo, como una preocupación leve, afectan al pensamiento con el tiempo.",
+    "Cuando me altero, me calmo con bastante rapidez.",
+    "Sé cómo animar a alguien que está triste.",
+    "Tiendo a darle vueltas y quedarme atrapado en el mal humor.",
+    "Mantengo la calma y pienso con claridad incluso bajo presión.",
+    "Me cuesta ayudar a otros a manejar sus emociones negativas.",
+    "Resuelvo conflictos de forma que todas las partes queden satisfechas.",
+    "Las emociones negativas intensas me desbordan y no las gestiono bien.",
+  ],
 };
 const ORDER=['P','U','N','M'];
 
@@ -74,11 +151,11 @@ function label(total){
 function renderShell(){
   document.getElementById('test-root').innerHTML=`
   <div class="instruction-card">
-    <h3>How It Works</h3>
+    <h3>${_t('eq_how_title',"How It Works")}</h3>
     <ul>
-      <li>${ITEMS.length} statements across 4 dimensions of emotional intelligence.</li>
-      <li>Rate how accurately each describes you. There are no right or wrong answers.</li>
-      <li>Based on the Mayer-Salovey-Caruso model — the leading scientific EI framework.</li>
+      <li>${_t('eq_how0',"{n} statements across the 4 dimensions of emotional intelligence.").replace('{n}',ITEMS.length)}</li>
+      <li>${_t('eq_how1',"Rate how accurately each describes you. There are no right or wrong answers.")}</li>
+      <li>${_t('eq_how2',"Based on the Mayer-Salovey-Caruso model — the leading scientific EI framework.")}</li>
     </ul>
   </div>
   <div class="test-card-ui">
@@ -87,7 +164,7 @@ function renderShell(){
       <span id="eq-counter" class="q-counter">Question 1 of ${ITEMS.length}</span>
     </div>
     <div class="test-ui-body" id="eq-body">
-      <p style="color:var(--text-2)">Discover your EQ across all 4 dimensions of emotional intelligence.</p>
+      <p style="color:var(--text-2)">${_t('eq_start_desc',"Discover your EQ across all 4 dimensions of emotional intelligence.")}</p>
       <button class="btn btn-primary" onclick="EQTest.start()">Start Test</button>
     </div>
     <div style="padding:12px 24px;border-top:1px solid var(--border)">
@@ -143,7 +220,7 @@ function showResults(){
     </div>
     <div class="result-info">
       <h2>${text}</h2>
-      <p class="result-desc">${totalEQ>=115?'Your emotional intelligence is genuinely high. You process, understand, and manage emotions with exceptional skill — a strong predictor of life success and relationship quality.':totalEQ>=95?'Your EQ is solid and functional. You navigate emotions well in most situations, with some room to deepen specific dimensions.':'Your EQ has room to grow. Emotional intelligence is one of the most trainable cognitive skills — mindfulness, therapy, and deliberate practice all show measurable gains.'}</p>
+      <p class="result-desc">${totalEQ>=115?_t('eq_res_high',"Your emotional intelligence is genuinely high. You read, use and manage emotions with exceptional skill — a strong predictor of relationship quality and teamwork."):totalEQ>=95?_t('eq_res_mid',"Your EQ is solid and functional. You navigate emotions well in most situations, with room to deepen specific dimensions."):_t('eq_res_low',"Your EQ has room to grow. Emotional intelligence is one of the most trainable skills there is — labelling feelings precisely and deliberate practice both show measurable gains.")}</p>
       <div class="result-percentile" style="background:${color}22;color:${color}">Higher than ${p}% of people</div>
     </div>
   </div>

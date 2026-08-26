@@ -232,9 +232,14 @@ jobs:
 
           # One file per language under js/i18n/ - a visitor loads only English plus
           # their own language, never all 43 (that would have been 338 KB).
+          # Only markets marked ready are served to visitors; a work-in-progress
+          # language is allowed to be incomplete, it just is not offered anywhere.
+          _lang_src=io.open('_stage/js/languages.js',encoding='utf-8').read()
+          READY={m.group(1) for m in re.finditer(r'  ([a-z]{2}): \{[^}]*ready: true', _lang_src)}
           parsed={}
           for f in sorted(glob.glob('_stage/js/i18n/*.js')):
               lg=os.path.basename(f)[:-3]
+              if lg not in READY: continue
               body=io.open(f,encoding='utf-8').read()
               m=re.search(r'window\.TRANSLATIONS\.%s = \{\n(.*?)\n\};'%lg, body, re.S)
               if not m:
@@ -292,6 +297,21 @@ jobs:
           sys.exit(bad)
           SM
           [ $? -eq 0 ] || fail=1
+
+          # 9) MARKET COMPLETENESS. A language is only "ready" when everything a
+          #    visitor needs exists in it: UI strings, 15 pages, localised titles,
+          #    a native science section, typing passages, Stroop colour words and
+          #    the Big Five / EQ statement banks. Falling back to English does not
+          #    count - a Stroop task in a language you cannot read measures nothing,
+          #    and a personality item you cannot understand produces a junk answer.
+          #    This is a WARNING, not a failure: partial markets are allowed to ship
+          #    while translation is in progress, but they can never go unnoticed.
+          if [ -f _build/audit.py ]; then
+            ( cd _stage && python3 ../_build/audit.py ) > /tmp/audit.txt 2>&1 || true
+            cat /tmp/audit.txt
+            inc=$(grep -c 'INCOMPLETE' /tmp/audit.txt || true)
+            [ "${inc:-0}" -gt 0 ] && echo "::warning::${inc} market(s) still incomplete - see the table above"
+          fi
 
           [ "$fail" -eq 0 ] || exit 1
           echo "  all preflight checks passed"

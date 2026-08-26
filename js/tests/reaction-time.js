@@ -118,11 +118,12 @@ function showResults() {
   document.getElementById('rt-pct-badge').style.background = color+'22';
   document.getElementById('rt-pct-badge').style.color = color;
 
-  const desc = p>=80
-    ? `Outstanding reflexes! Your ${Math.round(avg)}ms average puts you in the top ${100-p}% globally. Athletes and gamers often score in this range.`
+  const desc = (p>=80
+    ? _t('rt_res_high',"Outstanding reflexes. A {ms}ms average puts you in the top {top}% globally — athletes and gamers often score in this range.")
     : p>=50
-    ? `Solid reaction time. Your ${Math.round(avg)}ms average is above the global mean of 261ms. Regular practice can push this further.`
-    : `Your ${Math.round(avg)}ms average is around or below the global mean. Fatigue, age, and screen distance all affect this — try again when fresh!`;
+    ? _t('rt_res_mid',"Solid reaction time. A {ms}ms average is above the global mean of 261ms. Regular practice can push this further.")
+    : _t('rt_res_low',"A {ms}ms average is around or below the global mean. Fatigue, age and screen distance all affect this — try again when fresh.")
+  ).replace('{ms}', Math.round(avg)).replace('{top}', 100-p);
   document.getElementById('rt-result-desc').textContent = desc;
 
   // ring animation

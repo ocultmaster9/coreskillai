@@ -31,7 +31,7 @@ function render(){
   <div class="test-card-ui">
     <div class="test-ui-header">
       <span class="test-ui-title">💭 ${_t('mem_title','Working Memory')}</span>
-      <span id="mem-level-badge" class="badge badge-primary">Level 1 — 3 digits</span>
+      <span id="mem-level-badge" class="badge badge-primary">${_t('mem_level',"Level {l} — {n} digits").replace('{l}',1).replace('{n}',3)}</span>
     </div>
     <div class="test-ui-body" id="mem-body">
       <p style="color:var(--text-2);text-align:center">${_t('mem_start_desc','How many digits can you hold in working memory?')}</p>
@@ -63,11 +63,12 @@ function showInput(){
 function showResults(maxSpan){
   const p=pct(maxSpan);
   const {text,color}=label(maxSpan);
-  const desc = maxSpan>=8
-    ? `A span of ${maxSpan} digits is impressive. Research shows most adults peak at 7. You're outperforming the majority.`
+  const desc = (maxSpan>=8
+    ? _t('mem_res_high',"A span of {n} digits is impressive. Most adults peak around 7, so you are outperforming the majority.")
     : maxSpan>=6
-    ? `Your span of ${maxSpan} digits falls in the normal range. Working memory is trainable — daily practice can push your span higher.`
-    : `A span of ${maxSpan} is below the typical range. Working memory varies with fatigue, stress, and age. Try again when rested!`;
+    ? _t('mem_res_mid',"A span of {n} digits falls in the normal range. Working memory is trainable — daily practice can push it higher.")
+    : _t('mem_res_low',"A span of {n} is below the typical range. Working memory varies with fatigue, stress and age. Try again when rested.")
+  ).replace('{n}', maxSpan);
 
   const R=55,circ=2*Math.PI*R;
   document.getElementById('mem-results').innerHTML=`
@@ -91,7 +92,7 @@ function showResults(maxSpan){
   <div class="bell-curve-wrap"><canvas id="mem-bell" style="width:100%;display:block"></canvas></div>
   <div class="result-breakdown">
     <div class="breakdown-item"><div class="b-label">Max Span</div><div class="b-val" style="color:var(--primary)">${maxSpan}</div><div class="b-sub">digits</div></div>
-    <div class="breakdown-item"><div class="b-label">Normal Range</div><div class="b-val">5–9</div><div class="b-sub">Miller's Law</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('mem_normal',"Normal Range")}</div><div class="b-val">5–9</div><div class="b-sub">Miller's Law</div></div>
     <div class="breakdown-item"><div class="b-label">Global Avg</div><div class="b-val">7</div><div class="b-sub">digits</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div><div class="b-sub"></div></div>
   </div>
@@ -116,7 +117,7 @@ window.MemTest={
     level=3;correct=0;wrong=0;phase='show';
     document.getElementById('mem-results')?.classList.remove('show');
     seq=randSeq(level);
-    document.getElementById('mem-level-badge').textContent=`Level ${correct+1} — ${level} digits`;
+    document.getElementById('mem-level-badge').textContent=_t('mem_level',"Level {l} — {n} digits").replace('{l}',correct+1).replace('{n}',level);
     showSequence();
   },
   submit(){
@@ -127,7 +128,7 @@ window.MemTest={
       const badge=document.getElementById('mem-level-badge');
       const body=document.getElementById('mem-body');
       body.innerHTML=`<div class="memory-display" style="color:var(--success);font-size:1.5rem">${_t('mem_correct_msg','✓ Correct!')}</div>`;
-      badge.textContent=`Level ${correct+1} — ${level} digits`;
+      badge.textContent=_t('mem_level',"Level {l} — {n} digits").replace('{l}',correct+1).replace('{n}',level);
       setTimeout(()=>{seq=randSeq(level);showSequence();},900);
     } else {
       const maxSpan=level-1;

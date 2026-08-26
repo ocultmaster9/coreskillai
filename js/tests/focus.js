@@ -12,11 +12,11 @@ const COLORS=[
 
 // Stroop words in each language — uppercase for interference effect
 const WORDS={
-  Red:   {en:'RED',   es:'ROJO',     pt:'VERMELHO', fr:'ROUGE', de:'ROT'},
-  Blue:  {en:'BLUE',  es:'AZUL',     pt:'AZUL',     fr:'BLEU',  de:'BLAU'},
-  Green: {en:'GREEN', es:'VERDE',    pt:'VERDE',     fr:'VERT',  de:'GRÜN'},
-  Yellow:{en:'YELLOW',es:'AMARILLO', pt:'AMARELO',   fr:'JAUNE', de:'GELB'},
-  Purple:{en:'PURPLE',es:'PÚRPURA',  pt:'ROXO',      fr:'VIOLET',de:'LILA'},
+  Red:   {en:'RED',   es:'ROJO',     pt:'VERMELHO', fr:'ROUGE', de:'ROT', it:'ROSSO', nl:'ROOD', pl:'CZERWONY', ru:'КРАСНЫЙ', tr:'KIRMIZI', ro:'ROȘU', sv:'RÖD', da:'RØD', no:'RØD', fi:'PUNAINEN'},
+  Blue:  {en:'BLUE',  es:'AZUL',     pt:'AZUL',     fr:'BLEU',  de:'BLAU', it:'BLU', nl:'BLAUW', pl:'NIEBIESKI', ru:'СИНИЙ', tr:'MAVİ', ro:'ALBASTRU', sv:'BLÅ', da:'BLÅ', no:'BLÅ', fi:'SININEN'},
+  Green: {en:'GREEN', es:'VERDE',    pt:'VERDE',     fr:'VERT',  de:'GRÜN', it:'VERDE', nl:'GROEN', pl:'ZIELONY', ru:'ЗЕЛЁНЫЙ', tr:'YEŞİL', ro:'VERDE', sv:'GRÖN', da:'GRØN', no:'GRØNN', fi:'VIHREÄ'},
+  Yellow:{en:'YELLOW',es:'AMARILLO', pt:'AMARELO',   fr:'JAUNE', de:'GELB', it:'GIALLO', nl:'GEEL', pl:'ŻÓŁTY', ru:'ЖЁЛТЫЙ', tr:'SARI', ro:'GALBEN', sv:'GUL', da:'GUL', no:'GUL', fi:'KELTAINEN'},
+  Purple:{en:'PURPLE',es:'PÚRPURA',  pt:'ROXO',      fr:'VIOLET',de:'LILA', it:'VIOLA', nl:'PAARS', pl:'FIOLETOWY', ru:'ФИОЛЕТОВЫЙ', tr:'MOR', ro:'MOV', sv:'LILA', da:'LILLA', no:'LILLA', fi:'VIOLETTI'},
 };
 function colorWord(name){
   const lang=window.I18n?.lang||window.PAGE_LANG||'en';
@@ -121,7 +121,7 @@ function showResults(){
     </div>
     <div class="result-info">
       <h2>${text}</h2>
-      <p class="result-desc">${p>=75?'Excellent cognitive control! You suppressed the Stroop interference effect quickly and accurately. This reflects strong executive function.':p>=50?`Solid focus. Your ${Math.round(acc*100)}% accuracy at ${avgMs}ms per response is above the typical range. The Stroop effect is notoriously hard to fight.`:`The Stroop effect got you! That's perfectly normal — it shows your brain automatically reads words. Practice improves this measurably.`}</p>
+      <p class="result-desc">${(p>=75?_t('foc_res_high',"Excellent cognitive control. You suppressed the Stroop interference quickly and accurately, which reflects strong executive function."):p>=50?_t('foc_res_mid',"Solid focus. {a}% accuracy at {ms}ms per response is above the typical range — the Stroop effect is notoriously hard to fight."):_t('foc_res_low',"The Stroop effect got you, and that is perfectly normal: it shows your brain reads words automatically. Practice improves this measurably.")).replace('{a}',Math.round(acc*100)).replace('{ms}',avgMs)}</p>
       <div class="result-percentile" style="background:${color}22;color:${color}">${_t('percentile_prefix','Better than')} ${p}% ${_t('percentile_suffix','of people')}</div>
     </div>
   </div>
