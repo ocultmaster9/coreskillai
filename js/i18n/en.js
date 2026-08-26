@@ -2,6 +2,15 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.en = {
+    diff_easy:"Easy",
+    diff_medium:"Medium",
+    diff_hard:"Hard",
+    badge_global:"Global ranking",
+    badge_anon:"Anonymous",
+    ad_label:"Advertisement",
+    footer_promise:"Science-backed • Free forever • No account required",
+    footer_terms:"Terms",
+    footer_contact:"Contact",
     typ_cpm:"CPM",
     typ_res_fast:"Impressive speed. {n} {u} puts you well above the professional threshold. Accuracy: {a}%.",
     typ_res_mid:"Solid speed at {n} {u} — above average for your language. With practice you can go noticeably faster.",

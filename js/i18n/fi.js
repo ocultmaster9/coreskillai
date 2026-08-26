@@ -2,6 +2,15 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fi = {
+    diff_easy:"Helppo",
+    diff_medium:"Keskitaso",
+    diff_hard:"Vaikea",
+    badge_global:"Maailmanlaajuinen sijoitus",
+    badge_anon:"Anonyymi",
+    ad_label:"Mainos",
+    footer_promise:"Tieteeseen perustuva • Ikuisesti ilmainen • Ei tiliä",
+    footer_terms:"Ehdot",
+    footer_contact:"Yhteystiedot",
     typ_cpm:"MPM",
     typ_res_fast:"Vaikuttava vauhti. {n} {u} vie sinut selvästi ammattitason yläpuolelle. Tarkkuus: {a}%.",
     typ_res_mid:"Vakaa vauhti: {n} {u}, yli kielesi keskiarvon. Harjoittelulla nopeutuu huomattavasti.",

@@ -2,6 +2,15 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.no = {
+    diff_easy:"Lett",
+    diff_medium:"Middels",
+    diff_hard:"Vanskelig",
+    badge_global:"Global rangering",
+    badge_anon:"Anonymt",
+    ad_label:"Annonse",
+    footer_promise:"Kunnskapsbasert • Alltid gratis • Ingen konto",
+    footer_terms:"Vilkår",
+    footer_contact:"Kontakt",
     typ_cpm:"TPM",
     typ_res_fast:"Imponerende tempo. {n} {u} plasserer deg godt over det profesjonelle nivået. Nøyaktighet: {a}%.",
     typ_res_mid:"Solid tempo: {n} {u}, over snittet for språket ditt. Med trening blir du merkbart raskere.",

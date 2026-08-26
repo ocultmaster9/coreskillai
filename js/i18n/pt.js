@@ -2,6 +2,15 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pt = {
+    diff_easy:"Fácil",
+    diff_medium:"Médio",
+    diff_hard:"Difícil",
+    badge_global:"Ranking mundial",
+    badge_anon:"Anônimo",
+    ad_label:"Publicidade",
+    footer_promise:"Com base científica • Grátis para sempre • Sem cadastro",
+    footer_terms:"Termos",
+    footer_contact:"Contato",
     typ_cpm:"CPM",
     typ_res_fast:"Velocidade impressionante. {n} {u} coloca você bem acima do limiar profissional. Precisão: {a}%.",
     typ_res_mid:"Boa velocidade: {n} {u}, acima da média do seu idioma. Com prática dá para ir bem mais rápido.",

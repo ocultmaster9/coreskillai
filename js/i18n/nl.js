@@ -2,6 +2,15 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.nl = {
+    diff_easy:"Makkelijk",
+    diff_medium:"Gemiddeld",
+    diff_hard:"Moeilijk",
+    badge_global:"Wereldwijde ranglijst",
+    badge_anon:"Anoniem",
+    ad_label:"Advertentie",
+    footer_promise:"Wetenschappelijk onderbouwd • Altijd gratis • Geen account",
+    footer_terms:"Voorwaarden",
+    footer_contact:"Contact",
     typ_cpm:"TPM",
     typ_res_fast:"Indrukwekkend tempo. {n} {u} ligt ruim boven de professionele grens. Nauwkeurigheid: {a}%.",
     typ_res_mid:"Degelijk tempo: {n} {u}, boven het gemiddelde voor je taal. Met oefening kun je merkbaar sneller.",

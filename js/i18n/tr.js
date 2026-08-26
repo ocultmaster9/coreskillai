@@ -2,6 +2,15 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tr = {
+    diff_easy:"Kolay",
+    diff_medium:"Orta",
+    diff_hard:"Zor",
+    badge_global:"Dünya sıralaması",
+    badge_anon:"Anonim",
+    ad_label:"Reklam",
+    footer_promise:"Bilimsel temelli • Sonsuza dek ücretsiz • Hesap yok",
+    footer_terms:"Koşullar",
+    footer_contact:"İletişim",
     typ_cpm:"karakter/dk",
     typ_res_fast:"Etkileyici hız. {n} {u} sizi profesyonel eşiğin epey üstüne taşıyor. Doğruluk: %{a}.",
     typ_res_mid:"Sağlam hız: {n} {u}, kendi diliniz için ortalamanın üstünde. Pratikle belirgin biçimde hızlanırsınız.",

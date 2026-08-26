@@ -2,6 +2,15 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sv = {
+    diff_easy:"Lätt",
+    diff_medium:"Medel",
+    diff_hard:"Svår",
+    badge_global:"Global rankning",
+    badge_anon:"Anonymt",
+    ad_label:"Annons",
+    footer_promise:"Vetenskapligt grundat • Alltid gratis • Inget konto",
+    footer_terms:"Villkor",
+    footer_contact:"Kontakt",
     typ_cpm:"TPM",
     typ_res_fast:"Imponerande tempo. {n} {u} placerar dig klart över den professionella nivån. Träffsäkerhet: {a}%.",
     typ_res_mid:"Stabilt tempo: {n} {u}, över genomsnittet för ditt språk. Med träning går det märkbart snabbare.",

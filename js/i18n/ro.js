@@ -2,6 +2,15 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ro = {
+    diff_easy:"Ușor",
+    diff_medium:"Mediu",
+    diff_hard:"Dificil",
+    badge_global:"Clasament mondial",
+    badge_anon:"Anonim",
+    ad_label:"Publicitate",
+    footer_promise:"Pe bază științifică • Gratuit pentru totdeauna • Fără cont",
+    footer_terms:"Termeni",
+    footer_contact:"Contact",
     typ_cpm:"car/min",
     typ_res_fast:"Viteză impresionantă. {n} {u} te plasează mult peste pragul profesional. Acuratețe: {a}%.",
     typ_res_mid:"Viteză solidă: {n} {u}, peste media pentru limba ta. Cu exercițiu poți merge simțitor mai repede.",
