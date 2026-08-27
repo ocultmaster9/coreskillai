@@ -88,16 +88,27 @@ const I18n = {
       : '/' + lang + '/' + (base.length ? base.join('/') + '/' : '');
     location.href = newPath;
   },
+  // Returns undefined - NOT the key - when a string is missing. The old
+  // `|| key` fallback printed "card_min" into the page: a visitor holding a
+  // cached copy of an older js/i18n/<lang>.js got raw key names splattered
+  // over otherwise-correct markup. Since every page is now PRE-RENDERED with
+  // the right text, the served HTML is the source of truth and a missing key
+  // must leave it untouched.
   t(key) {
     const T = window.TRANSLATIONS || {};
-    return (T[this.lang] && T[this.lang][key]) || (T['en'] && T['en'][key]) || key;
+    const v = (T[this.lang] && T[this.lang][key]);
+    if (v !== undefined) return v;
+    const e = (T['en'] && T['en'][key]);
+    return e !== undefined ? e : undefined;
   },
   apply() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
-      el.textContent = this.t(el.getAttribute('data-i18n'));
+      const v = this.t(el.getAttribute('data-i18n'));
+      if (v !== undefined) el.textContent = v;   // else keep pre-rendered text
     });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-      el.placeholder = this.t(el.getAttribute('data-i18n-placeholder'));
+      const v = this.t(el.getAttribute('data-i18n-placeholder'));
+      if (v !== undefined) el.placeholder = v;
     });
   }
 };

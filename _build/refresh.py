@@ -36,7 +36,40 @@ def main():
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "\n".join(body) + '\n</urlset>\n')
     import xml.etree.ElementTree as ET; ET.parse('sitemap.xml')
+    stamp_assets()
     print('ready: %s | hreflang updated on %d pages | sitemap %d urls' % (' '.join(ready), n, len(body)))
+
+
+def stamp_assets():
+    """Append ?v=<content hash> to js/css URLs.
+
+    Without this, a returning visitor keeps a cached js/i18n/<lang>.js while the
+    HTML around it has moved on. That mismatch is what put raw key names like
+    "card_min" on the live Arabic page. main.js no longer degrades when a key is
+    missing, but stale strings should still arrive promptly rather than waiting
+    for a browser cache to expire.
+    """
+    import hashlib, glob
+    ver = {}
+    for f in glob.glob('js/**/*.js', recursive=True) + glob.glob('css/*.css'):
+        ver['/' + f.replace(os.sep, '/')] = hashlib.md5(
+            io.open(f, 'rb').read()).hexdigest()[:8]
+    n = 0
+    for f in glob.glob('**/*.html', recursive=True):
+        if f.startswith('_'):
+            continue
+        h = io.open(f, encoding='utf-8').read()
+        def sub(m):
+            url = m.group(2)
+            v = ver.get(url.split('?')[0])
+            return m.group(1) + (url.split('?')[0] + '?v=' + v if v else url) + m.group(3)
+        new = re.sub(r'(\ssrc=")(/js/[^"]+)(")', sub, h)
+        new = re.sub(r'(\shref=")(/css/[^"]+)(")', sub, new)
+        if new != h:
+            io.open(f, 'w', encoding='utf-8', newline='\n').write(new)
+            n += 1
+    print('  asset versions stamped on %d pages' % n)
+    return n
 
 if __name__ == '__main__':
     main()
