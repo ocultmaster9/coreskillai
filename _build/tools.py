@@ -12,8 +12,17 @@ PAGES = ['home','about','privacy','terms','contact','tests',
          'tests/iq','tests/reaction-time','tests/memory','tests/pattern',
          'tests/color-vision','tests/big-five','tests/eq','tests/focus','tests/typing']
 TESTS = ['iq','reaction-time','memory','pattern','color-vision','big-five','eq','focus','typing']
-SCRIPT_OF = {'ru':'CYRILLIC','uk':'CYRILLIC','bg':'CYRILLIC','sr':'CYRILLIC','mk':'CYRILLIC',
-             'el':'GREEK','he':'HEBREW','ar':'ARABIC','fa':'ARABIC','hi':'DEVANAGARI','th':'THAI'}
+# A language may legitimately use more than one script - Japanese mixes hiragana,
+# katakana and kanji - so each entry is a tuple of acceptable prefixes.
+SCRIPT_OF = {'ru':('CYRILLIC',),'uk':('CYRILLIC',),'bg':('CYRILLIC',),
+             'sr':('CYRILLIC',),'mk':('CYRILLIC',),
+             'el':('GREEK',),'he':('HEBREW',),'ar':('ARABIC',),'fa':('ARABIC',),
+             'hi':('DEVANAGARI',),'th':('THAI',),
+             # CJK had NO Latin-bleed check at all, which let a bare English
+             # word sit inside a Japanese string undetected.
+             'ja':('HIRAGANA','KATAKANA','CJK'),
+             'zh':('CJK',),
+             'ko':('HANGUL','CJK')}
 
 # ── paths / urls ──────────────────────────────────────────
 def path_for(lang, page):
@@ -32,18 +41,30 @@ def ready_langs():
     return [m.group(1) for m in re.finditer(r'  ([a-z]{2}): \{[^}]*ready: true', s)]
 
 # ── shared guard ──────────────────────────────────────────
+BRAND_TOKENS = ['CoreSkillAI', 'AdSense', 'Google', 'IQ', 'EQ', 'WPM', 'CPM',
+                'MBTI', 'DNS', 'X', 'AI', 'SD']
+BRAND_RE = re.compile('|'.join(sorted(BRAND_TOKENS, key=len, reverse=True)))
+
 def mixed_script_guard(lang, texts, latin_tolerance=0.25):
     """Authoring hundreds of strings in a script you cannot proofread by eye is
     exactly where a stray character slips in. This already caught real Cyrillic
     typed into German and a CJK glyph in Russian."""
     for t in texts:
         plain = re.sub(r'<[^>]+>', ' ', t)
-        names = [unicodedata.name(c, '') for c in plain if c.isalpha()]
+        # Brand and technical tokens are legitimately Latin inside every script:
+        # "Про CoreSkillAI" is correct Ukrainian, not a typo. Mask them before
+        # counting or the ratio test fires on every correct About/IQ string.
+        # {n}, {ms}, {top} are template slots, never prose. Counting their
+        # letters as "Latin" made short RTL strings like "سطح {l} — {n} رقم"
+        # fail the ratio test purely because the Arabic half was short.
+        counted = re.sub(r'\{[a-zA-Z_][a-zA-Z0-9_]*\}', ' ', plain)
+        counted = BRAND_RE.sub(' ', counted)
+        names = [unicodedata.name(c, '') for c in counted if c.isalpha()]
         if any('CJK' in n for n in names) and lang not in ('ja', 'zh', 'ko'):
             print('  %s: CJK character in %r' % (lang, plain[:44])); sys.exit(1)
         want = SCRIPT_OF.get(lang)
         if want:
-            native = sum(1 for n in names if n.startswith(want))
+            native = sum(1 for n in names if any(w in n for w in want))
             latin = sum(1 for n in names if n.startswith('LATIN'))
             if native and latin > native * latin_tolerance:
                 print('  %s: Latin bleeding into %s: %r' % (lang, want, plain[:44])); sys.exit(1)

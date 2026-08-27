@@ -163,6 +163,186 @@ const PASSAGES={
     "Pada mulanya adalah kata. Bahasa membentuk pikiran, dan pikiran membentuk dunia tempat kita hidup setiap hari.",
     "Setiap gagasan besar bermula sebagai satu kalimat di kepala seseorang, ditulis tergesa di selembar kertas sebelum sempat menghilang.",
   ],
+  uk:[
+    "Уміння швидко друкувати давно перестало бути вузькою канцелярською навичкою і перетворилося на щоденний інструмент майже кожної професії. Людина, яка не мусить шукати очима кожну літеру, витрачає увагу на зміст думки, а не на механіку її запису.",
+    "Клавіатура з розкладкою ЙЦУКЕН пройшла довгий шлях від друкарських машинок кінця дев'ятнадцятого століття до сучасних ноутбуків. Розташування літер у ній визначалося частотою їх уживання, тому найпоширеніші символи опинилися під найсильнішими пальцями.",
+    "Сліпий метод друку ґрунтується на простій ідеї: кожен палець відповідає за власну зону клавіатури, а погляд ніколи не опускається вниз. Спершу це здається повільнішим за звичне тицяння двома пальцями, проте вже за кілька тижнів різниця стає разючою.",
+    "Дослідники, які вивчають роботу з текстом, помітили цікаву закономірність. Швидкість набору майже не залежить від того, наскільки швидко людина рухає руками. Вирішальним є те, наскільки добре мозок передбачає наступні кілька літер у слові.",
+    "Помилка під час набору коштує дорожче, ніж здається на перший погляд. Щоб виправити одну літеру, потрібно зупинити потік думки, повернути курсор назад, стерти зайве й відновити ритм. Тому точність майже завжди вигідніша за поспіх.",
+    "Українська мова має кілька особливостей, які помітно впливають на набір тексту. Апостроф трапляється значно частіше, ніж в інших слов'янських мовах, а літери «і», «ї» та «є» вимагають окремої уваги від тих, хто звик до російської розкладки.",
+    "Регулярність важить більше за тривалість. Десять хвилин щоденних вправ дають кращий результат, ніж дві години раз на тиждень, бо навички моторної пам'яті закріплюються під час сну, а не під час самого тренування.",
+    "Найкращі друкарі світу долають межу в сто двадцять слів за хвилину, але для повсякденної роботи цілком достатньо шістдесяти. Головне не рекорд, а те, щоб швидкість запису встигала за швидкістю думки й не заважала їй.",
+  ],
+  bg:[
+    "Умението да се пише бързо отдавна престана да бъде тясна канцеларска дейност и се превърна в ежедневен инструмент на почти всяка професия. Човек, който не търси с очи всяка буква, посвещава вниманието си на смисъла, а не на механиката на записването.",
+    "Българската клавиатурна подредба съществува в два основни варианта. Традиционната БДС разпределя буквите според честотата им в езика, докато фонетичната подрежда кирилицата според съответствията с латиницата и затова се усвоява значително по-лесно от начинаещите.",
+    "Сляпото писане се основава на проста идея: всеки пръст отговаря за своя зона от клавиатурата, а погледът никога не се спуска надолу. Отначало изглежда по-бавно от обичайното чукане с два пръста, но само след няколко седмици разликата става очевидна.",
+    "Изследователите, които изучават работата с текст, забелязали любопитна закономерност. Скоростта на писане почти не зависи от това колко бързо човек движи ръцете си. Решаващо е доколко добре мозъкът предвижда следващите няколко букви в думата.",
+    "Една грешка при писането струва повече, отколкото изглежда на пръв поглед. За да поправите една буква, трябва да спрете потока на мисълта, да върнете курсора назад, да изтриете излишното и да възстановите ритъма. Затова точността почти винаги е по-изгодна от бързането.",
+    "Българският език има особености, които влияят осезаемо върху писането. Определителният член се прибавя в края на думата, което удължава думите, а буквите «ъ» и «щ» нямат преки съответствия в повечето други езици и изискват отделно внимание.",
+    "Редовността тежи повече от продължителността. Десет минути ежедневни упражнения дават по-добър резултат от два часа веднъж седмично, защото уменията на моторната памет се затвърждават по време на сън, а не по време на самата тренировка.",
+    "Най-добрите машинописци в света преодоляват границата от сто и двадесет думи в минута, но за всекидневна работа шейсет са напълно достатъчни. Важен е не рекордът, а това скоростта на записване да догонва скоростта на мисълта и да не ѝ пречи.",
+  ],
+  sr:[
+    "Вештина брзог куцања одавно је престала да буде уска канцеларијска делатност и претворила се у свакодневни алат готово сваке професије. Особа која не тражи очима свако слово посвећује пажњу смислу, а не механици записивања.",
+    "Српска тастатура постоји у две варијанте, ћириличној и латиничној, а многи корисници свакодневно прелазе с једне на другу. Управо то пребацивање, а не сама брзина прстију, најчешће успорава оне који пишу пословне текстове.",
+    "Слепо куцање почива на једноставној идеји: сваки прст одговара за своју зону тастатуре, а поглед никада не силази надоле. Испрва делује спорије од уобичајеног чукања с два прста, али већ након неколико недеља разлика постаје очигледна.",
+    "Истраживачи који проучавају рад с текстом приметили су занимљиву законитост. Брзина куцања готово да не зависи од тога колико брзо човек помера руке. Пресудно је колико добро мозак предвиђа наредних неколико слова у речи.",
+    "Једна грешка при куцању кошта више него што на први поглед изгледа. Да бисте исправили једно слово, морате зауставити ток мисли, вратити курсор, обрисати вишак и обновити ритам. Зато је тачност готово увек исплативија од журбе.",
+    "Српски језик има особености које приметно утичу на куцање. Слова попут «ђ», «ћ», «џ» и «љ» немају непосредне парњаке у већини других језика, а падежни наставци чине речи дужима него у аналитичким језицима.",
+    "Редовност вреди више од трајања. Десет минута свакодневне вежбе даје бољи резултат од два сата једном недељно, јер се вештине моторне меморије учвршћују током сна, а не током саме вежбе.",
+    "Најбољи дактилографи на свету прелазе границу од сто двадесет речи у минуту, али за свакодневни рад шездесет је сасвим довољно. Није важан рекорд, већ то да брзина записивања стиже брзину мисли и да јој не смета.",
+  ],
+  mk:[
+    "Вештината за брзо пишување одамна престана да биде тесна канцелариска дејност и се претвори во секојдневна алатка на речиси секоја професија. Човек што не бара со очи секоја буква ѝ го посветува вниманието на смислата, а не на механиката на запишувањето.",
+    "Македонската тастатура ги содржи буквите «ѓ», «ќ», «ѕ», «џ», «љ» и «њ», кои немаат непосредни парници во повеќето други јазици. Токму тие клавиши најчесто ги забавуваат оние што минуваат од друга кирилична распределба.",
+    "Слепото пишување почива на едноставна идеја: секој прст одговара за својата зона од тастатурата, а погледот никогаш не се спушта надолу. Отпрвин изгледа побавно од вообичаеното чукање со два прста, но веќе по неколку недели разликата станува очигледна.",
+    "Истражувачите што ја проучуваат работата со текст забележале интересна законитост. Брзината на пишување речиси и да не зависи од тоа колку брзо човекот ги движи рацете. Пресудно е колку добро мозокот ги предвидува следните неколку букви во зборот.",
+    "Една грешка при пишувањето чини повеќе отколку што изгледа на прв поглед. За да поправите една буква, мора да го запрете текот на мислата, да го вратите курсорот назад, да го избришете вишокот и да го обновите ритамот. Затоа точноста речиси секогаш е поисплатлива од брзањето.",
+    "Македонскиот јазик има особености што забележливо влијаат на пишувањето. Определената форма се додава на крајот од зборот, што ги издолжува зборовите, а троjниот член бара внимание какво што другите словенски јазици не бараат.",
+    "Редовноста вреди повеќе од траењето. Десет минути секојдневна вежба даваат подобар резултат од два часа еднаш неделно, бидејќи вештините на моторната меморија се зацврстуваат за време на сон, а не за време на самата вежба.",
+    "Најдобрите дактилографи во светот ја надминуваат границата од сто и дваесет зборови во минута, но за секојдневна работа шеесет се сосема доволни. Не е важен рекордот, туку тоа брзината на запишување да ја стигнува брзината на мислата и да не ѝ пречи.",
+  ],
+  el:[
+    "Η ικανότητα γρήγορης πληκτρολόγησης έπαψε προ πολλού να είναι στενή γραφειακή δεξιότητα και μετατράπηκε σε καθημερινό εργαλείο σχεδόν κάθε επαγγέλματος. Όποιος δεν ψάχνει με τα μάτια κάθε γράμμα αφιερώνει την προσοχή του στο νόημα και όχι στη μηχανική της καταγραφής.",
+    "Το ελληνικό πληκτρολόγιο ακολουθεί τη διάταξη QWERTY με αντιστοίχιση των ελληνικών γραμμάτων στις λατινικές θέσεις. Οι τόνοι απαιτούν ξεχωριστό πάτημα πριν από το φωνήεν, κάτι που στην αρχή δυσκολεύει όσους έχουν συνηθίσει σε άλλες γλώσσες.",
+    "Η τυφλή πληκτρολόγηση στηρίζεται σε μια απλή ιδέα: κάθε δάχτυλο ευθύνεται για τη δική του ζώνη του πληκτρολογίου και το βλέμμα δεν κατεβαίνει ποτέ. Στην αρχή φαίνεται πιο αργή από το συνηθισμένο χτύπημα με δύο δάχτυλα, όμως μετά από λίγες εβδομάδες η διαφορά γίνεται ολοφάνερη.",
+    "Οι ερευνητές που μελετούν την εργασία με κείμενο παρατήρησαν μια ενδιαφέρουσα κανονικότητα. Η ταχύτητα πληκτρολόγησης σχεδόν δεν εξαρτάται από το πόσο γρήγορα κινεί κανείς τα χέρια του. Καθοριστικό είναι το πόσο καλά ο εγκέφαλος προβλέπει τα επόμενα γράμματα της λέξης.",
+    "Ένα λάθος κατά την πληκτρολόγηση κοστίζει περισσότερο απ' όσο φαίνεται με την πρώτη ματιά. Για να διορθώσετε ένα γράμμα πρέπει να σταματήσετε τη ροή της σκέψης, να γυρίσετε τον δρομέα πίσω, να σβήσετε το περιττό και να ξαναβρείτε τον ρυθμό. Γι' αυτό η ακρίβεια σχεδόν πάντα συμφέρει περισσότερο από τη βιασύνη.",
+    "Η ελληνική γλώσσα έχει ιδιαιτερότητες που επηρεάζουν αισθητά την πληκτρολόγηση. Το τελικό σίγμα έχει δική του μορφή, ο τονισμός είναι υποχρεωτικός σε κάθε πολυσύλλαβη λέξη και τα διαλυτικά προσθέτουν ακόμη ένα επίπεδο προσοχής.",
+    "Η τακτικότητα μετράει περισσότερο από τη διάρκεια. Δέκα λεπτά καθημερινής εξάσκησης δίνουν καλύτερο αποτέλεσμα από δύο ώρες μία φορά την εβδομάδα, επειδή οι δεξιότητες της κινητικής μνήμης εδραιώνονται κατά τη διάρκεια του ύπνου και όχι κατά την ίδια την προπόνηση.",
+    "Οι καλύτεροι δακτυλογράφοι στον κόσμο ξεπερνούν το όριο των εκατόν είκοσι λέξεων ανά λεπτό, αλλά για την καθημερινή εργασία οι εξήντα είναι υπεραρκετές. Σημασία δεν έχει το ρεκόρ, αλλά η ταχύτητα καταγραφής να προλαβαίνει την ταχύτητα της σκέψης και να μην την εμποδίζει.",
+  ],
+  cs:[
+    "Schopnost rychle psát na klávesnici dávno přestala být úzkou kancelářskou dovedností a proměnila se v každodenní nástroj téměř každé profese. Člověk, který nehledá očima každé písmeno, věnuje pozornost smyslu, a nikoli mechanice zapisování.",
+    "Česká klávesnice existuje ve dvou hlavních podobách. Rozložení QWERTZ s háčky a čárkami v horní řadě je u nás tradiční, zatímco programátoři často zůstávají u QWERTY a diakritiku doplňují jinak. Obě volby mají své zastánce i svá úskalí.",
+    "Psaní všemi deseti stojí na jednoduché myšlence: každý prst odpovídá za svou zónu klávesnice a pohled nikdy neklesá dolů. Zpočátku to působí pomaleji než obvyklé ťukání dvěma prsty, ale už po několika týdnech je rozdíl zřejmý.",
+    "Badatelé, kteří zkoumají práci s textem, si všimli zajímavé zákonitosti. Rychlost psaní téměř nezávisí na tom, jak rychle člověk pohybuje rukama. Rozhodující je, jak dobře mozek předvídá několik dalších písmen ve slově.",
+    "Jedna chyba při psaní stojí víc, než se na první pohled zdá. Abyste opravili jediné písmeno, musíte zastavit tok myšlenky, vrátit kurzor zpět, smazat přebytek a obnovit rytmus. Proto se přesnost téměř vždy vyplatí víc než spěch.",
+    "Čeština má zvláštnosti, které znatelně ovlivňují psaní. Háčky a čárky vyžadují mrtvé klávesy nebo horní řadu, souhláskové skupiny jako „ztvrdl“ nutí prsty k neobvyklým přechodům a délka slov kolísá víc než v angličtině.",
+    "Pravidelnost váží víc než délka. Deset minut každodenního cvičení přináší lepší výsledek než dvě hodiny jednou týdně, protože dovednosti motorické paměti se upevňují během spánku, a nikoli během samotného tréninku.",
+    "Nejlepší písaři na světě překonávají hranici sto dvaceti slov za minutu, ale pro běžnou práci úplně stačí šedesát. Nejde o rekord, nýbrž o to, aby rychlost zápisu stíhala rychlost myšlenky a nebránila jí.",
+  ],
+  hr:[
+    "Vještina brzog tipkanja odavno je prestala biti uska uredska djelatnost i pretvorila se u svakodnevni alat gotovo svake struke. Osoba koja ne traži očima svako slovo posvećuje pažnju smislu, a ne mehanici zapisivanja.",
+    "Hrvatska tipkovnica slijedi raspored QWERTZ, u kojem su slova Y i Z zamijenjena u odnosu na engleski. Dijakritički znakovi č, ć, ž, š i đ imaju vlastite tipke, pa se hrvatski tekst piše bez mrtvih tipki i dodatnih kombinacija.",
+    "Slijepo tipkanje počiva na jednostavnoj zamisli: svaki prst odgovara za svoju zonu tipkovnice, a pogled nikada ne silazi prema dolje. Isprva djeluje sporije od uobičajenog lupkanja s dva prsta, no već nakon nekoliko tjedana razlika postaje očita.",
+    "Istraživači koji proučavaju rad s tekstom uočili su zanimljivu zakonitost. Brzina tipkanja gotovo i ne ovisi o tome koliko brzo čovjek pomiče ruke. Presudno je koliko dobro mozak predviđa sljedećih nekoliko slova u riječi.",
+    "Jedna pogreška pri tipkanju stoji više nego što se na prvi pogled čini. Da biste ispravili jedno slovo, morate zaustaviti tijek misli, vratiti pokazivač natrag, obrisati višak i obnoviti ritam. Zato se točnost gotovo uvijek isplati više od žurbe.",
+    "Hrvatski jezik ima osobitosti koje primjetno utječu na tipkanje. Pet dijakritičkih slova pojavljuje se često, a padežni nastavci čine riječi duljima nego u analitičkim jezicima poput engleskoga.",
+    "Redovitost vrijedi više od trajanja. Deset minuta svakodnevne vježbe daje bolji rezultat od dva sata jednom tjedno, jer se vještine motoričkog pamćenja učvršćuju tijekom sna, a ne tijekom same vježbe.",
+    "Najbolji daktilografi na svijetu prelaze granicu od sto dvadeset riječi u minuti, ali za svakodnevni rad šezdeset je posve dovoljno. Nije važan rekord, nego to da brzina zapisivanja stigne brzinu misli i da joj ne smeta.",
+  ],
+  sk:[
+    "Schopnosť rýchlo písať na klávesnici dávno prestala byť úzkou kancelárskou zručnosťou a premenila sa na každodenný nástroj takmer každej profesie. Človek, ktorý nehľadá očami každé písmeno, venuje pozornosť zmyslu, a nie mechanike zapisovania.",
+    "Slovenská klávesnica používa rozloženie QWERTZ, v ktorom sú písmená Y a Z prehodené oproti anglickému. Mäkčene a dĺžne sídlia v hornom rade tam, kde inde bývajú číslice, čo spočiatku prekvapí každého, kto prechádza z inej krajiny.",
+    "Písanie všetkými desiatimi stojí na jednoduchej myšlienke: každý prst zodpovedá za svoju zónu klávesnice a pohľad nikdy neklesá nadol. Spočiatku to pôsobí pomalšie než obvyklé ťukanie dvoma prstami, ale už po niekoľkých týždňoch je rozdiel zjavný.",
+    "Bádatelia, ktorí skúmajú prácu s textom, si všimli zaujímavú zákonitosť. Rýchlosť písania takmer nezávisí od toho, ako rýchlo človek pohybuje rukami. Rozhodujúce je, ako dobre mozog predvída niekoľko ďalších písmen v slove.",
+    "Jedna chyba pri písaní stojí viac, než sa na prvý pohľad zdá. Aby ste opravili jediné písmeno, musíte zastaviť tok myšlienky, vrátiť kurzor späť, zmazať prebytok a obnoviť rytmus. Preto sa presnosť takmer vždy vyplatí viac než zhon.",
+    "Slovenčina má zvláštnosti, ktoré citeľne ovplyvňujú písanie. Mäkčene, dĺžne a vokáň nad ô vyžadujú horný rad alebo mŕtve klávesy, a rytmické krátenie mení dĺžky tam, kde by ich písaci čakal.",
+    "Pravidelnosť váži viac než dĺžka. Desať minút každodenného cvičenia prináša lepší výsledok než dve hodiny raz týždenne, pretože zručnosti motorickej pamäte sa upevňujú počas spánku, a nie počas samotného tréningu.",
+    "Najlepší pisári na svete prekonávajú hranicu stodvadsiatich slov za minútu, ale na bežnú prácu úplne stačí šesťdesiat. Nejde o rekord, ale o to, aby rýchlosť zápisu stíhala rýchlosť myšlienky a neprekážala jej.",
+  ],
+  sl:[
+    "Spretnost hitrega tipkanja je že zdavnaj prenehala biti ozka pisarniška veščina in se je spremenila v vsakodnevno orodje skoraj vsakega poklica. Človek, ki z očmi ne išče vsake črke, posveča pozornost pomenu in ne mehaniki zapisovanja.",
+    "Slovenska tipkovnica uporablja razporeditev QWERTZ, pri kateri sta črki Y in Z zamenjani glede na angleško. Šumniki č, š in ž imajo svoje tipke desno od črkovnega bloka, zato slovenskega besedila ni treba pisati z mrtvimi tipkami.",
+    "Slepo tipkanje sloni na preprosti zamisli: vsak prst odgovarja za svoje območje tipkovnice, pogled pa nikoli ne pade navzdol. Sprva se zdi počasnejše od običajnega tipkanja z dvema prstoma, a že po nekaj tednih postane razlika očitna.",
+    "Raziskovalci, ki proučujejo delo z besedilom, so opazili zanimivo zakonitost. Hitrost tipkanja skoraj ni odvisna od tega, kako hitro človek premika roke. Odločilno je, kako dobro možgani napovedujejo naslednjih nekaj črk v besedi.",
+    "Ena napaka pri tipkanju stane več, kot se zdi na prvi pogled. Da popravite eno samo črko, morate ustaviti tok misli, vrniti kazalec nazaj, izbrisati odvečno in obnoviti ritem. Zato se natančnost skoraj vedno bolj izplača kot hitenje.",
+    "Slovenščina ima posebnosti, ki opazno vplivajo na tipkanje. Poleg treh šumnikov ima dvojino, zaradi katere se oblike besed množijo, sklonske končnice pa besede podaljšujejo bolj kot v analitičnih jezikih.",
+    "Rednost šteje več kot trajanje. Deset minut vsakodnevne vaje da boljši rezultat kot dve uri enkrat na teden, saj se veščine gibalnega spomina utrjujejo med spanjem in ne med samo vadbo.",
+    "Najboljši tipkarji na svetu presegajo mejo stodvajsetih besed na minuto, a za vsakdanje delo jih šestdeset povsem zadošča. Ne gre za rekord, temveč za to, da hitrost zapisovanja dohaja hitrost misli in ji ne stoji na poti.",
+  ],
+  hu:[
+    "A gyors gépelés képessége már rég nem szűk irodai készség, hanem szinte minden szakma mindennapi eszköze. Aki nem keresi szemével minden egyes betűt, a figyelmét a gondolat tartalmára fordítja, nem pedig a leírás mechanikájára.",
+    "A magyar billentyűzet QWERTZ elrendezésű, és a hosszú magánhangzók külön billentyűket kaptak a betűblokk jobb oldalán. Aki angol kiosztásról vált, elsősorban az ő, ű és az ékezetes párok elhelyezkedésén akad fenn, nem a sebességén.",
+    "A vakon gépelés egyszerű gondolaton nyugszik: minden ujj a saját billentyűzónájáért felel, a tekintet pedig soha nem száll lefelé. Eleinte lassabbnak tűnik a megszokott kétujjas kopogásnál, de néhány hét után a különbség nyilvánvalóvá válik.",
+    "A szöveggel végzett munkát kutatók érdekes szabályszerűséget vettek észre. A gépelés sebessége szinte nem függ attól, milyen gyorsan mozgatja valaki a kezét. A döntő az, mennyire jól jelzi előre az agy a szó következő néhány betűjét.",
+    "Egyetlen gépelési hiba többe kerül, mint amennyinek elsőre látszik. Egy betű javításához meg kell állítani a gondolat folyamát, vissza kell vinni a kurzort, törölni a felesleget és újra felvenni a ritmust. Ezért a pontosság szinte mindig jobban megéri a sietségnél.",
+    "A magyar nyelvnek vannak sajátosságai, amelyek érezhetően hatnak a gépelésre. A toldalékoló szerkezet miatt a szavak jóval hosszabbak, mint az angolban, a magánhangzó-harmónia pedig hosszú, egybefüggő betűsorokat eredményez.",
+    "A rendszeresség többet nyom a latban, mint az időtartam. Napi tíz perc gyakorlás jobb eredményt ad, mint heti egy alkalommal két óra, mert a mozgásos emlékezet készségei alvás közben rögzülnek, nem pedig maga a gyakorlás alatt.",
+    "A világ legjobb gépírói átlépik a percenkénti százhúsz szavas határt, de a mindennapi munkához hatvan bőven elég. Nem a rekord számít, hanem az, hogy a leírás sebessége utolérje a gondolatét, és ne álljon az útjába.",
+  ],
+  lt:[
+    "Gebėjimas greitai spausdinti jau seniai nustojo būti siaura raštinės įgūdis ir virto kasdieniu beveik kiekvienos profesijos įrankiu. Žmogus, kuris akimis neieško kiekvienos raidės, dėmesį skiria minties turiniui, o ne užrašymo mechanikai.",
+    "Lietuviška klaviatūra turi savitą bruožą: raidės su nosinėmis ir varnelėmis užima viršutinę eilę ten, kur kitur būna skaitmenys. Todėl pereinantys nuo angliškos klaviatūros iš pradžių sutrinka būtent ties ą, č, ę, ė, į, š, ų, ū ir ž.",
+    "Aklas spausdinimas remiasi paprasta mintimi: kiekvienas pirštas atsako už savo klaviatūros zoną, o žvilgsnis niekada nenusileidžia žemyn. Iš pradžių tai atrodo lėčiau nei įprastas bakstelėjimas dviem pirštais, bet jau po kelių savaičių skirtumas tampa akivaizdus.",
+    "Tyrėjai, nagrinėjantys darbą su tekstu, pastebėjo įdomų dėsningumą. Spausdinimo greitis beveik nepriklauso nuo to, kaip greitai žmogus judina rankas. Lemiama yra tai, kaip gerai smegenys numato kelias kitas žodžio raides.",
+    "Viena klaida spausdinant kainuoja daugiau, nei atrodo iš pirmo žvilgsnio. Kad ištaisytumėte vieną raidę, reikia sustabdyti minties tėkmę, grąžinti žymeklį atgal, ištrinti perteklių ir atkurti ritmą. Todėl tikslumas beveik visada apsimoka labiau nei skubėjimas.",
+    "Lietuvių kalba turi ypatumų, kurie pastebimai veikia spausdinimą. Ilgos galūnės ir linksniavimas daro žodžius gerokai ilgesnius nei anglų kalboje, o devynios raidės su diakritiniais ženklais reikalauja atskiro dėmesio.",
+    "Reguliarumas sveria daugiau nei trukmė. Dešimt minučių kasdienių pratybų duoda geresnį rezultatą nei dvi valandos kartą per savaitę, nes judesių atminties įgūdžiai įsitvirtina miego metu, o ne per pačias treniruotes.",
+    "Geriausi pasaulio spausdintojai peržengia šimto dvidešimties žodžių per minutę ribą, bet kasdieniam darbui visiškai pakanka šešiasdešimties. Svarbu ne rekordas, o tai, kad užrašymo greitis spėtų paskui minties greitį ir jai netrukdytų.",
+  ],
+  lv:[
+    "Spēja ātri rakstīt uz tastatūras sen vairs nav šaura biroja prasme, bet gan gandrīz katras profesijas ikdienas darbarīks. Cilvēks, kurš ar acīm nemeklē katru burtu, uzmanību velta domas jēgai, nevis pierakstīšanas mehānikai.",
+    "Latviešu tastatūrai ir sava īpatnība: garumzīmes un mīkstinājuma zīmes visbiežāk ievada ar atsevišķu taustiņu vai apostrofa metodi. Tieši tas sākumā apgrūtina tos, kuri pārnāk no angļu izkārtojuma.",
+    "Aklā rakstīšana balstās uz vienkāršu domu: katrs pirksts atbild par savu tastatūras zonu, bet skatiens nekad nenolaižas lejup. Sākumā tas šķiet lēnāk par ierasto klaudzināšanu ar diviem pirkstiem, bet jau pēc dažām nedēļām atšķirība kļūst acīmredzama.",
+    "Pētnieki, kas nodarbojas ar darbu ar tekstu, pamanīja interesantu likumsakarību. Rakstīšanas ātrums gandrīz nav atkarīgs no tā, cik ātri cilvēks kustina rokas. Izšķirošais ir tas, cik labi smadzenes paredz nākamos dažus burtus vārdā.",
+    "Viena kļūda rakstot maksā vairāk, nekā šķiet no pirmā acu uzmetiena. Lai izlabotu vienu burtu, jāaptur domas plūsma, jāatgriež kursors atpakaļ, jāizdzēš liekais un jāatjauno ritms. Tāpēc precizitāte gandrīz vienmēr atmaksājas labāk nekā steiga.",
+    "Latviešu valodai ir īpatnības, kas manāmi ietekmē rakstīšanu. Vienpadsmit burti ar diakritiskajām zīmēm parādās bieži, bet locījumu galotnes padara vārdus garākus nekā analītiskajās valodās.",
+    "Regularitāte sver vairāk nekā ilgums. Desmit minūtes ikdienas vingrinājumu dod labāku rezultātu nekā divas stundas reizi nedēļā, jo kustību atmiņas prasmes nostiprinās miega laikā, nevis pašas treniņa laikā.",
+    "Labākie rakstītāji pasaulē pārsniedz simt divdesmit vārdu minūtē robežu, bet ikdienas darbam pilnīgi pietiek ar sešdesmit. Svarīgs nav rekords, bet gan tas, lai pierakstīšanas ātrums panāktu domas ātrumu un tai netraucētu.",
+  ],
+  et:[
+    "Oskus kiiresti klaviatuuril kirjutada lakkas ammu olemast kitsas kontorioskus ja muutus peaaegu iga elukutse igapäevaseks tööriistaks. Inimene, kes ei otsi silmadega iga tähte, pühendab tähelepanu mõtte sisule, mitte kirjapaneku mehaanikale.",
+    "Eesti klaviatuur järgib QWERTY paigutust, kuid täpitähed õ, ä, ö ja ü on saanud omaenda klahvid tähebloki paremal serval. Just nende asukoht paneb alguses komistama neid, kes tulevad üle inglise paigutuselt.",
+    "Pimekirjutamine tugineb lihtsal mõttel: iga sõrm vastutab oma klaviatuuritsooni eest ja pilk ei lasku kunagi alla. Alguses tundub see aeglasem kui harjumuspärane kahe sõrmega toksimine, kuid juba mõne nädala pärast muutub vahe ilmseks.",
+    "Uurijad, kes tegelevad tekstitööga, märkasid huvitavat seaduspära. Kirjutamiskiirus ei sõltu peaaegu üldse sellest, kui kiiresti inimene käsi liigutab. Otsustav on see, kui hästi aju ennustab sõna järgmisi tähti.",
+    "Üks viga kirjutamisel maksab rohkem, kui esmapilgul näib. Ühe tähe parandamiseks tuleb peatada mõttevoog, viia kursor tagasi, kustutada üleliigne ja taastada rütm. Seepärast tasub täpsus peaaegu alati rohkem ära kui kiirustamine.",
+    "Eesti keelel on omapärad, mis mõjutavad kirjutamist märgatavalt. Käänamine teeb sõnad pikemaks kui inglise keeles, kolm välteastet muudavad kirjapilti ja liitsõnad võivad venida märkimisväärselt pikaks.",
+    "Regulaarsus kaalub rohkem kui kestus. Kümme minutit igapäevast harjutamist annab parema tulemuse kui kaks tundi kord nädalas, sest liigutusmälu oskused kinnistuvad une ajal, mitte treeningu enda käigus.",
+    "Maailma parimad kirjutajad ületavad saja kahekümne sõna piiri minutis, kuid igapäevatööks piisab täiesti kuuekümnest. Oluline pole rekord, vaid see, et kirjapaneku kiirus jõuaks mõtte kiirusele järele ja ei segaks seda.",
+  ],
+  ar:[
+    "لم تعد مهارة الكتابة السريعة على لوحة المفاتيح مهارة مكتبية ضيقة، بل صارت أداة يومية في كل مهنة تقريبًا. فمن لا يبحث بعينيه عن كل حرف يوجّه انتباهه إلى المعنى لا إلى ميكانيكا التدوين.",
+    "تتبع لوحة المفاتيح العربية ترتيبًا وُضع في زمن الآلات الكاتبة، ويضع الحروف الأكثر شيوعًا تحت الأصابع الأقوى. غير أن الكتابة بالعربية تفرض تحديًا إضافيًا: اتصال الحروف وتغيّر شكلها بحسب موقعها في الكلمة.",
+    "تقوم الكتابة دون النظر على فكرة بسيطة: لكل إصبع منطقته على لوحة المفاتيح، والنظر لا ينزل إلى الأسفل أبدًا. تبدو في البداية أبطأ من النقر المعتاد بإصبعين، لكن الفارق يصير واضحًا بعد أسابيع قليلة.",
+    "لاحظ الباحثون في مجال العمل على النصوص قاعدة لافتة. فسرعة الكتابة لا تكاد تعتمد على سرعة تحريك اليدين، بل الحاسم هو مدى قدرة الدماغ على توقّع الحروف القليلة التالية في الكلمة.",
+    "يكلّف الخطأ الواحد أثناء الكتابة أكثر مما يبدو للوهلة الأولى. فلتصحيح حرف واحد عليك أن توقف تدفق الفكرة وتعيد المؤشر وتمحو الزائد ثم تستعيد الإيقاع. لذلك تكون الدقة أجدى من العجلة في معظم الأحوال.",
+    "للعربية خصائص تؤثر في الكتابة تأثيرًا ملموسًا. فالحروف تتصل ببعضها وتتبدل أشكالها بحسب موضعها، والتشكيل يضيف طبقة أخرى، كما أن الكتابة تجري من اليمين إلى اليسار بينما تسير الأرقام في الاتجاه المعاكس.",
+    "الانتظام أثقل وزنًا من طول الجلسة. فعشر دقائق من التمرين اليومي تعطي نتيجة أفضل من ساعتين مرة في الأسبوع، لأن مهارات الذاكرة الحركية ترسخ أثناء النوم لا أثناء التمرين نفسه.",
+    "يتجاوز أمهر الكتّاب في العالم حاجز مئة وعشرين كلمة في الدقيقة، غير أن ستين كلمة تكفي تمامًا للعمل اليومي. فالمهم ليس الرقم القياسي بل أن تلحق سرعة التدوين بسرعة الفكرة دون أن تعرقلها.",
+  ],
+  he:[
+    "היכולת להקליד במהירות חדלה מזמן להיות מיומנות משרדית צרה והפכה לכלי יומיומי כמעט בכל מקצוע. אדם שאינו מחפש בעיניו כל אות מקדיש את תשומת לבו למשמעות ולא למכניקה של הרישום.",
+    "המקלדת העברית נשענת על פריסה שנקבעה עוד בימי מכונות הכתיבה, והאותיות השכיחות ביותר הוצבו תחת האצבעות החזקות. אלא שהכתיבה בעברית מוסיפה אתגר משלה: הטקסט זורם מימין לשמאל בעוד המספרים נכתבים בכיוון ההפוך.",
+    "הקלדה עיוורת נשענת על רעיון פשוט: לכל אצבע אזור משלה במקלדת, והמבט לעולם אינו יורד למטה. בהתחלה זה נראה איטי יותר מהנקישה הרגילה בשתי אצבעות, אבל כבר אחרי שבועות אחדים ההבדל נעשה ברור.",
+    "חוקרים שעוסקים בעבודה עם טקסט הבחינו בחוקיות מעניינת. מהירות ההקלדה כמעט אינה תלויה במהירות שבה אדם מזיז את ידיו. המכריע הוא עד כמה טוב המוח חוזה את האותיות הבאות במילה.",
+    "טעות אחת בהקלדה עולה יותר ממה שנדמה במבט ראשון. כדי לתקן אות אחת צריך לעצור את זרם המחשבה, להחזיר את הסמן, למחוק את המיותר ולשחזר את הקצב. לכן הדיוק כמעט תמיד משתלם יותר מהחיפזון.",
+    "לעברית יש מאפיינים שמשפיעים על ההקלדה במידה ניכרת. הכתיב חסר הניקוד מחייב את הקורא להשלים תנועות מתוך ההקשר, השורשים משנים צורה לפי הבניין, והמעבר בין עברית לאנגלית מחייב החלפת פריסה תכופה.",
+    "הסדירות שוקלת יותר מהמשך. עשר דקות של תרגול יומי נותנות תוצאה טובה יותר משעתיים פעם בשבוע, משום שמיומנויות הזיכרון המוטורי מתקבעות בזמן השינה ולא בזמן האימון עצמו.",
+    "המקלידים הטובים בעולם חוצים את רף מאה ועשרים המילים בדקה, אבל לעבודה יומיומית שישים מספיקות בהחלט. לא השיא הוא העיקר אלא שמהירות הרישום תדביק את מהירות המחשבה ולא תעמוד בדרכה.",
+  ],
+  fa:[
+    "توانایی تایپ سریع دیگر مدت‌هاست مهارتی تنگ و اداری نیست و به ابزاری روزمره در تقریباً هر پیشه بدل شده است. کسی که با چشم دنبال تک‌تک حرف‌ها نمی‌گردد، توجهش را به معنا می‌سپارد نه به سازوکار نوشتن.",
+    "صفحه‌کلید فارسی بر پایهٔ چیدمانی است که از روزگار ماشین‌های تحریر به جا مانده و پرکاربردترین حرف‌ها را زیر انگشتان تواناتر نشانده است. با این همه، نوشتن به فارسی دشواری ویژهٔ خود را دارد: حرف‌ها به هم می‌چسبند و شکلشان بسته به جایگاه در واژه دگرگون می‌شود.",
+    "تایپ ده‌انگشتی بر اندیشه‌ای ساده استوار است: هر انگشت مسئول ناحیهٔ خویش از صفحه‌کلید است و نگاه هرگز پایین نمی‌رود. نخست کندتر از ضربه‌زدن معمول با دو انگشت می‌نماید، اما همین که چند هفته بگذرد تفاوت آشکار می‌شود.",
+    "پژوهشگرانی که کار با متن را می‌کاوند به قاعده‌ای جالب برخوردند. سرعت تایپ تقریباً به سرعت حرکت دست‌ها بستگی ندارد. آنچه تعیین‌کننده است این است که مغز چند حرف بعدی واژه را چه اندازه خوب پیش‌بینی می‌کند.",
+    "یک خطا هنگام تایپ گران‌تر از آن است که در نگاه نخست می‌نماید. برای درست‌کردن یک حرف باید جریان اندیشه را بازداشت، مکان‌نما را بازگرداند، زیادی را پاک کرد و آهنگ کار را از نو یافت. از این رو دقت تقریباً همیشه از شتاب به‌صرفه‌تر است.",
+    "زبان فارسی ویژگی‌هایی دارد که تایپ را به‌روشنی زیر تأثیر می‌گیرد. نیم‌فاصله در واژه‌های مرکب نقشی کلیدی دارد، حرف‌ها به هم می‌پیوندند، و نوشتار از راست به چپ پیش می‌رود در حالی که ارقام در جهت وارونه نوشته می‌شوند.",
+    "پیوستگی از درازای جلسه مهم‌تر است. ده دقیقه تمرین روزانه نتیجه‌ای بهتر از دو ساعت یک بار در هفته می‌دهد، زیرا مهارت‌های حافظهٔ حرکتی در هنگام خواب پایدار می‌شوند نه در حین خود تمرین.",
+    "بهترین تایپیست‌های جهان از مرز صد و بیست واژه در دقیقه می‌گذرند، اما برای کار روزمره شصت واژه کاملاً بس است. آنچه اهمیت دارد رکورد نیست، بلکه این است که سرعت نوشتن به سرعت اندیشه برسد و سد راه آن نشود.",
+  ],
+  hi:[
+    "तेज़ टाइप करने की क्षमता अब कोई सीमित दफ़्तरी हुनर नहीं रह गई, बल्कि लगभग हर पेशे का रोज़मर्रा का औज़ार बन चुकी है। जो व्यक्ति आँखों से हर अक्षर नहीं खोजता, वह अपना ध्यान अर्थ पर लगाता है, लिखने की यांत्रिकी पर नहीं।",
+    "हिंदी टाइपिंग के दो प्रचलित तरीक़े हैं। इनस्क्रिप्ट कुंजीपटल में हर व्यंजन और मात्रा की अपनी कुंजी होती है, जबकि लिप्यंतरण में लोग रोमन में लिखते हैं और शब्द देवनागरी में बदल जाता है। दूसरा तरीक़ा सीखना आसान है पर पहला अंतत: तेज़ पड़ता है।",
+    "बिना देखे टाइप करना एक सीधे विचार पर टिका है: हर उँगली कुंजीपटल के अपने क्षेत्र की ज़िम्मेदार है और नज़र कभी नीचे नहीं जाती। शुरू में यह दो उँगलियों की आदत से धीमा लगता है, पर कुछ ही हफ़्तों में अंतर साफ़ दिखने लगता है।",
+    "पाठ पर काम का अध्ययन करने वाले शोधकर्ताओं ने एक दिलचस्प नियम देखा। टाइप करने की गति इस पर लगभग निर्भर नहीं करती कि व्यक्ति हाथ कितनी तेज़ी से चलाता है। निर्णायक यह है कि मस्तिष्क शब्द के अगले कुछ अक्षरों का अनुमान कितना अच्छा लगाता है।",
+    "टाइप करते समय एक भूल उससे कहीं महँगी पड़ती है जितनी पहली नज़र में लगती है। एक अक्षर सुधारने के लिए विचार की धारा रोकनी पड़ती है, कर्सर पीछे लाना पड़ता है, अतिरिक्त मिटाना पड़ता है और फिर लय पानी पड़ती है। इसीलिए जल्दबाज़ी से सटीकता लगभग हमेशा बेहतर सौदा है।",
+    "देवनागरी की अपनी विशेषताएँ टाइपिंग पर स्पष्ट असर डालती हैं। मात्राएँ, संयुक्ताक्षर और हलंत एक दिखने वाले अक्षर के लिए कई कुंजियाँ माँगते हैं, और शिरोरेखा शब्द को एक इकाई की तरह बाँधती है।",
+    "नियमितता अवधि से अधिक भारी पड़ती है। रोज़ दस मिनट का अभ्यास हफ़्ते में एक बार दो घंटे से बेहतर परिणाम देता है, क्योंकि पेशीय स्मृति के कौशल नींद के दौरान पक्के होते हैं, अभ्यास के दौरान नहीं।",
+    "दुनिया के सबसे कुशल टंकक प्रति मिनट सौ से ऊपर शब्द पार कर जाते हैं, पर रोज़ के काम के लिए तीस से चालीस पूरी तरह पर्याप्त हैं। महत्त्व रिकॉर्ड का नहीं, इस बात का है कि लिखने की गति विचार की गति के साथ चले और उसके आड़े न आए।",
+  ],
+  ja:[
+    "速く入力できることは、もはや限られた事務の技能ではなく、ほとんどの職業で毎日使う道具になりました。一文字ずつ目で探さずに済む人は、書き取る手つきではなく、書こうとしている中身のほうに注意を向けられます。",
+    "日本語の入力は、ローマ字で打った音をかな漢字に変換する方式が広く使われています。つまり画面に現れる一文字の裏側で、いくつものキーが押されているわけです。速さを文字数で数えるのはそのためです。",
+    "指を見ずに打つ方法は、単純な考えの上に成り立っています。どの指がどの範囲を受け持つかを決め、視線は決して手元へ落とさない。最初は二本指で打つより遅く感じますが、数週間もすれば違いがはっきりしてきます。",
+    "文章を書く作業を調べてきた研究者たちは、興味深い規則性に気づきました。入力の速さは、手をどれだけ速く動かせるかにはあまり左右されません。決め手は、次に来る文字を脳がどれだけうまく先読みできるかにあります。",
+    "打ち間違いは、見た目より高くつきます。一文字直すためには、考えの流れを止め、カーソルを戻し、余分を消し、そして調子を取り戻さなければなりません。ですから急ぐより正確に打つほうが、たいていは得になります。",
+    "日本語には入力を左右する独特の事情があります。変換の候補から適切な語を選ぶ手間がかかり、同じ読みでも意味の違う語が並びます。この選ぶ時間もまた、入力の速さの一部なのです。",
+    "続けることは、一度に長くやることより大切です。毎日十分の練習は、週に一度二時間の練習より良い結果をもたらします。体で覚えた技能は、練習しているあいだではなく、眠っているあいだに定着するからです。",
+    "世界で最も速い打ち手は毎分数百字を超えますが、日常の仕事にはその半分もあれば十分です。大切なのは記録ではなく、書き取る速さが考える速さに追いつき、その邪魔をしないことです。",
+  ],
 };
 
 function getPassage(){
@@ -184,7 +364,7 @@ let passage='', typed='', startTime=0, endTime=0, phase='idle', timerInterval=nu
 // alpha : Latin, Cyrillic, Greek, Arabic, Hebrew, Devanagari - words ~5 chars
 // direct: Hangul and Thai - typed directly, no conversion step, high CPM
 // ime   : Japanese and Chinese - romaji/pinyin then conversion, lower CPM
-const SPEED_FAMILY = { ja:'ime', zh:'ime', ko:'direct', th:'direct' };
+const SPEED_FAMILY = { ja:'ime', zh:'ime', ko:'direct', th:'direct', hi:'indic' };
 function familyFor(lang){ return SPEED_FAMILY[lang] || 'alpha'; }
 
 const SPEED_NORMS = {
@@ -194,13 +374,21 @@ const SPEED_NORMS = {
   ime:    [[0,1],[15,5],[25,15],[35,35],[50,50],[70,65],[90,78],[120,88],[150,95],[200,98],[250,99]],
   // Hangul and Thai are entered directly, so raw character rates run much higher.
   direct: [[0,1],[60,5],[100,15],[150,35],[200,50],[260,65],[320,78],[400,88],[500,95],[600,98],[700,99]],
+  // Devanagari is word-segmented, so words/min still applies - but the curve is
+  // NOT the Latin one. A matra, conjunct or halant costs several keystrokes for
+  // one visible character, so the same finger speed yields far fewer words.
+  // India's own typist competency standard is 25 wpm Hindi against 30-35 English;
+  // scored on the Latin curve an ordinary Hindi typist would land near the 5th
+  // percentile, which measures the script, not the person.
+  indic:  [[0,1],[10,5],[16,15],[22,35],[30,50],[38,65],[46,78],[55,88],[70,95],[85,98],[100,99]],
 };
 
 function speedUnitKey(lang){ return familyFor(lang)==='alpha' ? 'typ_wpm' : 'typ_cpm'; }
 
 function wpm(chars, seconds, lang){
   const l = lang || window.I18n?.lang || window.PAGE_LANG || 'en';
-  return familyFor(l)==='alpha'
+  const fam = familyFor(l);
+  return (fam==='alpha' || fam==='indic')
     ? Math.round((chars/5)/(seconds/60))   // words per minute
     : Math.round(chars/(seconds/60));      // characters per minute
 }

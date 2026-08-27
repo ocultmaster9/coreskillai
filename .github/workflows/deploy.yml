@@ -313,6 +313,23 @@ jobs:
             [ "${inc:-0}" -gt 0 ] && echo "::warning::${inc} market(s) still incomplete - see the table above"
           fi
 
+          # 10) EVERY TEST ACTUALLY RUNS, IN EVERY LANGUAGE. Checks 1-9 confirm
+          #     files exist and parse. They do not confirm the page works: four
+          #     tests once shipped calling an undefined `_t` helper, which every
+          #     other check passed happily while the page threw on load. This
+          #     boots each of the 9 tests for each ready language in jsdom and
+          #     asserts it renders, renders IN THAT LANGUAGE, and has a start
+          #     control. Unlike check 9 this is a HARD FAILURE - a test that
+          #     does not run is not a partial market, it is a broken page.
+          npm install --no-save --silent jsdom 2>/dev/null || npm install -g --silent jsdom 2>/dev/null || true
+          export NODE_PATH="$(npm root):$(npm root -g)"
+          if node -e "require('jsdom')" 2>/dev/null; then
+            ( cd _stage && cp -r ../_build . 2>/dev/null; node _build/verify_tests.js ) || fail=1
+          else
+            echo "::error::jsdom unavailable - cannot verify the tests run. Refusing to deploy blind."
+            fail=1
+          fi
+
           [ "$fail" -eq 0 ] || exit 1
           echo "  all preflight checks passed"
 
