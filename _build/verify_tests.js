@@ -117,11 +117,33 @@ function visibleText(doc) {
   return (main.textContent || '').replace(/\s+/g, ' ').trim();
 }
 
+// Tests whose substance is a QUESTION BANK rendered only after the visitor
+// starts. The landing shell for these can be perfectly localised while every
+// statement is still English - which is exactly what shipped: the 33 language
+// banks sat in TRAIT_INFO/BRANCHES instead of ITEMS_I18N, so itemsFor() fell
+// back to the English master on every market. Shell-only checks cannot see it.
+const ITEM_TESTS = {
+  'big-five': { api: 'B5Test', sel: '.question-text' },
+  'eq':       { api: 'EQTest', sel: '.question-text' },
+};
+
+function firstQuestion(r, spec) {
+  const api = r.dom.window[spec.api];
+  if (!api || typeof api.start !== 'function') return null;
+  try { api.start(); } catch (e) { return null; }
+  const el = r.doc.querySelector(spec.sel);
+  return el ? el.textContent.trim() : null;
+}
+
 function run(langs) {
   let fails = 0, checked = 0;
   const enText = {};
+  const enFirstQ = {};
   for (const t of TESTS) {
     try { enText[t] = visibleText(loadPage('en', t).doc); } catch (e) { enText[t] = ''; }
+  }
+  for (const t of Object.keys(ITEM_TESTS)) {
+    try { enFirstQ[t] = firstQuestion(loadPage('en', t), ITEM_TESTS[t]); } catch (e) { enFirstQ[t] = null; }
   }
 
   for (const lang of langs) {
@@ -144,6 +166,16 @@ function run(langs) {
         if (!re.test(txt)) { bad.push(`${test}: no native script in rendered text`); continue; }
       } else if (lang !== 'en' && txt === enText[test]) {
         bad.push(`${test}: rendered text identical to English`); continue;
+      }
+
+      // The QUESTIONS themselves must be localised, not just the shell.
+      if (lang !== 'en' && ITEM_TESTS[test]) {
+        const q = firstQuestion(r, ITEM_TESTS[test]);
+        if (!q) { bad.push(`${test}: could not render a question`); continue; }
+        if (enFirstQ[test] && q === enFirstQ[test]) {
+          bad.push(`${test}: question bank is ENGLISH -> ${JSON.stringify(q.slice(0, 48))}`);
+          continue;
+        }
       }
 
       // The start control is what a visitor actually clicks. If it is missing

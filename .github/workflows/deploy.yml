@@ -136,6 +136,7 @@ jobs:
           # pages are alternates of each other, not duplicates.
           import collections
           titles = collections.defaultdict(list)
+          descs = {}
           for f in glob.glob('_stage/**/*.html', recursive=True):
               rel = os.path.relpath(f, '_stage')
               if rel == '404.html': continue
@@ -143,6 +144,8 @@ jobs:
               mt = re.search(r'<title>(.*?)</title>', h, re.S)
               if not mt:
                   print(f'::error::{rel} has no <title>'); bad = 1; continue
+              md = re.search(r'<meta name="description" content="(.*?)"', h, re.S)
+              descs[rel] = md.group(1).strip() if md else ''
               first = rel.split('/')[0]
               lg = first if re.fullmatch(r'[a-z]{2}', first) else 'en'
               titles[(lg, mt.group(1).strip())].append(rel)
@@ -150,12 +153,27 @@ jobs:
               if len(files) > 1:
                   print(f'::error::[{lg}] duplicate <title> on {len(files)} pages: {files[:4]} -> {t[:60]}')
                   bad = 1
-          # And every non-English page must NOT reuse the English title.
+          # And every non-English page must NOT reuse the English title - unless
+          # the word is genuinely the same in that language. "Contact" is correct
+          # French, Dutch AND Romanian, exactly as "Kontakt" is correct German,
+          # so a matching title on its own proves nothing and failed run #18 on
+          # three pages that were in fact fully translated.
+          # A page is only untranslated if its DESCRIPTION is the English one too:
+          # a localised description means the title is a real cognate. A page with
+          # NO description cannot prove itself and is still treated as untranslated.
           en_titles = {t for (lg, t) in titles if lg == 'en'}
+          en_descs = {d for r, d in descs.items()
+                      if d and not re.fullmatch(r'[a-z]{2}', r.split('/')[0])}
           for (lg, t), files in titles.items():
-              if lg != 'en' and t in en_titles:
-                  print(f'::error::[{lg}] page still carries the ENGLISH title: {files[0]} -> {t[:60]}')
+              if lg == 'en' or t not in en_titles: continue
+              stuck = [r for r in files if not descs.get(r) or descs[r] in en_descs]
+              if stuck:
+                  print(f'::error::[{lg}] page still carries the ENGLISH title AND description: '
+                        f'{stuck[0]} -> {t[:60]}')
                   bad = 1
+              else:
+                  print(f'  note: [{lg}] {files[0]} shares the English title "{t[:40]}" but its '
+                        f'description is localised - cognate, not a missed translation')
           print(f'  title/language pairs: {len(titles)}')
           print(f'  pages checked: {n}')
           sys.exit(bad)
@@ -190,6 +208,35 @@ jobs:
           print(f'  ad slots paired with a push: {ins_total}')
           sys.exit(bad)
           ADS
+          [ $? -eq 0 ] || fail=1
+
+          # 4c) AD SLOTS MUST BE ABLE TO GET A WIDTH. Check 4b proves each <ins>
+          #     is paired with a push() - that is a CODE check and says nothing
+          #     about LAYOUT. .ad-wrap is display:flex, so the column holding the
+          #     empty <ins> shrank to its widest real content (the "Advertisement"
+          #     label, ~103px). On a 1440px desktop AdSense rejected every unit
+          #     with "No slot size for availableWidth=93" and the site served no
+          #     ads at all, while checks 1-4b stayed green. Keep the width rules.
+          python3 - <<'ADWIDTH'
+          import io, re, sys
+          css = io.open('_stage/css/main.css', encoding='utf-8').read()
+          bad = 0
+          def rule(sel):
+              m = re.search(re.escape(sel) + r'\s*\{([^}]*)\}', css)
+              return m.group(1) if m else None
+          wrap = rule('.ad-wrap')
+          if wrap and 'flex' in wrap:
+              col = rule('.ad-wrap > div')
+              ins = rule('.ad-wrap .adsbygoogle')
+              if not col or 'flex' not in col:
+                  print('::error::.ad-wrap is display:flex but .ad-wrap > div has no flex basis '
+                        '- the ad column collapses and AdSense rejects every slot'); bad = 1
+              if not ins or 'width' not in ins:
+                  print('::error::.ad-wrap .adsbygoogle has no width rule - the empty <ins> '
+                        'cannot get a width and AdSense rejects it'); bad = 1
+          print('  ad containers cannot collapse' if not bad else '')
+          sys.exit(bad)
+          ADWIDTH
           [ $? -eq 0 ] || fail=1
 
           # 5) Every test page must load its own script, and every script must parse.
@@ -335,7 +382,10 @@ jobs:
           #     the test cards had no data-i18n at all, and newly generated
           #     markets shipped the English clone inside their data-i18n tags.
           #     Titles, key counts and page length cannot see any of that.
-          python3 _build/check_untranslated.py || fail=1
+          # Run against _stage like every other check. It used to run against the
+          # repo root, so it was auditing the source tree rather than the artefact
+          # actually being deployed - green here would not have proved green there.
+          ( cd _stage && python3 ../_build/check_untranslated.py ) || fail=1
 
           [ "$fail" -eq 0 ] || exit 1
           echo "  all preflight checks passed"

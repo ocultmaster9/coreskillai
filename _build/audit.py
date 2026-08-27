@@ -65,12 +65,42 @@ def passages(lang):
     m=re.search(r'\n  %s:\[(.*?)\n  \]'%lang,b,re.S)
     return len(re.findall(r'"',m.group(1)))//2 if m else 0
 
+def _obj_body(s, name):
+    """Body of `name = { ... }`, located by BRACE MATCHING.
+
+    The old version used a lazy regex up to the next '\n};'. When ITEMS_I18N
+    was an empty `{}` on one line that regex sailed straight past it and
+    captured the rest of the file, so it found the language banks that had
+    been mis-filed inside TRAIT_INFO/BRANCHES and happily reported a full
+    50/28 for every market. Every non-English Big Five and EQ test was
+    serving ENGLISH statements while this audit called all 34 markets
+    complete. Match braces; never trust a lazy scan to find an object end.
+    """
+    i = s.find(name)
+    if i < 0: return ''
+    b = s.find('{', i)
+    if b < 0: return ''
+    depth = 0; j = b; instr = None; n = len(s)
+    while j < n:
+        c = s[j]
+        if instr:
+            if c == '\\': j += 2; continue
+            if c == instr: instr = None
+        elif c in '"\'`': instr = c
+        elif c in '{[': depth += 1
+        elif c in '}]':
+            depth -= 1
+            if depth == 0: return s[b+1:j]
+        j += 1
+    return ''
+
+
 def items(fname, lang):
     """How many statements exist for this language in the ITEMS_I18N bank."""
     s=io.open('js/tests/%s.js'%fname,encoding='utf-8').read()
-    m=re.search(r'ITEMS_I18N = \{(.*?)\n\};', s, re.S)
-    if not m: return 0
-    b=re.search(r'\n?\s*%s:\s*\[(.*?)\n?\s*\]'%lang, m.group(1), re.S)
+    body=_obj_body(s, 'ITEMS_I18N')
+    if not body.strip(): return 0
+    b=re.search(r'\n?\s*%s:\s*\[(.*?)\n?\s*\]'%lang, body, re.S)
     return len(re.findall(r'"', b.group(1)))//2 if b else 0
 
 def stroop(lang):

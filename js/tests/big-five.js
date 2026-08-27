@@ -60,25 +60,7 @@ const ITEMS_EN=[
   ["Am full of ideas","O",false],
 ];
 
-const ITEMS_I18N = {};
-
-function itemsFor(lang){
-  const t = ITEMS_I18N[lang];
-  if (!t) return ITEMS_EN;
-  // keep the trait/branch coding from the English master, swap only the text
-  return ITEMS_EN.map((it, i) => [t[i] != null ? t[i] : it[0], it[1], it[2]]);
-}
-let ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
-document.addEventListener('DOMContentLoaded', () => {
-  ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
-});
-
-const TRAIT_INFO={
-  E:{name:'Extraversion',       color:'#f59e0b',low:'Reserved & reflective — you gain energy from solitude and deep one-on-one connections.',     high:'Outgoing & energized by social interaction. You thrive in groups and love being the center of attention.'},
-  A:{name:'Agreeableness',      color:'#10b981',low:'Analytical and objective — you prioritize facts over feelings and can be bluntly honest.',   high:'Warm, cooperative, and empathetic — you value harmony and the wellbeing of others.'},
-  C:{name:'Conscientiousness',  color:'#6366f1',low:'Flexible and spontaneous — you adapt on the fly rather than following strict plans.',         high:'Organized, reliable, and goal-driven. You take your commitments seriously.'},
-  N:{name:'Neuroticism',        color:'#ef4444',low:'Emotionally stable and resilient — you stay calm under pressure and recover quickly from stress.', high:'More emotionally reactive — you experience stress, anxiety, and mood shifts more intensely.'},
-  O:{name:'Openness',           color:'#8b5cf6',low:'Practical and conventional — you prefer established methods and concrete, familiar ideas.',    high:'Curious, imaginative, and open to new experiences. You love exploring ideas and aesthetics.'},
+const ITEMS_I18N = {
   de: [
     "Bin der Mittelpunkt jeder Feier",
     "Kümmere mich wenig um andere",
@@ -1794,7 +1776,26 @@ const TRAIT_INFO={
     "新しい経験や旅に惹かれる。",
     "人の成功を心から喜べる。",
     "人前で話すときも落ち着いていられる。",
-  ],
+  ]
+};
+
+function itemsFor(lang){
+  const t = ITEMS_I18N[lang];
+  if (!t) return ITEMS_EN;
+  // keep the trait/branch coding from the English master, swap only the text
+  return ITEMS_EN.map((it, i) => [t[i] != null ? t[i] : it[0], it[1], it[2]]);
+}
+let ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
+document.addEventListener('DOMContentLoaded', () => {
+  ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
+});
+
+const TRAIT_INFO={
+  E:{name:'Extraversion',       color:'#f59e0b',low:'Reserved & reflective — you gain energy from solitude and deep one-on-one connections.',     high:'Outgoing & energized by social interaction. You thrive in groups and love being the center of attention.'},
+  A:{name:'Agreeableness',      color:'#10b981',low:'Analytical and objective — you prioritize facts over feelings and can be bluntly honest.',   high:'Warm, cooperative, and empathetic — you value harmony and the wellbeing of others.'},
+  C:{name:'Conscientiousness',  color:'#6366f1',low:'Flexible and spontaneous — you adapt on the fly rather than following strict plans.',         high:'Organized, reliable, and goal-driven. You take your commitments seriously.'},
+  N:{name:'Neuroticism',        color:'#ef4444',low:'Emotionally stable and resilient — you stay calm under pressure and recover quickly from stress.', high:'More emotionally reactive — you experience stress, anxiety, and mood shifts more intensely.'},
+  O:{name:'Openness',           color:'#8b5cf6',low:'Practical and conventional — you prefer established methods and concrete, familiar ideas.',    high:'Curious, imaginative, and open to new experiences. You love exploring ideas and aesthetics.'}
 };
 
 const TRAIT_ORDER=['O','C','E','A','N'];
@@ -1817,7 +1818,7 @@ function renderShell(){
   <div class="test-card-ui">
     <div class="test-ui-header">
       <span class="test-ui-title">🪄 Big Five Personality</span>
-      <span id="b5-counter" class="q-counter">Question 1 of ${ITEMS.length}</span>
+      <span id="b5-counter" class="q-counter">Q1 / ${ITEMS.length}</span>
     </div>
     <div class="test-ui-body" id="b5-body">
       <p style="color:var(--text-2)">${_t('b5_start_desc',"The most accurate personality model in psychology, used by researchers worldwide.")}</p>
@@ -1832,9 +1833,9 @@ function renderShell(){
 
 function renderQ(){
   const [text,,] = ITEMS[current];
-  document.getElementById('b5-counter').textContent=`Question ${current+1} of ${ITEMS.length}`;
+  document.getElementById('b5-counter').textContent=`Q${current+1} / ${ITEMS.length}`;
   document.getElementById('b5-prog').style.width=`${(current/ITEMS.length)*100}%`;
-  const labels=[['1','Strongly\nDisagree'],['2','Disagree'],['3','Neutral'],['4','Agree'],['5','Strongly\nAgree']];
+  const labels=[1,2,3,4,5].map(n=>[String(n), _t('likert_'+n)]);
   const btns=labels.map(([n,l],i)=>`
     <button class="likert-btn" onclick="B5Test.answer(${i+1})">
       <span class="likert-num">${n}</span>

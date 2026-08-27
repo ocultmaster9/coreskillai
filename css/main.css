@@ -262,6 +262,16 @@ button { cursor: pointer; font-family: inherit; }
   max-width: 900px; margin: 32px auto; padding: 0 24px;
   display: flex; justify-content: center;
 }
+/* The <ins> is an empty block with no intrinsic width. As a flex item the
+   column holding it therefore shrank to its widest real content - the
+   "Advertisement" label, about 103px - so on a 1440px desktop AdSense
+   rejected every unit with "No slot size for availableWidth=93" and the
+   homepage served no ads at all. Slot/push pairing was perfect the whole
+   time, which is why preflight never saw it: this is a LAYOUT failure.
+   calculator-free.com, the approved site, has no flex wrapper and works.
+   Let the column fill the wrapper and force the ins to full width. */
+.ad-wrap > div { flex: 1 1 100%; min-width: 0; }
+.ad-wrap .adsbygoogle { display: block; width: 100%; }
 .ad-label {
   font-size: .7rem; color: var(--text-3); text-align: center;
   text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;

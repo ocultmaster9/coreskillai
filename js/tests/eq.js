@@ -40,23 +40,7 @@ const ITEMS_EN=[
   ["I feel overwhelmed by strong negative emotions and can't manage them well.","M",true],
 ];
 
-const ITEMS_I18N = {};
-
-function itemsFor(lang){
-  const t = ITEMS_I18N[lang];
-  if (!t) return ITEMS_EN;
-  // keep the trait/branch coding from the English master, swap only the text
-  return ITEMS_EN.map((it, i) => [t[i] != null ? t[i] : it[0], it[1], it[2]]);
-}
-let ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
-document.addEventListener('DOMContentLoaded', () => {
-  ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
-});
-const BRANCHES={
-  P:{name:'Perceiving Emotions', color:'#f97316', desc:'Your ability to accurately read emotions in faces, voices, and surroundings.'},
-  U:{name:'Using Emotions',      color:'#f59e0b', desc:'How well you leverage emotional states to enhance thinking and creativity.'},
-  N:{name:'Understanding Emotions', color:'#6366f1', desc:'Your knowledge of emotional dynamics — how they blend, evolve, and influence behavior.'},
-  M:{name:'Managing Emotions',   color:'#10b981', desc:'Your capacity to regulate your own emotions and positively influence others.'},
+const ITEMS_I18N = {
   de: [
     "Ich erkenne an einem Gesicht, wie sich jemand fühlt.",
     "Ich merke, wenn Freunde bedrückt sind, auch wenn sie nichts sagen.",
@@ -1046,7 +1030,24 @@ const BRANCHES={
     "張りつめた場をやわらげられる。",
     "決めるときに相手の気持ちを考えに入れる。",
     "問題を別の角度から見られるよう手助けできる。",
-  ],
+  ]
+};
+
+function itemsFor(lang){
+  const t = ITEMS_I18N[lang];
+  if (!t) return ITEMS_EN;
+  // keep the trait/branch coding from the English master, swap only the text
+  return ITEMS_EN.map((it, i) => [t[i] != null ? t[i] : it[0], it[1], it[2]]);
+}
+let ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
+document.addEventListener('DOMContentLoaded', () => {
+  ITEMS = itemsFor(window.I18n?.lang || window.PAGE_LANG || 'en');
+});
+const BRANCHES={
+  P:{name:'Perceiving Emotions', color:'#f97316', desc:'Your ability to accurately read emotions in faces, voices, and surroundings.'},
+  U:{name:'Using Emotions',      color:'#f59e0b', desc:'How well you leverage emotional states to enhance thinking and creativity.'},
+  N:{name:'Understanding Emotions', color:'#6366f1', desc:'Your knowledge of emotional dynamics — how they blend, evolve, and influence behavior.'},
+  M:{name:'Managing Emotions',   color:'#10b981', desc:'Your capacity to regulate your own emotions and positively influence others.'}
 };
 const ORDER=['P','U','N','M'];
 
@@ -1091,7 +1092,7 @@ function renderShell(){
   <div class="test-card-ui">
     <div class="test-ui-header">
       <span class="test-ui-title">❤️ Emotional Intelligence</span>
-      <span id="eq-counter" class="q-counter">Question 1 of ${ITEMS.length}</span>
+      <span id="eq-counter" class="q-counter">Q1 / ${ITEMS.length}</span>
     </div>
     <div class="test-ui-body" id="eq-body">
       <p style="color:var(--text-2)">${_t('eq_start_desc',"Discover your EQ across all 4 dimensions of emotional intelligence.")}</p>
@@ -1106,9 +1107,9 @@ function renderShell(){
 
 function renderQ(){
   const [text,,rev]=ITEMS[current];
-  document.getElementById('eq-counter').textContent=`Question ${current+1} of ${ITEMS.length}`;
+  document.getElementById('eq-counter').textContent=`Q${current+1} / ${ITEMS.length}`;
   document.getElementById('eq-prog').style.width=`${(current/ITEMS.length)*100}%`;
-  const labels=[['1','Strongly\nDisagree'],['2','Disagree'],['3','Neutral'],['4','Agree'],['5','Strongly\nAgree']];
+  const labels=[1,2,3,4,5].map(n=>[String(n), _t('likert_'+n)]);
   const btns=labels.map(([n,l],i)=>`<button class="likert-btn" onclick="EQTest.answer(${i+1})"><span class="likert-num">${n}</span><span class="likert-label">${l.replace('\n','<br>')}</span></button>`).join('');
   document.getElementById('eq-body').innerHTML=`
     <p class="q-counter">Q${current+1} / ${ITEMS.length}</p>
