@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lt = {
+    tests_badge:"9 nemokami testai",
+    home_sci_body:"Kiekvienas iš devynių CoreSkillAI testų kilęs iš priemonių, iš tiesų naudojamų psichologijos tyrimuose: intelekto testas priklauso matricų samprotavimo tradicijai, atminties testas įgyvendina klasikinę skaitmenų apimtį, dėmesio testas naudoja devyniasdešimties metų senumo Stroopo efektą, o asmenybės testas remiasi moksle vyraujančiu Didžiojo penketo modeliu. Kiekviename testo puslapyje paaiškinama, kokiu mokslu remiasi užduotis, kaip skaityti savo rezultatą ir ką tyrimai sako apie jo gerinimą. Visi testai veikia vien naršyklėje, trunka nuo 2 iki 20 minučių ir lygina rezultatą su pasaulio procentiliais — nemokamai, anonimiškai ir be paskyros.",
+    home_sci_title:"Kodėl verta įvertinti savo pažintinius gebėjimus?",
+    step4_desc:"Vienu paspaudimu pasidalyk rezultatu — mesk iššūkį draugams.",
+    step4_title:"Pasidalyti",
+    why1_desc:"Remiasi recenzuojamais psichologijos tyrimais. Tos pačios priemonės kaip akademiniuose tyrimuose.",
+    why1_title:"Moksliškai patvirtinta",
+    why2_desc:"Pamatyk tiksliai, kur esi tarp milijonų įvairaus amžiaus žmonių iš viso pasaulio.",
+    why2_title:"Pasaulinis palyginimas",
+    why3_desc:"Jokios paskyros. Jokio sekimo. Rezultatai lieka tavo įrenginyje. Visada nemokamai.",
+    why3_title:"100% anonimiškai",
+    why4_desc:"Pritaikyta kompiuteriui ir telefonui. Testus atlik bet kur ir bet kada.",
+    why4_title:"Veikia visur",
+    why_sub:"Kiekvienas testas remiasi patvirtintais moksliniais tyrimais, tais pačiais, kuriuos naudoja psichologai ir tyrėjai visame pasaulyje.",
+    why_title:"Kodėl būtent šie testai?",
+    card_min:"min.",
+    card_take:"Atlikti testą",
     b5_how0:"{n} trumpi teiginiai. Įvertinkite, kaip tiksliai kiekvienas jus apibūdina.",
     eq_how0:"{n} teiginiai keturiose emocinio intelekto srityse.",
     b5_dominant:"Vyraujantis bruožas:",

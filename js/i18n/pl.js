@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pl = {
+    tests_badge:"9 darmowych testów",
+    home_sci_body:"Każdy z dziewięciu testów na CoreSkillAI wywodzi się z narzędzi realnie stosowanych w badaniach psychologicznych: test IQ należy do tradycji rozumowania na macierzach, test pamięci realizuje klasyczny paradygmat rozpiętości cyfr, test uwagi wykorzystuje liczący 90 lat efekt Stroopa, a test osobowości opiera się na dominującym naukowo modelu Wielkiej Piątki. Każda strona testu wyjaśnia naukę stojącą za zadaniem, jak odczytać swój wynik i co badania mówią o jego poprawie. Wszystkie testy działają w całości w przeglądarce, trwają od 2 do 20 minut i porównują wynik z percentylami światowymi — bezpłatnie, anonimowo i bez zakładania konta.",
+    home_sci_title:"Po co badać własne zdolności poznawcze?",
+    step4_desc:"Jedno kliknięcie, by pokazać wynik — rzuć wyzwanie znajomym.",
+    step4_title:"Udostępnij",
+    why1_desc:"Oparte na recenzowanych badaniach psychologicznych. Te same narzędzia, co w badaniach akademickich.",
+    why1_title:"Potwierdzone naukowo",
+    why2_desc:"Zobacz dokładnie, jak wypadasz na tle milionów osób w każdym wieku i z każdego kraju.",
+    why2_title:"Porównanie światowe",
+    why3_desc:"Bez konta. Bez śledzenia. Twoje wyniki zostają na Twoim urządzeniu. Zawsze za darmo.",
+    why3_title:"100% anonimowo",
+    why4_desc:"Zoptymalizowane pod komputer i telefon. Rozwiązuj testy gdzie i kiedy chcesz.",
+    why4_title:"Działa wszędzie",
+    why_sub:"Każdy test opiera się na zweryfikowanych badaniach naukowych, z których korzystają psychologowie i badacze na całym świecie.",
+    why_title:"Dlaczego akurat te testy?",
+    card_min:"min",
+    card_take:"Rozwiąż test",
     b5_dominant:"Cecha dominująca:",
     b5_how0:"{n} krótkich stwierdzeń. Oceń, jak trafnie każde Cię opisuje.",
     b5_how1:"Nie ma odpowiedzi dobrych ani złych: odpowiadaj szczerze, żeby wynik był wiarygodny.",

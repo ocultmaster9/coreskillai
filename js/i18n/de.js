@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.de = {
+    tests_badge:"9 kostenlose Tests verfügbar",
+    home_sci_body:"Jeder der neun Tests auf CoreSkillAI ist von Verfahren abgeleitet, die in der psychologischen Forschung tatsächlich eingesetzt werden: Der IQ-Test steht in der Tradition des Matrizen-Schließens, der Gedächtnistest setzt die klassische Zahlenspanne um, der Konzentrationstest nutzt den 90 Jahre alten Stroop-Effekt, und der Persönlichkeitstest folgt dem wissenschaftlich vorherrschenden Fünf-Faktoren-Modell. Jede Testseite erklärt die Wissenschaft hinter der Aufgabe, wie du dein Ergebnis einordnest und was die Forschung über Verbesserung sagt. Alle Tests laufen vollständig im Browser, dauern zwischen 2 und 20 Minuten und vergleichen dein Ergebnis mit weltweiten Perzentilen — kostenlos, anonym und ohne Konto.",
+    home_sci_title:"Warum die eigenen kognitiven Fähigkeiten testen?",
+    step4_desc:"Ein Klick, um dein Ergebnis zu teilen — zeig es deinen Freunden.",
+    step4_title:"Teilen",
+    why1_desc:"Auf Grundlage begutachteter psychologischer Forschung. Dieselben Verfahren wie in akademischen Studien.",
+    why1_title:"Wissenschaftlich validiert",
+    why2_desc:"Sieh genau, wo du im Vergleich zu Millionen Menschen aller Altersgruppen und Länder stehst.",
+    why2_title:"Weltweiter Vergleich",
+    why3_desc:"Kein Konto. Kein Tracking. Deine Ergebnisse bleiben auf deinem Gerät. Immer kostenlos.",
+    why3_title:"100% anonym",
+    why4_desc:"Für Desktop und Mobilgeräte optimiert. Mach deine Tests überall und jederzeit.",
+    why4_title:"Überall nutzbar",
+    why_sub:"Jeder Test beruht auf validierter wissenschaftlicher Forschung, wie sie Psychologen und Forschende weltweit verwenden.",
+    why_title:"Warum diese Tests?",
+    card_min:"Min.",
+    card_take:"Test starten",
     b5_how0:"{n} kurze Aussagen. Bewerte, wie genau jede auf dich zutrifft.",
     eq_how0:"{n} Aussagen aus den vier Dimensionen emotionaler Intelligenz.",
     b5_dominant:"Dominantes Merkmal:",

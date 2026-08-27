@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fr = {
+    tests_badge:"9 tests gratuits disponibles",
+    home_sci_body:"Chacun des neuf tests de CoreSkillAI est adapté d'instruments réellement employés en recherche psychologique : le test de QI s'inscrit dans la tradition du raisonnement sur matrices, le test de mémoire reprend le paradigme classique de l'empan de chiffres, le test d'attention utilise l'effet Stroop, vieux de 90 ans, et le test de personnalité suit le modèle des Big Five, dominant scientifiquement. Chaque page explique la science derrière la tâche, comment interpréter votre score et ce que dit la recherche sur son amélioration. Tous les tests s'exécutent entièrement dans votre navigateur, durent entre 2 et 20 minutes et comparent vos résultats à des percentiles mondiaux — gratuitement, anonymement et sans compte.",
+    home_sci_title:"Pourquoi évaluer ses capacités cognitives ?",
+    step4_desc:"Un clic pour partager votre score — défiez vos amis.",
+    step4_title:"Partager",
+    why1_desc:"Fondé sur des recherches en psychologie évaluées par les pairs. Les mêmes outils que dans les études universitaires.",
+    why1_title:"Validé scientifiquement",
+    why2_desc:"Voyez précisément où vous vous situez face à des millions de personnes, tous âges et tous pays confondus.",
+    why2_title:"Comparaison mondiale",
+    why3_desc:"Pas de compte. Pas de suivi. Vos résultats restent sur votre appareil. Toujours gratuit.",
+    why3_title:"100% anonyme",
+    why4_desc:"Optimisé pour ordinateur et mobile. Faites vos tests où et quand vous voulez.",
+    why4_title:"Fonctionne partout",
+    why_sub:"Chaque test repose sur des recherches scientifiques validées, celles qu'utilisent psychologues et chercheurs dans le monde entier.",
+    why_title:"Pourquoi ces tests ?",
+    card_min:"min",
+    card_take:"Faire le test",
     b5_dominant:"Trait dominant :",
     b5_how0:"{n} affirmations courtes. Évaluez à quel point chacune vous décrit.",
     b5_how1:"Il n'y a ni bonne ni mauvaise réponse : répondez honnêtement pour un résultat fidèle.",

@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.it = {
+    tests_badge:"9 test gratuiti disponibili",
+    home_sci_body:"Ognuno dei nove test di CoreSkillAI è adattato da strumenti realmente usati nella ricerca psicologica: il test del QI si inserisce nella tradizione del ragionamento per matrici, quello di memoria applica il classico paradigma dell'ampiezza di cifre, quello di attenzione usa l'effetto Stroop, vecchio di 90 anni, e quello di personalità segue il modello dei Big Five, dominante nella scienza. Ogni pagina spiega la scienza dietro il compito, come interpretare il punteggio e cosa dice la ricerca sul migliorarlo. Tutti i test girano interamente nel browser, durano fra 2 e 20 minuti e confrontano i risultati con percentili mondiali: gratis, anonimo e senza account.",
+    home_sci_title:"Perché misurare le proprie capacità cognitive?",
+    step4_desc:"Un clic per condividere il tuo punteggio — sfida i tuoi amici.",
+    step4_title:"Condividi",
+    why1_desc:"Basato su ricerca psicologica sottoposta a revisione paritaria. Gli stessi strumenti impiegati negli studi accademici.",
+    why1_title:"Validato scientificamente",
+    why2_desc:"Scopri esattamente dove ti collochi rispetto a milioni di persone di ogni età e paese.",
+    why2_title:"Confronto mondiale",
+    why3_desc:"Nessun account. Nessun tracciamento. I risultati restano sul tuo dispositivo. Sempre gratis.",
+    why3_title:"100% anonimo",
+    why4_desc:"Ottimizzato per computer e cellulare. Fai i test dove e quando vuoi.",
+    why4_title:"Funziona ovunque",
+    why_sub:"Ogni test si basa su ricerca scientifica validata, la stessa usata da psicologi e ricercatori in tutto il mondo.",
+    why_title:"Perché questi test?",
+    card_min:"min",
+    card_take:"Fai il test",
     b5_dominant:"Tratto dominante:",
     b5_how0:"{n} affermazioni brevi. Valuta quanto ciascuna ti descrive.",
     b5_how1:"Non ci sono risposte giuste o sbagliate: rispondi con sincerità per un risultato fedele.",

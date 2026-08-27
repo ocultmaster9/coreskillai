@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ro = {
+    tests_badge:"9 teste gratuite disponibile",
+    home_sci_body:"Fiecare dintre cele nouă teste de pe CoreSkillAI este adaptat după instrumente folosite cu adevărat în cercetarea psihologică: testul de IQ se înscrie în tradiția raționamentului pe matrice, cel de memorie aplică paradigma clasică a seriei de cifre, cel de atenție folosește efectul Stroop, vechi de 90 de ani, iar cel de personalitate urmează modelul Big Five, dominant științific. Fiecare pagină explică știința din spatele sarcinii, cum să-ți interpretezi rezultatul și ce spune cercetarea despre îmbunătățirea lui. Toate testele rulează integral în browser, durează între 2 și 20 de minute și îți compară rezultatul cu percentile mondiale — gratuit, anonim și fără cont.",
+    home_sci_title:"De ce să-ți măsori abilitățile cognitive?",
+    step4_desc:"Un clic ca să-ți împărtășești rezultatul — provoacă-ți prietenii.",
+    step4_title:"Distribuie",
+    why1_desc:"Bazat pe cercetare psihologică evaluată de specialiști. Aceleași instrumente ca în studiile academice.",
+    why1_title:"Validat științific",
+    why2_desc:"Vezi exact unde te situezi față de milioane de oameni de toate vârstele și din toate țările.",
+    why2_title:"Comparație mondială",
+    why3_desc:"Fără cont. Fără urmărire. Rezultatele rămân pe dispozitivul tău. Întotdeauna gratuit.",
+    why3_title:"100% anonim",
+    why4_desc:"Optimizat pentru computer și telefon. Dă testele oriunde și oricând.",
+    why4_title:"Funcționează oriunde",
+    why_sub:"Fiecare test se bazează pe cercetare științifică validată, aceeași folosită de psihologi și cercetători din întreaga lume.",
+    why_title:"De ce aceste teste?",
+    card_min:"min",
+    card_take:"Începe testul",
     b5_dominant:"Trăsătură dominantă:",
     b5_how0:"{n} afirmații scurte. Evaluează cât de exact te descrie fiecare.",
     b5_how1:"Nu există răspunsuri corecte sau greșite: răspunde sincer pentru un rezultat fidel.",

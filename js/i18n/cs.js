@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.cs = {
+    tests_badge:"9 testů zdarma",
+    home_sci_body:"Každý z devíti testů na CoreSkillAI vychází z nástrojů, které se skutečně používají v psychologickém výzkumu: IQ test patří do tradice uvažování nad maticemi, paměťový test realizuje klasické rozpětí číslic, test pozornosti využívá devadesát let starý Stroopův efekt a osobnostní test se drží vědecky převládajícího modelu Velké pětky. Každá stránka testu vysvětluje vědu za úlohou, jak číst svůj výsledek a co výzkum říká o jeho zlepšování. Všechny testy běží zcela v prohlížeči, trvají 2 až 20 minut a porovnávají výsledek se světovými percentily — zdarma, anonymně a bez účtu.",
+    home_sci_title:"Proč měřit vlastní poznávací schopnosti?",
+    step4_desc:"Jedním kliknutím sdílíš výsledek — vyzvi kamarády.",
+    step4_title:"Sdílet",
+    why1_desc:"Vychází z recenzovaného psychologického výzkumu. Stejné nástroje jako v akademických studiích.",
+    why1_title:"Vědecky ověřeno",
+    why2_desc:"Zjisti přesně, kde stojíš vedle milionů lidí všech věkových skupin a zemí.",
+    why2_title:"Světové srovnání",
+    why3_desc:"Žádný účet. Žádné sledování. Výsledky zůstávají ve tvém zařízení. Vždy zdarma.",
+    why3_title:"100% anonymně",
+    why4_desc:"Optimalizováno pro počítač i mobil. Testy si udělej kdekoli a kdykoli.",
+    why4_title:"Funguje všude",
+    why_sub:"Každý test stojí na ověřeném vědeckém výzkumu, tom samém, který používají psychologové a badatelé po celém světě.",
+    why_title:"Proč právě tyto testy?",
+    card_min:"min",
+    card_take:"Spustit test",
     b5_how0:"{n} krátkých výroků. Ohodnoťte, jak přesně vás každý popisuje.",
     eq_how0:"{n} výroků ve čtyřech dimenzích emoční inteligence.",
     b5_dominant:"Vedoucí rys:",

@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.nl = {
+    tests_badge:"9 gratis tests beschikbaar",
+    home_sci_body:"Elk van de negen tests op CoreSkillAI is afgeleid van instrumenten die daadwerkelijk in psychologisch onderzoek worden gebruikt: de IQ-test staat in de traditie van matrixredeneren, de geheugentest voert het klassieke cijferreeksparadigma uit, de aandachtstest gebruikt het 90 jaar oude Stroop-effect en de persoonlijkheidstest volgt het wetenschappelijk dominante Big Five-model. Elke testpagina legt uit welke wetenschap achter de taak schuilt, hoe je je score moet lezen en wat het onderzoek zegt over verbeteren. Alle tests draaien volledig in je browser, duren tussen 2 en 20 minuten en vergelijken je resultaat met wereldwijde percentielen — gratis, anoniem en zonder account.",
+    home_sci_title:"Waarom je cognitieve vaardigheden testen?",
+    step4_desc:"Eén klik om je score te delen — daag je vrienden uit.",
+    step4_title:"Delen",
+    why1_desc:"Gebaseerd op peer-reviewed psychologisch onderzoek. Dezelfde instrumenten als in academische studies.",
+    why1_title:"Wetenschappelijk gevalideerd",
+    why2_desc:"Zie precies waar je staat ten opzichte van miljoenen mensen van alle leeftijden en landen.",
+    why2_title:"Wereldwijde vergelijking",
+    why3_desc:"Geen account. Geen tracking. Je resultaten blijven op je apparaat. Altijd gratis.",
+    why3_title:"100% anoniem",
+    why4_desc:"Geoptimaliseerd voor desktop en mobiel. Doe je tests waar en wanneer je wilt.",
+    why4_title:"Werkt overal",
+    why_sub:"Elke test berust op gevalideerd wetenschappelijk onderzoek, hetzelfde dat psychologen en onderzoekers wereldwijd gebruiken.",
+    why_title:"Waarom deze tests?",
+    card_min:"min",
+    card_take:"Doe de test",
     b5_dominant:"Dominante trek:",
     b5_how0:"{n} korte uitspraken. Beoordeel hoe goed elke uitspraak bij je past.",
     b5_how1:"Er zijn geen goede of foute antwoorden: antwoord eerlijk voor een betrouwbaar resultaat.",

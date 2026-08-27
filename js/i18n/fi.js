@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fi = {
+    tests_badge:"9 maksutonta testiä",
+    home_sci_body:"Jokainen CoreSkillAI:n yhdeksästä testistä on johdettu välineistä, joita todella käytetään psykologisessa tutkimuksessa: älykkyystesti nojaa matriisipäättelyn perinteeseen, muistitesti toteuttaa klassisen numerosarjan, keskittymistesti hyödyntää 90 vuotta vanhaa Stroopin ilmiötä ja persoonallisuustesti seuraa tieteessä vallitsevaa viiden suuren mallia. Jokainen testisivu selittää tehtävän taustalla olevan tieteen, miten tulosta luetaan ja mitä tutkimus sanoo sen parantamisesta. Kaikki testit toimivat kokonaan selaimessa, kestävät 2–20 minuuttia ja vertaavat tulostasi maailmanlaajuisiin prosenttipisteisiin — maksutta, nimettömästi ja ilman tiliä.",
+    home_sci_title:"Miksi mitata omia kognitiivisia kykyjä?",
+    step4_desc:"Yhdellä napsautuksella jaat tuloksesi — haasta ystäväsi.",
+    step4_title:"Jaa",
+    why1_desc:"Perustuu vertaisarvioituun psykologiseen tutkimukseen. Samat menetelmät kuin akateemisissa tutkimuksissa.",
+    why1_title:"Tieteellisesti validoitu",
+    why2_desc:"Näet tarkalleen, missä olet suhteessa miljooniin ihmisiin kaikista ikäryhmistä ja maista.",
+    why2_title:"Maailmanlaajuinen vertailu",
+    why3_desc:"Ei tiliä. Ei seurantaa. Tuloksesi jäävät laitteellesi. Aina maksuton.",
+    why3_title:"100% nimetön",
+    why4_desc:"Optimoitu tietokoneelle ja puhelimelle. Tee testit missä ja milloin haluat.",
+    why4_title:"Toimii kaikkialla",
+    why_sub:"Jokainen testi perustuu validoituun tieteelliseen tutkimukseen, samaan jota psykologit ja tutkijat käyttävät kaikkialla maailmassa.",
+    why_title:"Miksi juuri nämä testit?",
+    card_min:"min",
+    card_take:"Tee testi",
     b5_dominant:"Vahvin piirre:",
     b5_how0:"{n} lyhyttä väittämää. Arvioi, kuinka tarkasti kukin kuvaa sinua.",
     b5_how1:"Oikeita tai vääriä vastauksia ei ole: vastaa rehellisesti, niin tulos on todenmukainen.",

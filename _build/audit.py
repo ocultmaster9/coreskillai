@@ -78,6 +78,31 @@ def stroop(lang):
     b=re.search(r'const WORDS=\{(.*?)\n\};', s, re.S).group(1)
     return len(re.findall(r'%s:\s*[\'"]'%lang, b))
 
+
+def thin_count(ratios):
+    """Flag pages that are short FOR THIS LANGUAGE.
+
+    Comparing raw character counts against English is invalid across scripts.
+    Japanese renders the same content in ~73% of the characters English needs,
+    so a flat "80% of English" rule marked all nine Japanese test pages thin
+    while they were in fact complete. This is the same mistake that once
+    flagged Finnish - fixed then by switching words to characters - but
+    characters are just as script-dependent as words.
+
+    So: take this language's own median ratio to English as its natural
+    density and flag only pages falling well below that. No per-language
+    constants, and it works for any script added later. The absolute floor
+    still catches a language that is genuinely under-written everywhere.
+    """
+    if not ratios:
+        return 0
+    vals = sorted(r for _, r in ratios)
+    med = vals[len(vals) // 2]
+    if med < 0.45:                 # every page short => genuinely thin, not dense
+        return len(ratios)
+    return sum(1 for _, r in ratios if r < med * 0.80)
+
+
 def audit():
     EN=strings('en'); nkeys=len(EN)
     en_titles=set()
@@ -104,7 +129,7 @@ def audit():
         T=strings(lang)
         keys_ok = len(T)==nkeys and not (set(EN)-set(T))
         pages_ok = sum(1 for pg in PAGES if os.path.isfile(path_for(lang,pg)))
-        eng_title=0; sci_missing=0; sci_english=0; thin=0
+        eng_title=0; sci_missing=0; sci_english=0; thin=0; ratios=[]
         for pg in PAGES:
             f=path_for(lang,pg)
             if not os.path.isfile(f): continue
@@ -128,10 +153,10 @@ def audit():
                 # 2,179 characters - MORE text, 22% fewer words. Characters are
                 # comparable across alphabetic scripts; words are not.
                 en_chars = EN_LEN.get(pg, 0)
-                if en_chars and len(body_text(h)) < en_chars * 0.80: thin+=1
+                if en_chars: ratios.append((pg, len(body_text(h)) / float(en_chars)))
         rows.append(dict(lang=lang, keys=len(T), keys_ok=keys_ok, pages=pages_ok,
                          eng_title=eng_title, sci_missing=sci_missing, sci_english=sci_english,
-                         thin=thin, passages=passages(lang),
+                         thin=thin_count(ratios), passages=passages(lang),
                          stroop=stroop(lang), b5=items('big-five',lang), eq=items('eq',lang)))
     return rows, nkeys
 

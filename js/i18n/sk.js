@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sk = {
+    tests_badge:"9 testov zadarmo",
+    home_sci_body:"Každý z deviatich testov na CoreSkillAI vychádza z nástrojov, ktoré sa naozaj používajú v psychologickom výskume: IQ test patrí do tradície uvažovania nad maticami, pamäťový test realizuje klasické rozpätie číslic, test pozornosti využíva deväťdesiat rokov starý Stroopov efekt a osobnostný test sa drží vedecky prevládajúceho modelu Veľkej päťky. Každá stránka testu vysvetľuje vedu za úlohou, ako čítať svoj výsledok a čo výskum hovorí o jeho zlepšovaní. Všetky testy bežia úplne v prehliadači, trvajú 2 až 20 minút a porovnávajú výsledok so svetovými percentilmi — zadarmo, anonymne a bez účtu.",
+    home_sci_title:"Prečo merať vlastné poznávacie schopnosti?",
+    step4_desc:"Jedným kliknutím zdieľaš výsledok — vyzvi kamarátov.",
+    step4_title:"Zdieľať",
+    why1_desc:"Vychádza z recenzovaného psychologického výskumu. Rovnaké nástroje ako v akademických štúdiách.",
+    why1_title:"Vedecky overené",
+    why2_desc:"Zisti presne, kde stojíš vedľa miliónov ľudí všetkých vekových skupín a krajín.",
+    why2_title:"Svetové porovnanie",
+    why3_desc:"Žiadny účet. Žiadne sledovanie. Výsledky zostávajú v tvojom zariadení. Vždy zadarmo.",
+    why3_title:"100% anonymne",
+    why4_desc:"Optimalizované pre počítač aj mobil. Testy si sprav kdekoľvek a kedykoľvek.",
+    why4_title:"Funguje všade",
+    why_sub:"Každý test stojí na overenom vedeckom výskume, tom istom, ktorý používajú psychológovia a bádatelia po celom svete.",
+    why_title:"Prečo práve tieto testy?",
+    card_min:"min",
+    card_take:"Spustiť test",
     b5_how0:"{n} krátkych výrokov. Ohodnoťte, ako presne vás každý opisuje.",
     eq_how0:"{n} výrokov v štyroch dimenziách emocionálnej inteligencie.",
     b5_dominant:"Vedúca črta:",

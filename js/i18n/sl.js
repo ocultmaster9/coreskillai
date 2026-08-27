@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sl = {
+    tests_badge:"9 brezplačnih testov",
+    home_sci_body:"Vsak od devetih testov na CoreSkillAI izhaja iz orodij, ki se resnično uporabljajo v psiholoških raziskavah: test inteligentnosti sodi v tradicijo sklepanja z matrikami, spominski test uresničuje klasični razpon števk, test pozornosti uporablja devetdeset let star Stroopov učinek, osebnostni test pa sledi znanstveno prevladujočemu modelu Velikih pet. Vsaka stran testa pojasni znanost za nalogo, kako brati svoj rezultat in kaj raziskave pravijo o njegovem izboljšanju. Vsi testi tečejo v celoti v brskalniku, trajajo od 2 do 20 minut in primerjajo rezultat s svetovnimi percentili — brezplačno, anonimno in brez računa.",
+    home_sci_title:"Zakaj meriti lastne spoznavne sposobnosti?",
+    step4_desc:"En klik za delitev rezultata — izzovi prijatelje.",
+    step4_title:"Deli",
+    why1_desc:"Temelji na recenziranih psiholoških raziskavah. Ista orodja kot v akademskih študijah.",
+    why1_title:"Znanstveno preverjeno",
+    why2_desc:"Poglej natanko, kje si v primerjavi z milijoni ljudi vseh starosti in iz vseh držav.",
+    why2_title:"Svetovna primerjava",
+    why3_desc:"Brez računa. Brez sledenja. Rezultati ostanejo na tvoji napravi. Vedno brezplačno.",
+    why3_title:"100% anonimno",
+    why4_desc:"Prilagojeno računalniku in telefonu. Teste opravi kjer koli in kadar koli.",
+    why4_title:"Deluje povsod",
+    why_sub:"Vsak test temelji na preverjenih znanstvenih raziskavah, istih, ki jih uporabljajo psihologi in raziskovalci po vsem svetu.",
+    why_title:"Zakaj prav ti testi?",
+    card_min:"min",
+    card_take:"Opravi test",
     b5_how0:"{n} kratkih trditev. Ocenite, kako natančno vas vsaka opisuje.",
     eq_how0:"{n} trditev v štirih razsežnostih čustvene inteligence.",
     b5_dominant:"Vodilna poteza:",

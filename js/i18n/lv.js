@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lv = {
+    tests_badge:"9 bezmaksas testi",
+    home_sci_body:"Katrs no deviņiem CoreSkillAI testiem cēlies no rīkiem, kurus patiešām izmanto psiholoģijas pētījumos: intelekta tests pieder matricu spriešanas tradīcijai, atmiņas tests īsteno klasisko ciparu apjomu, uzmanības tests izmanto deviņdesmit gadus veco Strūpa efektu, bet personības tests seko zinātnē valdošajam Lielā piecinieka modelim. Katra testa lapa skaidro zinātni aiz uzdevuma, kā lasīt savu rezultātu un ko pētījumi saka par tā uzlabošanu. Visi testi darbojas tikai pārlūkā, aizņem no 2 līdz 20 minūtēm un salīdzina rezultātu ar pasaules procentilēm — bez maksas, anonīmi un bez konta.",
+    home_sci_title:"Kāpēc mērīt savas izziņas spējas?",
+    step4_desc:"Ar vienu klikšķi padalies ar rezultātu — izaicini draugus.",
+    step4_title:"Dalīties",
+    why1_desc:"Balstīts recenzētos psiholoģijas pētījumos. Tie paši rīki, ko lieto akadēmiskos pētījumos.",
+    why1_title:"Zinātniski pārbaudīts",
+    why2_desc:"Redzi precīzi, kur esi salīdzinājumā ar miljoniem cilvēku visos vecumos un visās valstīs.",
+    why2_title:"Pasaules salīdzinājums",
+    why3_desc:"Nav konta. Nav izsekošanas. Rezultāti paliek tavā ierīcē. Vienmēr bez maksas.",
+    why3_title:"100% anonīmi",
+    why4_desc:"Pielāgots datoram un telefonam. Testus veic jebkur un jebkurā laikā.",
+    why4_title:"Darbojas visur",
+    why_sub:"Katrs tests balstās pārbaudītos zinātniskos pētījumos, tajos pašos, ko izmanto psihologi un pētnieki visā pasaulē.",
+    why_title:"Kāpēc tieši šie testi?",
+    card_min:"min",
+    card_take:"Veikt testu",
     b5_how0:"{n} īsi apgalvojumi. Novērtējiet, cik precīzi katrs jūs raksturo.",
     eq_how0:"{n} apgalvojumi četrās emocionālās inteliģences dimensijās.",
     b5_dominant:"Vadošā iezīme:",

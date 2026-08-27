@@ -330,6 +330,13 @@ jobs:
             fail=1
           fi
 
+          # 11) NO HARD-CODED ENGLISH ON A LOCALISED PAGE. Checks 1-9 were all
+          #     green while the live Arabic home page was 479/583 words English:
+          #     the test cards had no data-i18n at all, and newly generated
+          #     markets shipped the English clone inside their data-i18n tags.
+          #     Titles, key counts and page length cannot see any of that.
+          python3 _build/check_untranslated.py || fail=1
+
           [ "$fail" -eq 0 ] || exit 1
           echo "  all preflight checks passed"
 

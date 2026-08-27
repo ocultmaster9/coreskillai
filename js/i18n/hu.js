@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hu = {
+    tests_badge:"9 ingyenes teszt elérhető",
+    home_sci_body:"A CoreSkillAI kilenc tesztje mind olyan eszközökből származik, amelyeket ténylegesen használnak a pszichológiai kutatásban: az IQ-teszt a mátrixos következtetés hagyományába illeszkedik, a memóriateszt a klasszikus számterjedelmet valósítja meg, a figyelemteszt a kilencven éves Stroop-hatásra épül, a személyiségteszt pedig a tudományosan uralkodó Nagy Ötök modellt követi. Minden tesztoldal elmagyarázza a feladat mögötti tudományt, az eredmény értelmezését és azt, amit a kutatás a fejlesztéséről mond. Minden teszt teljes egészében a böngésződben fut, 2 és 20 perc között tart, és világszintű percentilisekhez méri az eredményed — ingyen, névtelenül, fiók nélkül.",
+    home_sci_title:"Miért érdemes felmérni a kognitív képességeidet?",
+    step4_desc:"Egy kattintás, és megoszthatod az eredményed — hívd ki a barátaidat.",
+    step4_title:"Megosztás",
+    why1_desc:"Lektorált pszichológiai kutatáson alapul. Ugyanazok az eszközök, mint az egyetemi vizsgálatokban.",
+    why1_title:"Tudományosan igazolt",
+    why2_desc:"Nézd meg pontosan, hol állsz több millió emberhez képest, minden korosztályból és országból.",
+    why2_title:"Világszintű összehasonlítás",
+    why3_desc:"Nincs fiók. Nincs követés. Az eredményeid a saját eszközödön maradnak. Mindig ingyenes.",
+    why3_title:"100% névtelen",
+    why4_desc:"Számítógépre és mobilra optimalizálva. Bárhol és bármikor kitöltheted.",
+    why4_title:"Mindenhol működik",
+    why_sub:"Minden teszt igazolt tudományos kutatáson alapul, ugyanazon, amelyet pszichológusok és kutatók használnak világszerte.",
+    why_title:"Miért éppen ezek a tesztek?",
+    card_min:"perc",
+    card_take:"Teszt indítása",
     b5_how0:"{n} rövid állítás. Értékelje, mennyire pontosan írja le Önt mindegyik.",
     eq_how0:"{n} állítás az érzelmi intelligencia négy dimenziójában.",
     b5_dominant:"Vezető vonás:",

@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pt = {
+    tests_badge:"9 testes gratuitos disponíveis",
+    home_sci_body:"Cada um dos nove testes do CoreSkillAI é adaptado de instrumentos usados em investigação psicológica real: o teste de QI segue a tradição do raciocínio por matrizes, o de memória aplica o clássico paradigma da amplitude de dígitos, o de atenção usa o efeito Stroop, com 90 anos, e o de personalidade segue o modelo dos Cinco Grandes, dominante na ciência. Cada página explica a ciência por trás da tarefa, como interpretar o seu resultado e o que a investigação diz sobre melhorá-lo. Todos os testes correm inteiramente no seu navegador, demoram entre 2 e 20 minutos e comparam os seus resultados com percentis mundiais — grátis, anónimo e sem conta.",
+    home_sci_title:"Porquê avaliar as suas capacidades cognitivas?",
+    step4_desc:"Um clique para partilhar o seu resultado — desafie os seus amigos.",
+    step4_title:"Partilhar",
+    why1_desc:"Baseado em investigação psicológica revista por pares. As mesmas ferramentas usadas em estudos académicos.",
+    why1_title:"Validado cientificamente",
+    why2_desc:"Veja exatamente onde se posiciona face a milhões de pessoas de todas as idades e países.",
+    why2_title:"Comparação mundial",
+    why3_desc:"Sem conta. Sem rastreio. Os seus resultados ficam no seu dispositivo. Sempre grátis.",
+    why3_title:"100% anónimo",
+    why4_desc:"Otimizado para computador e telemóvel. Faça os testes onde e quando quiser.",
+    why4_title:"Funciona em qualquer lado",
+    why_sub:"Cada teste assenta em investigação científica validada, a mesma que psicólogos e investigadores usam em todo o mundo.",
+    why_title:"Porquê estes testes?",
+    card_min:"min",
+    card_take:"Fazer o teste",
     b5_dominant:"Traço dominante:",
     b5_how0:"{n} afirmações curtas. Avalie o quanto cada uma descreve você.",
     b5_how1:"Não há respostas certas ou erradas: responda com sinceridade para um resultado fiel.",

@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hr = {
+    tests_badge:"9 besplatnih testova",
+    home_sci_body:"Svaki od devet testova na CoreSkillAI izveden je iz alata koji se doista koriste u psihologijskim istraživanjima: test inteligencije pripada tradiciji zaključivanja matricama, test pamćenja provodi klasični raspon znamenki, test pažnje koristi devedeset godina star Stroopov učinak, a test osobnosti slijedi znanstveno prevladavajući model Velikih pet. Svaka stranica testa objašnjava znanost iza zadatka, kako čitati svoj rezultat i što istraživanja kažu o njegovu poboljšanju. Svi testovi rade u cijelosti u pregledniku, traju od 2 do 20 minuta i uspoređuju rezultat sa svjetskim percentilima — besplatno, anonimno i bez računa.",
+    home_sci_title:"Zašto mjeriti vlastite spoznajne sposobnosti?",
+    step4_desc:"Jednim klikom podijeli rezultat — izazovi prijatelje.",
+    step4_title:"Podijeli",
+    why1_desc:"Temelji se na recenziranim psihologijskim istraživanjima. Isti alati kao u akademskim studijama.",
+    why1_title:"Znanstveno provjereno",
+    why2_desc:"Vidi točno gdje stojiš u odnosu na milijune ljudi svih dobi i iz svih zemalja.",
+    why2_title:"Svjetska usporedba",
+    why3_desc:"Bez računa. Bez praćenja. Rezultati ostaju na tvom uređaju. Uvijek besplatno.",
+    why3_title:"100% anonimno",
+    why4_desc:"Prilagođeno računalu i mobitelu. Testove riješi gdje god i kad god želiš.",
+    why4_title:"Radi svugdje",
+    why_sub:"Svaki se test temelji na provjerenim znanstvenim istraživanjima, istima kojima se služe psiholozi i istraživači diljem svijeta.",
+    why_title:"Zašto baš ovi testovi?",
+    card_min:"min",
+    card_take:"Riješi test",
     b5_how0:"{n} kratkih tvrdnji. Ocijenite koliko vas točno svaka opisuje.",
     eq_how0:"{n} tvrdnji u četiri dimenzije emocionalne inteligencije.",
     b5_dominant:"Vodeća osobina:",

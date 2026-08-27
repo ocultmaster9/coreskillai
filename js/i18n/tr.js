@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tr = {
+    tests_badge:"9 ücretsiz test mevcut",
+    home_sci_body:"CoreSkillAI'daki dokuz testin her biri, psikoloji araştırmalarında gerçekten kullanılan araçlardan uyarlanmıştır: IQ testi matris akıl yürütme geleneğinden gelir, bellek testi klasik sayı dizisi paradigmasını uygular, dikkat testi 90 yıllık Stroop etkisinden yararlanır ve kişilik testi bilimsel olarak baskın Beş Faktör modelini izler. Her test sayfası görevin ardındaki bilimi, sonucunu nasıl okuyacağını ve araştırmaların gelişim hakkında ne söylediğini anlatır. Tüm testler tamamen tarayıcında çalışır, 2 ila 20 dakika sürer ve sonucunu dünya yüzdelikleriyle karşılaştırır — ücretsiz, anonim ve hesap gerektirmeden.",
+    home_sci_title:"Bilişsel becerilerini ölçmek neden önemli?",
+    step4_desc:"Tek tıkla sonucunu paylaş — arkadaşlarına meydan oku.",
+    step4_title:"Paylaş",
+    why1_desc:"Hakem değerlendirmesinden geçmiş psikoloji araştırmalarına dayanır. Akademik çalışmalardaki araçların aynısı.",
+    why1_title:"Bilimsel olarak doğrulanmış",
+    why2_desc:"Her yaştan ve her ülkeden milyonlarca insana kıyasla tam olarak nerede olduğunu gör.",
+    why2_title:"Dünya çapında karşılaştırma",
+    why3_desc:"Hesap yok. Takip yok. Sonuçların cihazında kalır. Her zaman ücretsiz.",
+    why3_title:"%100 anonim",
+    why4_desc:"Bilgisayar ve telefon için uyarlandı. Testleri istediğin yerde ve zamanda çöz.",
+    why4_title:"Her yerde çalışır",
+    why_sub:"Her test, dünyanın dört bir yanında psikologların ve araştırmacıların kullandığı doğrulanmış bilimsel araştırmalara dayanır.",
+    why_title:"Neden bu testler?",
+    card_min:"dk",
+    card_take:"Teste başla",
     b5_dominant:"Baskın özellik:",
     b5_how0:"{n} kısa ifade. Her birinin sizi ne kadar doğru anlattığını değerlendirin.",
     b5_how1:"Doğru ya da yanlış cevap yok: sonucun gerçekçi olması için dürüst yanıtlayın.",

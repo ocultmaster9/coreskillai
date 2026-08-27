@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.en = {
+    tests_badge:"9 Free Tests Available",
+    home_sci_body:"Each of the nine tests on CoreSkillAI is adapted from instruments used in real psychological research: the IQ test draws on matrix-reasoning traditions, the memory test implements the classic digit span paradigm, the focus test uses the 90-year-old Stroop effect, and the personality test follows the scientifically dominant Big Five model. Every test page explains the science behind the task, how to interpret your score, and what the research says about improving it. All tests run entirely in your browser, take between 2 and 20 minutes, and compare your results against global percentiles — free, anonymous, with no account required.",
+    home_sci_title:"Why Test Your Cognitive Skills?",
+    step4_desc:"One click to share your score — beat your friends.",
+    step4_title:"Share It",
+    why1_desc:"Based on peer-reviewed psychology research. Same tools used in academic studies.",
+    why1_title:"Scientifically Validated",
+    why2_desc:"See exactly where you rank against millions of people across all ages and countries.",
+    why2_title:"Global Comparison",
+    why3_desc:"No account. No tracking. Your results stay on your device. Always free.",
+    why3_title:"100% Anonymous",
+    why4_desc:"Optimized for desktop and mobile. Take your tests anywhere, anytime.",
+    why4_title:"Works Everywhere",
+    why_sub:"Each test is based on validated scientific research used by psychologists and researchers worldwide.",
+    why_title:"Why These Tests?",
+    card_min:"min",
+    card_take:"Take Test",
     b5_how0:"{n} short statements. Rate how accurately each describes you.",
     eq_how0:"{n} statements across the 4 dimensions of emotional intelligence.",
     b5_dominant:"Dominant trait:",

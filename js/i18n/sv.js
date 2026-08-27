@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sv = {
+    tests_badge:"9 gratis tester tillgängliga",
+    home_sci_body:"Vart och ett av de nio testerna på CoreSkillAI är hämtat från instrument som faktiskt används i psykologisk forskning: IQ-testet står i matrisresonemangets tradition, minnestestet bygger på det klassiska sifferspannet, koncentrationstestet använder den 90 år gamla Stroop-effekten och personlighetstestet följer den vetenskapligt dominerande femfaktormodellen. Varje testsida förklarar vetenskapen bakom uppgiften, hur du tolkar ditt resultat och vad forskningen säger om att förbättra det. Alla tester körs helt i webbläsaren, tar mellan 2 och 20 minuter och jämför ditt resultat med globala percentiler — gratis, anonymt och utan konto.",
+    home_sci_title:"Varför testa din kognitiva förmåga?",
+    step4_desc:"Ett klick för att dela ditt resultat — utmana dina vänner.",
+    step4_title:"Dela",
+    why1_desc:"Bygger på referentgranskad psykologisk forskning. Samma verktyg som används i akademiska studier.",
+    why1_title:"Vetenskapligt validerat",
+    why2_desc:"Se exakt var du ligger jämfört med miljoner människor i alla åldrar och länder.",
+    why2_title:"Global jämförelse",
+    why3_desc:"Inget konto. Ingen spårning. Dina resultat stannar på din enhet. Alltid gratis.",
+    why3_title:"100% anonymt",
+    why4_desc:"Optimerat för dator och mobil. Gör dina tester var och när du vill.",
+    why4_title:"Fungerar överallt",
+    why_sub:"Varje test bygger på validerad vetenskaplig forskning, densamma som psykologer och forskare använder världen över.",
+    why_title:"Varför dessa tester?",
+    card_min:"min",
+    card_take:"Gör testet",
     b5_dominant:"Dominerande drag:",
     b5_how0:"{n} korta påståenden. Bedöm hur väl varje stämmer in på dig.",
     b5_how1:"Det finns inga rätt eller fel: svara ärligt för ett rättvisande resultat.",

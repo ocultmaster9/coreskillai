@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.id = {
+    tests_badge:"9 tes gratis tersedia",
+    home_sci_body:"Masing-masing dari sembilan tes di CoreSkillAI diadaptasi dari instrumen yang benar-benar dipakai dalam riset psikologi: tes IQ berakar pada tradisi penalaran matriks, tes memori menerapkan paradigma rentang angka klasik, tes fokus memakai efek Stroop yang berusia 90 tahun, dan tes kepribadian mengikuti model Lima Besar yang dominan secara ilmiah. Setiap halaman tes menjelaskan sains di balik tugasnya, cara membaca skor Anda, dan apa kata riset tentang meningkatkannya. Semua tes berjalan sepenuhnya di peramban Anda, memakan waktu 2 hingga 20 menit, dan membandingkan hasil Anda dengan persentil global — gratis, anonim, tanpa perlu akun.",
+    home_sci_title:"Mengapa menguji kemampuan kognitif Anda?",
+    step4_desc:"Satu klik untuk membagikan skor Anda — tantang teman-teman Anda.",
+    step4_title:"Bagikan",
+    why1_desc:"Berdasarkan riset psikologi yang ditelaah sejawat. Alat yang sama seperti dalam studi akademik.",
+    why1_title:"Tervalidasi secara ilmiah",
+    why2_desc:"Lihat persis posisi Anda dibanding jutaan orang dari segala usia dan negara.",
+    why2_title:"Perbandingan global",
+    why3_desc:"Tanpa akun. Tanpa pelacakan. Hasil Anda tetap di perangkat Anda. Selalu gratis.",
+    why3_title:"100% anonim",
+    why4_desc:"Dioptimalkan untuk komputer dan ponsel. Kerjakan tes kapan pun dan di mana pun.",
+    why4_title:"Berjalan di mana saja",
+    why_sub:"Setiap tes berpijak pada riset ilmiah tervalidasi, yang sama seperti dipakai psikolog dan peneliti di seluruh dunia.",
+    why_title:"Mengapa tes ini?",
+    card_min:"mnt",
+    card_take:"Ikuti tes",
     b5_how0:"{n} pernyataan singkat. Nilai seberapa tepat masing-masing menggambarkan Anda.",
     eq_how0:"{n} pernyataan mencakup 4 dimensi kecerdasan emosional.",
     b5_dominant:"Sifat dominan:",

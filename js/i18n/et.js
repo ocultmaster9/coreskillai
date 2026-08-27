@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.et = {
+    tests_badge:"9 tasuta testi",
+    home_sci_body:"Iga CoreSkillAI üheksast testist pärineb vahenditest, mida psühholoogiauuringutes tegelikult kasutatakse: IQ test kuulub maatriksarutluse traditsiooni, mälutest teostab klassikalise numbriulatuse, tähelepanutest kasutab üheksakümne aasta vanust Stroopi efekti ja isiksusetest järgib teaduses valitsevat Suure viisiku mudelit. Iga testileht selgitab ülesande taga olevat teadust, kuidas oma tulemust lugeda ja mida uuringud selle parandamise kohta ütlevad. Kõik testid töötavad täielikult brauseris, kestavad 2 kuni 20 minutit ja võrdlevad tulemust ülemaailmsete protsentiilidega — tasuta, anonüümselt ja kontot loomata.",
+    home_sci_title:"Miks oma tunnetusvõimeid mõõta?",
+    step4_desc:"Ühe klõpsuga jagad oma tulemust — kutsu sõbrad võistlema.",
+    step4_title:"Jaga",
+    why1_desc:"Tugineb eelretsenseeritud psühholoogiauuringutele. Samad vahendid mis akadeemilistes uuringutes.",
+    why1_title:"Teaduslikult valideeritud",
+    why2_desc:"Näe täpselt, kus sa asud miljonite inimeste seas igast vanusest ja igast riigist.",
+    why2_title:"Ülemaailmne võrdlus",
+    why3_desc:"Kontot pole. Jälgimist pole. Tulemused jäävad sinu seadmesse. Alati tasuta.",
+    why3_title:"100% anonüümne",
+    why4_desc:"Kohandatud arvutile ja telefonile. Tee testid kus ja millal tahad.",
+    why4_title:"Töötab kõikjal",
+    why_sub:"Iga test tugineb valideeritud teadusuuringutele, samadele, mida kasutavad psühholoogid ja teadlased üle maailma.",
+    why_title:"Miks just need testid?",
+    card_min:"min",
+    card_take:"Tee test",
     b5_how0:"{n} lühikest väidet. Hinnake, kui täpselt igaüks teid kirjeldab.",
     eq_how0:"{n} väidet emotsionaalse intelligentsuse neljas mõõtmes.",
     b5_dominant:"Juhtiv joon:",

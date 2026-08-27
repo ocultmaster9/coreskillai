@@ -248,3 +248,125 @@ def add_stroop(lang, words):
         n += 1
     io.open(p, 'w', encoding='utf-8', newline='\n').write(s)
     print('  %s: %d Stroop colour words' % (lang, n))
+
+
+# ── card wiring + pre-render ──────────────────────────────
+# Two bugs found live on 2026-08-27, both invisible to checks 1-9:
+#
+#  1. The nine test cards on the home and /tests/ pages carried NO data-i18n at
+#     all. "IQ Test", "Measure your cognitive reasoning...", "Take Test" and
+#     "~20 min" were hard-coded English in EVERY language, including the four
+#     original markets. Humans and crawlers both saw English.
+#
+#  2. generate_pages() clones the ENGLISH pages, so every market built that way
+#     shipped English inside its data-i18n elements. Client-side i18n repaired
+#     it for humans, but the served HTML - the thing Bing indexes, and Bing is
+#     ~26:1 of this site's traffic - was English. 479 of 583 visible words on
+#     the Arabic home page were English before this fix.
+CARD_PREFIX = {'iq':'iq','reaction-time':'rt','memory':'mem','pattern':'pat',
+               'color-vision':'cv','big-five':'b5','eq':'eq','focus':'foc',
+               'typing':'typ'}
+
+def wire_cards(path):
+    """Attach data-i18n to the parts of each test card that never had it."""
+    h = io.open(path, encoding='utf-8').read()
+    orig = h
+
+    def fix(m):
+        block, slug = m.group(0), m.group(1)
+        pre = CARD_PREFIX.get(slug)
+        if not pre: return block
+        block = re.sub(r'<h3(?![^>]*data-i18n)>', '<h3 data-i18n="%s_title">' % pre, block, count=1)
+        block = re.sub(r'<p(?![^>]*data-i18n)>',  '<p data-i18n="%s_desc">'  % pre, block, count=1)
+        # "~20 min" -> keep the numeral, translate the unit only.
+        # NB: no (?!<) lookahead here - "~2 min" is always followed by "</span>",
+        # so that guard blocked every real match. Guard against double-wrapping
+        # by checking for the marker instead.
+        if 'card_min' not in block:
+            block = re.sub(r'~(\d+)\s*min\b',
+                           lambda d: '~%s <span data-i18n="card_min">min</span>' % d.group(1), block)
+        block = re.sub(r'(<div class="test-card-foot">)\s*Take Test',
+                       r'\1<span data-i18n="card_take">Take Test</span>', block, count=1)
+        return block
+
+    h = re.sub(r'<a href="[^"]*/tests/([a-z\-]+)/" class="test-card">.*?</a>', fix, h, flags=re.S)
+    if h != orig:
+        io.open(path, 'w', encoding='utf-8', newline='\n').write(h)
+        return True
+    return False
+
+
+def strings_for(lang):
+    """Parse js/i18n/<lang>.js into a dict."""
+    f = os.path.join('js', 'i18n', lang + '.js')
+    if not os.path.isfile(f): return {}
+    s = io.open(f, encoding='utf-8').read()
+    out = {}
+    for m in re.finditer(r'(?m)^\s*([A-Za-z_][A-Za-z0-9_]*)\s*:\s*"((?:[^"\\]|\\.)*)"\s*,?\s*$', s):
+        out[m.group(1)] = m.group(2).replace('\\"', '"').replace('\\\\', '\\')
+    return out
+
+
+def prerender(lang):
+    """Replace the inner text of every data-i18n element with this language's
+    string, so the SERVED HTML is already localised. Client-side i18n still
+    runs and is now a no-op on first paint. Elements whose key is missing keep
+    the English fallback rather than being blanked."""
+    K = strings_for(lang)
+    if not K: return 0
+    changed = 0
+    for page in PAGES:
+        f = path_for(lang, page)
+        if not os.path.isfile(f): continue
+        h = io.open(f, encoding='utf-8').read()
+        def sub(m):
+            open_tag, key, inner, close = m.group(1), m.group(2), m.group(3), m.group(4)
+            val = K.get(key)
+            if val is None or '<' in inner: return m.group(0)   # nested markup: leave alone
+            return open_tag + val + close
+        new = re.sub(r'(<([a-z0-9]+)[^>]*\bdata-i18n="([a-z0-9_]+)"[^>]*>)([^<]*)(</\2>)',
+                     lambda m: m.group(1) + (K.get(m.group(3)) or m.group(4)) + m.group(5), h)
+        if new != h:
+            io.open(f, 'w', encoding='utf-8', newline='\n').write(new)
+            changed += 1
+    return changed
+
+
+def wire_home_blocks(path):
+    """The 4th 'how it works' step, the whole 'Why These Tests?' band and the
+    closing science paragraph shipped with no data-i18n on any language. Found
+    by reading the LIVE Arabic home page, not by any local check."""
+    h = io.open(path, encoding='utf-8').read(); orig = h
+    pairs = [
+        (r'<h4>Share It</h4>', '<h4 data-i18n="step4_title">Share It</h4>'),
+        (r'(<div class="step observe"><div class="step-num">4</div><h4[^>]*>.*?</h4>)<p>',
+         r'\1<p data-i18n="step4_desc">'),
+        (r'<h2 class="section-title text-center">Why These Tests\?</h2>',
+         '<h2 class="section-title text-center" data-i18n="why_title">Why These Tests?</h2>'),
+        (r'<p class="section-subtitle text-center">(?!.*data-i18n)',
+         '<p class="section-subtitle text-center" data-i18n="why_sub">'),
+    ]
+    for pat, rep in pairs:
+        h = re.sub(pat, rep, h, count=1, flags=re.S)
+
+    n = [0]
+    def sci(m):
+        n[0] += 1
+        i = n[0]
+        blk = m.group(0)
+        blk = re.sub(r'<h3(?![^>]*data-i18n)>', '<h3 data-i18n="why%d_title">' % i, blk, count=1)
+        blk = re.sub(r'<p(?![^>]*data-i18n)>',  '<p data-i18n="why%d_desc">'  % i, blk, count=1)
+        return blk
+    h = re.sub(r'<div class="science-card">.*?</div>', sci, h, flags=re.S)
+
+    def close(m):
+        b = m.group(0)
+        b = re.sub(r'<h2(?![^>]*data-i18n)>', '<h2 data-i18n="home_sci_title">', b, count=1)
+        b = re.sub(r'<p(?![^>]*data-i18n)>',  '<p data-i18n="home_sci_body">',  b, count=1)
+        return b
+    h = re.sub(r'<section style="max-width:860px.*?</section>', close, h, count=1, flags=re.S)
+
+    if h != orig:
+        io.open(path, 'w', encoding='utf-8', newline='\n').write(h)
+        return True
+    return False

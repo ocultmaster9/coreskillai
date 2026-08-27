@@ -2,6 +2,23 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.es = {
+    tests_badge:"9 pruebas gratuitas disponibles",
+    home_sci_body:"Cada una de las nueve pruebas de CoreSkillAI está adaptada de instrumentos empleados en investigación psicológica real: el test de inteligencia sigue la tradición del razonamiento con matrices, el de memoria aplica el clásico paradigma de amplitud de dígitos, el de atención usa el efecto Stroop, que tiene 90 años, y el de personalidad sigue el modelo de los Cinco Grandes, dominante en la ciencia. Cada página explica la ciencia que hay detrás de la tarea, cómo interpretar tu resultado y qué dice la investigación sobre mejorarlo. Todas las pruebas se ejecutan por completo en tu navegador, duran entre 2 y 20 minutos y comparan tu resultado con percentiles mundiales: gratis, anónimo y sin necesidad de cuenta.",
+    home_sci_title:"¿Por qué medir tus capacidades cognitivas?",
+    step4_desc:"Un clic para compartir tu resultado — supera a tus amigos.",
+    step4_title:"Compártelo",
+    why1_desc:"Basado en investigación psicológica revisada por pares. Las mismas herramientas que se usan en estudios académicos.",
+    why1_title:"Validado científicamente",
+    why2_desc:"Comprueba exactamente dónde te sitúas frente a millones de personas de todas las edades y países.",
+    why2_title:"Comparación mundial",
+    why3_desc:"Sin cuenta. Sin rastreo. Tus resultados se quedan en tu dispositivo. Siempre gratis.",
+    why3_title:"100% anónimo",
+    why4_desc:"Optimizado para ordenador y móvil. Haz tus pruebas donde y cuando quieras.",
+    why4_title:"Funciona en todas partes",
+    why_sub:"Cada prueba se basa en investigación científica validada, la misma que usan psicólogos e investigadores de todo el mundo.",
+    why_title:"¿Por qué estas pruebas?",
+    card_min:"min",
+    card_take:"Hacer el test",
     b5_dominant:"Rasgo dominante:",
     b5_how0:"{n} afirmaciones breves. Valora con qué exactitud te describe cada una.",
     b5_how1:"No hay respuestas correctas ni incorrectas: responde con sinceridad para obtener un resultado fiel.",
