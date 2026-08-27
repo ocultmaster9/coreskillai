@@ -87,11 +87,9 @@ def offenders(lang_path, en_path):
     return [t for t in text_nodes(lang_path) if t in en]
 
 
-# The four info pages are known to be English in every market - about 34,000
-# words of translation still outstanding as of 2026-08-27. They are reported
-# every run so the debt stays visible, but they do not block a deploy; the
-# pages that ARE translated must never regress, and those do block.
-PENDING = {'about', 'privacy', 'terms', 'contact'}
+# Cleared 2026-08-27: about/privacy/terms/contact are now written natively in
+# all 33 markets. The exemption is deliberately gone - every page is protected.
+PENDING = set()
 
 
 def main(langs):

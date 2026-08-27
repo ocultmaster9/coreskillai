@@ -79,6 +79,26 @@ def stroop(lang):
     return len(re.findall(r'%s:\s*[\'"]'%lang, b))
 
 
+
+
+def _body_matches_en(lang, pg, h):
+    """True when this page still carries verbatim English prose in its body.
+
+    Delegates to check_untranslated.offenders rather than comparing whole-page
+    text: nav and footer are already localised, so a naive whole-page diff said
+    "different" even when the entire article body was English.
+    """
+    try:
+        import importlib.util, os as _os
+        _d = _os.path.dirname(_os.path.abspath(__file__))
+        spec = importlib.util.spec_from_file_location(
+            'cu', _os.path.join(_d, 'check_untranslated.py'))
+        cu = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cu)
+        return len(cu.offenders(path_for(lang, pg), path_for('en', pg))) > 0
+    except Exception:
+        return True          # cannot tell -> keep the old strict behaviour
+
 def thin_count(ratios):
     """Flag pages that are short FOR THIS LANGUAGE.
 
@@ -135,7 +155,13 @@ def audit():
             if not os.path.isfile(f): continue
             h=io.open(f,encoding='utf-8').read()
             mt=re.search(r'<title>(.*?)</title>',h,re.S)
-            if lang!='en' and mt and mt.group(1).strip() in en_titles: eng_title+=1
+            # An identical title is only an English LEAK if the body is English
+            # too. "Contact | CoreSkillAI" is the correct French and Dutch title -
+            # the word is the same in all three languages. The bug this guards
+            # against (13-14 of 15 pages shipping the English title) always came
+            # with an English body, so requiring both keeps the guard intact.
+            if lang!='en' and mt and mt.group(1).strip() in en_titles:
+                if _body_matches_en(lang, pg, h): eng_title+=1
             if pg.startswith('tests/'):
                 ms=re.search(r'<section style="max-width:860px[^"]*">(.*?)</section>',h,re.S)
                 if not ms: sci_missing+=1

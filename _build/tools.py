@@ -370,3 +370,46 @@ def wire_home_blocks(path):
         io.open(path, 'w', encoding='utf-8', newline='\n').write(h)
         return True
     return False
+
+
+# ── info pages (about / privacy / terms / contact) ────────
+# These four shipped as byte-identical English on all 33 non-English markets:
+# 132 duplicate pages sitting in the sitemap. Privacy, terms and contact are
+# exactly the pages an AdSense reviewer opens. Same approach as add_science:
+# the body is prose, not UI strings, so it is written straight into the page
+# rather than bloating every language's strings file.
+INFO_SHELL = ('<div class="page">\n'
+              '  <section class="section section-sm" style="padding-top:60px">\n'
+              '%s\n'
+              '  </section>\n'
+              '</div>\n')
+
+def set_info(lang, page, inner):
+    """Replace the body of an info page with localised markup.
+
+    Anchored on "<div class=\"page\"> ... up to <footer" rather than a matching
+    </div>: the about page on newly generated markets closes with </section>
+    instead, so a </div>-based anchor silently skipped it. Any ad-wrap block in
+    the original is carried over - /about/ carries a unit, and preflight check 3
+    fails any page that loses its AdSense.
+    """
+    f = path_for(lang, page)
+    if not os.path.isfile(f):
+        return False
+    h = io.open(f, encoding='utf-8').read()
+    mixed_script_guard(lang, [re.sub(r'<[^>]+>', ' ', inner)])
+    m = re.search(r'<div class="page">.*?(?=<footer)', h, re.S)
+    if not m:
+        raise SystemExit('  %s/%s: no <div class="page"> block' % (lang, page))
+    ads = re.findall(r'<div class="ad-wrap">.*?</div>\s*</div>', m.group(0), re.S)
+    body = (INFO_SHELL % inner) + ('\n'.join(ads) + '\n' if ads else '')
+    new = h[:m.start()] + body + h[m.end():]
+    if new == h:
+        return False
+    io.open(f, 'w', encoding='utf-8', newline='\n').write(new)
+    return True
+
+
+def info_title(lang, page, title, desc):
+    """Set <title>/description/og/twitter for one info page."""
+    return add_meta(lang, {page: {'title': title, 'desc': desc}})
