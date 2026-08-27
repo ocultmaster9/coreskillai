@@ -239,6 +239,39 @@ jobs:
           ADWIDTH
           [ $? -eq 0 ] || fail=1
 
+          # 4d) ASSET VERSIONS MUST MATCH THE FILES THEY POINT AT. stamp_assets()
+          #     in _build/refresh.py is a MANUAL step. Skip it and the HTML keeps
+          #     the previous ?v= hash, so every returning visitor is served the
+          #     old cached css/js while the deploy still reports success. That is
+          #     exactly how a shipped ad-layout fix stayed invisible: main.css was
+          #     correct on the origin and every cached browser kept the broken one.
+          python3 - <<'ASSETVER'
+          import glob, hashlib, io, os, re, sys
+          ver = {}
+          for f in glob.glob('_stage/js/**/*.js', recursive=True) + glob.glob('_stage/css/*.css'):
+              ver['/' + os.path.relpath(f, '_stage').replace(os.sep, '/')] = hashlib.md5(
+                  io.open(f, 'rb').read()).hexdigest()[:8]
+          pat = re.compile(r'(?:src|href)="(/(?:js|css)/[^"?]+)\?v=([a-z0-9]+)"')
+          stale = {}; checked = 0
+          for f in glob.glob('_stage/**/*.html', recursive=True):
+              rel = os.path.relpath(f, '_stage')
+              h = io.open(f, encoding='utf-8', errors='replace').read()
+              for url, v in pat.findall(h):
+                  want = ver.get(url)
+                  if want is None: continue
+                  checked += 1
+                  if v != want:
+                      stale.setdefault((url, v, want), []).append(rel)
+          for (url, v, want), files in list(stale.items())[:5]:
+              print('::error::%s?v=%s is stale - the file hashes to %s (%d page(s), e.g. %s). '
+                    'Run stamp_assets() in _build/refresh.py.' % (url, v, want, len(files), files[0]))
+          if len(stale) > 5:
+              print('::error::...and %d more stale asset reference(s)' % (len(stale) - 5))
+          print('  asset versions match their files (%d refs)' % checked)
+          sys.exit(1 if stale else 0)
+          ASSETVER
+          [ $? -eq 0 ] || fail=1
+
           # 5) Every test page must load its own script, and every script must parse.
           #    On 2026-08-24 a broken pick() shipped that skipped questions and threw
           #    after the last one. A syntax gate is the cheapest guard against a repeat.
