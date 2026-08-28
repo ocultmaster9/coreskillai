@@ -180,6 +180,32 @@ jobs:
           PAGES
           [ $? -eq 0 ] || fail=1
 
+          # 3b) EVERY LOCALISED PAGE MUST LOAD ITS OWN STRINGS FILE. generate_pages()
+          #      wires <script src="/js/i18n/<lang>.js"> in with a string replace.
+          #      Once stamp_assets() added ?v=<hash> that replace stopped matching
+          #      and failed silently: Vietnamese shipped 15 pages that loaded only
+          #      en.js, so every button, label and Likert option was English while
+          #      the audit reported the market 100% complete. Nothing else sees it,
+          #      because the titles, science sections and question banks are all
+          #      correct - it is only the UI strings that vanish.
+          python3 - <<'I18NLOAD'
+          import glob, io, os, re, sys
+          bad = {}
+          for f in glob.glob('_stage/**/*.html', recursive=True):
+              rel = os.path.relpath(f, '_stage')
+              first = rel.split('/')[0]
+              if not re.fullmatch(r'[a-z]{2}', first): continue
+              h = io.open(f, encoding='utf-8', errors='replace').read()
+              if not re.search(r'<script src="/js/i18n/%s\.js(\?v=[a-z0-9]+)?"></script>' % first, h):
+                  bad.setdefault(first, []).append(rel)
+          for lg, files in list(bad.items())[:6]:
+              print('::error::[%s] %d page(s) never load /js/i18n/%s.js - every UI string '
+                    'falls back to English (e.g. %s)' % (lg, len(files), lg, files[0]))
+          print('  every localised page loads its own strings file' if not bad else '')
+          sys.exit(1 if bad else 0)
+          I18NLOAD
+          [ $? -eq 0 ] || fail=1
+
           # 4) ads.txt must name our publisher id.
           grep -q 'pub-5798786176755576' _stage/ads.txt || { echo "::error::ads.txt wrong or missing"; fail=1; }
 

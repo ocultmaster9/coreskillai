@@ -218,10 +218,20 @@ def generate_pages(lang):
         sub = '' if page == 'home' else page + '/'
         h = re.sub(r'<link rel="canonical" href="[^"]*">',
                    '<link rel="canonical" href="https://coreskillai.com/%s/%s">' % (lang, sub), h, count=1)
-        h = h.replace('<script src="/js/languages.js"></script>',
-                      '<script>window.PAGE_LANG="%s";</script><script src="/js/languages.js"></script>' % lang, 1)
-        h = h.replace('<script src="/js/i18n/en.js"></script>',
-                      '<script src="/js/i18n/en.js"></script><script src="/js/i18n/%s.js"></script>' % lang, 1)
+        # These two were literal string replaces. Once stamp_assets() appends a
+        # ?v=<hash> to every /js/ src they stop matching, and they fail SILENTLY:
+        # the market builds, the audit is green, every page looks translated -
+        # and /js/i18n/<lang>.js is simply never loaded, so every UI string
+        # falls back to English. That shipped on Vietnamese. Match the hash too.
+        h = re.sub(r'<script src="/js/languages\.js(\?v=[a-z0-9]+)?"></script>',
+                   lambda m: '<script>window.PAGE_LANG="%s";</script>%s' % (lang, m.group(0)),
+                   h, count=1)
+        h = re.sub(r'<script src="/js/i18n/en\.js(\?v=[a-z0-9]+)?"></script>',
+                   lambda m: '%s<script src="/js/i18n/%s.js"></script>' % (m.group(0), lang),
+                   h, count=1)
+        if '/js/i18n/%s.js' % lang not in h:
+            print('  %s: FAILED to wire /js/i18n/%s.js into %s' % (lang, lang, dst))
+            sys.exit(1)
         h = re.sub(r'href="(/[^"]*)"',
                    lambda m: 'href="%s"' % m.group(1) if ASSET.match(m.group(1)) else 'href="/%s%s"' % (lang, m.group(1)), h)
         io.open(dst, 'w', encoding='utf-8', newline='\n').write(h)
