@@ -45,10 +45,36 @@ const I18n = {
     const urlLang = location.pathname.split('/').find(s => this.prefixes().includes(s)) || null;
     // 2. window.PAGE_LANG set by template for lang pages
     const pageLang = (window.PAGE_LANG && VALID.includes(window.PAGE_LANG)) ? window.PAGE_LANG : null;
-    // 3. localStorage, then browser
-    const saved   = localStorage.getItem('csa-lang');
-    const browser = (navigator.language || 'en').slice(0, 2);
-    this.lang = urlLang || pageLang || (VALID.includes(saved) ? saved : (VALID.includes(browser) ? browser : 'en'));
+    // 3. The unprefixed URLs ARE the English edition, but they carry no /xx/
+    //    segment and generate_pages only injects PAGE_LANG for LOCALISED pages,
+    //    so both signals above are null on all 15 English pages - including the
+    //    home page. The language then fell through to localStorage and finally to
+    //    navigator.language, so a visitor with a German browser landing on the
+    //    English canonical was served German, and applyDir() rewrote <html lang>
+    //    to contradict the served HTML, the canonical and the whole hreflang
+    //    cluster. Verified live: viewing /et/ then / rendered Estonian on the
+    //    English URL. The URL now always decides what is RENDERED.
+    const saved = localStorage.getItem('csa-lang');
+
+    // A language the visitor chose is still honoured - but by sending them to
+    // that language's URL, not by swapping the content underneath a URL that
+    // says something else. navigator.language deliberately does NOT redirect:
+    // auto-redirecting every non-English browser away from the English entry
+    // point is exactly what Google warns against, and it would hide the English
+    // pages from a reviewer whose machine is not set to English.
+    if (!urlLang && !pageLang && saved && saved !== 'en' && VALID.includes(saved)) {
+      const parts = location.pathname.split('/').filter(Boolean);
+      const root  = parts[0] || '';
+      const KNOWN = ['', 'about', 'privacy', 'terms', 'contact', 'tests'];
+      // Never bounce an unknown path: that would turn one 404 into two.
+      if (KNOWN.includes(root)) {
+        location.replace('/' + saved + '/' + (parts.length ? parts.join('/') + '/' : '')
+                         + location.search + location.hash);
+        return;
+      }
+    }
+
+    this.lang = urlLang || pageLang || 'en';
     localStorage.setItem('csa-lang', this.lang);
     this.applyDir();
     this.buildSelector();

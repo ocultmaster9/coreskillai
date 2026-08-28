@@ -206,6 +206,34 @@ jobs:
           I18NLOAD
           [ $? -eq 0 ] || fail=1
 
+          # 3c) THE URL MUST DECIDE THE RENDERED LANGUAGE. The unprefixed pages
+          #      are the English edition but carry no /xx/ segment and no
+          #      PAGE_LANG, so the language resolver used to fall through to
+          #      localStorage and then navigator.language. A visitor with a
+          #      German browser was served German on the English canonical while
+          #      the URL, canonical and hreflang all said English, and <html lang>
+          #      was rewritten to contradict them. Nothing else catches this:
+          #      the served HTML is correct and Googlebot has no localStorage.
+          python3 - <<'LANGRES'
+          import io, re, sys
+          s = io.open('_stage/js/main.js', encoding='utf-8').read()
+          body = re.sub(r'//[^\n]*', '', s)          # ignore comments
+          bad = 0
+          m = re.search(r'this\.lang\s*=\s*([^;]+);', body)
+          if not m:
+              print('::error::js/main.js no longer assigns this.lang - language resolver missing'); bad = 1
+          else:
+              expr = ' '.join(m.group(1).split())
+              if 'navigator' in expr or 'saved' in expr:
+                  print('::error::js/main.js resolves the rendered language from %s - the URL must '
+                        'decide, or the English canonical renders in another language' % expr); bad = 1
+              elif "'en'" not in expr:
+                  print('::error::js/main.js language fallback is not English: %s' % expr); bad = 1
+          print('  the URL decides the rendered language' if not bad else '')
+          sys.exit(bad)
+          LANGRES
+          [ $? -eq 0 ] || fail=1
+
           # 4) ads.txt must name our publisher id.
           grep -q 'pub-5798786176755576' _stage/ads.txt || { echo "::error::ads.txt wrong or missing"; fail=1; }
 
