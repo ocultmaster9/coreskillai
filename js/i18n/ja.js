@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ja = {
+    cv_errors:"誤り",
+    cv_q_average:"平均",
+    cv_q_excellent:"優秀",
+    cv_q_good:"良好",
+    cv_q_weak:"要改善",
+    iq_qcount:"{n}問",
+    pat_difficulty:"難易度は上昇します",
+    rt_r_above:"平均以上",
+    rt_r_average:"平均",
+    rt_r_below:"平均以下",
+    rt_r_exceptional:"卓越",
+    rt_r_practice:"練習を続けましょう",
+    rt_r_superior:"上位",
+    typ_chars:"文字数",
     tests_badge:"無料テスト9種",
     home_sci_body:"CoreSkillAIの9つのテストは、いずれも心理学の研究で実際に使われている手法をもとにしています。IQテストは行列推理の系譜に連なり、記憶テストは古典的な数唱スパンを用い、注意力テストは90年前のストループ効果を利用し、性格テストは学術的に主流であるビッグファイブ・モデルに従っています。各テストのページでは、課題の背景にある科学、結果の読み方、そして向上について研究が何を示しているかを説明しています。すべてブラウザ内で完結し、所要時間は2分から20分、結果は世界のパーセンタイルと比較されます。無料・匿名で、アカウントは必要ありません。",
     home_sci_title:"認知能力を測る意味",

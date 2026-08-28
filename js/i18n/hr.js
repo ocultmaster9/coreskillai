@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hr = {
+    cv_errors:"pogreške",
+    cv_q_average:"Prosjek",
+    cv_q_excellent:"Izvrsno",
+    cv_q_good:"Dobro",
+    cv_q_weak:"Slabo",
+    iq_qcount:"{n} pitanja",
+    pat_difficulty:"rastuća težina",
+    rt_r_above:"Iznad prosjeka",
+    rt_r_average:"Prosjek",
+    rt_r_below:"Ispod prosjeka",
+    rt_r_exceptional:"Iznimno",
+    rt_r_practice:"Nastavi vježbati",
+    rt_r_superior:"Nadmoćno",
+    typ_chars:"Znakovi",
     tests_badge:"9 besplatnih testova",
     home_sci_body:"Svaki od devet testova na CoreSkillAI izveden je iz alata koji se doista koriste u psihologijskim istraživanjima: test inteligencije pripada tradiciji zaključivanja matricama, test pamćenja provodi klasični raspon znamenki, test pažnje koristi devedeset godina star Stroopov učinak, a test osobnosti slijedi znanstveno prevladavajući model Velikih pet. Svaka stranica testa objašnjava znanost iza zadatka, kako čitati svoj rezultat i što istraživanja kažu o njegovu poboljšanju. Svi testovi rade u cijelosti u pregledniku, traju od 2 do 20 minuta i uspoređuju rezultat sa svjetskim percentilima — besplatno, anonimno i bez računa.",
     home_sci_title:"Zašto mjeriti vlastite spoznajne sposobnosti?",

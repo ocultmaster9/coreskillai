@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.nl = {
+    cv_errors:"fouten",
+    cv_q_average:"Gemiddeld",
+    cv_q_excellent:"Uitstekend",
+    cv_q_good:"Goed",
+    cv_q_weak:"Zwak",
+    iq_qcount:"{n} vragen",
+    pat_difficulty:"oplopende moeilijkheid",
+    rt_r_above:"Boven gemiddeld",
+    rt_r_average:"Gemiddeld",
+    rt_r_below:"Onder gemiddeld",
+    rt_r_exceptional:"Uitzonderlijk",
+    rt_r_practice:"Blijf oefenen",
+    rt_r_superior:"Superieur",
+    typ_chars:"Tekens",
     tests_badge:"9 gratis tests beschikbaar",
     home_sci_body:"Elk van de negen tests op CoreSkillAI is afgeleid van instrumenten die daadwerkelijk in psychologisch onderzoek worden gebruikt: de IQ-test staat in de traditie van matrixredeneren, de geheugentest voert het klassieke cijferreeksparadigma uit, de aandachtstest gebruikt het 90 jaar oude Stroop-effect en de persoonlijkheidstest volgt het wetenschappelijk dominante Big Five-model. Elke testpagina legt uit welke wetenschap achter de taak schuilt, hoe je je score moet lezen en wat het onderzoek zegt over verbeteren. Alle tests draaien volledig in je browser, duren tussen 2 en 20 minuten en vergelijken je resultaat met wereldwijde percentielen — gratis, anoniem en zonder account.",
     home_sci_title:"Waarom je cognitieve vaardigheden testen?",

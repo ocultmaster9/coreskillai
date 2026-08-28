@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tr = {
+    cv_errors:"hata",
+    cv_q_average:"Ortalama",
+    cv_q_excellent:"Mükemmel",
+    cv_q_good:"İyi",
+    cv_q_weak:"Zayıf",
+    iq_qcount:"{n} soru",
+    pat_difficulty:"artan zorluk",
+    rt_r_above:"Ortalamanın üzerinde",
+    rt_r_average:"Ortalama",
+    rt_r_below:"Ortalamanın altında",
+    rt_r_exceptional:"Olağanüstü",
+    rt_r_practice:"Pratiğe devam edin",
+    rt_r_superior:"Üstün",
+    typ_chars:"Karakter",
     tests_badge:"9 ücretsiz test mevcut",
     home_sci_body:"CoreSkillAI'daki dokuz testin her biri, psikoloji araştırmalarında gerçekten kullanılan araçlardan uyarlanmıştır: IQ testi matris akıl yürütme geleneğinden gelir, bellek testi klasik sayı dizisi paradigmasını uygular, dikkat testi 90 yıllık Stroop etkisinden yararlanır ve kişilik testi bilimsel olarak baskın Beş Faktör modelini izler. Her test sayfası görevin ardındaki bilimi, sonucunu nasıl okuyacağını ve araştırmaların gelişim hakkında ne söylediğini anlatır. Tüm testler tamamen tarayıcında çalışır, 2 ila 20 dakika sürer ve sonucunu dünya yüzdelikleriyle karşılaştırır — ücretsiz, anonim ve hesap gerektirmeden.",
     home_sci_title:"Bilişsel becerilerini ölçmek neden önemli?",

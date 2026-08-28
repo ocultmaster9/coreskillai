@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pl = {
+    cv_errors:"błędy",
+    cv_q_average:"Przeciętnie",
+    cv_q_excellent:"Doskonale",
+    cv_q_good:"Dobrze",
+    cv_q_weak:"Słabo",
+    iq_qcount:"{n} pytań",
+    pat_difficulty:"rosnąca trudność",
+    rt_r_above:"Powyżej średniej",
+    rt_r_average:"Średnia",
+    rt_r_below:"Poniżej średniej",
+    rt_r_exceptional:"Wyjątkowy",
+    rt_r_practice:"Ćwicz dalej",
+    rt_r_superior:"Znakomity",
+    typ_chars:"Znaki",
     tests_badge:"9 darmowych testów",
     home_sci_body:"Każdy z dziewięciu testów na CoreSkillAI wywodzi się z narzędzi realnie stosowanych w badaniach psychologicznych: test IQ należy do tradycji rozumowania na macierzach, test pamięci realizuje klasyczny paradygmat rozpiętości cyfr, test uwagi wykorzystuje liczący 90 lat efekt Stroopa, a test osobowości opiera się na dominującym naukowo modelu Wielkiej Piątki. Każda strona testu wyjaśnia naukę stojącą za zadaniem, jak odczytać swój wynik i co badania mówią o jego poprawie. Wszystkie testy działają w całości w przeglądarce, trwają od 2 do 20 minut i porównują wynik z percentylami światowymi — bezpłatnie, anonimowo i bez zakładania konta.",
     home_sci_title:"Po co badać własne zdolności poznawcze?",

@@ -76,7 +76,7 @@ function renderQ(){
   <div class="pattern-choices">${choices}</div>`;
 
   document.getElementById('pat-q-num').textContent=`Q${current+1} / ${QUESTIONS.length}`;
-  document.getElementById('pat-score-now').textContent=`Score: ${score}`;
+  document.getElementById('pat-score-now').textContent=`${_t('pat_result_label','Pattern Score')}: ${score}`;
   const fill=document.getElementById('pat-prog-fill');
   if(fill) fill.style.width=`${(current/QUESTIONS.length)*100}%`;
   // dots
@@ -94,14 +94,14 @@ function renderShell(){
     <ul>
       <li>${_t('pat_how1',"Each puzzle shows a 3×3 grid with the last piece missing.")}</li>
       <li>${_t('pat_how2',"Find the logical rule and pick the correct answer from 4 options.")}</li>
-      <li>${QUESTIONS.length} questions, increasing difficulty.</li>
+      <li>${_t('iq_qcount',"{n} questions").replace('{n}',QUESTIONS.length)}, ${_t('pat_difficulty',"increasing difficulty")}.</li>
     </ul>
   </div>
   <div class="test-card-ui">
     <div class="test-ui-header">
-      <span class="test-ui-title">🔷 Pattern Recognition</span>
+      <span class="test-ui-title">🔷 ${_t('pat_title',"Pattern Recognition Test")}</span>
       <div style="display:flex;gap:12px;align-items:center">
-        <span id="pat-score-now" style="font-size:.8rem;color:var(--text-3)">Score: 0</span>
+        <span id="pat-score-now" style="font-size:.8rem;color:var(--text-3)">${_t('pat_result_label','Pattern Score')}: 0</span>
         <span id="pat-q-num" style="font-size:.8rem;color:var(--text-3)">Q1 / ${QUESTIONS.length}</span>
       </div>
     </div>
@@ -142,7 +142,7 @@ function showResults(){
   </div>
   <div class="bell-curve-wrap"><canvas id="pat-bell" style="width:100%;display:block"></canvas></div>
   <div class="result-breakdown">
-    <div class="breakdown-item"><div class="b-label">Score</div><div class="b-val" style="color:var(--primary)">${score}/${QUESTIONS.length}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('pat_result_label','Pattern Score')}</div><div class="b-val" style="color:var(--primary)">${score}/${QUESTIONS.length}</div></div>
     <div class="breakdown-item"><div class="b-label">Est. IQ</div><div class="b-val">~${iq}</div><div class="b-sub">range estimate</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div></div>
     <div class="breakdown-item"><div class="b-label">Average</div><div class="b-val">7/12</div><div class="b-sub">global mean</div></div>

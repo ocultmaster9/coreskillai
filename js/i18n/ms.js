@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ms = {
+    cv_errors:"kesilapan",
+    cv_q_average:"Sederhana",
+    cv_q_excellent:"Cemerlang",
+    cv_q_good:"Baik",
+    cv_q_weak:"Lemah",
+    iq_qcount:"{n} soalan",
+    pat_difficulty:"kesukaran meningkat",
+    rt_r_above:"Melebihi purata",
+    rt_r_average:"Purata",
+    rt_r_below:"Bawah purata",
+    rt_r_exceptional:"Luar biasa",
+    rt_r_practice:"Teruskan berlatih",
+    rt_r_superior:"Unggul",
+    typ_chars:"Aksara",
     tests_badge:"9 Ujian Percuma Tersedia",
     home_sci_body:"Setiap satu daripada sembilan ujian di CoreSkillAI diadaptasi daripada instrumen yang digunakan dalam penyelidikan psikologi sebenar: ujian IQ berasaskan tradisi penaakulan matriks, ujian memori melaksanakan paradigma jangkauan digit klasik, ujian fokus menggunakan kesan Stroop berusia 90 tahun, dan ujian personaliti mengikut model Big Five yang dominan secara saintifik. Setiap halaman ujian menerangkan sains di sebalik tugasan itu, cara mentafsir skor anda, dan apa yang dikatakan penyelidikan tentang cara memperbaikinya. Semua ujian berjalan sepenuhnya dalam pelayar anda, mengambil masa antara 2 hingga 20 minit, dan membandingkan keputusan anda dengan persentil global — percuma, tanpa nama, tanpa perlu akaun.",
     home_sci_title:"Mengapa Perlu Menguji Kemahiran Kognitif Anda?",

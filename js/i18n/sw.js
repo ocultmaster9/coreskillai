@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sw = {
+    cv_errors:"makosa",
+    cv_q_average:"Wastani",
+    cv_q_excellent:"Bora sana",
+    cv_q_good:"Nzuri",
+    cv_q_weak:"Dhaifu",
+    iq_qcount:"maswali {n}",
+    pat_difficulty:"ugumu unaoongezeka",
+    rt_r_above:"Juu ya wastani",
+    rt_r_average:"Wastani",
+    rt_r_below:"Chini ya wastani",
+    rt_r_exceptional:"Ya kipekee",
+    rt_r_practice:"Endelea kufanya mazoezi",
+    rt_r_superior:"Bora",
+    typ_chars:"Herufi",
     tests_badge:"Majaribio 9 Bila Malipo Yanapatikana",
     home_sci_body:"Kila moja ya majaribio tisa katika CoreSkillAI yametoholewa kutoka vifaa vinavyotumika katika utafiti halisi wa saikolojia: jaribio la IQ linategemea mapokeo ya utambuzi wa matriki, jaribio la kumbukumbu linatumia mfumo wa kawaida wa mfululizo wa tarakimu, jaribio la umakini linatumia athari ya Stroop yenye umri wa miaka 90, na jaribio la utu linafuata muundo wa Big Five unaotawala kisayansi. Kila ukurasa wa jaribio unaeleza sayansi iliyo nyuma ya kazi hiyo, jinsi ya kutafsiri alama zako, na yale ambayo utafiti unasema kuhusu kuiboresha. Majaribio yote yanaendeshwa kabisa ndani ya kivinjari chako, huchukua kati ya dakika 2 na 20, na hulinganisha matokeo yako na asilimia za kimataifa — bila malipo, bila jina, bila kuhitaji akaunti.",
     home_sci_title:"Kwa Nini Upime Ujuzi Wako wa Kiakili?",

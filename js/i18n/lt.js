@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lt = {
+    cv_errors:"klaidų",
+    cv_q_average:"Vidutiniškai",
+    cv_q_excellent:"Puikiai",
+    cv_q_good:"Gerai",
+    cv_q_weak:"Silpnai",
+    iq_qcount:"{n} klausimų",
+    pat_difficulty:"didėjantis sudėtingumas",
+    rt_r_above:"Virš vidurkio",
+    rt_r_average:"Vidurkis",
+    rt_r_below:"Žemiau vidurkio",
+    rt_r_exceptional:"Išskirtinis",
+    rt_r_practice:"Toliau treniruokitės",
+    rt_r_superior:"Puikus",
+    typ_chars:"Simboliai",
     tests_badge:"9 nemokami testai",
     home_sci_body:"Kiekvienas iš devynių CoreSkillAI testų kilęs iš priemonių, iš tiesų naudojamų psichologijos tyrimuose: intelekto testas priklauso matricų samprotavimo tradicijai, atminties testas įgyvendina klasikinę skaitmenų apimtį, dėmesio testas naudoja devyniasdešimties metų senumo Stroopo efektą, o asmenybės testas remiasi moksle vyraujančiu Didžiojo penketo modeliu. Kiekviename testo puslapyje paaiškinama, kokiu mokslu remiasi užduotis, kaip skaityti savo rezultatą ir ką tyrimai sako apie jo gerinimą. Visi testai veikia vien naršyklėje, trunka nuo 2 iki 20 minučių ir lygina rezultatą su pasaulio procentiliais — nemokamai, anonimiškai ir be paskyros.",
     home_sci_title:"Kodėl verta įvertinti savo pažintinius gebėjimus?",

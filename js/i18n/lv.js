@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lv = {
+    cv_errors:"kļūdas",
+    cv_q_average:"Vidēji",
+    cv_q_excellent:"Teicami",
+    cv_q_good:"Labi",
+    cv_q_weak:"Vāji",
+    iq_qcount:"{n} jautājumi",
+    pat_difficulty:"pieaugoša grūtība",
+    rt_r_above:"Virs vidējā",
+    rt_r_average:"Vidēji",
+    rt_r_below:"Zem vidējā",
+    rt_r_exceptional:"Izcils",
+    rt_r_practice:"Turpiniet trenēties",
+    rt_r_superior:"Lielisks",
+    typ_chars:"Rakstzīmes",
     tests_badge:"9 bezmaksas testi",
     home_sci_body:"Katrs no deviņiem CoreSkillAI testiem cēlies no rīkiem, kurus patiešām izmanto psiholoģijas pētījumos: intelekta tests pieder matricu spriešanas tradīcijai, atmiņas tests īsteno klasisko ciparu apjomu, uzmanības tests izmanto deviņdesmit gadus veco Strūpa efektu, bet personības tests seko zinātnē valdošajam Lielā piecinieka modelim. Katra testa lapa skaidro zinātni aiz uzdevuma, kā lasīt savu rezultātu un ko pētījumi saka par tā uzlabošanu. Visi testi darbojas tikai pārlūkā, aizņem no 2 līdz 20 minūtēm un salīdzina rezultātu ar pasaules procentilēm — bez maksas, anonīmi un bez konta.",
     home_sci_title:"Kāpēc mērīt savas izziņas spējas?",

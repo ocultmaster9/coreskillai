@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.de = {
+    cv_errors:"Fehler",
+    cv_q_average:"Durchschnitt",
+    cv_q_excellent:"Ausgezeichnet",
+    cv_q_good:"Gut",
+    cv_q_weak:"Schwach",
+    iq_qcount:"{n} Fragen",
+    pat_difficulty:"steigende Schwierigkeit",
+    rt_r_above:"Über dem Durchschnitt",
+    rt_r_average:"Durchschnitt",
+    rt_r_below:"Unter dem Durchschnitt",
+    rt_r_exceptional:"Außergewöhnlich",
+    rt_r_practice:"Weiter üben",
+    rt_r_superior:"Überdurchschnittlich",
+    typ_chars:"Zeichen",
     tests_badge:"9 kostenlose Tests verfügbar",
     home_sci_body:"Jeder der neun Tests auf CoreSkillAI ist von Verfahren abgeleitet, die in der psychologischen Forschung tatsächlich eingesetzt werden: Der IQ-Test steht in der Tradition des Matrizen-Schließens, der Gedächtnistest setzt die klassische Zahlenspanne um, der Konzentrationstest nutzt den 90 Jahre alten Stroop-Effekt, und der Persönlichkeitstest folgt dem wissenschaftlich vorherrschenden Fünf-Faktoren-Modell. Jede Testseite erklärt die Wissenschaft hinter der Aufgabe, wie du dein Ergebnis einordnest und was die Forschung über Verbesserung sagt. Alle Tests laufen vollständig im Browser, dauern zwischen 2 und 20 Minuten und vergleichen dein Ergebnis mit weltweiten Perzentilen — kostenlos, anonym und ohne Konto.",
     home_sci_title:"Warum die eigenen kognitiven Fähigkeiten testen?",

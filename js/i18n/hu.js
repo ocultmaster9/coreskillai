@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hu = {
+    cv_errors:"hiba",
+    cv_q_average:"Átlagos",
+    cv_q_excellent:"Kiváló",
+    cv_q_good:"Jó",
+    cv_q_weak:"Gyenge",
+    iq_qcount:"{n} kérdés",
+    pat_difficulty:"növekvő nehézség",
+    rt_r_above:"Átlag feletti",
+    rt_r_average:"Átlagos",
+    rt_r_below:"Átlag alatti",
+    rt_r_exceptional:"Kivételes",
+    rt_r_practice:"Gyakorolj tovább",
+    rt_r_superior:"Kimagasló",
+    typ_chars:"Karakterek",
     tests_badge:"9 ingyenes teszt elérhető",
     home_sci_body:"A CoreSkillAI kilenc tesztje mind olyan eszközökből származik, amelyeket ténylegesen használnak a pszichológiai kutatásban: az IQ-teszt a mátrixos következtetés hagyományába illeszkedik, a memóriateszt a klasszikus számterjedelmet valósítja meg, a figyelemteszt a kilencven éves Stroop-hatásra épül, a személyiségteszt pedig a tudományosan uralkodó Nagy Ötök modellt követi. Minden tesztoldal elmagyarázza a feladat mögötti tudományt, az eredmény értelmezését és azt, amit a kutatás a fejlesztéséről mond. Minden teszt teljes egészében a böngésződben fut, 2 és 20 perc között tart, és világszintű percentilisekhez méri az eredményed — ingyen, névtelenül, fiók nélkül.",
     home_sci_title:"Miért érdemes felmérni a kognitív képességeidet?",

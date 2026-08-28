@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.cs = {
+    cv_errors:"chyby",
+    cv_q_average:"Průměr",
+    cv_q_excellent:"Výborně",
+    cv_q_good:"Dobře",
+    cv_q_weak:"Slabé",
+    iq_qcount:"{n} otázek",
+    pat_difficulty:"rostoucí obtížnost",
+    rt_r_above:"Nadprůměr",
+    rt_r_average:"Průměr",
+    rt_r_below:"Podprůměr",
+    rt_r_exceptional:"Výjimečné",
+    rt_r_practice:"Trénujte dál",
+    rt_r_superior:"Vynikající",
+    typ_chars:"Znaky",
     tests_badge:"9 testů zdarma",
     home_sci_body:"Každý z devíti testů na CoreSkillAI vychází z nástrojů, které se skutečně používají v psychologickém výzkumu: IQ test patří do tradice uvažování nad maticemi, paměťový test realizuje klasické rozpětí číslic, test pozornosti využívá devadesát let starý Stroopův efekt a osobnostní test se drží vědecky převládajícího modelu Velké pětky. Každá stránka testu vysvětluje vědu za úlohou, jak číst svůj výsledek a co výzkum říká o jeho zlepšování. Všechny testy běží zcela v prohlížeči, trvají 2 až 20 minut a porovnávají výsledek se světovými percentily — zdarma, anonymně a bez účtu.",
     home_sci_title:"Proč měřit vlastní poznávací schopnosti?",

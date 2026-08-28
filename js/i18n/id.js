@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.id = {
+    cv_errors:"kesalahan",
+    cv_q_average:"Rata-rata",
+    cv_q_excellent:"Sangat baik",
+    cv_q_good:"Baik",
+    cv_q_weak:"Lemah",
+    iq_qcount:"{n} pertanyaan",
+    pat_difficulty:"kesulitan meningkat",
+    rt_r_above:"Di atas rata-rata",
+    rt_r_average:"Rata-rata",
+    rt_r_below:"Di bawah rata-rata",
+    rt_r_exceptional:"Luar biasa",
+    rt_r_practice:"Terus berlatih",
+    rt_r_superior:"Unggul",
+    typ_chars:"Karakter",
     tests_badge:"9 tes gratis tersedia",
     home_sci_body:"Masing-masing dari sembilan tes di CoreSkillAI diadaptasi dari instrumen yang benar-benar dipakai dalam riset psikologi: tes IQ berakar pada tradisi penalaran matriks, tes memori menerapkan paradigma rentang angka klasik, tes fokus memakai efek Stroop yang berusia 90 tahun, dan tes kepribadian mengikuti model Lima Besar yang dominan secara ilmiah. Setiap halaman tes menjelaskan sains di balik tugasnya, cara membaca skor Anda, dan apa kata riset tentang meningkatkannya. Semua tes berjalan sepenuhnya di peramban Anda, memakan waktu 2 hingga 20 menit, dan membandingkan hasil Anda dengan persentil global — gratis, anonim, tanpa perlu akun.",
     home_sci_title:"Mengapa menguji kemampuan kognitif Anda?",

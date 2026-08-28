@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.vi = {
+    cv_errors:"lỗi",
+    cv_q_average:"Trung bình",
+    cv_q_excellent:"Xuất sắc",
+    cv_q_good:"Tốt",
+    cv_q_weak:"Yếu",
+    iq_qcount:"{n} câu hỏi",
+    pat_difficulty:"độ khó tăng dần",
+    rt_r_above:"Trên trung bình",
+    rt_r_average:"Trung bình",
+    rt_r_below:"Dưới trung bình",
+    rt_r_exceptional:"Vượt trội",
+    rt_r_practice:"Hãy tiếp tục luyện tập",
+    rt_r_superior:"Ưu tú",
+    typ_chars:"Ký tự",
     tests_badge:"9 bài kiểm tra miễn phí",
     home_sci_body:"Mỗi bài trong chín bài kiểm tra trên CoreSkillAI đều được phỏng theo những công cụ dùng trong nghiên cứu tâm lý học thực thụ: bài IQ dựa trên truyền thống suy luận ma trận, bài trí nhớ áp dụng mô hình đo dãy số kinh điển, bài tập trung sử dụng hiệu ứng Stroop đã 90 năm tuổi, và bài tính cách theo mô hình Big Five đang chiếm ưu thế về mặt khoa học. Mỗi trang kiểm tra đều giải thích cơ sở khoa học phía sau nhiệm vụ, cách diễn giải điểm số của bạn, và những gì nghiên cứu nói về việc cải thiện nó. Tất cả bài kiểm tra chạy hoàn toàn trong trình duyệt, mất từ 2 đến 20 phút, và so sánh kết quả của bạn với phân vị toàn cầu — miễn phí, ẩn danh, không cần tài khoản.",
     home_sci_title:"Vì sao nên kiểm tra năng lực nhận thức?",

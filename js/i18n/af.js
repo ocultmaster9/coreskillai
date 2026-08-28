@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.af = {
+    cv_errors:"foute",
+    cv_q_average:"Gemiddeld",
+    cv_q_excellent:"Uitstekend",
+    cv_q_good:"Goed",
+    cv_q_weak:"Swak",
+    iq_qcount:"{n} vrae",
+    pat_difficulty:"toenemende moeilikheid",
+    rt_r_above:"Bo Gemiddeld",
+    rt_r_average:"Gemiddeld",
+    rt_r_below:"Onder Gemiddeld",
+    rt_r_exceptional:"Buitengewoon",
+    rt_r_practice:"Hou Aan Oefen",
+    rt_r_superior:"Superieur",
+    typ_chars:"Karakters",
     tests_badge:"9 Gratis Toetse Beskikbaar",
     home_sci_body:"Elkeen van die nege toetse op CoreSkillAI is aangepas uit instrumente wat in werklike sielkundige navorsing gebruik word: die IK-toets steun op matriksredenering, die geheuetoets implementeer die klassieke syferspan-paradigma, die fokustoets gebruik die 90 jaar oue Stroop-effek, en die persoonlikheidstoets volg die wetenskaplik dominante Groot Vyf-model. Elke toetsbladsy verduidelik die wetenskap agter die taak, hoe om jou telling te vertolk, en wat die navorsing sê oor die verbetering daarvan. Alle toetse loop volledig in jou blaaier, neem tussen 2 en 20 minute, en vergelyk jou uitslae met wêreldwye persentiele — gratis, anoniem, sonder 'n rekening.",
     home_sci_title:"Hoekom Jou Kognitiewe Vaardighede Toets?",

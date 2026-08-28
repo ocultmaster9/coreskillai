@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sq = {
+    cv_errors:"gabime",
+    cv_q_average:"Mesatar",
+    cv_q_excellent:"Shkëlqyeshëm",
+    cv_q_good:"Mirë",
+    cv_q_weak:"Dobët",
+    iq_qcount:"{n} pyetje",
+    pat_difficulty:"vështirësi në rritje",
+    rt_r_above:"Mbi mesataren",
+    rt_r_average:"Mesatare",
+    rt_r_below:"Nën mesataren",
+    rt_r_exceptional:"I jashtëzakonshëm",
+    rt_r_practice:"Vazhdo të stërvitesh",
+    rt_r_superior:"Superior",
+    typ_chars:"Karaktere",
     tests_badge:"9 Teste Falas në Dispozicion",
     home_sci_body:"Secili prej nëntë testeve në CoreSkillAI është përshtatur nga instrumente të përdorura në kërkime reale psikologjike: testi i IQ-së mbështetet në traditën e arsyetimit me matrica, testi i kujtesës zbaton paradigmën klasike të diapazonit të shifrave, testi i përqendrimit përdor efektin Stroop 90-vjeçar, dhe testi i personalitetit ndjek modelin Big Five, dominues nga pikëpamja shkencore. Çdo faqe testi shpjegon shkencën pas detyrës, si të interpretohet rezultati juaj, dhe çfarë thotë kërkimi për përmirësimin e tij. Të gjitha testet ekzekutohen tërësisht në shfletuesin tuaj, zgjasin nga 2 deri në 20 minuta, dhe krahasojnë rezultatet tuaja me përqindjet globale — falas, në mënyrë anonime, pa nevojë për llogari.",
     home_sci_title:"Pse t'i Testoni Aftësitë Tuaja Njohëse?",

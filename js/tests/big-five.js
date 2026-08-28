@@ -2285,7 +2285,7 @@ function renderShell(){
   </div>
   <div class="test-card-ui">
     <div class="test-ui-header">
-      <span class="test-ui-title">🪄 Big Five Personality</span>
+      <span class="test-ui-title">🪄 ${_t('b5_title',"Big Five Personality Test")}</span>
       <span id="b5-counter" class="q-counter">Q1 / ${ITEMS.length}</span>
     </div>
     <div class="test-ui-body" id="b5-body">

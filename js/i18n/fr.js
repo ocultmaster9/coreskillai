@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fr = {
+    cv_errors:"erreurs",
+    cv_q_average:"Moyen",
+    cv_q_excellent:"Excellent",
+    cv_q_good:"Bon",
+    cv_q_weak:"Faible",
+    iq_qcount:"{n} questions",
+    pat_difficulty:"difficulté croissante",
+    rt_r_above:"Au-dessus de la moyenne",
+    rt_r_average:"Moyenne",
+    rt_r_below:"En dessous de la moyenne",
+    rt_r_exceptional:"Exceptionnel",
+    rt_r_practice:"Continuez à vous entraîner",
+    rt_r_superior:"Supérieur",
+    typ_chars:"Caractères",
     tests_badge:"9 tests gratuits disponibles",
     home_sci_body:"Chacun des neuf tests de CoreSkillAI est adapté d'instruments réellement employés en recherche psychologique : le test de QI s'inscrit dans la tradition du raisonnement sur matrices, le test de mémoire reprend le paradigme classique de l'empan de chiffres, le test d'attention utilise l'effet Stroop, vieux de 90 ans, et le test de personnalité suit le modèle des Big Five, dominant scientifiquement. Chaque page explique la science derrière la tâche, comment interpréter votre score et ce que dit la recherche sur son amélioration. Tous les tests s'exécutent entièrement dans votre navigateur, durent entre 2 et 20 minutes et comparent vos résultats à des percentiles mondiaux — gratuitement, anonymement et sans compte.",
     home_sci_title:"Pourquoi évaluer ses capacités cognitives ?",

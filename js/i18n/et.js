@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.et = {
+    cv_errors:"vigu",
+    cv_q_average:"Keskmine",
+    cv_q_excellent:"Suurepärane",
+    cv_q_good:"Hea",
+    cv_q_weak:"Nõrk",
+    iq_qcount:"{n} küsimust",
+    pat_difficulty:"kasvav raskusaste",
+    rt_r_above:"Üle keskmise",
+    rt_r_average:"Keskmine",
+    rt_r_below:"Alla keskmise",
+    rt_r_exceptional:"Erakordne",
+    rt_r_practice:"Jätka harjutamist",
+    rt_r_superior:"Väga hea",
+    typ_chars:"Tähemärki",
     tests_badge:"9 tasuta testi",
     home_sci_body:"Iga CoreSkillAI üheksast testist pärineb vahenditest, mida psühholoogiauuringutes tegelikult kasutatakse: IQ test kuulub maatriksarutluse traditsiooni, mälutest teostab klassikalise numbriulatuse, tähelepanutest kasutab üheksakümne aasta vanust Stroopi efekti ja isiksusetest järgib teaduses valitsevat Suure viisiku mudelit. Iga testileht selgitab ülesande taga olevat teadust, kuidas oma tulemust lugeda ja mida uuringud selle parandamise kohta ütlevad. Kõik testid töötavad täielikult brauseris, kestavad 2 kuni 20 minutit ja võrdlevad tulemust ülemaailmsete protsentiilidega — tasuta, anonüümselt ja kontot loomata.",
     home_sci_title:"Miks oma tunnetusvõimeid mõõta?",

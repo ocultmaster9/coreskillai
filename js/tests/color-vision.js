@@ -5,10 +5,10 @@ function _t(k,fb){return window.I18n?.t(k)||fb||k;}
 // 4 rows, each row has 2 fixed anchors + 8 moveable chips to sort
 
 const ROWS=[
-  {label:'Red → Yellow',  anchors:['#d32f2f','#f9a825'], hues:['#e53935','#ef6c00','#fb8c00','#ffa726','#ffcc02','#f7dc6f','#f4ca64','#f5a623']},
-  {label:'Yellow → Green',anchors:['#f9a825','#2e7d32'], hues:['#f0b429','#d4c700','#c5d600','#aed136','#8dc63f','#6abf69','#4caf50','#388e3c']},
-  {label:'Green → Blue',  anchors:['#2e7d32','#1565c0'], hues:['#43a047','#26a69a','#00acc1','#039be5','#1e88e5','#3949ab','#283593','#1a237e']},
-  {label:'Blue → Red',    anchors:['#1565c0','#d32f2f'], hues:['#1976d2','#5c6bc0','#7b1fa2','#ad1457','#c62828','#b71c1c','#8e0000','#bf360c']},
+  {from:'red',   to:'yellow', anchors:['#d32f2f','#f9a825'], hues:['#e53935','#ef6c00','#fb8c00','#ffa726','#ffcc02','#f7dc6f','#f4ca64','#f5a623']},
+  {from:'yellow',to:'green',  anchors:['#f9a825','#2e7d32'], hues:['#f0b429','#d4c700','#c5d600','#aed136','#8dc63f','#6abf69','#4caf50','#388e3c']},
+  {from:'green', to:'blue',   anchors:['#2e7d32','#1565c0'], hues:['#43a047','#26a69a','#00acc1','#039be5','#1e88e5','#3949ab','#283593','#1a237e']},
+  {from:'blue',  to:'red',    anchors:['#1565c0','#d32f2f'], hues:['#1976d2','#5c6bc0','#7b1fa2','#ad1457','#c62828','#b71c1c','#8e0000','#bf360c']},
 ];
 
 let rowOrder=[]; // user's current arrangement per row (copy of hues)
@@ -42,13 +42,18 @@ function totalErrorPct(totalErr){
 }
 
 function label(err){
-  if(err===0)  return{text:'Perfect Color Vision 🌈',color:'#6366f1'};
-  if(err<=8)   return{text:'Excellent',color:'#8b5cf6'};
-  if(err<=18)  return{text:'Good',color:'#10b981'};
-  if(err<=32)  return{text:'Average',color:'#06b6d4'};
-  if(err<=50)  return{text:'Mild Deficiency',color:'#f59e0b'};
-  return{text:'Significant Deficiency',color:'#ef4444'};
+  if(err===0)  return{text:_t('cv_perfect','Perfect colour vision')+' 🌈',color:'#6366f1'};
+  if(err<=8)   return{text:_t('cv_q_excellent','Excellent'),color:'#8b5cf6'};
+  if(err<=18)  return{text:_t('cv_q_good','Good'),color:'#10b981'};
+  if(err<=32)  return{text:_t('cv_q_average','Average'),color:'#06b6d4'};
+  if(err<=50)  return{text:_t('cv_minor','Minor deficiency'),color:'#f59e0b'};
+  return{text:_t('cv_significant','Significant deficiency'),color:'#ef4444'};
 }
+
+// The four row captions were hardcoded English and showed as "Red → Yellow" on
+// every localised page. Build them from the colour words the Stroop test already
+// translates into all 43 markets.
+function rowLabel(r){ return _t('color_'+r.from, r.from) + ' → ' + _t('color_'+r.to, r.to); }
 
 function buildRow(ri){
   const row=ROWS[ri];
@@ -59,7 +64,7 @@ function buildRow(ri){
       title="${h}"></div>`).join('');
   return `
   <div style="margin-bottom:20px">
-    <p style="font-size:.78rem;color:var(--text-3);margin-bottom:8px">${row.label}</p>
+    <p style="font-size:.78rem;color:var(--text-3);margin-bottom:8px">${rowLabel(row)}</p>
     <div class="hue-row">
       <div class="hue-anchor" style="background:${row.anchors[0]}" title="Anchor"></div>
       <div class="hue-chips" id="chips-${ri}">${chips}</div>
@@ -81,7 +86,7 @@ function renderShell(){
   </div>
   <div class="test-card-ui">
     <div class="test-ui-header">
-      <span class="test-ui-title">🌈 Color Vision</span>
+      <span class="test-ui-title">🌈 ${_t('cv_title',"Color Vision Test")}</span>
       <span class="badge badge-primary">${_t('cv_badge_drag',"Drag to sort")}</span>
     </div>
     <div class="test-ui-body" style="flex-direction:column;align-items:flex-start;gap:8px" id="cv-body">
@@ -139,7 +144,7 @@ function showResults(){
   const p=totalErrorPct(totalErr);
   const {text,color}=label(totalErr);
   const circ=2*Math.PI*55;
-  const breakdown=scores.map((s,i)=>`<div class="breakdown-item"><div class="b-label">${ROWS[i].label.split('→')[0].trim()}</div><div class="b-val" style="color:${s===0?'var(--success)':s<=8?'var(--primary)':'var(--warning)'}">${s===0?'Perfect':s<=4?'Excellent':s<=12?'Good':'Poor'}</div><div class="b-sub">err: ${s}</div></div>`).join('');
+  const breakdown=scores.map((s,i)=>`<div class="breakdown-item"><div class="b-label">${_t('color_'+ROWS[i].from, ROWS[i].from)}</div><div class="b-val" style="color:${s===0?'var(--success)':s<=8?'var(--primary)':'var(--warning)'}">${s===0?_t('cv_perfect','Perfect'):s<=4?_t('cv_q_excellent','Excellent'):s<=12?_t('cv_q_good','Good'):_t('cv_q_weak','Poor')}</div><div class="b-sub">${_t('cv_errors','errors')}: ${s}</div></div>`).join('');
   document.getElementById('cv-results').innerHTML=`
   <div class="result-score-wrap">
     <div class="score-ring-wrap" style="position:relative">

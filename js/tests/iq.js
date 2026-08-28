@@ -144,17 +144,17 @@ function renderShell(){
     <div class="science-card" style="text-align:center;padding:16px">
       <div style="font-size:1.6rem">🔢</div>
       <div style="font-size:.8rem;font-weight:700;margin-top:6px">${_t('iq_result_series','Number Series')}</div>
-      <div style="font-size:.75rem;color:var(--text-3)">15 questions</div>
+      <div style="font-size:.75rem;color:var(--text-3)">${_t('iq_qcount',"{n} questions").replace('{n}',15)}</div>
     </div>
     <div class="science-card" style="text-align:center;padding:16px">
       <div style="font-size:1.6rem">🔷</div>
       <div style="font-size:.8rem;font-weight:700;margin-top:6px">${_t('iq_result_matrix','Visual Patterns')}</div>
-      <div style="font-size:.75rem;color:var(--text-3)">10 questions</div>
+      <div style="font-size:.75rem;color:var(--text-3)">${_t('iq_qcount',"{n} questions").replace('{n}',10)}</div>
     </div>
     <div class="science-card" style="text-align:center;padding:16px">
       <div style="font-size:1.6rem">⚖️</div>
       <div style="font-size:.8rem;font-weight:700;margin-top:6px">${_t('iq_result_analogy','Analogies')}</div>
-      <div style="font-size:.75rem;color:var(--text-3)">15 questions</div>
+      <div style="font-size:.75rem;color:var(--text-3)">${_t('iq_qcount',"{n} questions").replace('{n}',15)}</div>
     </div>
   </div>
   <div class="test-card-ui">

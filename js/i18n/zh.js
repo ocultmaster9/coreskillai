@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.zh = {
+    cv_errors:"错误",
+    cv_q_average:"中等",
+    cv_q_excellent:"优秀",
+    cv_q_good:"良好",
+    cv_q_weak:"偏弱",
+    iq_qcount:"{n} 道题",
+    pat_difficulty:"难度递增",
+    rt_r_above:"高于平均",
+    rt_r_average:"平均",
+    rt_r_below:"低于平均",
+    rt_r_exceptional:"卓越",
+    rt_r_practice:"继续练习",
+    rt_r_superior:"出色",
+    typ_chars:"字符数",
     tests_badge:"9 项免费测试",
     home_sci_body:"本站的九项测试均改编自真实心理学研究所使用的工具：智力测试基于矩阵推理传统，记忆测试采用经典的数字广度范式，专注力测试使用已有九十年历史的斯特鲁普效应，人格测试则遵循学界最主流的五因素模型。每个测试页面都会说明任务背后的科学依据、如何解读你的分数，以及研究对如何提升给出的建议。所有测试完全在你的浏览器中运行，用时二到二十分钟，并把你的结果与全球百分位进行比较。完全免费、匿名，无需注册账户。",
     home_sci_title:"为什么要测试你的认知能力",

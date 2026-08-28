@@ -22,12 +22,12 @@ function normalCDF(z) {
 }
 
 function label(p) {
-  if(p>=95) return {text:'Exceptional ⚡',color:'#6366f1'};
-  if(p>=80) return {text:'Superior',color:'#8b5cf6'};
-  if(p>=60) return {text:'Above Average',color:'#10b981'};
-  if(p>=40) return {text:'Average',color:'#06b6d4'};
-  if(p>=20) return {text:'Below Average',color:'#f59e0b'};
-  return {text:'Keep Practicing',color:'#ef4444'};
+  if(p>=95) return {text:_t('rt_r_exceptional','Exceptional')+' ⚡',color:'#6366f1'};
+  if(p>=80) return {text:_t('rt_r_superior','Superior'),color:'#8b5cf6'};
+  if(p>=60) return {text:_t('rt_r_above','Above Average'),color:'#10b981'};
+  if(p>=40) return {text:_t('rt_r_average','Average'),color:'#06b6d4'};
+  if(p>=20) return {text:_t('rt_r_below','Below Average'),color:'#f59e0b'};
+  return {text:_t('rt_r_practice','Keep Practicing'),color:'#ef4444'};
 }
 
 function render() {
@@ -43,9 +43,9 @@ function render() {
   </div>
   <div class="test-card-ui">
     <div class="test-ui-header">
-      <span class="test-ui-title">⚡ Reaction Time</span>
+      <span class="test-ui-title">⚡ ${_t('rt_title',"Reaction Time Test")}</span>
       <div class="test-progress">
-        <span id="rt-trial-label" style="font-size:.8rem;color:var(--text-3)">Round 1 of ${MAX_TRIALS}</span>
+        <span id="rt-trial-label" style="font-size:.8rem;color:var(--text-3)">${_t('rt_round',"Round")} 1 ${_t('rt_of',"of")} ${MAX_TRIALS}</span>
         <div class="progress-dots" id="rt-dots">
           ${Array.from({length:MAX_TRIALS},(_,i)=>`<div class="progress-dot" id="rt-dot-${i}"></div>`).join('')}
         </div>
@@ -56,7 +56,7 @@ function render() {
         ${_t('rt_click_start','Click Start to begin')}
       </div>
       <div class="rt-trials" id="rt-trials"></div>
-      <button class="btn btn-primary" id="rt-start-btn" onclick="RTTest.start()">Start Test</button>
+      <button class="btn btn-primary" id="rt-start-btn" onclick="RTTest.start()">${_t('btn_start_test',"Start Test")}</button>
     </div>
   </div>
   <div class="results-panel" id="rt-results">
@@ -68,12 +68,12 @@ function render() {
         </svg>
         <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none" id="rt-ring-text-wrap">
           <div class="score-ring-num" id="rt-avg-ms">--</div>
-          <div class="score-ring-unit">ms avg</div>
+          <div class="score-ring-unit">ms ${_t('rt_average',"Average")}</div>
         </div>
       </div>
       <div class="score-ring-wrap" style="position:relative"><!-- placeholder --></div>
       <div class="result-info">
-        <h2 id="rt-result-label">Your Result</h2>
+        <h2 id="rt-result-label">${_t('rt_result_label',"Your Reaction Time")}</h2>
         <p class="result-desc" id="rt-result-desc"></p>
         <div class="result-percentile" id="rt-pct-badge"></div>
       </div>
@@ -83,11 +83,11 @@ function render() {
     </div>
     <div class="result-breakdown" id="rt-breakdown"></div>
     <div class="share-row">
-      <button class="share-btn" id="share-copy" onclick="RTTest.copyResult()">📋 Copy Result</button>
-      <button class="share-btn" onclick="RTTest.tweetResult()">𝕏 Share on X</button>
+      <button class="share-btn" id="share-copy" onclick="RTTest.copyResult()">📋 ${_t('share_copy',"Copy Result")}</button>
+      <button class="share-btn" onclick="RTTest.tweetResult()">𝕏 ${_t('share_tweet',"Share on X")}</button>
     </div>
     <div style="text-align:center;margin-top:20px">
-      <button class="btn btn-secondary" onclick="RTTest.reset()">↺ Try Again</button>
+      <button class="btn btn-secondary" onclick="RTTest.reset()">↺ ${_t('btn_try_again',"Try Again")}</button>
     </div>
   </div>`;
 
@@ -238,7 +238,7 @@ window.RTTest = {
     navigator.clipboard?.writeText(txt).then(()=>{
       const btn=document.getElementById('share-copy');
       btn.textContent='✓ Copied!'; btn.classList.add('copied');
-      setTimeout(()=>{btn.textContent='📋 Copy Result';btn.classList.remove('copied');},2000);
+      setTimeout(()=>{btn.textContent='📋 '+_t('share_copy','Copy Result');btn.classList.remove('copied');},2000);
     });
   },
   tweetResult() {

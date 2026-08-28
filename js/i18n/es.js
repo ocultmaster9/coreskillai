@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.es = {
+    cv_errors:"errores",
+    cv_q_average:"Medio",
+    cv_q_excellent:"Excelente",
+    cv_q_good:"Bueno",
+    cv_q_weak:"Bajo",
+    iq_qcount:"{n} preguntas",
+    pat_difficulty:"dificultad creciente",
+    rt_r_above:"Por encima de la media",
+    rt_r_average:"Media",
+    rt_r_below:"Por debajo de la media",
+    rt_r_exceptional:"Excepcional",
+    rt_r_practice:"Sigue practicando",
+    rt_r_superior:"Superior",
+    typ_chars:"Caracteres",
     tests_badge:"9 pruebas gratuitas disponibles",
     home_sci_body:"Cada una de las nueve pruebas de CoreSkillAI está adaptada de instrumentos empleados en investigación psicológica real: el test de inteligencia sigue la tradición del razonamiento con matrices, el de memoria aplica el clásico paradigma de amplitud de dígitos, el de atención usa el efecto Stroop, que tiene 90 años, y el de personalidad sigue el modelo de los Cinco Grandes, dominante en la ciencia. Cada página explica la ciencia que hay detrás de la tarea, cómo interpretar tu resultado y qué dice la investigación sobre mejorarlo. Todas las pruebas se ejecutan por completo en tu navegador, duran entre 2 y 20 minutos y comparan tu resultado con percentiles mundiales: gratis, anónimo y sin necesidad de cuenta.",
     home_sci_title:"¿Por qué medir tus capacidades cognitivas?",

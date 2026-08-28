@@ -530,7 +530,7 @@ function renderShell(){
       <textarea class="typing-input" id="typ-input" rows="3" placeholder="${_t('typ_start_placeholder','Start typing here…')}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
       <div class="typing-stats" id="typ-live-stats" style="justify-content:flex-start;gap:20px">
         <div class="typing-stat-item"><div class="typing-stat-num" id="typ-acc-live">100%</div><div class="typing-stat-label">${_t('typ_accuracy','Accuracy')}</div></div>
-        <div class="typing-stat-item"><div class="typing-stat-num" id="typ-chars-live">0</div><div class="typing-stat-label">Characters</div></div>
+        <div class="typing-stat-item"><div class="typing-stat-num" id="typ-chars-live">0</div><div class="typing-stat-label">${_t('typ_chars',"Characters")}</div></div>
       </div>
     </div>
   </div>
@@ -624,7 +624,7 @@ function endTest(){
   <div class="result-breakdown">
     <div class="breakdown-item"><div class="b-label">${wpmLabel}</div><div class="b-val" style="color:var(--primary)">${w}</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('typ_accuracy','Accuracy')}</div><div class="b-val">${acc}%</div></div>
-    <div class="breakdown-item"><div class="b-label">Characters</div><div class="b-val">${typed.length}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('typ_chars',"Characters")}</div><div class="b-val">${typed.length}</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div></div>
   </div>
   <div class="share-row">

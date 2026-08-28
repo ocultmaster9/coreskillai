@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fi = {
+    cv_errors:"virhettä",
+    cv_q_average:"Keskitaso",
+    cv_q_excellent:"Erinomainen",
+    cv_q_good:"Hyvä",
+    cv_q_weak:"Heikko",
+    iq_qcount:"{n} kysymystä",
+    pat_difficulty:"kasvava vaikeus",
+    rt_r_above:"Yli keskitason",
+    rt_r_average:"Keskitaso",
+    rt_r_below:"Alle keskitason",
+    rt_r_exceptional:"Poikkeuksellinen",
+    rt_r_practice:"Jatka harjoittelua",
+    rt_r_superior:"Erinomainen",
+    typ_chars:"Merkkiä",
     tests_badge:"9 maksutonta testiä",
     home_sci_body:"Jokainen CoreSkillAI:n yhdeksästä testistä on johdettu välineistä, joita todella käytetään psykologisessa tutkimuksessa: älykkyystesti nojaa matriisipäättelyn perinteeseen, muistitesti toteuttaa klassisen numerosarjan, keskittymistesti hyödyntää 90 vuotta vanhaa Stroopin ilmiötä ja persoonallisuustesti seuraa tieteessä vallitsevaa viiden suuren mallia. Jokainen testisivu selittää tehtävän taustalla olevan tieteen, miten tulosta luetaan ja mitä tutkimus sanoo sen parantamisesta. Kaikki testit toimivat kokonaan selaimessa, kestävät 2–20 minuuttia ja vertaavat tulostasi maailmanlaajuisiin prosenttipisteisiin — maksutta, nimettömästi ja ilman tiliä.",
     home_sci_title:"Miksi mitata omia kognitiivisia kykyjä?",

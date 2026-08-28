@@ -1361,7 +1361,7 @@ function renderShell(){
   </div>
   <div class="test-card-ui">
     <div class="test-ui-header">
-      <span class="test-ui-title">❤️ Emotional Intelligence</span>
+      <span class="test-ui-title">❤️ ${_t('eq_title',"Emotional Intelligence Test")}</span>
       <span id="eq-counter" class="q-counter">Q1 / ${ITEMS.length}</span>
     </div>
     <div class="test-ui-body" id="eq-body">

@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.no = {
+    cv_errors:"feil",
+    cv_q_average:"Gjennomsnitt",
+    cv_q_excellent:"Utmerket",
+    cv_q_good:"Bra",
+    cv_q_weak:"Svak",
+    iq_qcount:"{n} spørsmål",
+    pat_difficulty:"økende vanskelighetsgrad",
+    rt_r_above:"Over gjennomsnittet",
+    rt_r_average:"Gjennomsnitt",
+    rt_r_below:"Under gjennomsnittet",
+    rt_r_exceptional:"Eksepsjonell",
+    rt_r_practice:"Fortsett å øve",
+    rt_r_superior:"Overlegen",
+    typ_chars:"Tegn",
     tests_badge:"9 gratis tester tilgjengelige",
     home_sci_body:"Hver av de ni testene på CoreSkillAI er avledet av verktøy som faktisk brukes i psykologisk forskning: IQ-testen står i matriseresonneringens tradisjon, hukommelsestesten bygger på det klassiske sifferspennet, konsentrasjonstesten bruker den 90 år gamle Stroop-effekten, og personlighetstesten følger den vitenskapelig dominerende femfaktormodellen. Hver testside forklarer vitenskapen bak oppgaven, hvordan du tolker resultatet, og hva forskningen sier om å forbedre det. Alle testene kjører helt i nettleseren, tar mellom 2 og 20 minutter og sammenlikner resultatet med globale persentiler — gratis, anonymt og uten konto.",
     home_sci_title:"Hvorfor teste de kognitive evnene dine?",

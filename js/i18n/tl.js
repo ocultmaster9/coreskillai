@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tl = {
+    cv_errors:"mali",
+    cv_q_average:"Katamtaman",
+    cv_q_excellent:"Napakahusay",
+    cv_q_good:"Mahusay",
+    cv_q_weak:"Mahina",
+    iq_qcount:"{n} tanong",
+    pat_difficulty:"tumataas na hirap",
+    rt_r_above:"Higit sa karaniwan",
+    rt_r_average:"Karaniwan",
+    rt_r_below:"Mas mababa sa karaniwan",
+    rt_r_exceptional:"Pambihira",
+    rt_r_practice:"Magpatuloy sa pagsasanay",
+    rt_r_superior:"Nakahihigit",
+    typ_chars:"Mga karakter",
     tests_badge:"9 Libreng Pagsusulit na Available",
     home_sci_body:"Ang bawat isa sa siyam na pagsusulit sa CoreSkillAI ay hango sa mga instrumentong ginagamit sa tunay na pananaliksik sa sikolohiya: ang IQ test ay nakabatay sa tradisyon ng matrix reasoning, ang memory test ay gumagamit ng klasikong digit span paradigm, ang focus test ay gumagamit ng 90-taong gulang na Stroop effect, at ang personality test ay sumusunod sa Big Five na siyang nangingibabaw sa agham. Ipinapaliwanag ng bawat pahina ng pagsusulit ang agham sa likod ng gawain, kung paano bigyang-kahulugan ang iyong iskor, at kung ano ang sinasabi ng pananaliksik tungkol sa pagpapabuti nito. Lahat ng pagsusulit ay tumatakbo nang buo sa iyong browser, tumatagal ng 2 hanggang 20 minuto, at inihahambing ang iyong resulta sa pandaigdigang persentil — libre, hindi nagpapakilala, walang kailangang account.",
     home_sci_title:"Bakit Dapat Subukin ang Iyong Kakayahang Kognitibo?",

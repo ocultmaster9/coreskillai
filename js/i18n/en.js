@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.en = {
+    cv_errors:"errors",
+    cv_q_average:"Average",
+    cv_q_excellent:"Excellent",
+    cv_q_good:"Good",
+    cv_q_weak:"Poor",
+    iq_qcount:"{n} questions",
+    pat_difficulty:"increasing difficulty",
+    rt_r_above:"Above Average",
+    rt_r_average:"Average",
+    rt_r_below:"Below Average",
+    rt_r_exceptional:"Exceptional",
+    rt_r_practice:"Keep Practicing",
+    rt_r_superior:"Superior",
+    typ_chars:"Characters",
     tests_badge:"9 Free Tests Available",
     home_sci_body:"Each of the nine tests on CoreSkillAI is adapted from instruments used in real psychological research: the IQ test draws on matrix-reasoning traditions, the memory test implements the classic digit span paradigm, the focus test uses the 90-year-old Stroop effect, and the personality test follows the scientifically dominant Big Five model. Every test page explains the science behind the task, how to interpret your score, and what the research says about improving it. All tests run entirely in your browser, take between 2 and 20 minutes, and compare your results against global percentiles — free, anonymous, with no account required.",
     home_sci_title:"Why Test Your Cognitive Skills?",

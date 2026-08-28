@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ko = {
+    cv_errors:"오류",
+    cv_q_average:"보통",
+    cv_q_excellent:"매우 우수",
+    cv_q_good:"양호",
+    cv_q_weak:"미흡",
+    iq_qcount:"{n}문항",
+    pat_difficulty:"난이도 상승",
+    rt_r_above:"평균 이상",
+    rt_r_average:"평균",
+    rt_r_below:"평균 이하",
+    rt_r_exceptional:"탁월",
+    rt_r_practice:"계속 연습하세요",
+    rt_r_superior:"우수",
+    typ_chars:"글자 수",
     tests_badge:"무료 테스트 9종 이용 가능",
     home_sci_body:"이 사이트의 아홉 가지 테스트는 모두 실제 심리학 연구에서 쓰이는 도구를 바탕으로 만들어졌습니다. 지능 테스트는 행렬 추론 전통에 기반하고, 기억력 테스트는 고전적인 숫자 폭 과제를 구현하며, 집중력 테스트는 90년 된 스트룹 효과를 사용하고, 성격 테스트는 과학적으로 가장 널리 인정받는 다섯 요인 모형을 따릅니다. 각 테스트 페이지는 과제 뒤에 있는 과학적 근거와 점수를 해석하는 방법, 그리고 향상 방법에 관해 연구가 밝힌 내용을 설명합니다. 모든 테스트는 브라우저 안에서만 실행되고 2분에서 20분이 걸리며, 결과를 전 세계 백분위와 비교해 줍니다. 무료이며 익명이고 계정도 필요하지 않습니다.",
     home_sci_title:"인지 능력을 왜 측정해야 할까요",

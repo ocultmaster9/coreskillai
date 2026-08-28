@@ -127,6 +127,26 @@ const ITEM_TESTS = {
   'eq':       { api: 'EQTest', sel: '.question-text' },
 };
 
+// Latin tokens that are legitimately Latin inside ANY script: our own brand,
+// technical units, and the researchers whose names the science text cites.
+const LATIN_OK = /^(CoreSkillAI|AdSense|Google|IQ|EQ|WPM|CPM|MBTI|DNS|AI|SD|Stroop|Raven|Miller|Goldberg|IPIP|MSCEIT|WAIS|Binet|Ishihara|Farnsworth|Munsell|OCEAN|Mayer|Salovey|Caruso|QWERTY|X|ms|min|Q|v|px|err)$/i;
+
+// Every string a test WRITES INTO THE DOM must be translated too. The question
+// banks were only half the problem: "Color Vision", "Red -> Yellow", "Start
+// Test", "Try Again", "Score" and the reaction-time rating words were hardcoded
+// English inside the test JS. check_untranslated.py scans SERVED HTML and these
+// are rendered at runtime, so nothing saw them - a Korean visitor read them in
+// English. Only non-Latin scripts can be checked this way, which is enough:
+// the strings are shared, so a leak shows up in every market at once.
+function latinLeaks(doc) {
+  const main = doc.querySelector('main') || doc.body;
+  const clone = main.cloneNode(true);
+  clone.querySelectorAll('section[style*="max-width:860px"], footer, nav, select, script, style')
+       .forEach(n => n.remove());
+  const text = (clone.textContent || '').replace(/\s+/g, ' ');
+  return [...new Set((text.match(/[A-Za-z][A-Za-z'\u2019]{2,}/g) || []))].filter(w => !LATIN_OK.test(w));
+}
+
 function firstQuestion(r, spec) {
   const api = r.dom.window[spec.api];
   if (!api || typeof api.start !== 'function') return null;
@@ -174,6 +194,22 @@ function run(langs) {
         if (!q) { bad.push(`${test}: could not render a question`); continue; }
         if (enFirstQ[test] && q === enFirstQ[test]) {
           bad.push(`${test}: question bank is ENGLISH -> ${JSON.stringify(q.slice(0, 48))}`);
+          continue;
+        }
+      }
+
+      // Hardcoded English in the test's own JS, visible to a real visitor.
+      if (SCRIPT_RE[lang]) {
+        const spec = ITEM_TESTS[test];
+        if (spec) { try { firstQuestion(r, spec); } catch (e) {} }
+        else {
+          const api = r.dom.window[({iq:'IQTest','reaction-time':'RTTest',memory:'MemTest',
+            pattern:'PatTest','color-vision':'CVTest',focus:'FocusTest',typing:'TypTest'})[test]];
+          if (api && typeof api.start === 'function') { try { api.start(); } catch (e) {} }
+        }
+        const leaks = latinLeaks(r.doc);
+        if (leaks.length) {
+          bad.push(`${test}: hardcoded English in the UI -> ${leaks.slice(0, 6).join(', ')}`);
           continue;
         }
       }
