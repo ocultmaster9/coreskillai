@@ -129,7 +129,26 @@ def _body_matches_en(lang, pg, h):
     except Exception:
         return True          # cannot tell -> keep the old strict behaviour
 
-def thin_count(ratios):
+def han_share(texts):
+    """Fraction of letters that are Han ideographs.
+
+    Needed because character counts are only comparable between scripts of
+    similar information density. A Han glyph carries roughly a whole morpheme,
+    so correct Chinese renders the same content in about 40% of the characters
+    English needs - denser even than Japanese, which mixes phonetic kana in and
+    lands near 75%. Measured from the text itself, so any ideographic language
+    added later is handled without a per-language constant.
+    """
+    letters = han = 0
+    for t in texts:
+        for c in t:
+            if c.isalpha():
+                letters += 1
+                if '\u4e00' <= c <= '\u9fff': han += 1
+    return han / float(letters) if letters else 0.0
+
+
+def thin_count(ratios, texts=()):
     """Flag pages that are short FOR THIS LANGUAGE.
 
     Comparing raw character counts against English is invalid across scripts.
@@ -148,7 +167,13 @@ def thin_count(ratios):
         return 0
     vals = sorted(r for _, r in ratios)
     med = vals[len(vals) // 2]
-    if med < 0.45:                 # every page short => genuinely thin, not dense
+    # The absolute floor catches a language that is under-written everywhere.
+    # It was calibrated on alphabetic and kana scripts; Chinese legitimately
+    # sits near 0.40 and every one of its 15 pages was flagged thin while the
+    # market was in fact complete - the same false positive this function was
+    # written to fix for Japanese and Finnish, one script further along.
+    floor = 0.28 if han_share(texts) > 0.5 else 0.45
+    if med < floor:                # every page short => genuinely thin, not dense
         return len(ratios)
     return sum(1 for _, r in ratios if r < med * 0.80)
 
@@ -179,7 +204,7 @@ def audit():
         T=strings(lang)
         keys_ok = len(T)==nkeys and not (set(EN)-set(T))
         pages_ok = sum(1 for pg in PAGES if os.path.isfile(path_for(lang,pg)))
-        eng_title=0; sci_missing=0; sci_english=0; thin=0; ratios=[]
+        eng_title=0; sci_missing=0; sci_english=0; thin=0; ratios=[]; page_texts=[]
         for pg in PAGES:
             f=path_for(lang,pg)
             if not os.path.isfile(f): continue
@@ -209,10 +234,13 @@ def audit():
                 # 2,179 characters - MORE text, 22% fewer words. Characters are
                 # comparable across alphabetic scripts; words are not.
                 en_chars = EN_LEN.get(pg, 0)
-                if en_chars: ratios.append((pg, len(body_text(h)) / float(en_chars)))
+                if en_chars:
+                    bt = body_text(h)
+                    page_texts.append(bt)
+                    ratios.append((pg, len(bt) / float(en_chars)))
         rows.append(dict(lang=lang, keys=len(T), keys_ok=keys_ok, pages=pages_ok,
                          eng_title=eng_title, sci_missing=sci_missing, sci_english=sci_english,
-                         thin=thin_count(ratios), passages=passages(lang),
+                         thin=thin_count(ratios, page_texts), passages=passages(lang),
                          stroop=stroop(lang), b5=items('big-five',lang), eq=items('eq',lang)))
     return rows, nkeys
 
