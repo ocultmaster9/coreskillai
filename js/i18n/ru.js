@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ru = {
+    lbl_copied:"Скопировано!",
+    lbl_correct:"Верно",
+    lbl_score:"Результат",
+    pat_est_iq:"Оценочный IQ",
+    pat_global_mean:"мировое среднее",
+    pat_range:"оценка диапазона",
+    pat_res_desc:"Вы правильно ответили на {n} из {t}. По опубликованным нормам это соответствует оценочному диапазону IQ около ~{iq}. Распознавание закономерностей — ключевой компонент подвижного интеллекта.",
+    pat_top:"Топ {p}% в подвижном мышлении",
     cv_errors:"ошибок",
     cv_q_average:"Средне",
     cv_q_excellent:"Отлично",

@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.mk = {
+    lbl_copied:"Копирано!",
+    lbl_correct:"Точно",
+    lbl_score:"Резултат",
+    pat_est_iq:"Проценет IQ",
+    pat_global_mean:"светски просек",
+    pat_range:"процена на опсег",
+    pat_res_desc:"Точно одговоривте на {n} од {t}. Според објавените норми, тоа одговара на проценет IQ опсег околу ~{iq}. Препознавањето обрасци е основна компонента на флуидната интелигенција.",
+    pat_top:"Најдобри {p}% во флуидно расудување",
     cv_errors:"грешки",
     cv_q_average:"Просечно",
     cv_q_excellent:"Одлично",

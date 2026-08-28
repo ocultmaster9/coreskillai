@@ -9,12 +9,12 @@ function pct(span){
   return norms[Math.min(11,Math.max(3,span))]||50;
 }
 function label(span){
-  if(span>=10) return{text:'Exceptional Memory 🧠',color:'#6366f1'};
-  if(span>=9)  return{text:'Superior',color:'#8b5cf6'};
-  if(span>=8)  return{text:'Above Average',color:'#10b981'};
-  if(span>=7)  return{text:'Average (Normal)',color:'#06b6d4'};
-  if(span>=6)  return{text:'Low Average',color:'#f59e0b'};
-  return{text:'Below Average',color:'#ef4444'};
+  if(span>=10) return{text:_t('rt_r_exceptional','Exceptional')+' 🧠',color:'#6366f1'};
+  if(span>=9)  return{text:_t('rt_r_superior','Superior'),color:'#8b5cf6'};
+  if(span>=8)  return{text:_t('rt_r_above','Above Average'),color:'#10b981'};
+  if(span>=7)  return{text:_t('rt_r_average','Average'),color:'#06b6d4'};
+  if(span>=6)  return{text:_t('rt_r_below','Below Average'),color:'#f59e0b'};
+  return{text:_t('rt_r_practice','Keep Practicing'),color:'#ef4444'};
 }
 function randSeq(len){return Array.from({length:len},()=>Math.floor(Math.random()*9)+1);}
 
@@ -80,7 +80,7 @@ function showResults(maxSpan){
       </svg>
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
         <div class="score-ring-num">${maxSpan}</div>
-        <div class="score-ring-unit">digits</div>
+        <div class="score-ring-unit">${_t('mem_digits',"digits")}</div>
       </div>
     </div>
     <div class="result-info">
@@ -91,16 +91,16 @@ function showResults(maxSpan){
   </div>
   <div class="bell-curve-wrap"><canvas id="mem-bell" style="width:100%;display:block"></canvas></div>
   <div class="result-breakdown">
-    <div class="breakdown-item"><div class="b-label">Max Span</div><div class="b-val" style="color:var(--primary)">${maxSpan}</div><div class="b-sub">digits</div></div>
-    <div class="breakdown-item"><div class="b-label">${_t('mem_normal',"Normal Range")}</div><div class="b-val">5–9</div><div class="b-sub">Miller's Law</div></div>
-    <div class="breakdown-item"><div class="b-label">Global Avg</div><div class="b-val">7</div><div class="b-sub">digits</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('mem_result_label',"Memory Span")}</div><div class="b-val" style="color:var(--primary)">${maxSpan}</div><div class="b-sub">${_t('mem_digits',"digits")}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('mem_normal',"Normal Range")}</div><div class="b-val">5–9</div><div class="b-sub">${_t('mem_millers',"Miller's Law")}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('mem_global_avg',"Global Avg")}</div><div class="b-val">7</div><div class="b-sub">${_t('mem_digits',"digits")}</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div><div class="b-sub"></div></div>
   </div>
   <div class="share-row">
-    <button class="share-btn" id="share-copy" onclick="MemTest.copy()">📋 Copy Result</button>
-    <button class="share-btn" onclick="MemTest.tweet()">𝕏 Share on X</button>
+    <button class="share-btn" id="share-copy" onclick="MemTest.copy()">📋 ${_t('share_copy',"Copy Result")}</button>
+    <button class="share-btn" onclick="MemTest.tweet()">𝕏 ${_t('share_tweet',"Share on X")}</button>
   </div>
-  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="MemTest.reset()">↺ Try Again</button></div>`;
+  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="MemTest.reset()">↺ ${_t('btn_try_again',"Try Again")}</button></div>`;
   document.getElementById('mem-results').classList.add('show');
   window._memResult={span:maxSpan,pct:p,text};
 
@@ -138,7 +138,7 @@ window.MemTest={
     }
   },
   reset(){level=3;correct=0;render();},
-  copy(){const r=window._memResult;if(!r)return;const t=`My working memory span: ${r.span} digits — ${r.text} (${(window.ordinal?window.ordinal(r.pct):r.pct+'th')} percentile) 🧠 Test yours: coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');b.textContent='✓ Copied!';setTimeout(()=>b.textContent='📋 Copy Result',2000);});},
+  copy(){const r=window._memResult;if(!r)return;const t=`My working memory span: ${r.span} digits — ${r.text} (${(window.ordinal?window.ordinal(r.pct):r.pct+'th')} percentile) 🧠 Test yours: coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent='📋 '+_t('share_copy','Copy Result'),2000);});},
   tweet(){const r=window._memResult;if(!r)return;const t=`My working memory span: ${r.span} digits — ${r.text} (${(window.ordinal?window.ordinal(r.pct):r.pct+'th')} percentile)`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 

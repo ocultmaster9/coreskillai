@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fi = {
+    lbl_copied:"Kopioitu!",
+    lbl_correct:"Oikein",
+    lbl_score:"Pisteet",
+    pat_est_iq:"Arvioitu ÄO",
+    pat_global_mean:"maailman keskiarvo",
+    pat_range:"vaihteluvälin arvio",
+    pat_res_desc:"Sait {n}/{t} oikein. Julkaistujen normien perusteella tämä vastaa arvioitua ÄO-vaihteluväliä noin ~{iq}. Hahmontunnistus on sujuvan älykkyyden keskeinen osa.",
+    pat_top:"Paras {p} % sujuvassa päättelyssä",
     cv_errors:"virhettä",
     cv_q_average:"Keskitaso",
     cv_q_excellent:"Erinomainen",

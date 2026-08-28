@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lt = {
+    lbl_copied:"Nukopijuota!",
+    lbl_correct:"Teisingai",
+    lbl_score:"Rezultatas",
+    pat_est_iq:"Numatomas IQ",
+    pat_global_mean:"pasaulio vidurkis",
+    pat_range:"intervalo įvertis",
+    pat_res_desc:"Teisingai atsakėte į {n} iš {t}. Remiantis paskelbtomis normomis, tai atitinka numatomą IQ intervalą apie ~{iq}. Modelių atpažinimas yra pagrindinė sklandaus intelekto dalis.",
+    pat_top:"Geriausi {p}% sklandaus mąstymo srityje",
     cv_errors:"klaidų",
     cv_q_average:"Vidutiniškai",
     cv_q_excellent:"Puikiai",

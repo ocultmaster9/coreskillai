@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.nl = {
+    lbl_copied:"Gekopieerd!",
+    lbl_correct:"Goed",
+    lbl_score:"Score",
+    pat_est_iq:"Geschat IQ",
+    pat_global_mean:"wereldgemiddelde",
+    pat_range:"bereikschatting",
+    pat_res_desc:"Je had {n} van de {t} goed. Op basis van gepubliceerde normen komt dit overeen met een geschat IQ-bereik van ~{iq}. Patroonherkenning is een kernonderdeel van vloeiende intelligentie.",
+    pat_top:"Top {p}% in vloeiend redeneren",
     cv_errors:"fouten",
     cv_q_average:"Gemiddeld",
     cv_q_excellent:"Uitstekend",

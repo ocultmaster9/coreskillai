@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hi = {
+    lbl_copied:"कॉपी हो गया!",
+    lbl_correct:"सही",
+    lbl_score:"स्कोर",
+    pat_est_iq:"अनुमानित IQ",
+    pat_global_mean:"वैश्विक औसत",
+    pat_range:"अनुमानित सीमा",
+    pat_res_desc:"आपने {t} में से {n} सही किए। प्रकाशित मानकों के आधार पर यह लगभग ~{iq} की अनुमानित IQ सीमा से मेल खाता है। पैटर्न पहचान तरल बुद्धि का एक प्रमुख घटक है।",
+    pat_top:"तरल तर्क में शीर्ष {p}%",
     cv_errors:"त्रुटियाँ",
     cv_q_average:"औसत",
     cv_q_excellent:"उत्कृष्ट",

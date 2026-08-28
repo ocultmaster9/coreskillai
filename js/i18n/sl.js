@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sl = {
+    lbl_copied:"Kopirano!",
+    lbl_correct:"Pravilno",
+    lbl_score:"Rezultat",
+    pat_est_iq:"Ocenjeni IQ",
+    pat_global_mean:"svetovno povprečje",
+    pat_range:"ocena razpona",
+    pat_res_desc:"Pravilno ste odgovorili na {n} od {t}. Glede na objavljene norme to ustreza ocenjenemu razponu IQ okoli ~{iq}. Prepoznavanje vzorcev je temeljna sestavina fluidne inteligentnosti.",
+    pat_top:"Najboljših {p} % v fluidnem sklepanju",
     cv_errors:"napake",
     cv_q_average:"Povprečje",
     cv_q_excellent:"Odlično",

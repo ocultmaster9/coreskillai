@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hr = {
+    lbl_copied:"Kopirano!",
+    lbl_correct:"Točno",
+    lbl_score:"Rezultat",
+    pat_est_iq:"Procijenjeni IQ",
+    pat_global_mean:"svjetski prosjek",
+    pat_range:"procjena raspona",
+    pat_res_desc:"Točno ste odgovorili na {n} od {t}. Prema objavljenim normama to odgovara procijenjenom rasponu IQ oko ~{iq}. Prepoznavanje uzoraka temeljna je sastavnica fluidne inteligencije.",
+    pat_top:"Najboljih {p}% u fluidnom rasuđivanju",
     cv_errors:"pogreške",
     cv_q_average:"Prosjek",
     cv_q_excellent:"Izvrsno",

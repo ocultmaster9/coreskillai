@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.el = {
+    lbl_copied:"Αντιγράφηκε!",
+    lbl_correct:"Σωστά",
+    lbl_score:"Βαθμολογία",
+    pat_est_iq:"Εκτιμώμενο IQ",
+    pat_global_mean:"παγκόσμιος μέσος",
+    pat_range:"εκτίμηση εύρους",
+    pat_res_desc:"Απαντήσατε σωστά σε {n} από {t}. Με βάση δημοσιευμένους κανόνες, αυτό αντιστοιχεί σε εκτιμώμενο εύρος IQ περίπου ~{iq}. Η αναγνώριση μοτίβων είναι βασικό στοιχείο της ρευστής νοημοσύνης.",
+    pat_top:"Κορυφαίο {p}% στη ρευστή συλλογιστική",
     cv_errors:"σφάλματα",
     cv_q_average:"Μέτριο",
     cv_q_excellent:"Εξαιρετικό",

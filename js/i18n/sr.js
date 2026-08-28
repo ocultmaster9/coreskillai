@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sr = {
+    lbl_copied:"Копирано!",
+    lbl_correct:"Тачно",
+    lbl_score:"Резултат",
+    pat_est_iq:"Процењени IQ",
+    pat_global_mean:"светски просек",
+    pat_range:"процена опсега",
+    pat_res_desc:"Тачно сте одговорили на {n} од {t}. Према објављеним нормама то одговара процењеном IQ опсегу око ~{iq}. Препознавање образаца је основна компонента флуидне интелигенције.",
+    pat_top:"Најбољих {p}% у флуидном расуђивању",
     cv_errors:"грешке",
     cv_q_average:"Просек",
     cv_q_excellent:"Одлично",

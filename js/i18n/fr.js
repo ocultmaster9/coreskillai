@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fr = {
+    lbl_copied:"Copié !",
+    lbl_correct:"Correctes",
+    lbl_score:"Score",
+    pat_est_iq:"QI estimé",
+    pat_global_mean:"moyenne mondiale",
+    pat_range:"estimation de plage",
+    pat_res_desc:"Vous avez {n} bonnes réponses sur {t}. D'après les normes publiées, cela correspond à une plage de QI estimée à ~{iq}. La reconnaissance de motifs est une composante centrale de l'intelligence fluide.",
+    pat_top:"Top {p}% en raisonnement fluide",
     cv_errors:"erreurs",
     cv_q_average:"Moyen",
     cv_q_excellent:"Excellent",

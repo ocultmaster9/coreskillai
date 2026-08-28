@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ko = {
+    lbl_copied:"복사했습니다",
+    lbl_correct:"정답",
+    lbl_score:"점수",
+    pat_est_iq:"추정 IQ",
+    pat_global_mean:"전 세계 평균",
+    pat_range:"범위 추정",
+    pat_res_desc:"{t}문항 중 {n}문항을 맞혔습니다. 공표된 규준에 따르면 이는 추정 IQ 범위 약 ~{iq}에 해당합니다. 규칙 인식은 유동 지능의 핵심 요소입니다.",
+    pat_top:"유동 추론 상위 {p}%",
     cv_errors:"오류",
     cv_q_average:"보통",
     cv_q_excellent:"매우 우수",

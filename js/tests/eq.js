@@ -1341,12 +1341,12 @@ function normalCDF(z){
   return z>=0?1-d:d;
 }
 function label(total){
-  if(total>=130) return{text:'Exceptional EQ ❤️',color:'#6366f1'};
-  if(total>=115) return{text:'Very High EQ',color:'#8b5cf6'};
-  if(total>=105) return{text:'Above Average EQ',color:'#10b981'};
-  if(total>=95)  return{text:'Average EQ',color:'#06b6d4'};
-  if(total>=85)  return{text:'Developing',color:'#f59e0b'};
-  return{text:'Low EQ',color:'#ef4444'};
+  if(total>=130) return{text:_t('rt_r_exceptional','Exceptional')+' ❤️',color:'#6366f1'};
+  if(total>=115) return{text:_t('rt_r_superior','Superior'),color:'#8b5cf6'};
+  if(total>=105) return{text:_t('rt_r_above','Above Average'),color:'#10b981'};
+  if(total>=95)  return{text:_t('rt_r_average','Average'),color:'#06b6d4'};
+  if(total>=85)  return{text:_t('rt_r_below','Below Average'),color:'#f59e0b'};
+  return{text:_t('rt_r_practice','Keep Practicing'),color:'#ef4444'};
 }
 
 function renderShell(){
@@ -1366,7 +1366,7 @@ function renderShell(){
     </div>
     <div class="test-ui-body" id="eq-body">
       <p style="color:var(--text-2)">${_t('eq_start_desc',"Discover your EQ across all 4 dimensions of emotional intelligence.")}</p>
-      <button class="btn btn-primary" onclick="EQTest.start()">Start Test</button>
+      <button class="btn btn-primary" onclick="EQTest.start()">${_t('btn_start_test',"Start Test")}</button>
     </div>
     <div style="padding:12px 24px;border-top:1px solid var(--border)">
       <div class="q-progress-bar"><div class="q-progress-fill" id="eq-prog" style="width:0%"></div></div>
@@ -1422,20 +1422,20 @@ function showResults(){
     <div class="result-info">
       <h2>${text}</h2>
       <p class="result-desc">${totalEQ>=115?_t('eq_res_high',"Your emotional intelligence is genuinely high. You read, use and manage emotions with exceptional skill — a strong predictor of relationship quality and teamwork."):totalEQ>=95?_t('eq_res_mid',"Your EQ is solid and functional. You navigate emotions well in most situations, with room to deepen specific dimensions."):_t('eq_res_low',"Your EQ has room to grow. Emotional intelligence is one of the most trainable skills there is — labelling feelings precisely and deliberate practice both show measurable gains.")}</p>
-      <div class="result-percentile" style="background:${color}22;color:${color}">Higher than ${p}% of people</div>
+      <div class="result-percentile" style="background:${color}22;color:${color}">${_t('percentile_prefix',"Better than")} ${p}% ${_t('percentile_suffix',"of people")}</div>
     </div>
   </div>
   <div class="bell-curve-wrap"><canvas id="eq-bell" style="width:100%;display:block"></canvas></div>
   <div class="trait-bars" style="margin-top:20px">${bars}</div>
   <div class="result-breakdown" style="margin-top:20px">
     ${ORDER.map(b=>`<div class="breakdown-item"><div class="b-label">${BRANCHES[b].name.split(' ')[0]}</div><div class="b-val" style="color:${BRANCHES[b].color}">${eqScores[b]}</div></div>`).join('')}
-    <div class="breakdown-item"><div class="b-label">Overall EQ</div><div class="b-val" style="color:${color}">${totalEQ}</div><div class="b-sub">avg: 100</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('eq_result_label',"EQ Score")}</div><div class="b-val" style="color:${color}">${totalEQ}</div><div class="b-sub">${_t('rt_average',"Average")}: 100</div></div>
   </div>
   <div class="share-row">
-    <button class="share-btn" id="share-copy" onclick="EQTest.copy()">📋 Copy Result</button>
-    <button class="share-btn" onclick="EQTest.tweet()">𝕏 Share on X</button>
+    <button class="share-btn" id="share-copy" onclick="EQTest.copy()">📋 ${_t('share_copy',"Copy Result")}</button>
+    <button class="share-btn" onclick="EQTest.tweet()">𝕏 ${_t('share_tweet',"Share on X")}</button>
   </div>
-  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="EQTest.reset()">↺ Retake</button></div>`;
+  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="EQTest.reset()">↺ ${_t('btn_try_again',"Try Again")}</button></div>`;
   document.getElementById('eq-results').classList.add('show');
   window._eqResult={totalEQ,p,text};
   const ring=document.getElementById('eq-ring');

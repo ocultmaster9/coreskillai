@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.uk = {
+    lbl_copied:"Скопійовано!",
+    lbl_correct:"Правильно",
+    lbl_score:"Результат",
+    pat_est_iq:"Оцінений IQ",
+    pat_global_mean:"світнє середнє",
+    pat_range:"оцінка діапазону",
+    pat_res_desc:"Ви правильно відповіли на {n} із {t}. За опублікованими нормами це відповідає оціненому діапазону IQ близько ~{iq}. Розпізнавання закономірностей — ключовий компонент рухливого інтелекту.",
+    pat_top:"Топ {p}% у рухливому мисленні",
     cv_errors:"помилок",
     cv_q_average:"Середньо",
     cv_q_excellent:"Відмінно",

@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.et = {
+    lbl_copied:"Kopeeritud!",
+    lbl_correct:"Õiged",
+    lbl_score:"Tulemus",
+    pat_est_iq:"Hinnanguline IQ",
+    pat_global_mean:"maailma keskmine",
+    pat_range:"vahemiku hinnang",
+    pat_res_desc:"Vastasite õigesti {n} küsimusele {t}-st. Avaldatud normide põhjal vastab see hinnangulisele IQ vahemikule ~{iq}. Mustrite tuvastamine on voolava intelligentsuse põhikomponent.",
+    pat_top:"Parim {p}% voolavas arutluses",
     cv_errors:"vigu",
     cv_q_average:"Keskmine",
     cv_q_excellent:"Suurepärane",

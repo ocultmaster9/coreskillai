@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sw = {
+    lbl_copied:"Imenakiliwa!",
+    lbl_correct:"Sahihi",
+    lbl_score:"Alama",
+    pat_est_iq:"IQ inayokadiriwa",
+    pat_global_mean:"wastani wa dunia",
+    pat_range:"makadirio ya kiwango",
+    pat_res_desc:"Ulijibu {n} kati ya {t} kwa usahihi. Kwa mujibu wa viwango vilivyochapishwa, hii inalingana na kiwango cha IQ kinachokadiriwa cha takriban ~{iq}. Utambuzi wa michoro ni sehemu kuu ya akili tendaji.",
+    pat_top:"Asilimia {p} bora katika utambuzi tendaji",
     cv_errors:"makosa",
     cv_q_average:"Wastani",
     cv_q_excellent:"Bora sana",

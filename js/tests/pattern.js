@@ -49,12 +49,12 @@ function iqEst(s){
 }
 function label(s){
   const p=pct(s);
-  if(p>=95) return{text:'Exceptional 🔷',color:'#6366f1'};
-  if(p>=80) return{text:'Superior',color:'#8b5cf6'};
-  if(p>=60) return{text:'Above Average',color:'#10b981'};
-  if(p>=40) return{text:'Average',color:'#06b6d4'};
-  if(p>=20) return{text:'Below Average',color:'#f59e0b'};
-  return{text:'Low',color:'#ef4444'};
+  if(p>=95) return{text:_t('rt_r_exceptional','Exceptional')+' 🔷',color:'#6366f1'};
+  if(p>=80) return{text:_t('rt_r_superior','Superior'),color:'#8b5cf6'};
+  if(p>=60) return{text:_t('rt_r_above','Above Average'),color:'#10b981'};
+  if(p>=40) return{text:_t('rt_r_average','Average'),color:'#06b6d4'};
+  if(p>=20) return{text:_t('rt_r_below','Below Average'),color:'#f59e0b'};
+  return{text:_t('rt_r_practice','Keep Practicing'),color:'#ef4444'};
 }
 
 function renderQ(){
@@ -107,7 +107,7 @@ function renderShell(){
     </div>
     <div class="test-ui-body" id="pat-body" style="flex-direction:column;gap:16px">
       <p style="color:var(--text-2)">${_t('pat_desc',"Test your fluid intelligence with abstract visual patterns.")}</p>
-      <button class="btn btn-primary" onclick="PatTest.start()">Start Test</button>
+      <button class="btn btn-primary" onclick="PatTest.start()">${_t('btn_start_test',"Start Test")}</button>
     </div>
     <div style="padding:12px 24px;border-top:1px solid var(--border)">
       <div class="q-progress-bar"><div class="q-progress-fill" id="pat-prog-fill" style="width:0%"></div></div>
@@ -131,28 +131,28 @@ function showResults(){
       </svg>
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
         <div class="score-ring-num">${score}/${QUESTIONS.length}</div>
-        <div class="score-ring-unit">correct</div>
+        <div class="score-ring-unit">${_t('lbl_correct',"Correct")}</div>
       </div>
     </div>
     <div class="result-info">
       <h2>${text}</h2>
-      <p class="result-desc">You got ${score} out of ${QUESTIONS.length} correct. Based on published norms, this corresponds to an estimated IQ range of <strong>~${iq}</strong>. Pattern recognition is a core component of fluid intelligence.</p>
-      <div class="result-percentile" style="background:${color}22;color:${color}">Top ${100-p}% in fluid reasoning</div>
+      <p class="result-desc">${_t('pat_res_desc',"You got {n} out of {t} correct. Based on published norms, this corresponds to an estimated IQ range of ~{iq}. Pattern recognition is a core component of fluid intelligence.").replace('{n}',score).replace('{t}',QUESTIONS.length).replace('{iq}','<strong>~'+iq+'</strong>')}</p>
+      <div class="result-percentile" style="background:${color}22;color:${color}">${_t('pat_top',"Top {p}% in fluid reasoning").replace('{p}',100-p)}</div>
     </div>
   </div>
   <div class="bell-curve-wrap"><canvas id="pat-bell" style="width:100%;display:block"></canvas></div>
   <div class="result-breakdown">
     <div class="breakdown-item"><div class="b-label">${_t('pat_result_label','Pattern Score')}</div><div class="b-val" style="color:var(--primary)">${score}/${QUESTIONS.length}</div></div>
-    <div class="breakdown-item"><div class="b-label">Est. IQ</div><div class="b-val">~${iq}</div><div class="b-sub">range estimate</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('pat_est_iq',"Est. IQ")}</div><div class="b-val">~${iq}</div><div class="b-sub">${_t('pat_range',"range estimate")}</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div></div>
-    <div class="breakdown-item"><div class="b-label">Average</div><div class="b-val">7/12</div><div class="b-sub">global mean</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('rt_average',"Average")}</div><div class="b-val">7/12</div><div class="b-sub">${_t('pat_global_mean',"global mean")}</div></div>
   </div>
   <p style="font-size:.75rem;color:var(--text-3);margin-top:8px;text-align:center">${_t('pat_note',"Note: This is a brief screening measure, not a certified IQ test. For clinical IQ assessment, consult a psychologist.")}</p>
   <div class="share-row">
-    <button class="share-btn" id="share-copy" onclick="PatTest.copy()">📋 Copy Result</button>
-    <button class="share-btn" onclick="PatTest.tweet()">𝕏 Share on X</button>
+    <button class="share-btn" id="share-copy" onclick="PatTest.copy()">📋 ${_t('share_copy',"Copy Result")}</button>
+    <button class="share-btn" onclick="PatTest.tweet()">𝕏 ${_t('share_tweet',"Share on X")}</button>
   </div>
-  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="PatTest.reset()">↺ Try Again</button></div>`;
+  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="PatTest.reset()">↺ ${_t('btn_try_again',"Try Again")}</button></div>`;
   document.getElementById('pat-results').classList.add('show');
   window._patResult={score,pct:p,iq,text};
   const ring=document.getElementById('pat-ring');

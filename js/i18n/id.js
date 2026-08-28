@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.id = {
+    lbl_copied:"Tersalin!",
+    lbl_correct:"Benar",
+    lbl_score:"Skor",
+    pat_est_iq:"Perkiraan IQ",
+    pat_global_mean:"rata-rata global",
+    pat_range:"perkiraan rentang",
+    pat_res_desc:"Anda menjawab benar {n} dari {t}. Berdasarkan norma yang dipublikasikan, ini setara dengan rentang IQ perkiraan sekitar ~{iq}. Pengenalan pola adalah komponen inti kecerdasan cair.",
+    pat_top:"{p}% teratas dalam penalaran cair",
     cv_errors:"kesalahan",
     cv_q_average:"Rata-rata",
     cv_q_excellent:"Sangat baik",

@@ -2290,7 +2290,7 @@ function renderShell(){
     </div>
     <div class="test-ui-body" id="b5-body">
       <p style="color:var(--text-2)">${_t('b5_start_desc',"The most accurate personality model in psychology, used by researchers worldwide.")}</p>
-      <button class="btn btn-primary" onclick="B5Test.start()">Start Test</button>
+      <button class="btn btn-primary" onclick="B5Test.start()">${_t('btn_start_test',"Start Test")}</button>
     </div>
     <div style="padding:12px 24px;border-top:1px solid var(--border)">
       <div class="q-progress-bar"><div class="q-progress-fill" id="b5-prog" style="width:0%"></div></div>
@@ -2336,7 +2336,7 @@ function showResults(){
     return `<div class="trait-bar-item">
       <div class="trait-bar-top">
         <span class="trait-name" style="color:${info.color}">${info.name}</span>
-        <span class="trait-pct">${(window.ordinal?window.ordinal(p):p+'th')} percentile</span>
+        <span class="trait-pct">${(window.ordinal?window.ordinal(p):p+'th')} ${_t('label_percentile',"Percentile")}</span>
       </div>
       <div class="trait-bar-track"><div class="trait-bar-fill" style="width:${p}%;background:${info.color}"></div></div>
       <p style="font-size:.78rem;color:var(--text-2);margin-top:6px;line-height:1.5">${desc}</p>
@@ -2355,10 +2355,10 @@ function showResults(){
   <div class="trait-bars">${bars}</div>
   <canvas id="b5-radar" style="max-width:320px;width:100%;display:block;margin:24px auto"></canvas>
   <div class="share-row" style="margin-top:8px">
-    <button class="share-btn" id="share-copy" onclick="B5Test.copy()">📋 Copy Result</button>
-    <button class="share-btn" onclick="B5Test.tweet()">𝕏 Share on X</button>
+    <button class="share-btn" id="share-copy" onclick="B5Test.copy()">📋 ${_t('share_copy',"Copy Result")}</button>
+    <button class="share-btn" onclick="B5Test.tweet()">𝕏 ${_t('share_tweet',"Share on X")}</button>
   </div>
-  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="B5Test.reset()">↺ Retake</button></div>`;
+  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="B5Test.reset()">↺ ${_t('btn_try_again',"Try Again")}</button></div>`;
   document.getElementById('b5-results').classList.add('show');
   window._b5Result={pcts, dom:domInfo.name};
 

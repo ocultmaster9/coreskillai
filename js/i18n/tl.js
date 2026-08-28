@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tl = {
+    lbl_copied:"Nakopya!",
+    lbl_correct:"Tama",
+    lbl_score:"Iskor",
+    pat_est_iq:"Tinatayang IQ",
+    pat_global_mean:"pandaigdigang karaniwan",
+    pat_range:"tantiya ng saklaw",
+    pat_res_desc:"Nakakuha ka ng {n} sa {t}. Batay sa mga nailathalang pamantayan, tumutugma ito sa tinatayang saklaw ng IQ na humigit-kumulang ~{iq}. Ang pagkilala ng pattern ay pangunahing bahagi ng fluid na katalinuhan.",
+    pat_top:"Nangungunang {p}% sa fluid na pangangatwiran",
     cv_errors:"mali",
     cv_q_average:"Katamtaman",
     cv_q_excellent:"Napakahusay",

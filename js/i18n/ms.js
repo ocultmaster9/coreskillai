@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ms = {
+    lbl_copied:"Disalin!",
+    lbl_correct:"Betul",
+    lbl_score:"Skor",
+    pat_est_iq:"Anggaran IQ",
+    pat_global_mean:"purata global",
+    pat_range:"anggaran julat",
+    pat_res_desc:"Anda menjawab {n} daripada {t} dengan betul. Berdasarkan norma yang diterbitkan, ini bersamaan julat IQ anggaran sekitar ~{iq}. Pengecaman corak ialah komponen teras kecerdasan cair.",
+    pat_top:"{p}% teratas dalam penaakulan cair",
     cv_errors:"kesilapan",
     cv_q_average:"Sederhana",
     cv_q_excellent:"Cemerlang",

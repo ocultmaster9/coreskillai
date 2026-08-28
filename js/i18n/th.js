@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.th = {
+    lbl_copied:"คัดลอกแล้ว",
+    lbl_correct:"ถูกต้อง",
+    lbl_score:"คะแนน",
+    pat_est_iq:"IQ โดยประมาณ",
+    pat_global_mean:"ค่าเฉลี่ยโลก",
+    pat_range:"ช่วงประมาณการ",
+    pat_res_desc:"คุณตอบถูก {n} จาก {t} ข้อ จากเกณฑ์ที่เผยแพร่ ค่านี้เทียบได้กับช่วง IQ ราว ~{iq} การจดจำรูปแบบเป็นองค์ประกอบหลักของสติปัญญาแบบลื่นไหล",
+    pat_top:"อยู่ใน {p}% แรกด้านการให้เหตุผลแบบลื่นไหล",
     cv_errors:"ข้อผิดพลาด",
     cv_q_average:"ปานกลาง",
     cv_q_excellent:"ยอดเยี่ยม",

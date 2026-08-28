@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fa = {
+    lbl_copied:"کپی شد!",
+    lbl_correct:"درست",
+    lbl_score:"امتیاز",
+    pat_est_iq:"هوش تخمینی",
+    pat_global_mean:"میانگین جهانی",
+    pat_range:"بازه تقریبی",
+    pat_res_desc:"شما {n} از {t} را درست پاسخ دادید. بر پایه هنجارهای منتشرشده، این با بازه هوش تخمینی حدود ~{iq} مطابقت دارد. تشخیص الگو مؤلفه‌ای اصلی از هوش سیال است.",
+    pat_top:"{p}% برتر در استدلال سیال",
     cv_errors:"خطا",
     cv_q_average:"متوسط",
     cv_q_excellent:"عالی",

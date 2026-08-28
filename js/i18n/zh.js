@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.zh = {
+    lbl_copied:"已复制",
+    lbl_correct:"正确",
+    lbl_score:"得分",
+    pat_est_iq:"估算智商",
+    pat_global_mean:"全球平均",
+    pat_range:"区间估计",
+    pat_res_desc:"你答对了 {t} 题中的 {n} 题。依据已发表的常模，这相当于估算智商区间约 ~{iq}。规律识别是流体智力的核心组成部分。",
+    pat_top:"流体推理前 {p}%",
     cv_errors:"错误",
     cv_q_average:"中等",
     cv_q_excellent:"优秀",

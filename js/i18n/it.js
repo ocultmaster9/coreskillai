@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.it = {
+    lbl_copied:"Copiato!",
+    lbl_correct:"Corrette",
+    lbl_score:"Punteggio",
+    pat_est_iq:"QI stimato",
+    pat_global_mean:"media mondiale",
+    pat_range:"stima dell'intervallo",
+    pat_res_desc:"Hai risposto correttamente a {n} su {t}. In base alle norme pubblicate, ciò corrisponde a un intervallo di QI stimato di ~{iq}. Il riconoscimento di schemi è una componente centrale dell'intelligenza fluida.",
+    pat_top:"Top {p}% nel ragionamento fluido",
     cv_errors:"errori",
     cv_q_average:"Medio",
     cv_q_excellent:"Eccellente",

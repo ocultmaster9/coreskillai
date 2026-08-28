@@ -153,23 +153,23 @@ function showResults(){
         <circle class="score-ring-fill" id="cv-ring" cx="65" cy="65" r="55"/>
       </svg>
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
-        <div class="score-ring-num">${p}</div><div class="score-ring-unit">percentile</div>
+        <div class="score-ring-num">${p}</div><div class="score-ring-unit">${_t('label_percentile',"Percentile")}</div>
       </div>
     </div>
     <div class="result-info">
       <h2>${text}</h2>
       <p class="result-desc">${totalErr===0?_t('cv_res_high',"Perfect score. Your colour discrimination is exceptional — every chip placed in exact order."):totalErr<=18?_t('cv_res_mid',"Your colour vision is well above average. Small errors are common even in people with clinically normal vision."):_t('cv_res_low',"Some difficulty with hue discrimination was detected. About 8% of men and 0.5% of women have some form of colour vision deficiency.")}</p>
-      <div class="result-percentile" style="background:${color}22;color:${color}">Better than ${p}% of people</div>
+      <div class="result-percentile" style="background:${color}22;color:${color}">${_t('percentile_prefix',"Better than")} ${p}% ${_t('percentile_suffix',"of people")}</div>
     </div>
   </div>
   <div class="bell-curve-wrap"><canvas id="cv-bell" style="width:100%;display:block"></canvas></div>
   <div class="result-breakdown">${breakdown}</div>
   <p style="font-size:.75rem;color:var(--text-3);margin-top:8px;text-align:center">${_t('cv_note',"Note: This test is for informational purposes only. For clinical color vision assessment, consult an optometrist.")}</p>
   <div class="share-row">
-    <button class="share-btn" id="share-copy" onclick="CVTest.copy()">📋 Copy Result</button>
-    <button class="share-btn" onclick="CVTest.tweet()">𝕏 Share on X</button>
+    <button class="share-btn" id="share-copy" onclick="CVTest.copy()">📋 ${_t('share_copy',"Copy Result")}</button>
+    <button class="share-btn" onclick="CVTest.tweet()">𝕏 ${_t('share_tweet',"Share on X")}</button>
   </div>
-  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="CVTest.reset()">↺ Try Again</button></div>`;
+  <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="CVTest.reset()">↺ ${_t('btn_try_again',"Try Again")}</button></div>`;
   document.getElementById('cv-results').classList.add('show');
   window._cvResult={totalErr,pct:p,text};
   const ring=document.getElementById('cv-ring');

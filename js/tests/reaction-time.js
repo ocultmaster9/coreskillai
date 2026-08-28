@@ -148,14 +148,14 @@ function showResults() {
   // breakdown
   document.getElementById('rt-breakdown').innerHTML = trials.map((ms,i)=>`
     <div class="breakdown-item">
-      <div class="b-label">Round ${i+1}</div>
+      <div class="b-label">${_t('rt_round',"Round")} ${i+1}</div>
       <div class="b-val" style="color:${ms===best?'var(--success)':'var(--text)'}">${Math.round(ms)}ms</div>
       <div class="b-sub">${ms===best?'★ Best':''}</div>
     </div>`).join('')+`
     <div class="breakdown-item">
-      <div class="b-label">Average</div>
+      <div class="b-label">${_t('rt_average',"Average")}</div>
       <div class="b-val" style="color:var(--primary)">${Math.round(avg)}ms</div>
-      <div class="b-sub">All rounds</div>
+      <div class="b-sub">${_t('rt_all_rounds',"All rounds")}</div>
     </div>`;
 
   // bell curve
@@ -237,7 +237,7 @@ window.RTTest = {
     const txt=`My reaction time: ${r.avg}ms — faster than ${r.pct}% of people! (${r.text}) Test yours at coreskillai.com ⚡`;
     navigator.clipboard?.writeText(txt).then(()=>{
       const btn=document.getElementById('share-copy');
-      btn.textContent='✓ Copied!'; btn.classList.add('copied');
+      btn.textContent='✓ '+_t('lbl_copied','Copied!'); btn.classList.add('copied');
       setTimeout(()=>{btn.textContent='📋 '+_t('share_copy','Copy Result');btn.classList.remove('copied');},2000);
     });
   },

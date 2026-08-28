@@ -253,7 +253,7 @@ function finishTest(){
     <div class="breakdown-item"><div class="b-label">${_t('iq_title','IQ')}</div><div class="b-val" style="color:${color}">${iq}</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('iq_category','Category')}</div><div class="b-val" style="font-size:.85rem">${category}</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div></div>
-    <div class="breakdown-item"><div class="b-label">Score</div><div class="b-val">${score}/40</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('lbl_score',"Score")}</div><div class="b-val">${score}/40</div></div>
   </div>
   <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-top:20px">
     <div style="font-size:.82rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px">${_t('iq_breakdown','Score Breakdown')}</div>
@@ -375,7 +375,7 @@ window.IQTest={
     const r=window._iqResult;if(!r)return;
     const t=`My IQ score: ${r.iq} — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile, ${r.score}/40 correct) 🧬 Free IQ test: coreskillai.com`;
     navigator.clipboard?.writeText(t).then(()=>{
-      const b=document.getElementById('share-copy');if(b){b.textContent='✓ Copied!';setTimeout(()=>b.textContent='📋 Copy Result',2000);}
+      const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent='📋 '+_t('share_copy','Copy Result'),2000);}
     });
   },
   tweet(){

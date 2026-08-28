@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.bg = {
+    lbl_copied:"Копирано!",
+    lbl_correct:"Верни",
+    lbl_score:"Резултат",
+    pat_est_iq:"Прогнозен IQ",
+    pat_global_mean:"световна средна",
+    pat_range:"приблизителен диапазон",
+    pat_res_desc:"Отговорихте вярно на {n} от {t}. Според публикувани норми това съответства на прогнозен диапазон IQ около ~{iq}. Разпознаването на модели е основен компонент на гъвкавата интелигентност.",
+    pat_top:"Топ {p}% по гъвкаво мислене",
     cv_errors:"грешки",
     cv_q_average:"Среден",
     cv_q_excellent:"Отличен",

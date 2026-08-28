@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ja = {
+    lbl_copied:"コピーしました",
+    lbl_correct:"正解",
+    lbl_score:"スコア",
+    pat_est_iq:"推定IQ",
+    pat_global_mean:"世界平均",
+    pat_range:"範囲の推定",
+    pat_res_desc:"{t}問中{n}問正解でした。公表された基準に照らすと、これは推定IQ範囲およそ~{iq}に相当します。パターン認識は流動性知能の中核をなす要素です。",
+    pat_top:"流動性推論で上位{p}%",
     cv_errors:"誤り",
     cv_q_average:"平均",
     cv_q_excellent:"優秀",

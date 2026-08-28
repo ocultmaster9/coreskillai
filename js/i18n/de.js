@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.de = {
+    lbl_copied:"Kopiert!",
+    lbl_correct:"Richtig",
+    lbl_score:"Punktzahl",
+    pat_est_iq:"Geschätzter IQ",
+    pat_global_mean:"weltweiter Mittelwert",
+    pat_range:"Bereichsschätzung",
+    pat_res_desc:"Sie haben {n} von {t} richtig. Nach veröffentlichten Normen entspricht das einem geschätzten IQ-Bereich von ~{iq}. Mustererkennung ist ein Kernbestandteil fluider Intelligenz.",
+    pat_top:"Top {p}% im fluiden Denken",
     cv_errors:"Fehler",
     cv_q_average:"Durchschnitt",
     cv_q_excellent:"Ausgezeichnet",

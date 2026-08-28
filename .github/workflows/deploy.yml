@@ -234,6 +234,39 @@ jobs:
           LANGRES
           [ $? -eq 0 ] || fail=1
 
+          # 3d) NO HARDCODED ENGLISH IN THE TEST SCRIPTS. verify_tests.js renders
+          #      each test, but only the start screen and the first question - it
+          #      cannot see a RESULT panel without completing the test, and that is
+          #      where the rating ladders, breakdown labels and score-ring units
+          #      live. Every one of those shipped in English. Read the source
+          #      instead: strip ${...} and tags out of each rendered template and
+          #      fail on the plain English left behind.
+          python3 - <<'JSENGLISH'
+          import io, re, glob, os, sys
+          OK = re.compile(r"^(CoreSkillAI|AdSense|Google|IQ|EQ|WPM|CPM|MBTI|Stroop|Raven|Miller|"
+                          r"Goldberg|IPIP|MSCEIT|WAIS|Binet|Ishihara|Farnsworth|Munsell|OCEAN|Mayer|"
+                          r"Salovey|Caruso|QWERTY|ms|min|avg|px|err|of|Q|X|v|"
+                          r"Array|from|length|join|map|data|choices|opts|ORDER|MAX|TRIALS|score)$", re.I)
+          bad = []
+          for f in sorted(glob.glob('_stage/js/tests/*.js')):
+              src = io.open(f, encoding='utf-8').read()
+              for m in re.finditer(r'`([^`]*)`', src, re.S):
+                  blk = m.group(1)
+                  if '<' not in blk: continue
+                  line = src[:m.start()].count('\n') + 1
+                  t = re.sub(r'\$\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', ' ', blk)
+                  t = re.sub(r'<[^>]+>', ' ', t)
+                  for w in re.findall(r"[A-Za-z][A-Za-z']{2,}", t):
+                      if not OK.match(w):
+                          bad.append('%s:%d %s' % (os.path.basename(f), line, w))
+                          break
+          for b in bad[:8]:
+              print('::error::hardcoded English rendered by a test script -> %s' % b)
+          print('  test scripts render no hardcoded English' if not bad else '')
+          sys.exit(1 if bad else 0)
+          JSENGLISH
+          [ $? -eq 0 ] || fail=1
+
           # 4) ads.txt must name our publisher id.
           grep -q 'pub-5798786176755576' _stage/ads.txt || { echo "::error::ads.txt wrong or missing"; fail=1; }
 

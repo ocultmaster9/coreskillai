@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hu = {
+    lbl_copied:"Másolva!",
+    lbl_correct:"Helyes",
+    lbl_score:"Pontszám",
+    pat_est_iq:"Becsült IQ",
+    pat_global_mean:"világátlag",
+    pat_range:"tartománybecslés",
+    pat_res_desc:"{t} kérdésből {n} helyes. A publikált normák alapján ez körülbelül ~{iq} becsült IQ-tartománynak felel meg. A mintafelismerés a fluid intelligencia egyik alapeleme.",
+    pat_top:"A legjobb {p}% a fluid gondolkodásban",
     cv_errors:"hiba",
     cv_q_average:"Átlagos",
     cv_q_excellent:"Kiváló",

@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lv = {
+    lbl_copied:"Nokopēts!",
+    lbl_correct:"Pareizi",
+    lbl_score:"Rezultāts",
+    pat_est_iq:"Aptuvenais IQ",
+    pat_global_mean:"pasaules vidējais",
+    pat_range:"diapazona novērtējums",
+    pat_res_desc:"Jūs pareizi atbildējāt uz {n} no {t}. Pamatojoties uz publicētajām normām, tas atbilst aptuvenam IQ diapazonam ap ~{iq}. Rakstu atpazīšana ir plūstošā intelekta pamatkomponents.",
+    pat_top:"Labākie {p}% plūstošajā spriešanā",
     cv_errors:"kļūdas",
     cv_q_average:"Vidēji",
     cv_q_excellent:"Teicami",

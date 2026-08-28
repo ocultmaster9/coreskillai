@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.vi = {
+    lbl_copied:"Đã sao chép!",
+    lbl_correct:"Đúng",
+    lbl_score:"Điểm",
+    pat_est_iq:"IQ ước tính",
+    pat_global_mean:"trung bình toàn cầu",
+    pat_range:"khoảng ước tính",
+    pat_res_desc:"Bạn trả lời đúng {n} trên {t} câu. Dựa trên các chuẩn đã công bố, kết quả này tương ứng khoảng IQ ước tính ~{iq}. Nhận diện quy luật là thành phần cốt lõi của trí thông minh linh hoạt.",
+    pat_top:"Top {p}% về suy luận linh hoạt",
     cv_errors:"lỗi",
     cv_q_average:"Trung bình",
     cv_q_excellent:"Xuất sắc",

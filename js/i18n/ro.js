@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ro = {
+    lbl_copied:"Copiat!",
+    lbl_correct:"Corecte",
+    lbl_score:"Scor",
+    pat_est_iq:"QI estimat",
+    pat_global_mean:"media globală",
+    pat_range:"estimare interval",
+    pat_res_desc:"Ai răspuns corect la {n} din {t}. Pe baza normelor publicate, aceasta corespunde unui interval de QI estimat de ~{iq}. Recunoașterea tiparelor este o componentă centrală a inteligenței fluide.",
+    pat_top:"Primii {p}% la raționament fluid",
     cv_errors:"erori",
     cv_q_average:"Mediu",
     cv_q_excellent:"Excelent",

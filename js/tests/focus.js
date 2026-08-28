@@ -43,12 +43,12 @@ function pct(avgMs, acc){
   return Math.max(1,Math.min(99,Math.round((composite-min)/(max-min)*96+2)));
 }
 function label(p){
-  if(p>=90) return{text:'Exceptional Focus 🎯',color:'#6366f1'};
-  if(p>=75) return{text:'Superior',color:'#8b5cf6'};
-  if(p>=55) return{text:'Above Average',color:'#10b981'};
-  if(p>=40) return{text:'Average',color:'#06b6d4'};
-  if(p>=25) return{text:'Below Average',color:'#f59e0b'};
-  return{text:'Developing',color:'#ef4444'};
+  if(p>=90) return{text:_t('rt_r_exceptional','Exceptional')+' 🎯',color:'#6366f1'};
+  if(p>=75) return{text:_t('rt_r_superior','Superior'),color:'#8b5cf6'};
+  if(p>=55) return{text:_t('rt_r_above','Above Average'),color:'#10b981'};
+  if(p>=40) return{text:_t('rt_r_average','Average'),color:'#06b6d4'};
+  if(p>=25) return{text:_t('rt_r_below','Below Average'),color:'#f59e0b'};
+  return{text:_t('rt_r_practice','Keep Practicing'),color:'#ef4444'};
 }
 
 function renderShell(){
@@ -71,7 +71,7 @@ function renderShell(){
     </div>
     <div class="test-ui-body" id="foc-body" style="flex-direction:column;gap:24px">
       <div id="foc-stroop-area" style="display:none;flex-direction:column;align-items:center;gap:24px">
-        <div class="stroop-word" id="foc-word">WORD</div>
+        <div class="stroop-word" id="foc-word"></div>
         <div class="color-buttons">${colorBtns}</div>
       </div>
       <div id="foc-start-area">
@@ -116,7 +116,7 @@ function showResults(){
         <circle class="score-ring-fill" id="foc-ring" cx="65" cy="65" r="55"/>
       </svg>
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
-        <div class="score-ring-num">${Math.round(acc*100)}%</div><div class="score-ring-unit">accuracy</div>
+        <div class="score-ring-num">${Math.round(acc*100)}%</div><div class="score-ring-unit">${_t('typ_accuracy',"Accuracy")}</div>
       </div>
     </div>
     <div class="result-info">
@@ -128,8 +128,8 @@ function showResults(){
   <div class="bell-curve-wrap"><canvas id="foc-bell" style="width:100%;display:block"></canvas></div>
   <div class="result-breakdown">
     <div class="breakdown-item"><div class="b-label">${_t('typ_accuracy','Accuracy')}</div><div class="b-val" style="color:var(--primary)">${Math.round(acc*100)}%</div></div>
-    <div class="breakdown-item"><div class="b-label">Avg Speed</div><div class="b-val">${avgMs}ms</div></div>
-    <div class="breakdown-item"><div class="b-label">Correct</div><div class="b-val" style="color:var(--success)">${correct}</div><div class="b-sub">of ${TOTAL}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('rt_average',"Average")}</div><div class="b-val">${avgMs}ms</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('lbl_correct',"Correct")}</div><div class="b-val" style="color:var(--success)">${correct}</div><div class="b-sub">${_t('rt_of',"of")} ${TOTAL}</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div></div>
   </div>
   <div class="share-row">
@@ -165,7 +165,7 @@ window.FocusTest={
     else showItem();
   },
   reset(){phase='idle';current=0;correct=0;times=[];renderShell();},
-  copy(){const r=window._focResult;if(!r)return;const t=`Focus test: ${r.acc}% accuracy at ${r.avgMs}ms — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile) 🎯 coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ Copied!';setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
+  copy(){const r=window._focResult;if(!r)return;const t=`Focus test: ${r.acc}% accuracy at ${r.avgMs}ms — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile) 🎯 coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
   tweet(){const r=window._focResult;if(!r)return;const t=`Stroop test: ${r.acc}% accuracy, ${r.avgMs}ms avg — ${r.text} 🎯`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);

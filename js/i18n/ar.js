@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ar = {
+    lbl_copied:"تم النسخ!",
+    lbl_correct:"صحيح",
+    lbl_score:"النتيجة",
+    pat_est_iq:"الذكاء التقديري",
+    pat_global_mean:"المتوسط العالمي",
+    pat_range:"نطاق تقديري",
+    pat_res_desc:"أجبت بشكل صحيح عن {n} من {t}. استنادًا إلى المعايير المنشورة، يقابل ذلك نطاق ذكاء تقديريًا يقارب ~{iq}. تمييز الأنماط ركن أساسي من الذكاء المرن.",
+    pat_top:"ضمن أفضل {p}% في الاستدلال المرن",
     cv_errors:"أخطاء",
     cv_q_average:"متوسط",
     cv_q_excellent:"ممتاز",

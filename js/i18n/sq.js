@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sq = {
+    lbl_copied:"U kopjua!",
+    lbl_correct:"Sakta",
+    lbl_score:"Rezultati",
+    pat_est_iq:"IQ i vlerësuar",
+    pat_global_mean:"mesatarja globale",
+    pat_range:"vlerësim i intervalit",
+    pat_res_desc:"Ju përgjigjët saktë {n} nga {t}. Bazuar në normat e publikuara, kjo korrespondon me një interval IQ të vlerësuar rreth ~{iq}. Njohja e modeleve është përbërës kryesor i inteligjencës fluide.",
+    pat_top:"{p}% më të mirët në arsyetimin fluid",
     cv_errors:"gabime",
     cv_q_average:"Mesatar",
     cv_q_excellent:"Shkëlqyeshëm",

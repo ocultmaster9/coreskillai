@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sv = {
+    lbl_copied:"Kopierat!",
+    lbl_correct:"Rätt",
+    lbl_score:"Poäng",
+    pat_est_iq:"Uppskattat IQ",
+    pat_global_mean:"globalt medelvärde",
+    pat_range:"intervalluppskattning",
+    pat_res_desc:"Du fick {n} av {t} rätt. Baserat på publicerade normer motsvarar detta ett uppskattat IQ-intervall på ~{iq}. Mönsterigenkänning är en central del av flytande intelligens.",
+    pat_top:"Topp {p} % i flytande resonemang",
     cv_errors:"fel",
     cv_q_average:"Genomsnitt",
     cv_q_excellent:"Utmärkt",

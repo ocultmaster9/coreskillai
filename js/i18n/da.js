@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.da = {
+    lbl_copied:"Kopieret!",
+    lbl_correct:"Korrekte",
+    lbl_score:"Score",
+    pat_est_iq:"Anslået IK",
+    pat_global_mean:"globalt gennemsnit",
+    pat_range:"intervalskøn",
+    pat_res_desc:"Du fik {n} ud af {t} rigtige. Baseret på publicerede normer svarer det til et anslået IK-interval på ~{iq}. Mønstergenkendelse er en kernekomponent i flydende intelligens.",
+    pat_top:"Top {p}% i flydende ræsonnement",
     cv_errors:"fejl",
     cv_q_average:"Gennemsnit",
     cv_q_excellent:"Fremragende",

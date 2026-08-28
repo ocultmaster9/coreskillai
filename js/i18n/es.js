@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.es = {
+    lbl_copied:"¡Copiado!",
+    lbl_correct:"Correctas",
+    lbl_score:"Puntuación",
+    pat_est_iq:"CI estimado",
+    pat_global_mean:"media mundial",
+    pat_range:"estimación de rango",
+    pat_res_desc:"Acertaste {n} de {t}. Según normas publicadas, esto corresponde a un rango de CI estimado de ~{iq}. El reconocimiento de patrones es un componente central de la inteligencia fluida.",
+    pat_top:"Top {p}% en razonamiento fluido",
     cv_errors:"errores",
     cv_q_average:"Medio",
     cv_q_excellent:"Excelente",

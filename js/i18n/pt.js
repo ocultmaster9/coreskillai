@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pt = {
+    lbl_copied:"Copiado!",
+    lbl_correct:"Corretas",
+    lbl_score:"Pontuação",
+    pat_est_iq:"QI estimado",
+    pat_global_mean:"média mundial",
+    pat_range:"estimativa de intervalo",
+    pat_res_desc:"Acertou {n} de {t}. Com base em normas publicadas, isto corresponde a um intervalo de QI estimado de ~{iq}. O reconhecimento de padrões é uma componente central da inteligência fluida.",
+    pat_top:"Top {p}% em raciocínio fluido",
     cv_errors:"erros",
     cv_q_average:"Médio",
     cv_q_excellent:"Excelente",

@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.en = {
+    lbl_copied:"Copied!",
+    lbl_correct:"Correct",
+    lbl_score:"Score",
+    pat_est_iq:"Est. IQ",
+    pat_global_mean:"global mean",
+    pat_range:"range estimate",
+    pat_res_desc:"You got {n} out of {t} correct. Based on published norms, this corresponds to an estimated IQ range of ~{iq}. Pattern recognition is a core component of fluid intelligence.",
+    pat_top:"Top {p}% in fluid reasoning",
     cv_errors:"errors",
     cv_q_average:"Average",
     cv_q_excellent:"Excellent",

@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sk = {
+    lbl_copied:"Skopírované!",
+    lbl_correct:"Správne",
+    lbl_score:"Skóre",
+    pat_est_iq:"Odhad IQ",
+    pat_global_mean:"svetový priemer",
+    pat_range:"odhad rozsahu",
+    pat_res_desc:"Správne ste zodpovedali {n} z {t}. Podľa publikovaných noriem to zodpovedá odhadovanému rozsahu IQ okolo ~{iq}. Rozpoznávanie vzorov je kľúčovou zložkou fluidnej inteligencie.",
+    pat_top:"Top {p} % vo fluidnom uvažovaní",
     cv_errors:"chyby",
     cv_q_average:"Priemer",
     cv_q_excellent:"Výborne",

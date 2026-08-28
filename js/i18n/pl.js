@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pl = {
+    lbl_copied:"Skopiowano!",
+    lbl_correct:"Poprawne",
+    lbl_score:"Wynik",
+    pat_est_iq:"Szacowane IQ",
+    pat_global_mean:"średnia światowa",
+    pat_range:"szacunkowy zakres",
+    pat_res_desc:"Poprawnie odpowiedziałeś na {n} z {t}. Na podstawie opublikowanych norm odpowiada to szacowanemu zakresowi IQ około ~{iq}. Rozpoznawanie wzorców to kluczowy element inteligencji płynnej.",
+    pat_top:"Najlepsze {p}% w rozumowaniu płynnym",
     cv_errors:"błędy",
     cv_q_average:"Przeciętnie",
     cv_q_excellent:"Doskonale",

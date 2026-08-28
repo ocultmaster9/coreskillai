@@ -498,12 +498,12 @@ function pct(w, lang){
   return 99;
 }
 function label(w){
-  if(w>=120) return{text:'Exceptional Typist ⌨️',color:'#6366f1'};
-  if(w>=90)  return{text:'Professional Speed',color:'#8b5cf6'};
-  if(w>=70)  return{text:'Above Average',color:'#10b981'};
-  if(w>=45)  return{text:'Average',color:'#06b6d4'};
-  if(w>=30)  return{text:'Below Average',color:'#f59e0b'};
-  return{text:'Beginner',color:'#ef4444'};
+  if(w>=120) return{text:_t('rt_r_exceptional','Exceptional')+' ⌨️',color:'#6366f1'};
+  if(w>=90)  return{text:_t('rt_r_superior','Superior'),color:'#8b5cf6'};
+  if(w>=70)  return{text:_t('rt_r_above','Above Average'),color:'#10b981'};
+  if(w>=45)  return{text:_t('rt_r_average','Average'),color:'#06b6d4'};
+  if(w>=30)  return{text:_t('rt_r_below','Below Average'),color:'#f59e0b'};
+  return{text:_t('rt_r_practice','Keep Practicing'),color:'#ef4444'};
 }
 
 function renderShell(){
@@ -642,7 +642,7 @@ function endTest(){
 
 window.TypTest={
   reset(){phase='idle';typed='';startTime=0;endTime=0;clearInterval(timerInterval);renderShell();},
-  copy(){const r=window._typResult;if(!r)return;const t=`Typing speed: ${r.wpm} ${_t(speedUnitKey(window.I18n?.lang),'WPM')}, ${r.acc}% accuracy — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile) ⌨️ coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ Copied!';setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
+  copy(){const r=window._typResult;if(!r)return;const t=`Typing speed: ${r.wpm} ${_t(speedUnitKey(window.I18n?.lang),'WPM')}, ${r.acc}% accuracy — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile) ⌨️ coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
   tweet(){const r=window._typResult;if(!r)return;const t=`My typing speed: ${r.wpm} ${_t(speedUnitKey(window.I18n?.lang),'WPM')} at ${r.acc}% accuracy — ${r.text} ⌨️`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);

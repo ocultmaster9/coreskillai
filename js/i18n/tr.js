@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tr = {
+    lbl_copied:"Kopyalandı!",
+    lbl_correct:"Doğru",
+    lbl_score:"Puan",
+    pat_est_iq:"Tahmini IQ",
+    pat_global_mean:"dünya ortalaması",
+    pat_range:"aralık tahmini",
+    pat_res_desc:"{t} sorudan {n} tanesini doğru yanıtladınız. Yayımlanmış normlara göre bu, yaklaşık ~{iq} tahmini IQ aralığına karşılık gelir. Örüntü tanıma, akışkan zekânın temel bir bileşenidir.",
+    pat_top:"Akışkan muhakemede ilk %{p}",
     cv_errors:"hata",
     cv_q_average:"Ortalama",
     cv_q_excellent:"Mükemmel",

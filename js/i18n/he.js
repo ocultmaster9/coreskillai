@@ -2,6 +2,14 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.he = {
+    lbl_copied:"הועתק!",
+    lbl_correct:"נכונות",
+    lbl_score:"ניקוד",
+    pat_est_iq:"מנת משכל משוערת",
+    pat_global_mean:"ממוצע עולמי",
+    pat_range:"הערכת טווח",
+    pat_res_desc:"ענית נכון על {n} מתוך {t}. על סמך נורמות שפורסמו, הדבר מתאים לטווח מנת משכל משוער של ~{iq}. זיהוי דפוסים הוא מרכיב מרכזי באינטליגנציה הגמישה.",
+    pat_top:"{p}% המובילים בחשיבה גמישה",
     cv_errors:"שגיאות",
     cv_q_average:"ממוצע",
     cv_q_excellent:"מצוין",
