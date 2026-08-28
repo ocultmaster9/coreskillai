@@ -343,6 +343,16 @@ const PASSAGES={
     "続けることは、一度に長くやることより大切です。毎日十分の練習は、週に一度二時間の練習より良い結果をもたらします。体で覚えた技能は、練習しているあいだではなく、眠っているあいだに定着するからです。",
     "世界で最も速い打ち手は毎分数百字を超えますが、日常の仕事にはその半分もあれば十分です。大切なのは記録ではなく、書き取る速さが考える速さに追いつき、その邪魔をしないことです。",
   ],
+  vi:[
+    "Trí nhớ làm việc là khả năng giữ một lượng nhỏ thông tin trong đầu và sử dụng nó ngay lập tức. Hầu hết người trưởng thành chỉ giữ được khoảng bảy con số cùng lúc.",
+    "Hiệu ứng Stroop xuất hiện khi tên một màu được in bằng mực khác màu. Não bộ đọc chữ nhanh hơn nhận diện màu, nên phản ứng của bạn chậm lại một chút.",
+    "Tốc độ gõ phím thường được đo bằng số từ mỗi phút. Người gõ thành thạo đạt khoảng bốn mươi từ, trong khi người chuyên nghiệp có thể vượt quá bảy mươi từ.",
+    "Mô hình Big Five mô tả tính cách qua năm chiều rộng: cởi mở, tận tâm, hướng ngoại, dễ chịu và bất ổn cảm xúc. Đây là khung được nghiên cứu nhiều nhất.",
+    "Thời gian phản xạ trung bình của con người với một tín hiệu thị giác đơn giản vào khoảng hai trăm năm mươi mili giây. Sự mệt mỏi và tuổi tác đều làm con số này tăng lên.",
+    "Trí thông minh linh hoạt là khả năng giải quyết vấn đề mới mà không dựa vào kiến thức đã học. Các bài ma trận đo năng lực này khá hiệu quả.",
+    "Khoảng tám phần trăm nam giới có một dạng khiếm khuyết thị giác màu nào đó, trong khi tỷ lệ ở nữ giới thấp hơn nhiều, chỉ khoảng nửa phần trăm dân số.",
+    "Trí tuệ cảm xúc bao gồm bốn nhánh: nhận biết, sử dụng, thấu hiểu và quản lý cảm xúc. Đây là một trong những kỹ năng có thể rèn luyện rõ rệt nhất.",
+  ],
 };
 
 function getPassage(){

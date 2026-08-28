@@ -34,7 +34,7 @@ window.LANGS = {
   fi: { name: "Suomi", dir: "ltr", ready: true },
   sv: { name: "Svenska", dir: "ltr", ready: true },
   tl: { name: "Tagalog", dir: "ltr" },
-  vi: { name: "Tiếng Việt", dir: "ltr" },
+  vi: { name: "Tiếng Việt", dir: "ltr", ready: true },
   tr: { name: "Türkçe", dir: "ltr", ready: true },
   el: { name: "Ελληνικά", dir: "ltr", ready: true },
   bg: { name: "Български", dir: "ltr", ready: true },
