@@ -494,6 +494,18 @@ jobs:
           chk "404 page has no ads"
           curl -s "$S/definitely-not-a-page-xyz" | grep -qE '<ins[^>]*adsbygoogle' && { echo FAIL; fail=1; } || echo OK
 
+          # functions/_middleware.js keeps the preview origin out of Google's
+          # index. Both halves are asserted because getting the condition
+          # backwards would deindex the real site, which is far worse than the
+          # duplicate it is meant to prevent.
+          chk "pages.dev is noindex"
+          curl -sI "https://${PROJECT}.pages.dev/" | grep -qi '^x-robots-tag:.*noindex' \
+            && echo OK || { echo "FAIL - preview origin still crawlable"; fail=1; }
+
+          chk "live site is NOT noindex"
+          curl -sI "$S/" | grep -qi '^x-robots-tag:.*noindex' \
+            && { echo "FAIL - the LIVE SITE is noindexed"; fail=1; } || echo OK
+
           [ "$fail" -eq 0 ] || { echo "::error::live verification failed"; exit 1; }
           echo ""
           echo "  build $V verified live"
