@@ -184,8 +184,8 @@ window.CVTest={
     showResults();
   },
   reset(){dragSrc=null;dragRow=null;scores=[];renderShell();},
-  copy(){const r=window._cvResult;if(!r)return;const t=`Color vision: ${r.text} (${(window.ordinal?window.ordinal(r.pct):r.pct+'th')} percentile) 🌈 Test yours: coreskillai.com`;navigator.clipboard?.writeText(t);},
-  tweet(){const r=window._cvResult;if(!r)return;const t=`Color vision test: ${r.text} — ${(window.ordinal?window.ordinal(r.pct):r.pct+'th')} percentile 🌈`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
+  copy(){const r=window._cvResult;if(!r)return;const t=window.shareText('cv_result_label', null, r.text, r.pct);navigator.clipboard?.writeText(t);},
+  tweet(){const r=window._cvResult;if(!r)return;const t=window.shareText('cv_result_label', null, r.text, r.pct);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);
 })();

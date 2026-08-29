@@ -373,14 +373,14 @@ window.IQTest={
   reset(){clearInterval(timer);phase='idle';renderShell();},
   copy(){
     const r=window._iqResult;if(!r)return;
-    const t=`My IQ score: ${r.iq} — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile, ${r.score}/40 correct) 🧬 Free IQ test: coreskillai.com`;
+    const t=window.shareText('iq_result_label', r.iq, r.text, r.p);
     navigator.clipboard?.writeText(t).then(()=>{
       const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent='📋 '+_t('share_copy','Copy Result'),2000);}
     });
   },
   tweet(){
     const r=window._iqResult;if(!r)return;
-    const t=`I scored IQ ${r.iq} (${r.text}) on the free IQ test! Can you beat it? 🧬`;
+    const t=window.shareText('iq_result_label', r.iq, r.text, r.p);
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');
   }
 };

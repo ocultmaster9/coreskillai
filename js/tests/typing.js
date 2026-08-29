@@ -642,8 +642,8 @@ function endTest(){
 
 window.TypTest={
   reset(){phase='idle';typed='';startTime=0;endTime=0;clearInterval(timerInterval);renderShell();},
-  copy(){const r=window._typResult;if(!r)return;const t=`Typing speed: ${r.wpm} ${_t(speedUnitKey(window.I18n?.lang),'WPM')}, ${r.acc}% accuracy — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile) ⌨️ coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
-  tweet(){const r=window._typResult;if(!r)return;const t=`My typing speed: ${r.wpm} ${_t(speedUnitKey(window.I18n?.lang),'WPM')} at ${r.acc}% accuracy — ${r.text} ⌨️`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
+  copy(){const r=window._typResult;if(!r)return;const t=window.shareText('typ_result_label', r.wpm+' '+_t(speedUnitKey(window.I18n?.lang),'WPM'), r.text, r.pct);navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
+  tweet(){const r=window._typResult;if(!r)return;const t=window.shareText('typ_result_label', r.wpm+' '+_t(speedUnitKey(window.I18n?.lang),'WPM'), r.text, r.pct);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);
 })();

@@ -2329,13 +2329,14 @@ function showResults(){
   const pcts={};
   TRAIT_ORDER.forEach(t=>{ pcts[t]=pct(raw[t]); });
 
+  const traitName=t=>_t('b5_'+t.toLowerCase(), TRAIT_INFO[t].name);
   const bars=TRAIT_ORDER.map(t=>{
     const info=TRAIT_INFO[t];
     const p=pcts[t];
     const desc=p>=60?info.high:p<=40?info.low:`A balanced mix of both ends of ${info.name}.`;
     return `<div class="trait-bar-item">
       <div class="trait-bar-top">
-        <span class="trait-name" style="color:${info.color}">${info.name}</span>
+        <span class="trait-name" style="color:${info.color}">${traitName(t)}</span>
         <span class="trait-pct">${(window.ordinal?window.ordinal(p):p+'th')} ${_t('label_percentile',"Percentile")}</span>
       </div>
       <div class="trait-bar-track"><div class="trait-bar-fill" style="width:${p}%;background:${info.color}"></div></div>
@@ -2350,7 +2351,7 @@ function showResults(){
   document.getElementById('b5-results').innerHTML=`
   <div style="text-align:center;margin-bottom:24px">
     <h2 style="font-size:1.4rem;font-weight:800">${_t('b5_profile',"Your Personality Profile")}</h2>
-    <p style="color:var(--text-2);font-size:.9rem;margin-top:6px">${_t('b5_dominant',"Dominant trait:")} <strong style="color:${domInfo.color}">${domInfo.name}</strong></p>
+    <p style="color:var(--text-2);font-size:.9rem;margin-top:6px">${_t('b5_dominant',"Dominant trait:")} <strong style="color:${domInfo.color}">${traitName(dom)}</strong></p>
   </div>
   <div class="trait-bars">${bars}</div>
   <canvas id="b5-radar" style="max-width:320px;width:100%;display:block;margin:24px auto"></canvas>
@@ -2360,7 +2361,7 @@ function showResults(){
   </div>
   <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="B5Test.reset()">↺ ${_t('btn_try_again',"Try Again")}</button></div>`;
   document.getElementById('b5-results').classList.add('show');
-  window._b5Result={pcts, dom:domInfo.name};
+  window._b5Result={pcts, dom:traitName(dom)};
 
   // animate bars
   setTimeout(()=>{
@@ -2432,7 +2433,7 @@ window.B5Test={
   reset(){answers={};current=0;renderShell();},
   copy(){
     const r=window._b5Result;if(!r)return;
-    const txt=TRAIT_ORDER.map(t=>`${TRAIT_INFO[t].name.slice(0,3)}:${r.pcts[t]}%`).join(' | ');
+    const txt=TRAIT_ORDER.map(t=>`${_t('b5_'+t.toLowerCase(),TRAIT_INFO[t].name)}: ${r.pcts[t]}%`).join(' | ');
     navigator.clipboard?.writeText(`Big Five: ${txt} 🪄 Test yours: coreskillai.com`);
   },
   tweet(){

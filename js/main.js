@@ -346,3 +346,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // well would push each slot twice and AdSense throws
   // "All ins elements in the DOM with class=adsbygoogle already have ads in them".
 });
+
+// ── shared share/clipboard message ─────────────────────────
+// Every test used to hardcode its own English sentence ("My EQ score: 118 — ..."),
+// so a Korean visitor copied English to their clipboard and posted English to X.
+// Assemble it instead from strings that are already translated in all 43 markets:
+// the test's own result label, its rating word, and the percentile wording. No new
+// keys, and a market added later gets a localised share message for free.
+window.shareText = function (titleKey, headline, rating, pct) {
+  const T = (k, fb) => (window.I18n && window.I18n.t(k)) || fb || k;
+  const parts = [T(titleKey, titleKey) + (headline != null && headline !== '' ? ': ' + headline : '')];
+  if (rating) parts.push(rating);
+  if (pct != null && !isNaN(pct)) {
+    parts.push(T('percentile_prefix', 'Better than') + ' ' + pct + '% ' + T('percentile_suffix', 'of people'));
+  }
+  return parts.join(' — ') + ' · coreskillai.com';
+};

@@ -1453,8 +1453,8 @@ window.EQTest={
     setTimeout(()=>{ current++; if(current>=ITEMS.length) showResults(); else renderQ(); },280);
   },
   reset(){answers={};current=0;renderShell();},
-  copy(){const r=window._eqResult;if(!r)return;const t=`My EQ score: ${r.totalEQ} — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile) ❤️ Test yours: coreskillai.com`;navigator.clipboard?.writeText(t);},
-  tweet(){const r=window._eqResult;if(!r)return;const t=`My EQ score: ${r.totalEQ} — ${r.text} ❤️`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
+  copy(){const r=window._eqResult;if(!r)return;const t=window.shareText('eq_result_label', r.totalEQ, r.text, r.p);navigator.clipboard?.writeText(t);},
+  tweet(){const r=window._eqResult;if(!r)return;const t=window.shareText('eq_result_label', r.totalEQ, r.text, r.p);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);
 })();

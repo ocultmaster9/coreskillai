@@ -138,8 +138,8 @@ window.MemTest={
     }
   },
   reset(){level=3;correct=0;render();},
-  copy(){const r=window._memResult;if(!r)return;const t=`My working memory span: ${r.span} digits — ${r.text} (${(window.ordinal?window.ordinal(r.pct):r.pct+'th')} percentile) 🧠 Test yours: coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent='📋 '+_t('share_copy','Copy Result'),2000);});},
-  tweet(){const r=window._memResult;if(!r)return;const t=`My working memory span: ${r.span} digits — ${r.text} (${(window.ordinal?window.ordinal(r.pct):r.pct+'th')} percentile)`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
+  copy(){const r=window._memResult;if(!r)return;const t=window.shareText('mem_result_label', r.span+' '+_t('mem_digits','digits'), r.text, r.pct);navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent='📋 '+_t('share_copy','Copy Result'),2000);});},
+  tweet(){const r=window._memResult;if(!r)return;const t=window.shareText('mem_result_label', r.span+' '+_t('mem_digits','digits'), r.text, r.pct);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 
 document.addEventListener('DOMContentLoaded',render);

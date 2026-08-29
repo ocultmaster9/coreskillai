@@ -234,7 +234,7 @@ window.RTTest = {
   copyResult() {
     const r=window._rtResult;
     if(!r) return;
-    const txt=`My reaction time: ${r.avg}ms — faster than ${r.pct}% of people! (${r.text}) Test yours at coreskillai.com ⚡`;
+    const txt=window.shareText('rt_result_label', r.avg+'ms', r.text, r.pct);
     navigator.clipboard?.writeText(txt).then(()=>{
       const btn=document.getElementById('share-copy');
       btn.textContent='✓ '+_t('lbl_copied','Copied!'); btn.classList.add('copied');
@@ -244,7 +244,7 @@ window.RTTest = {
   tweetResult() {
     const r=window._rtResult;
     if(!r) return;
-    const txt=`My reaction time: ${r.avg}ms — faster than ${r.pct}% of people! (${r.text}) 🧠 Test yours:`;
+    const txt=window.shareText('rt_result_label', r.avg+'ms', r.text, r.pct);
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(txt)}&url=${encodeURIComponent(location.href)}`, '_blank','noopener');
   }
 };

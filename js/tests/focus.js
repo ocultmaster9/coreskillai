@@ -165,8 +165,8 @@ window.FocusTest={
     else showItem();
   },
   reset(){phase='idle';current=0;correct=0;times=[];renderShell();},
-  copy(){const r=window._focResult;if(!r)return;const t=`Focus test: ${r.acc}% accuracy at ${r.avgMs}ms — ${r.text} (${(window.ordinal?window.ordinal(r.p):r.p+'th')} percentile) 🎯 coreskillai.com`;navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
-  tweet(){const r=window._focResult;if(!r)return;const t=`Stroop test: ${r.acc}% accuracy, ${r.avgMs}ms avg — ${r.text} 🎯`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
+  copy(){const r=window._focResult;if(!r)return;const t=window.shareText('foc_result_label', r.acc+'%', r.text, r.p);navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
+  tweet(){const r=window._focResult;if(!r)return;const t=window.shareText('foc_result_label', r.acc+'%', r.text, r.p);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);
 })();

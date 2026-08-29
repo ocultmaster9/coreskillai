@@ -180,8 +180,8 @@ window.PatTest={
     },900);
   },
   reset(){renderShell();},
-  copy(){const r=window._patResult;if(!r)return;const t=`Pattern recognition: ${r.score}/12 correct, est. IQ ~${r.iq} (${(window.ordinal?window.ordinal(r.pct):r.pct+'th')} percentile) 🔷 Test yours: coreskillai.com`;navigator.clipboard?.writeText(t);},
-  tweet(){const r=window._patResult;if(!r)return;const t=`Pattern recognition: ${r.score}/12 correct — ${r.text} 🔷 IQ estimate: ~${r.iq}`;window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
+  copy(){const r=window._patResult;if(!r)return;const t=window.shareText('pat_result_label', r.score+'/12', r.text, r.pct);navigator.clipboard?.writeText(t);},
+  tweet(){const r=window._patResult;if(!r)return;const t=window.shareText('pat_result_label', r.score+'/12', r.text, r.pct);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);
 })();

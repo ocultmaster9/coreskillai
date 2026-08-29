@@ -306,6 +306,36 @@ def wire_cards(path):
     return False
 
 
+def wire_next_cards(path):
+    """Localise the duration on the "Try these tests next" cards.
+
+    wire_cards() only ever touched the main .test-card grid on the home and
+    /tests/ pages. The .next-test-card blocks at the foot of all nine test pages
+    render `<span>~20 min</span>` with no data-i18n, so a Chinese visitor read
+    "~20 min" in English on 388 pages while the identical figure on the home page
+    said "~20 分钟". Wrap the unit so prerender() and the client-side i18n both
+    pick it up.
+    """
+    h = io.open(path, encoding='utf-8').read()
+    new = re.sub(r'(<a[^>]*class="next-test-card"[^>]*>.*?)<span>~(\d+)\s*min</span>',
+                 lambda m: '%s<span>~%s <span data-i18n="card_min">min</span></span>'
+                           % (m.group(1), m.group(2)),
+                 h, flags=re.S)
+    # the regex above only rewrites the first card in each <a>; repeat until stable
+    while True:
+        again = re.sub(r'(class="next-test-card"[^>]*>(?:(?!</a>).)*?)<span>~(\d+)\s*min</span>',
+                       lambda m: '%s<span>~%s <span data-i18n="card_min">min</span></span>'
+                                 % (m.group(1), m.group(2)),
+                       new, flags=re.S)
+        if again == new:
+            break
+        new = again
+    if new != h:
+        io.open(path, 'w', encoding='utf-8', newline='\n').write(new)
+        return True
+    return False
+
+
 def strings_for(lang):
     """Parse js/i18n/<lang>.js into a dict."""
     f = os.path.join('js', 'i18n', lang + '.js')
