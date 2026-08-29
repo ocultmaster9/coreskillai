@@ -336,6 +336,23 @@ def wire_next_cards(path):
     return False
 
 
+def wire_meta_badge(path):
+    """Localise the duration badge in the test-page header.
+
+    `<span class="badge">&#9203; ~3 min</span>` sits above every test. It is
+    neither a .test-card nor a .next-test-card, so neither wire_cards() nor
+    wire_next_cards() touched it and 474 pages showed "~3 min" in English right
+    under a fully translated heading.
+    """
+    h = io.open(path, encoding='utf-8').read()
+    new = re.sub(r'(<span class="badge">(?:&#9203;|\u23f3)\s*~\d+)\s*min</span>',
+                 lambda m: m.group(1) + ' <span data-i18n="card_min">min</span></span>', h)
+    if new != h:
+        io.open(path, 'w', encoding='utf-8', newline='\n').write(new)
+        return True
+    return False
+
+
 def strings_for(lang):
     """Parse js/i18n/<lang>.js into a dict."""
     f = os.path.join('js', 'i18n', lang + '.js')
