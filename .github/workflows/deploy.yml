@@ -46,8 +46,17 @@ jobs:
           rsync -a ./ _stage/ \
             --exclude '.git' --exclude '.github' --exclude '_stage' \
             --exclude '_build' \
+            --exclude '*.py' --exclude '*.pyc' --exclude '__pycache__' \
             --exclude '*.bak' --exclude 'node_modules' --exclude '.wrangler'
           echo "  staged $(find _stage -type f | wc -l) files"
+          # Build scripts land in the site root while a market is being
+          # translated and rsync would happily publish them. Nothing that
+          # is not part of the site should ever be fetchable.
+          leak=$(find _stage \( -name "*.py" -o -name "*.pyc" -o -name "*.log" -o -name "*.cmd" -o -name "*.ps1" \) -print)
+          if [ -n "$leak" ]; then
+            echo "FAIL: non-site files staged for deploy:"; echo "$leak"; exit 1
+          fi
+          echo "  no source or script files staged"
 
       - name: Preflight checks
         run: |
