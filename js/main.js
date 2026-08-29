@@ -287,6 +287,12 @@ function shareTwitter(text) {
 function ordinal(n){
   n = Number(n);
   if (!isFinite(n)) return String(n);
+  // "st/nd/rd/th" are ENGLISH. Every market was rendering them: a Korean
+  // visitor read "88th 백분위", a Chinese one "88th 百分位". No other language in
+  // the registry forms ordinals with an English suffix, and a percentile reads
+  // perfectly well as a bare number, so only English gets the suffix.
+  const lang = (window.I18n && window.I18n.lang) || 'en';
+  if (lang !== 'en') return String(n);
   const r100 = n % 100, r10 = n % 10;
   if (r100 >= 11 && r100 <= 13) return n + 'th';
   if (r10 === 1) return n + 'st';

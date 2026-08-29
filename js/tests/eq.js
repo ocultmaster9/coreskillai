@@ -1401,10 +1401,12 @@ function showResults(){
 
   const bars=ORDER.map(b=>{
     const info=BRANCHES[b]; const eq=eqScores[b]; const bp=eqPct(eq);
+    const bk='eq_b_'+b.toLowerCase();
+    const bname=_t(bk,info.name), bdesc=_t(bk+'_desc',info.desc);
     return `<div class="trait-bar-item">
-      <div class="trait-bar-top"><span class="trait-name" style="color:${info.color}">${info.name}</span><span class="trait-pct">EQ ${eq}</span></div>
+      <div class="trait-bar-top"><span class="trait-name" style="color:${info.color}">${bname}</span><span class="trait-pct">EQ ${eq}</span></div>
       <div class="trait-bar-track"><div class="trait-bar-fill" style="width:${bp}%;background:${info.color}"></div></div>
-      <p style="font-size:.78rem;color:var(--text-2);margin-top:5px">${info.desc}</p>
+      <p style="font-size:.78rem;color:var(--text-2);margin-top:5px">${bdesc}</p>
     </div>`;
   }).join('');
 
@@ -1416,7 +1418,7 @@ function showResults(){
         <circle class="score-ring-fill" id="eq-ring" cx="65" cy="65" r="55"/>
       </svg>
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
-        <div class="score-ring-num">${totalEQ}</div><div class="score-ring-unit">EQ score</div>
+        <div class="score-ring-num">${totalEQ}</div><div class="score-ring-unit">${_t('eq_result_label',"EQ Score")}</div>
       </div>
     </div>
     <div class="result-info">
@@ -1428,7 +1430,7 @@ function showResults(){
   <div class="bell-curve-wrap"><canvas id="eq-bell" style="width:100%;display:block"></canvas></div>
   <div class="trait-bars" style="margin-top:20px">${bars}</div>
   <div class="result-breakdown" style="margin-top:20px">
-    ${ORDER.map(b=>`<div class="breakdown-item"><div class="b-label">${BRANCHES[b].name.split(' ')[0]}</div><div class="b-val" style="color:${BRANCHES[b].color}">${eqScores[b]}</div></div>`).join('')}
+    ${ORDER.map(b=>`<div class="breakdown-item"><div class="b-label">${_t('eq_b_'+b.toLowerCase(),BRANCHES[b].name)}</div><div class="b-val" style="color:${BRANCHES[b].color}">${eqScores[b]}</div></div>`).join('')}
     <div class="breakdown-item"><div class="b-label">${_t('eq_result_label',"EQ Score")}</div><div class="b-val" style="color:${color}">${totalEQ}</div><div class="b-sub">${_t('rt_average',"Average")}: 100</div></div>
   </div>
   <div class="share-row">

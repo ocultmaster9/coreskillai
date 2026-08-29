@@ -2333,7 +2333,10 @@ function showResults(){
   const bars=TRAIT_ORDER.map(t=>{
     const info=TRAIT_INFO[t];
     const p=pcts[t];
-    const desc=p>=60?info.high:p<=40?info.low:`A balanced mix of both ends of ${info.name}.`;
+    const k='b5_'+t.toLowerCase();
+    const desc=p>=60?_t(k+'_high',info.high)
+             :p<=40?_t(k+'_low',info.low)
+             :_t('b5_balanced','A balanced mix of both ends of {trait}.').replace('{trait}',traitName(t));
     return `<div class="trait-bar-item">
       <div class="trait-bar-top">
         <span class="trait-name" style="color:${info.color}">${traitName(t)}</span>
@@ -2414,7 +2417,7 @@ function drawRadar(){
   ctx.fillStyle=textC; ctx.font=`bold ${11*window.devicePixelRatio/window.devicePixelRatio}px Inter, sans-serif`; ctx.textAlign='center';
   angles.forEach((a,i)=>{
     const lx=cx+Math.cos(a)*(r+22), ly=cy+Math.sin(a)*(r+22)+4;
-    ctx.fillText(TRAIT_INFO[traits[i]].name.slice(0,3),lx,ly);
+    ctx.fillText(_t('b5_s_'+traits[i].toLowerCase(),TRAIT_INFO[traits[i]].name.slice(0,3)),lx,ly);
   });
 }
 
