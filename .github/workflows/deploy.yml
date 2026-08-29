@@ -250,30 +250,11 @@ jobs:
           #      live. Every one of those shipped in English. Read the source
           #      instead: strip ${...} and tags out of each rendered template and
           #      fail on the plain English left behind.
-          python3 - <<'JSENGLISH'
-          import io, re, glob, os, sys
-          OK = re.compile(r"^(CoreSkillAI|AdSense|Google|IQ|EQ|WPM|CPM|MBTI|Stroop|Raven|Miller|"
-                          r"Goldberg|IPIP|MSCEIT|WAIS|Binet|Ishihara|Farnsworth|Munsell|OCEAN|Mayer|"
-                          r"Salovey|Caruso|QWERTY|ms|min|avg|px|err|of|Q|X|v|"
-                          r"Array|from|length|join|map|data|choices|opts|ORDER|MAX|TRIALS|score)$", re.I)
-          bad = []
-          for f in sorted(glob.glob('_stage/js/tests/*.js')):
-              src = io.open(f, encoding='utf-8').read()
-              for m in re.finditer(r'`([^`]*)`', src, re.S):
-                  blk = m.group(1)
-                  if '<' not in blk: continue
-                  line = src[:m.start()].count('\n') + 1
-                  t = re.sub(r'\$\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', ' ', blk)
-                  t = re.sub(r'<[^>]+>', ' ', t)
-                  for w in re.findall(r"[A-Za-z][A-Za-z']{2,}", t):
-                      if not OK.match(w):
-                          bad.append('%s:%d %s' % (os.path.basename(f), line, w))
-                          break
-          for b in bad[:8]:
-              print('::error::hardcoded English rendered by a test script -> %s' % b)
-          print('  test scripts render no hardcoded English' if not bad else '')
-          sys.exit(1 if bad else 0)
-          JSENGLISH
+          # Moved out of this file into _build/check_js_english.py so it can be
+          # unit-tested. The inline regex version could not parse nested template
+          # literals: it reported the identifier `floored` as English (breaking
+          # run #32) while missing real English inside a nested branch.
+          ( cd _stage && cp -r ../_build . 2>/dev/null; python3 _build/check_js_english.py . )
           [ $? -eq 0 ] || fail=1
 
           # 4) ads.txt must name our publisher id.
@@ -535,6 +516,23 @@ jobs:
 
           [ "$fail" -eq 0 ] || exit 1
           echo "  all preflight checks passed"
+
+      # The preflight copies _build INTO _stage so the checkers can run there.
+      # Nothing removed it afterwards, so every build script - audit.py, tools.py,
+      # refresh.py, the scratch translation scripts - was published and fetchable
+      # at https://www.coreskillai.com/_build/. The staging-leak guard could not
+      # catch it because that guard runs BEFORE the preflight copies _build in.
+      # So the authoritative check is here, immediately before publishing.
+      - name: Strip build tooling from the deploy
+        run: |
+          set -euo pipefail
+          rm -rf _stage/_build _stage/node_modules _stage/.wrangler
+          leak=$(find _stage \( -name "*.py" -o -name "*.pyc" -o -name "*.log" \
+                                -o -name "*.cmd" -o -name "*.ps1" -o -name "__pycache__" \) -print)
+          if [ -n "$leak" ]; then
+            echo "::error::non-site files would be published:"; echo "$leak"; exit 1
+          fi
+          echo "  nothing but the site is staged ($(find _stage -type f | wc -l) files)"
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
