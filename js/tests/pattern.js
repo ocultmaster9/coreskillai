@@ -1,52 +1,46 @@
 /* CoreSkillAI — Pattern Recognition Test (Matrix Reasoning) */
 (function(){
 function _t(k,fb){return window.I18n?.t(k)||fb||k;}
-// Each question: 8 cells shown (shapes as SVG strings) + 4 choices
-// Shapes encoded: circle, square, triangle, diamond | sizes: s/m/l | fill: empty/half/full
-const S={
-  co:'<circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2"/>',
-  cf:'<circle cx="20" cy="20" r="14" fill="currentColor"/>',
-  ch:'<circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 20 A14 14 0 0 1 34 20 Z" fill="currentColor"/>',
-  so:'<rect x="6" y="6" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"/>',
-  sf:'<rect x="6" y="6" width="28" height="28" fill="currentColor"/>',
-  sh:'<rect x="6" y="6" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"/><rect x="6" y="6" width="28" height="14" fill="currentColor"/>',
-  to:'<polygon points="20,5 35,35 5,35" fill="none" stroke="currentColor" stroke-width="2"/>',
-  tf:'<polygon points="20,5 35,35 5,35" fill="currentColor"/>',
-  th:'<polygon points="20,5 35,35 5,35" fill="none" stroke="currentColor" stroke-width="2"/><clipPath id="tc"><polygon points="20,5 35,35 5,35"/></clipPath><rect x="0" y="20" width="40" height="20" fill="currentColor" clip-path="url(#tc)"/>',
-  do:'<polygon points="20,4 36,20 20,36 4,20" fill="none" stroke="currentColor" stroke-width="2"/>',
-  df:'<polygon points="20,4 36,20 20,36 4,20" fill="currentColor"/>',
-};
-function cell(shape,color='var(--text)'){
-  return `<svg viewBox="0 0 40 40" width="44" height="44" style="color:${color}">${S[shape]||S.co}</svg>`;
+// Items come from js/tests/matrixgen.js rather than a hardcoded bank.
+//
+// The old bank was 12 hand-typed items with the correct answer in slot 1 EIGHT
+// times out of twelve, rendered in fixed order. Always clicking the first option
+// scored 8/12 and the page then reported "estimated IQ ~108". Worse, the items
+// were the same ones the IQ test used, so the two tests were largely the same
+// twelve puzzles under two names.
+const N_ITEMS = 16;
+const N_OPTIONS = 6;
+let QUESTIONS = [];
+
+function newItems(){
+  if(!window.MatrixGen) return [];
+  const seed=(Date.now()^Math.floor(Math.random()*0xffffffff))>>>0;
+  let t=window.MatrixGen.generateTest(seed,N_ITEMS);
+  for(let i=0;!t&&i<20;i++) t=window.MatrixGen.generateTest((seed+i+1)>>>0,N_ITEMS);
+  return t||[];
 }
+const cellSvg=(c,size)=>window.MatrixGen?window.MatrixGen.cellSvg(c,size||44):'';
 
-// 12 questions — grid cells + correct answer index
-const QUESTIONS=[
-  {cells:['co','co','co','sf','sf','sf','to','to',null],choices:['to','tf','co','so'],ans:0},
-  {cells:['co','cf','co','so','sf','so','to','tf',null],choices:['to','co','do','tf'],ans:0},
-  {cells:['so','so','so','cf','cf','cf','do','do',null],choices:['df','do','tf','co'],ans:1},
-  {cells:['co','so','to','cf','sf','tf','ch','sh',null],choices:['th','tf','to','do'],ans:0},
-  {cells:['co','co','cf','so','so','sf','to','to',null],choices:['th','tf','to','do'],ans:1},
-  {cells:['sf','cf','tf','so','co','to','sh','ch',null],choices:['th','so','tf','do'],ans:0},
-  {cells:['co','so','do','co','so','do','co','so',null],choices:['do','co','to','so'],ans:0},
-  {cells:['tf','sf','cf','to','so','co','th','sh',null],choices:['ch','co','cf','th'],ans:0},
-  {cells:['co','co','co','so','so','so','do','do',null],choices:['to','co','do','so'],ans:2},
-  {cells:['cf','sf','tf','cf','sf','tf','cf','sf',null],choices:['tf','co','df','sf'],ans:0},
-  {cells:['sh','ch','th','so','co','to','sf','cf',null],choices:['tf','th','df','to'],ans:0},
-  {cells:['co','so','do','sf','cf','df','to','co',null],choices:['so','do','df','cf'],ans:1},
-];
-
-let current=0, score=0, answered=false;
-
+// Guessing-corrected accuracy -> estimated percentile, using the same method as
+// the IQ test so the two are consistent. The old version mapped 12 raw points
+// onto an "estimated IQ" of 60-130 and told the visitor it was "based on
+// published norms". There are no norms. That claim is gone.
+function corrected(s){
+  const chance=QUESTIONS.length/N_OPTIONS;
+  return Math.max(0,(s-chance)/(1-1/N_OPTIONS));
+}
 function pct(s){
-  // score out of 12 → estimated IQ percentile band
-  const map=[2,4,8,14,22,35,50,65,78,88,93,97,99];
-  return map[Math.min(12,Math.max(0,s))];
+  const n=QUESTIONS.length||N_ITEMS;
+  const p=corrected(s)/n, eps=0.012;
+  const q=Math.min(1-eps,Math.max(eps,p));
+  const z=Math.log(q/(1-q))/1.75-0.05;
+  const a=[0.319381530,-0.356563782,1.781477937,-1.821255978,1.330274429];
+  const t=1/(1+0.2316419*Math.abs(z));let poly=0,tp=t;a.forEach(c=>{poly+=c*tp;tp*=t;});
+  const d=0.3989423*Math.exp(-z*z/2)*poly;
+  return Math.max(1,Math.min(99,Math.round((z>=0?1-d:d)*100)));
 }
-function iqEst(s){
-  const map=[60,70,78,86,92,97,100,104,108,113,119,125,130];
-  return map[Math.min(12,Math.max(0,s))];
-}
+function accuracy(s){ return Math.round(100*s/(QUESTIONS.length||N_ITEMS)); }
+
 function label(s){
   const p=pct(s);
   if(p>=95) return{text:_t('rt_r_exceptional','Exceptional')+' 🔷',color:'#6366f1'};
@@ -60,13 +54,13 @@ function label(s){
 function renderQ(){
   const q=QUESTIONS[current];
   answered=false;
-  const cells=q.cells.map((s,i)=>
+  const cells=[0,1,2,3,4,5,6,7,8].map(i=>
     i===8
       ? `<div class="pattern-cell missing" style="font-size:1.5rem;color:var(--primary)">?</div>`
-      : `<div class="pattern-cell">${s?cell(s):''}</div>`
+      : `<div class="pattern-cell">${cellSvg(q.cells[i],52)}</div>`
   ).join('');
-  const choices=q.choices.map((s,i)=>
-    `<div class="pattern-choice" onclick="PatTest.pick(${i})" data-i="${i}">${cell(s)}</div>`
+  const choices=q.choices.map((c,i)=>
+    `<div class="pattern-choice" onclick="PatTest.pick(${i})" data-i="${i}">${cellSvg(c,46)}</div>`
   ).join('');
 
   document.getElementById('test-root').querySelector('#pat-body').innerHTML=`
@@ -87,14 +81,14 @@ function renderQ(){
 }
 
 function renderShell(){
-  const dots=QUESTIONS.map((_,i)=>`<div class="progress-dot" id="pat-dot-${i}"></div>`).join('');
+  const dots=Array.from({length:QUESTIONS.length||N_ITEMS},(_,i)=>`<div class="progress-dot" id="pat-dot-${i}"></div>`).join('');
   document.getElementById('test-root').innerHTML=`
   <div class="instruction-card">
     <h3>${_t('pat_how_title',"How It Works")}</h3>
     <ul>
       <li>${_t('pat_how1',"Each puzzle shows a 3×3 grid with the last piece missing.")}</li>
-      <li>${_t('pat_how2',"Find the logical rule and pick the correct answer from 4 options.")}</li>
-      <li>${_t('iq_qcount',"{n} questions").replace('{n}',QUESTIONS.length)}, ${_t('pat_difficulty',"increasing difficulty")}.</li>
+      <li>${_t('pat_how2',"Work out the rule and choose the missing piece from 6 options. Fresh puzzles every attempt.")}</li>
+      <li>${_t('iq_qcount',"{n} questions").replace('{n}',N_ITEMS)}, ${_t('pat_difficulty',"increasing difficulty")}.</li>
     </ul>
   </div>
   <div class="test-card-ui">
@@ -102,7 +96,7 @@ function renderShell(){
       <span class="test-ui-title">🔷 ${_t('pat_title',"Pattern Recognition Test")}</span>
       <div style="display:flex;gap:12px;align-items:center">
         <span id="pat-score-now" style="font-size:.8rem;color:var(--text-3)">${_t('pat_result_label','Pattern Score')}: 0</span>
-        <span id="pat-q-num" style="font-size:.8rem;color:var(--text-3)">Q1 / ${QUESTIONS.length}</span>
+        <span id="pat-q-num" style="font-size:.8rem;color:var(--text-3)">Q1 / ${N_ITEMS}</span>
       </div>
     </div>
     <div class="test-ui-body" id="pat-body" style="flex-direction:column;gap:16px">
@@ -119,7 +113,7 @@ function renderShell(){
 
 function showResults(){
   const p=pct(score);
-  const iq=iqEst(score);
+  const acc=accuracy(score);
   const {text,color}=label(score);
   const circ=2*Math.PI*55;
   document.getElementById('pat-results').innerHTML=`
@@ -136,25 +130,25 @@ function showResults(){
     </div>
     <div class="result-info">
       <h2>${text}</h2>
-      <p class="result-desc">${_t('pat_res_desc',"You got {n} out of {t} correct. Based on published norms, this corresponds to an estimated IQ range of ~{iq}. Pattern recognition is a core component of fluid intelligence.").replace('{n}',score).replace('{t}',QUESTIONS.length).replace('{iq}','<strong>~'+iq+'</strong>')}</p>
+      <p class="result-desc">${_t('pat_res_desc',"You solved {n} of {t}. This is a short screener, so treat the percentile as a rough placement rather than a measurement — the full IQ test uses more items and reports a confidence interval.").replace('{n}',score).replace('{t}',QUESTIONS.length)}</p>
       <div class="result-percentile" style="background:${color}22;color:${color}">${_t('pat_top',"Top {p}% in fluid reasoning").replace('{p}',100-p)}</div>
     </div>
   </div>
   <div class="bell-curve-wrap"><canvas id="pat-bell" style="width:100%;display:block"></canvas></div>
   <div class="result-breakdown">
     <div class="breakdown-item"><div class="b-label">${_t('pat_result_label','Pattern Score')}</div><div class="b-val" style="color:var(--primary)">${score}/${QUESTIONS.length}</div></div>
-    <div class="breakdown-item"><div class="b-label">${_t('pat_est_iq',"Est. IQ")}</div><div class="b-val">~${iq}</div><div class="b-sub">${_t('pat_range',"range estimate")}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('pat_accuracy',"Accuracy")}</div><div class="b-val">${acc}%</div></div>
     <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div></div>
-    <div class="breakdown-item"><div class="b-label">${_t('rt_average',"Average")}</div><div class="b-val">7/12</div><div class="b-sub">${_t('pat_global_mean',"global mean")}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('pat_chance',"Chance level")}</div><div class="b-val">${Math.round(QUESTIONS.length/N_OPTIONS)}/${QUESTIONS.length}</div></div>
   </div>
-  <p style="font-size:.75rem;color:var(--text-3);margin-top:8px;text-align:center">${_t('pat_note',"Note: This is a brief screening measure, not a certified IQ test. For clinical IQ assessment, consult a psychologist.")}</p>
+  <p style="font-size:.75rem;color:var(--text-3);margin-top:8px;text-align:center">${_t('pat_note',"A short screener, not a certified IQ test, and not standardised on a representative sample. For a clinical assessment, consult a psychologist.")}</p>
   <div class="share-row">
     <button class="share-btn" id="share-copy" onclick="PatTest.copy()">📋 ${_t('share_copy',"Copy Result")}</button>
     <button class="share-btn" onclick="PatTest.tweet()">𝕏 ${_t('share_tweet',"Share on X")}</button>
   </div>
   <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="PatTest.reset()">↺ ${_t('btn_try_again',"Try Again")}</button></div>`;
   document.getElementById('pat-results').classList.add('show');
-  window._patResult={score,pct:p,iq,text};
+  window._patResult={score,pct:p,acc,text};
   const ring=document.getElementById('pat-ring');
   ring.style.stroke=color;ring.setAttribute('stroke-dasharray',circ);ring.setAttribute('stroke-dashoffset',circ);
   setTimeout(()=>{ring.style.transition='stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)';ring.setAttribute('stroke-dashoffset',circ*(1-p/100));},100);
@@ -162,7 +156,7 @@ function showResults(){
 }
 
 window.PatTest={
-  start(){current=0;score=0;renderQ();},
+  start(){QUESTIONS=newItems();if(!QUESTIONS.length){console.error('MatrixGen missing');return;}current=0;score=0;renderShell();renderQ();},
   pick(idx){
     if(answered) return;
     answered=true;
@@ -180,8 +174,8 @@ window.PatTest={
     },900);
   },
   reset(){renderShell();},
-  copy(){const r=window._patResult;if(!r)return;const t=window.shareText('pat_result_label', r.score+'/12', r.text, r.pct);navigator.clipboard?.writeText(t);},
-  tweet(){const r=window._patResult;if(!r)return;const t=window.shareText('pat_result_label', r.score+'/12', r.text, r.pct);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
+  copy(){const r=window._patResult;if(!r)return;const t=window.shareText('pat_result_label', r.score+'/'+QUESTIONS.length, r.text, r.pct);navigator.clipboard?.writeText(t);},
+  tweet(){const r=window._patResult;if(!r)return;const t=window.shareText('pat_result_label', r.score+'/'+QUESTIONS.length, r.text, r.pct);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);
 })();

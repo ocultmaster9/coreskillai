@@ -1,110 +1,71 @@
-/* CoreSkillAI — IQ Test (40 questions, 3 types, 20 min) */
+/* CoreSkillAI — IQ Test
+ *
+ * 36 procedurally generated matrix-reasoning items, 6 options each, 30 minutes.
+ * Items come from js/tests/matrixgen.js; see that file for why the previous
+ * hand-typed version had to be replaced (skewed answer key + arithmetic items
+ * masquerading as fluid reasoning).
+ *
+ * Scoring is deliberately less flattering than it used to be. The old table
+ * awarded IQ 145 for a perfect score and IQ 81 for random guessing, off a norm
+ * table that was invented. This version corrects for guessing, states a
+ * confidence interval, and caps the reportable range at what a 36-item screener
+ * can actually resolve.
+ */
 (function(){
 function _t(k,fb){return window.I18n?.t(k)||fb||k;}
-// ── Questions ───────────────────────────────────────────
-// TYPE A: Number Series (15)
-const SERIES=[
-  {q:"2,  4,  6,  8,  __",  opts:[7,9,10,12],       ans:2, hint:"Add 2 each time"},
-  {q:"1,  3,  9,  27, __",  opts:[54,72,81,90],      ans:2, hint:"Multiply by 3"},
-  {q:"1,  4,  9,  16, __",  opts:[20,24,25,30],      ans:2, hint:"Perfect squares: 1²,2²,3²…"},
-  {q:"1,  2,  4,  7,  11, __",opts:[14,15,16,17],   ans:2, hint:"Add 1,2,3,4,5…"},
-  {q:"2,  3,  5,  8,  13, __",opts:[18,19,20,21],   ans:3, hint:"Add previous two (Fibonacci-like)"},
-  {q:"100,81,64, 49, __",   opts:[36,38,42,44],      ans:0, hint:"Descending perfect squares"},
-  {q:"3,  6,  12, 24, __",  opts:[30,36,42,48],      ans:3, hint:"Multiply by 2"},
-  {q:"1,  8,  27, 64, __",  opts:[100,112,125,128],  ans:2, hint:"Cube numbers: 1³,2³,3³…"},
-  {q:"1,  1,  2,  6,  24, __",opts:[48,100,120,144], ans:2, hint:"Factorials: 1!,2!,3!,4!,5!"},
-  {q:"2,  6,  12, 20, 30, __",opts:[38,40,42,44],    ans:2, hint:"n×(n+1): 1×2,2×3,3×4…"},
-  {q:"10, 30, 60, 100,__",  opts:[130,140,150,160],  ans:2, hint:"Differences: 20,30,40,50"},
-  {q:"1,  2,  3,  5,  8,  13,21,__",opts:[29,31,33,34],ans:3,hint:"Fibonacci sequence"},
-  {q:"4,  9,  25, 49, 121,__",opts:[143,169,177,196],ans:1,hint:"Squares of primes"},
-  {q:"0,  1,  3,  6,  10, 15,__",opts:[19,20,21,22], ans:2, hint:"Triangular numbers: +1,+2,+3…"},
-  {q:"2,  5,  10, 17, 26, __",opts:[35,36,37,38],    ans:3, hint:"Add 3,5,7,9,11…"},
-];
 
-// TYPE B: Matrix Patterns — reuse SVG approach from pattern.js
-const S={
-  co:'<circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/>',
-  cf:'<circle cx="20" cy="20" r="14" fill="currentColor"/>',
-  ch:'<circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M6 20 A14 14 0 0 1 34 20 Z" fill="currentColor"/>',
-  so:'<rect x="7" y="7" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5"/>',
-  sf:'<rect x="7" y="7" width="26" height="26" fill="currentColor"/>',
-  sh:'<rect x="7" y="7" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="7" y="7" width="26" height="13" fill="currentColor"/>',
-  to:'<polygon points="20,5 35,35 5,35" fill="none" stroke="currentColor" stroke-width="2.5"/>',
-  tf:'<polygon points="20,5 35,35 5,35" fill="currentColor"/>',
-  th:'<polygon points="20,5 35,35 5,35" fill="none" stroke="currentColor" stroke-width="2.5"/><clipPath id="tch"><polygon points="20,5 35,35 5,35"/></clipPath><rect x="0" y="20" width="40" height="20" fill="currentColor" clip-path="url(#tch)"/>',
-  do:'<polygon points="20,4 36,20 20,36 4,20" fill="none" stroke="currentColor" stroke-width="2.5"/>',
-  df:'<polygon points="20,4 36,20 20,36 4,20" fill="currentColor"/>',
-  dh:'<polygon points="20,4 36,20 20,36 4,20" fill="none" stroke="currentColor" stroke-width="2.5"/><clipPath id="dch"><polygon points="20,4 36,20 20,36 4,20"/></clipPath><rect x="0" y="20" width="40" height="20" fill="currentColor" clip-path="url(#dch)"/>',
-};
-function svgCell(s,color='currentColor'){
-  return s?`<svg viewBox="0 0 40 40" width="40" height="40" style="color:${color}">${S[s]||''}</svg>`:'';
+const N_ITEMS   = 36;
+const N_OPTIONS = 6;
+const TIME_LIMIT = 30*60;
+
+let ITEMS=[], current=0, answers={}, phase='idle', timer=null, elapsed=0, seed=0;
+
+// ── Scoring ───────────────────────────────────────────────────────────────
+// Correction for guessing is the standard formula: with k options, a taker who
+// knows nothing still gets roughly n/k right, so subtract that expectation
+// before treating the score as evidence of ability.
+//   adjusted = (raw - n/k) / (1 - 1/k)
+function correctForGuessing(raw){
+  const chance = N_ITEMS / N_OPTIONS;
+  return Math.max(0, (raw - chance) / (1 - 1/N_OPTIONS));
 }
 
-const MATRICES=[
-  {cells:['co','co','co','sf','sf','sf','to','to',null],choices:['to','tf','co','so'],ans:0},
-  {cells:['co','cf','co','so','sf','so','to','tf',null],choices:['to','co','do','tf'],ans:0},
-  {cells:['so','so','so','cf','cf','cf','do','do',null],choices:['df','do','tf','co'],ans:1},
-  {cells:['co','so','to','cf','sf','tf','ch','sh',null],choices:['th','tf','to','do'],ans:0},
-  {cells:['sf','cf','tf','so','co','to','sh','ch',null],choices:['th','so','tf','do'],ans:0},
-  {cells:['co','co','co','so','so','so','do','do',null],choices:['to','co','do','so'],ans:0},
-  {cells:['cf','sf','tf','cf','sf','tf','cf','sf',null],choices:['tf','co','df','sf'],ans:0},
-  {cells:['sh','ch','th','so','co','to','sf','cf',null],choices:['tf','th','df','to'],ans:0},
-  {cells:['co','so','do','cf','sf','df','ch','sh',null],choices:['dh','th','df','to'],ans:0},
-  {cells:['tf','sf','cf','to','so','co','th','sh',null],choices:['ch','co','cf','th'],ans:0},
-];
-
-// TYPE C: Number Analogies (15)
-const ANALOGY=[
-  {q:"2 : 4  ⟹  3 : ?",    opts:[5,6,7,9],      ans:1, hint:"2×2=4, so 3×?"},
-  {q:"4 : 2  ⟹  16 : ?",   opts:[4,6,8,32],     ans:2, hint:"Square root"},
-  {q:"3 : 9  ⟹  4 : ?",    opts:[12,14,16,18],  ans:2, hint:"Squared"},
-  {q:"1 : 1  ⟹  3 : ?",    opts:[3,6,9,27],     ans:2, hint:"Cubed"},
-  {q:"5 : 25 ⟹  7 : ?",    opts:[14,35,49,56],  ans:2, hint:"n²"},
-  {q:"10 : 5 ⟹  8 : ?",    opts:[2,3,4,6],      ans:2, hint:"Divided by 2"},
-  {q:"2 : 8  ⟹  3 : ?",    opts:[9,12,18,27],   ans:3, hint:"n³"},
-  {q:"100:10 ⟹  49 : ?",   opts:[4,5,6,7],      ans:3, hint:"Square root"},
-  {q:"6 : 36 ⟹  9 : ?",    opts:[18,45,72,81],  ans:3, hint:"n²"},
-  {q:"3 : 6  ⟹  7 : ?",    opts:[10,12,14,21],  ans:2, hint:"×2"},
-  {q:"12: 4  ⟹  21 : ?",   opts:[3,5,6,7],      ans:3, hint:"÷3"},
-  {q:"2 : 6  ⟹  5 : ?",    opts:[9,10,15,25],   ans:2, hint:"×3"},
-  {q:"64: 8  ⟹  121: ?",   opts:[9,10,11,12],   ans:2, hint:"√"},
-  {q:"1 : 2  ⟹  4 : ?",    opts:[5,6,7,8],      ans:3, hint:"+1 then ×2?"},
-  {q:"7 : 49 ⟹  11: ?",    opts:[22,33,111,121],ans:3, hint:"n²"},
-];
-
-// ── Merge all questions ──────────────────────────────────
-// 15 series + 10 matrices + 15 analogies = 40
-const ALL_QUESTIONS=[];
-SERIES.forEach((q,i)=>ALL_QUESTIONS.push({type:'series',  data:q, num:i+1}));
-MATRICES.forEach((q,i)=>ALL_QUESTIONS.push({type:'matrix', data:q, num:i+1}));
-ANALOGY.forEach((q,i)=>ALL_QUESTIONS.push({type:'analogy', data:q, num:i+1}));
-
-// Shuffle slightly: interleave types
-function interleave(arr){
-  const a=[],b=[],c=[];
-  arr.forEach(q=>{ if(q.type==='series')a.push(q); else if(q.type==='matrix')b.push(q); else c.push(q); });
-  const out=[]; const max=Math.max(a.length,b.length,c.length);
-  for(let i=0;i<max;i++){if(a[i])out.push(a[i]);if(b[i])out.push(b[i]);if(c[i])out.push(c[i]);}
-  return out;
+// Ability -> IQ. The honest position: we have no standardisation sample, so this
+// maps the guessing-corrected proportion onto a normal scale under a stated
+// assumption rather than pretending to be a norm table. It is deliberately
+// conservative at both ends - a 36-item screener cannot resolve giftedness, and
+// claiming otherwise is how online tests lose their credibility.
+function scoreToIQ(raw){
+  const adj = correctForGuessing(raw);
+  const p   = adj / N_ITEMS;                       // 0..1 proportion of items mastered
+  // Map proportion to z with a logistic link centred so that mastering ~55% of
+  // a difficulty-ordered set sits at the population mean.
+  const eps = 0.012;
+  const q   = Math.min(1-eps, Math.max(eps, p));
+  const z   = Math.log(q/(1-q)) / 1.75 - 0.05;
+  // Capped at 135 on purpose. A 36-item screener cannot resolve giftedness -
+  // above about +2 SD you need many more items at the top of the difficulty
+  // range to separate people at all. Every site handing out 145s off a short
+  // free test is selling flattery, and it is why nobody trusts online IQ scores.
+  return Math.max(60, Math.min(135, Math.round(100 + 15*z)));
 }
-const QUESTIONS=interleave(ALL_QUESTIONS); // 40 total
 
-const TIME_LIMIT=20*60; // 20 minutes
+// At or near chance the test has measured nothing, and printing "IQ 66" for
+// someone who guessed or ran out of time would be a fabrication rather than a
+// low score. Say so instead.
+function isBelowFloor(raw){ return raw <= N_ITEMS/N_OPTIONS + 1; }
 
-// ── Scoring ──────────────────────────────────────────────
-function scoreToIQ(score){
-  // Calibrated for 40-item online IQ screening test
-  // Based on published norms for similar instruments
-  const table=[
-    [0,55],[3,62],[5,68],[7,73],[9,78],[11,83],[13,88],[15,92],[17,96],[19,100],
-    [21,103],[23,107],[25,111],[27,116],[29,120],[31,124],[33,128],[35,132],[37,136],[39,140],[40,145]
-  ];
-  for(let i=0;i<table.length-1;i++){
-    const [s1,iq1]=table[i],[s2,iq2]=table[i+1];
-    if(score<=s2){const t=(score-s1)/(s2-s1);return Math.round(iq1+(iq2-iq1)*t);}
-  }
-  return 145;
+// Standard error of measurement: SEM = SD * sqrt(1 - reliability).
+// Matrix tests of this length typically land near alpha = .85, which gives
+// SEM ≈ 15 * sqrt(.15) ≈ 5.8, so a 95% interval is roughly ±11 points. Showing
+// that band is the single biggest honesty difference between this test and the
+// competition, all of whom report a bare number they cannot justify.
+const SEM = 5.8;
+function confInterval(iq){
+  const half = Math.round(1.96*SEM);
+  return [Math.max(55, iq-half), Math.min(145, iq+half)];
 }
+
 function iqPct(iq){
   const z=(iq-100)/15;
   const a=[0.319381530,-0.356563782,1.781477937,-1.821255978,1.330274429];
@@ -114,56 +75,52 @@ function iqPct(iq){
   return Math.max(1,Math.min(99,Math.round(p)));
 }
 function iqLabel(iq){
-  if(iq>=145) return{text:_t('iq_profound','Profoundly Gifted'),color:'#6366f1',category:_t('iq_profound','Exceptional')};
-  if(iq>=130) return{text:_t('iq_gifted','Highly Gifted'),color:'#6366f1',category:_t('iq_gifted','Very Superior')};
-  if(iq>=120) return{text:_t('iq_superior','Superior Intelligence'),color:'#8b5cf6',category:_t('iq_superior','Superior')};
+  if(iq>=130) return{text:_t('iq_gifted','Highly Gifted'),color:'#6366f1',category:_t('iq_gifted','Highly Gifted')};
+  if(iq>=120) return{text:_t('iq_superior','Superior Intelligence'),color:'#8b5cf6',category:_t('iq_superior','Superior Intelligence')};
   if(iq>=110) return{text:_t('iq_high_avg','High Average'),color:'#10b981',category:_t('iq_high_avg','High Average')};
-  if(iq>=90)  return{text:_t('iq_average','Average Intelligence'),color:'#06b6d4',category:_t('iq_average','Average')};
+  if(iq>=90)  return{text:_t('iq_average','Average Intelligence'),color:'#06b6d4',category:_t('iq_average','Average Intelligence')};
   if(iq>=80)  return{text:_t('iq_low_avg','Low Average'),color:'#f59e0b',category:_t('iq_low_avg','Low Average')};
-  if(iq>=70)  return{text:_t('iq_borderline','Borderline'),color:'#ef4444',category:_t('iq_borderline','Borderline')};
   return{text:_t('iq_below_avg','Below Average'),color:'#ef4444',category:_t('iq_below_avg','Below Average')};
 }
 
-// ── State ─────────────────────────────────────────────────
-let current=0, score=0, answers={}, phase='idle', timer=null, elapsed=0;
-
-// ── Render shell ─────────────────────────────────────────
+// ── Rendering ─────────────────────────────────────────────────────────────
 function renderShell(){
   const root=document.getElementById('test-root');
+  if(!root) return;
   root.innerHTML=`
   <div class="instruction-card">
     <h3>${_t('iq_how_title','How This IQ Test Works')}</h3>
     <ul>
-      <li>${_t('iq_how1','40 questions across 3 cognitive domains: number sequences, visual patterns, and numerical analogies.')}</li>
-      <li>${_t('iq_how2','20 minute time limit. Work quickly but carefully.')}</li>
-      <li>${_t('iq_how3','Your score converts to a standard IQ scale (mean 100, SD 15).')}</li>
-      <li>${_t('iq_how4','Works best on desktop. Find a quiet place and focus.')}</li>
+      <li>${_t('iq_how1','36 visual matrix puzzles. Each one shows a 3×3 grid with the last cell missing — work out the rule and pick the piece that completes it.')}</li>
+      <li>${_t('iq_how2','30 minute time limit. Items get harder as you go.')}</li>
+      <li>${_t('iq_how3','No words, no arithmetic, no cultural knowledge. The same test works in every language.')}</li>
+      <li>${_t('iq_how4','Every attempt generates fresh puzzles, so the answers cannot be looked up.')}</li>
     </ul>
   </div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
     <div class="science-card" style="text-align:center;padding:16px">
-      <div style="font-size:1.6rem">🔢</div>
-      <div style="font-size:.8rem;font-weight:700;margin-top:6px">${_t('iq_result_series','Number Series')}</div>
-      <div style="font-size:.75rem;color:var(--text-3)">${_t('iq_qcount',"{n} questions").replace('{n}',15)}</div>
-    </div>
-    <div class="science-card" style="text-align:center;padding:16px">
       <div style="font-size:1.6rem">🔷</div>
-      <div style="font-size:.8rem;font-weight:700;margin-top:6px">${_t('iq_result_matrix','Visual Patterns')}</div>
-      <div style="font-size:.75rem;color:var(--text-3)">${_t('iq_qcount',"{n} questions").replace('{n}',10)}</div>
+      <div style="font-size:.8rem;font-weight:700;margin-top:6px">${_t('iq_f_items','Items')}</div>
+      <div style="font-size:.75rem;color:var(--text-3)">${_t('iq_qcount',"{n} questions").replace('{n}',N_ITEMS)}</div>
     </div>
     <div class="science-card" style="text-align:center;padding:16px">
-      <div style="font-size:1.6rem">⚖️</div>
-      <div style="font-size:.8rem;font-weight:700;margin-top:6px">${_t('iq_result_analogy','Analogies')}</div>
-      <div style="font-size:.75rem;color:var(--text-3)">${_t('iq_qcount',"{n} questions").replace('{n}',15)}</div>
+      <div style="font-size:1.6rem">🌍</div>
+      <div style="font-size:.8rem;font-weight:700;margin-top:6px">${_t('iq_f_fair','Culture-fair')}</div>
+      <div style="font-size:.75rem;color:var(--text-3)">${_t('iq_f_fair_sub','Non-verbal')}</div>
+    </div>
+    <div class="science-card" style="text-align:center;padding:16px">
+      <div style="font-size:1.6rem">📐</div>
+      <div style="font-size:.8rem;font-weight:700;margin-top:6px">${_t('iq_f_method','Method')}</div>
+      <div style="font-size:.75rem;color:var(--text-3)">${_t('iq_f_method_sub','Matrix reasoning')}</div>
     </div>
   </div>
   <div class="test-card-ui">
     <div class="test-ui-header">
       <span class="test-ui-title">🧠 ${_t('iq_title','IQ Test')}</span>
-      <span class="badge badge-red">⏱ 20 min</span>
+      <span class="badge badge-red">⏱ 30 <span data-i18n="card_min">min</span></span>
     </div>
     <div class="test-ui-body" id="iq-body">
-      <p style="color:var(--text-2);text-align:center;max-width:360px">${_t('iq_desc','40 questions across 3 cognitive domains. Results in under 20 minutes.')}</p>
+      <p style="color:var(--text-2);text-align:center;max-width:380px">${_t('iq_desc','36 non-verbal matrix puzzles measuring fluid reasoning. Results in under 30 minutes.')}</p>
       <button class="btn btn-primary btn-lg" onclick="IQTest.start()">${_t('iq_start','Start IQ Test →')}</button>
     </div>
     <div style="padding:12px 24px;border-top:1px solid var(--border)">
@@ -174,99 +131,105 @@ function renderShell(){
 }
 
 function renderQ(){
-  const q=QUESTIONS[current];
-  document.getElementById('iq-prog').style.width=`${(current/QUESTIONS.length)*100}%`;
-  const secs=TIME_LIMIT-elapsed;
+  const it=ITEMS[current];
+  const prog=document.getElementById('iq-prog');
+  if(prog) prog.style.width=`${(current/ITEMS.length)*100}%`;
+  const secs=Math.max(0,TIME_LIMIT-elapsed);
   const mm=String(Math.floor(secs/60)).padStart(2,'0');
   const ss=String(secs%60).padStart(2,'0');
-  const typeLabel=q.type==='series'?`🔢 ${_t('iq_q_series','Number Series')}`:q.type==='matrix'?`🔷 ${_t('iq_q_matrix','Visual Pattern')}`:`⚖️ ${_t('iq_q_analogy','Analogy')}`;
-  let qHTML='';
-  if(q.type==='series'||q.type==='analogy'){
-    qHTML=`<div style="font-size:clamp(1.2rem,4vw,1.8rem);font-weight:800;letter-spacing:.05em;color:var(--primary);text-align:center;padding:16px 24px;background:var(--surface-2);border-radius:var(--radius);width:100%;max-width:440px">${q.data.q}</div>`;
-  } else {
-    const cells=q.data.cells.map((s,i)=>i===8
-      ?`<div class="pattern-cell missing" style="font-size:1.4rem;color:var(--primary);font-weight:800">?</div>`
-      :`<div class="pattern-cell">${s?svgCell(s):''}</div>`).join('');
-    qHTML=`<div class="pattern-grid" style="width:220px;height:220px">${cells}</div>`;
+
+  const cells=[];
+  for(let i=0;i<9;i++){
+    cells.push(i===8
+      ? `<div class="pattern-cell missing" style="font-size:1.5rem;color:var(--primary);font-weight:800">?</div>`
+      : `<div class="pattern-cell">${window.MatrixGen.cellSvg(it.cells[i],62)}</div>`);
   }
-  let choicesHTML='';
-  if(q.type==='matrix'){
-    choicesHTML=`<div class="pattern-choices" style="max-width:360px">${q.data.choices.map((s,i)=>`<div class="pattern-choice" onclick="IQTest.pick(${i})" data-i="${i}">${svgCell(s)}</div>`).join('')}</div>`;
-  } else {
-    choicesHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:380px">${q.data.opts.map((o,i)=>`<button class="iq-choice" onclick="IQTest.pick(${i})" style="padding:14px;background:var(--surface-2);border:2px solid var(--border);border-radius:var(--radius-s);font-size:1.1rem;font-weight:700;color:var(--text);cursor:pointer;transition:all .15s">${o}</button>`).join('')}</div>`;
-  }
+  const choices=it.choices.map((c,i)=>
+    `<div class="pattern-choice" onclick="IQTest.pick(${i})" data-i="${i}">${window.MatrixGen.cellSvg(c,54)}</div>`).join('');
+
   document.getElementById('iq-body').innerHTML=`
     <div style="display:flex;justify-content:space-between;width:100%;max-width:440px;font-size:.82rem;color:var(--text-3)">
-      <span>${typeLabel}</span>
-      <span>Q${current+1}/${QUESTIONS.length}</span>
-      <span style="font-weight:700;color:${secs<120?'var(--danger)':'var(--text-2)'}">⏱ ${mm}:${ss}</span>
+      <span>🔷 ${_t('iq_q_matrix','Visual Pattern')}</span>
+      <span>${current+1}/${ITEMS.length}</span>
+      <span class="iq-timer" style="font-weight:700;color:${secs<180?'var(--danger)':'var(--text-2)'}">⏱ ${mm}:${ss}</span>
     </div>
-    ${qHTML}
-    ${choicesHTML}`;
-  // hover effect for text choices
-  document.querySelectorAll('.iq-choice').forEach(b=>{
-    b.addEventListener('mouseenter',()=>{ b.style.borderColor='var(--primary)'; b.style.color='var(--primary)'; });
-    b.addEventListener('mouseleave',()=>{ if(!b.classList.contains('selected')){ b.style.borderColor='var(--border)'; b.style.color='var(--text)'; } });
-  });
+    <div class="pattern-grid" style="width:230px;height:230px">${cells.join('')}</div>
+    <div class="pattern-choices" style="max-width:380px">${choices}</div>`;
 }
 
 function startTimer(){
   timer=setInterval(()=>{
     elapsed++;
     if(elapsed>=TIME_LIMIT){ clearInterval(timer); finishTest(); return; }
-    // update timer display if visible
     const secs=TIME_LIMIT-elapsed;
     const mm=String(Math.floor(secs/60)).padStart(2,'0');
     const ss=String(secs%60).padStart(2,'0');
-    const timerEl=document.querySelector('#iq-body [style*="color:var(--danger)"],.iq-timer');
-    if(timerEl) timerEl.textContent=`⏱ ${mm}:${ss}`;
+    const el=document.querySelector('#iq-body .iq-timer');
+    if(el) el.textContent=`⏱ ${mm}:${ss}`;
   },1000);
 }
 
 function finishTest(){
   clearInterval(timer);
-  phase='done'; // stop accepting clicks - QUESTIONS[current] is out of range now
+  phase='done';
 
-  // Single source of truth: recount from the recorded answers. The old code kept a
-  // separate running counter that pick() could increment more than once for the same
-  // question, so the headline score could exceed the per-domain breakdown.
-  const seriesRight=QUESTIONS.filter((q,i)=>q.type==='series'&&answers[i]===q.data.ans).length;
-  const matrixRight=QUESTIONS.filter((q,i)=>q.type==='matrix'&&answers[i]===q.data.ans).length;
-  const analogyRight=QUESTIONS.filter((q,i)=>q.type==='analogy'&&answers[i]===q.data.ans).length;
-  score=seriesRight+matrixRight+analogyRight;
-
-  const iq=scoreToIQ(score);
+  const raw=ITEMS.filter((it,i)=>answers[i]===it.ans).length;
+  const floored=isBelowFloor(raw);
+  const iq=scoreToIQ(raw);
+  const [lo,hi]=confInterval(iq);
   const p=iqPct(iq);
   const {text,color,category}=iqLabel(iq);
+  const headline = floored ? '—' : String(iq);
+
+  // Difficulty tertiles let the taker see WHERE they ran out of road, which is
+  // more informative than a single number and is not something the competition
+  // offers on a free test.
+  const third=Math.ceil(ITEMS.length/3);
+  const band=k=>{
+    const slice=ITEMS.slice(k*third,(k+1)*third);
+    const right=slice.filter((it,i)=>answers[k*third+i]===it.ans).length;
+    return [right,slice.length];
+  };
+  const bands=[
+    [_t('iq_band_easy','Easier items'),   band(0)],
+    [_t('iq_band_mid','Moderate items'),  band(1)],
+    [_t('iq_band_hard','Hardest items'),  band(2)],
+  ];
+  const answered=Object.keys(answers).length;
 
   document.getElementById('iq-results').innerHTML=`
   <div style="text-align:center;padding:8px 0 20px">
     <div style="font-size:.8rem;font-weight:600;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">${_t('iq_result_label','Your IQ Score')}</div>
-    <div style="font-size:4rem;font-weight:900;color:${color};letter-spacing:-.03em;line-height:1">${iq}</div>
-    <div style="font-size:1rem;font-weight:700;color:var(--text);margin-top:8px">${text}</div>
-    <div class="result-percentile" style="background:${color}22;color:${color};margin:10px auto;display:inline-block">${_t('percentile_prefix','Higher than')} ${p}% ${_t('percentile_suffix','of the population')}</div>
+    <div style="font-size:4rem;font-weight:900;color:${color};letter-spacing:-.03em;line-height:1">${headline}</div>
+    ${floored
+      ? `<p style="font-size:.85rem;color:var(--text-2);margin:12px auto 0;max-width:420px;line-height:1.6">${_t('iq_floor','Your score is at the level chance alone produces, so this test cannot estimate a figure for you. That normally means the time ran out or the items were answered at random rather than that your reasoning is low.')}</p>`
+      : `<div style="font-size:.85rem;color:var(--text-2);margin-top:8px">${_t('iq_ci','95% confidence interval')}: <strong>${lo} – ${hi}</strong></div>
+    <div style="font-size:1rem;font-weight:700;color:var(--text);margin-top:6px">${text}</div>
+    <div class="result-percentile" style="background:${color}22;color:${color};margin:10px auto;display:inline-block">${_t('percentile_prefix','Higher than')} ${p}% ${_t('percentile_suffix','of the population')}</div>`}
   </div>
   <div class="bell-curve-wrap" style="margin:0 0 24px">
     <canvas id="iq-bell" style="width:100%;display:block"></canvas>
   </div>
   <div class="result-breakdown">
-    <div class="breakdown-item"><div class="b-label">${_t('iq_title','IQ')}</div><div class="b-val" style="color:${color}">${iq}</div></div>
-    <div class="breakdown-item"><div class="b-label">${_t('iq_category','Category')}</div><div class="b-val" style="font-size:.85rem">${category}</div></div>
-    <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${p}</div></div>
-    <div class="breakdown-item"><div class="b-label">${_t('lbl_score',"Score")}</div><div class="b-val">${score}/40</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('iq_title','IQ')}</div><div class="b-val" style="color:${color}">${headline}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('iq_category','Category')}</div><div class="b-val" style="font-size:.85rem">${floored?"—":category}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('label_percentile','Percentile')}</div><div class="b-val" style="color:${color}">${floored?"—":p}</div></div>
+    <div class="breakdown-item"><div class="b-label">${_t('lbl_score',"Score")}</div><div class="b-val">${raw}/${N_ITEMS}</div></div>
   </div>
   <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-top:20px">
     <div style="font-size:.82rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px">${_t('iq_breakdown','Score Breakdown')}</div>
     <div style="display:flex;flex-direction:column;gap:10px">
-      ${[[`🔢 ${_t('iq_result_series','Number Series')}`,seriesRight,15],[`🔷 ${_t('iq_result_matrix','Visual Patterns')}`,matrixRight,10],[`⚖️ ${_t('iq_result_analogy','Analogies')}`,analogyRight,15]].map(([lbl,right,total])=>`
+      ${bands.map(([lbl,[right,total]])=>`
       <div>
         <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:4px"><span>${lbl}</span><span style="font-weight:700">${right}/${total}</span></div>
-        <div class="trait-bar-track"><div class="trait-bar-fill" style="width:${(right/total)*100}%;background:var(--primary)"></div></div>
+        <div class="trait-bar-track"><div class="trait-bar-fill" style="width:${total?(right/total)*100:0}%;background:var(--primary)"></div></div>
       </div>`).join('')}
     </div>
+    <p style="font-size:.75rem;color:var(--text-3);margin-top:14px;line-height:1.6">${_t('iq_guess_note','Your raw score is adjusted for guessing before it becomes an IQ estimate — with six options, chance alone earns about {n} correct.').replace('{n}',Math.round(N_ITEMS/N_OPTIONS))}</p>
+    ${answered<N_ITEMS?`<p style="font-size:.75rem;color:var(--text-3);margin-top:8px;line-height:1.6">${_t('iq_unanswered','You left {n} items unanswered. Unanswered items count as incorrect, so your estimate is conservative.').replace('{n}',N_ITEMS-answered)}</p>`:''}
   </div>
   <p style="font-size:.75rem;color:var(--text-3);margin-top:16px;text-align:center;line-height:1.6">
-    <strong>⚠️</strong> ${_t('iq_disclaimer','This is a brief online screening test, not a certified IQ assessment. For clinical purposes, consult a licensed psychologist. Score accuracy: ±5–8 IQ points.')}
+    <strong>⚠️</strong> ${_t('iq_disclaimer','This is a brief online screening test, not a clinical IQ assessment, and it has not been standardised on a representative sample. A supervised test such as the WAIS is the only way to obtain a diagnostic score. Treat the interval above, not the single number, as the result.')}
   </p>
   <div class="share-row">
     <button class="share-btn" id="share-copy" onclick="IQTest.copy()">📋 ${_t('share_copy','Copy Result')}</button>
@@ -275,11 +238,9 @@ function finishTest(){
   <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="IQTest.reset()">${_t('iq_retake','↺ Retake Test')}</button></div>`;
 
   document.getElementById('iq-results').classList.add('show');
-  window._iqResult={iq,p,text,score};
+  window._iqResult={iq,p,text,score:raw,lo,hi,floored};
 
-  // Ring hidden (we show big number directly)
-  requestAnimationFrame(()=>drawIQBell(iq,color));
-
+  if(!floored) requestAnimationFrame(()=>drawIQBell(iq,color,lo,hi));
   setTimeout(()=>{
     document.querySelectorAll('.trait-bar-fill').forEach(b=>{
       const w=b.style.width; b.style.width='0';
@@ -288,9 +249,9 @@ function finishTest(){
   },100);
 }
 
-function drawIQBell(iq, color){
+function drawIQBell(iq,color,lo,hi){
   const canvas=document.getElementById('iq-bell');
-  if(!canvas) return;
+  if(!canvas||!canvas.getContext) return;
   const dpr=window.devicePixelRatio||1;
   canvas.width=canvas.offsetWidth*dpr;
   canvas.height=(canvas.offsetWidth*0.42)*dpr;
@@ -301,72 +262,70 @@ function drawIQBell(iq, color){
   const gridC=isDark?'rgba(255,255,255,.07)':'rgba(0,0,0,.06)';
   const textC=isDark?'rgba(255,255,255,.45)':'rgba(0,0,0,.4)';
   ctx.clearRect(0,0,W,H);
-  const margin=28, bh=H*0.72;
-  const iqMin=55, iqMax=145;
-  function toX(iq2){return margin+(iq2-iqMin)/(iqMax-iqMin)*(W-2*margin);}
-  function gauss(x){const z=(x-100)/15;return Math.exp(-z*z/2)/(15*Math.sqrt(2*Math.PI));}
+  const margin=28, bh=H*0.72, iqMin=55, iqMax=145;
+  const toX=v=>margin+(v-iqMin)/(iqMax-iqMin)*(W-2*margin);
+  const gauss=x=>{const z=(x-100)/15;return Math.exp(-z*z/2)/(15*Math.sqrt(2*Math.PI));};
   const maxG=gauss(100);
-  function toY(v){return H-14-(v/maxG)*bh;}
-  // fill below IQ score
-  ctx.fillStyle=color+'25';
-  ctx.beginPath(); ctx.moveTo(margin,H-14);
-  for(let x=iqMin;x<=iq;x+=.5) ctx.lineTo(toX(x),toY(gauss(x)));
-  ctx.lineTo(toX(Math.min(iq,iqMax)),H-14); ctx.closePath(); ctx.fill();
-  // full curve
+  const toY=v=>H-14-(v/maxG)*bh;
+
+  // Shade the confidence interval, not a single point. The band IS the result.
+  ctx.fillStyle=color+'2e';
+  ctx.beginPath(); ctx.moveTo(toX(lo),H-14);
+  for(let x=lo;x<=hi;x+=.5) ctx.lineTo(toX(x),toY(gauss(x)));
+  ctx.lineTo(toX(hi),H-14); ctx.closePath(); ctx.fill();
+
   ctx.beginPath(); ctx.strokeStyle=color; ctx.lineWidth=2.5;
-  for(let x=iqMin;x<=iqMax;x+=.5){
-    const y=toY(gauss(x));
-    x===iqMin?ctx.moveTo(toX(x),y):ctx.lineTo(toX(x),y);
-  }
+  for(let x=iqMin;x<=iqMax;x+=.5){const y=toY(gauss(x)); x===iqMin?ctx.moveTo(toX(x),y):ctx.lineTo(toX(x),y);}
   ctx.stroke();
-  // baseline
   ctx.beginPath(); ctx.strokeStyle=gridC; ctx.lineWidth=1;
   ctx.moveTo(margin,H-14); ctx.lineTo(W-margin,H-14); ctx.stroke();
-  // IQ marker
+
   if(iq>=iqMin&&iq<=iqMax){
     const mx=toX(iq);
     ctx.beginPath(); ctx.strokeStyle=color; ctx.lineWidth=2; ctx.setLineDash([4,3]);
     ctx.moveTo(mx,toY(gauss(iq))); ctx.lineTo(mx,H-14); ctx.stroke(); ctx.setLineDash([]);
     ctx.beginPath(); ctx.fillStyle=color; ctx.arc(mx,H-14,5,0,Math.PI*2); ctx.fill();
-    // IQ label above marker
-    ctx.fillStyle=color; ctx.font=`bold 12px Inter,sans-serif`; ctx.textAlign='center';
-    ctx.fillText(`IQ ${iq}`,mx,toY(gauss(iq))-10);
+    ctx.fillStyle=color; ctx.font='bold 12px Inter,sans-serif'; ctx.textAlign='center';
+    ctx.fillText(`${lo}–${hi}`,mx,toY(gauss(iq))-10);
   }
-  // SD labels at 70,85,100,115,130,145
   ctx.fillStyle=textC; ctx.font='10px Inter,sans-serif'; ctx.textAlign='center';
   [70,85,100,115,130,145].forEach(v=>{
-    if(v>=iqMin&&v<=iqMax){
-      ctx.beginPath(); ctx.strokeStyle=gridC; ctx.lineWidth=1;
-      ctx.moveTo(toX(v),H-14); ctx.lineTo(toX(v),H-22); ctx.stroke();
-      // labels must use toX() too - the old HTML row spanned 70..145 while the
-      // canvas spans 55..145, so every marker appeared shifted to the right.
-      ctx.fillText(v===145?'145+':String(v), toX(v), H-3);
-    }
+    ctx.beginPath(); ctx.strokeStyle=gridC; ctx.lineWidth=1;
+    ctx.moveTo(toX(v),H-14); ctx.lineTo(toX(v),H-22); ctx.stroke();
+    ctx.fillText(v===145?'145+':String(v), toX(v), H-3);
   });
 }
 
 window.IQTest={
   start(){
-    current=0;score=0;answers={};elapsed=0;phase='running';
+    if(!window.MatrixGen){ console.error('MatrixGen missing'); return; }
+    // A fresh seed per attempt: the item set differs every time, so no answer
+    // key can be published and a retake is a genuine retest.
+    seed=(Date.now()^Math.floor(Math.random()*0xffffffff))>>>0;
+    let t=window.MatrixGen.generateTest(seed,N_ITEMS);
+    for(let i=0;!t&&i<20;i++) t=window.MatrixGen.generateTest((seed+i+1)>>>0,N_ITEMS);
+    if(!t){ console.error('could not generate a test'); return; }
+    ITEMS=t; current=0; answers={}; elapsed=0; phase='running';
     document.getElementById('iq-results')?.classList.remove('show');
     renderQ();
     startTimer();
   },
   pick(idx){
     if(phase!=='running') return;
-    if(answers[current]!==undefined) return; // already answered - ignore double clicks
-    const q=QUESTIONS[current];
-    const correct=q.data.ans;
+    // already answered - ignore double clicks. pick() used to be re-entrant, so a
+    // fast second click skipped a question AND scored it, inflating the result.
+    // PUSH-coreskillai.cmd greps for this exact phrase to refuse pushing a build
+    // without the guard, so do not reword it.
+    if(answers[current]!==undefined) return;
+    const it=ITEMS[current];
     answers[current]=idx;
-    // flash feedback
-    const els=document.querySelectorAll(q.type==='matrix'?'.pattern-choice':'.iq-choice');
-    els.forEach((el,i)=>{
-      if(i===correct) el.style.cssText+=`;border-color:var(--success);background:rgba(16,185,129,.15)`;
-      else if(i===idx&&idx!==correct) el.style.cssText+=`;border-color:var(--danger);background:rgba(239,68,68,.1)`;
+    document.querySelectorAll('.pattern-choice').forEach((el,i)=>{
+      if(i===it.ans) el.style.cssText+=';border-color:var(--success);background:rgba(16,185,129,.15)';
+      else if(i===idx) el.style.cssText+=';border-color:var(--danger);background:rgba(239,68,68,.1)';
     });
     setTimeout(()=>{
       current++;
-      if(current>=QUESTIONS.length) finishTest();
+      if(current>=ITEMS.length) finishTest();
       else renderQ();
     },380);
   },
@@ -375,14 +334,16 @@ window.IQTest={
     const r=window._iqResult;if(!r)return;
     const t=window.shareText('iq_result_label', r.iq, r.text, r.p);
     navigator.clipboard?.writeText(t).then(()=>{
-      const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent='📋 '+_t('share_copy','Copy Result'),2000);}
+      const b=document.getElementById('share-copy');
+      if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent='📋 '+_t('share_copy','Copy Result'),2000);}
     });
   },
   tweet(){
     const r=window._iqResult;if(!r)return;
     const t=window.shareText('iq_result_label', r.iq, r.text, r.p);
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');
-  }
+  },
+  _debug(){ return {ITEMS,answers,scoreToIQ,confInterval,correctForGuessing}; }
 };
 document.addEventListener('DOMContentLoaded',renderShell);
 })();

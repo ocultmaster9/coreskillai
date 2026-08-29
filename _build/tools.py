@@ -83,6 +83,37 @@ def add_keys(lang, keys):
     io.open(p, 'w', encoding='utf-8', newline='\n').write(s[:i] + add + s[i:])
     print('  %s: %d keys added' % (lang, len(keys)))
 
+def set_keys(lang, keys):
+    """Like add_keys, but OVERWRITES a key that is already there.
+
+    add_keys deliberately skips existing keys so a rerun is idempotent. That is
+    wrong when the English source text itself has changed - rewriting the IQ test
+    from 40 arithmetic items to 36 matrix items made every iq_how* string in all
+    43 markets describe a test that no longer exists, and add_keys would have
+    silently left the stale copy in place.
+    """
+    mixed_script_guard(lang, list(keys.values()))
+    p = 'js/i18n/%s.js' % lang
+    s = io.open(p, encoding='utf-8').read()
+    fresh, changed = {}, 0
+    for k, v in keys.items():
+        pat = re.compile(r'\n    %s:"(?:[^"\\]|\\.)*",' % re.escape(k))
+        rep = '\n    %s:"%s",' % (k, v.replace('\\', '\\\\').replace('"', '\\"'))
+        s, n = pat.subn(lambda _m: rep, s, count=1)
+        if n:
+            changed += 1
+        else:
+            fresh[k] = v
+    if fresh:
+        add = "".join('    %s:"%s",\n' % (k, fresh[k].replace('\\', '\\\\').replace('"', '\\"'))
+                      for k in sorted(fresh))
+        anchor = 'window.TRANSLATIONS.%s = {\n' % lang
+        i = s.index(anchor) + len(anchor)
+        s = s[:i] + add + s[i:]
+    io.open(p, 'w', encoding='utf-8', newline='\n').write(s)
+    print('  %s: %d updated, %d added' % (lang, changed, len(fresh)))
+
+
 # ── Big Five / EQ statement banks ─────────────────────────
 def add_items(fname, lang, arr, expect):
     mixed_script_guard(lang, arr)

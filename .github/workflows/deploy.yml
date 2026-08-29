@@ -501,6 +501,23 @@ jobs:
           export NODE_PATH="$(npm root):$(npm root -g)"
           if node -e "require('jsdom')" 2>/dev/null; then
             ( cd _stage && cp -r ../_build . 2>/dev/null; node _build/verify_tests.js ) || fail=1
+
+          # 3e) THE IQ ANSWER KEY MUST BE UNIFORM. The previous hand-typed test
+          # keyed 9 of its 10 matrix items to slot 1 and never shuffled the
+          # options, so clicking a fixed pattern without reading anything scored
+          # 26/40 and was awarded IQ 114. Nothing in the build noticed. This
+          # generates thousands of tests and fails on any key skew.
+          echo "[3e] IQ item generator: key uniformity + solvability"
+          ( cd _stage && node _build/verify_matrixgen.js 1500 ) || fail=1
+
+          # 3f) Every IQ page must actually load the generator. iq.js is inert
+          # without it and the start button would do nothing.
+          echo "[3f] every IQ page loads matrixgen.js"
+          miss=0
+          for f in $(find _stage -path '*/tests/iq/index.html'); do
+            grep -q '/js/tests/matrixgen.js' "$f" || { echo "  FAIL $f"; miss=1; }
+          done
+          [ "$miss" = "0" ] && echo "  ok" || fail=1
           else
             echo "::error::jsdom unavailable - cannot verify the tests run. Refusing to deploy blind."
             fail=1
