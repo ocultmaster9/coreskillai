@@ -257,6 +257,16 @@ jobs:
           ( cd _stage && cp -r ../_build . 2>/dev/null; python3 _build/check_js_english.py . )
           [ $? -eq 0 ] || fail=1
 
+          # 3g) THE SERVED HTML MUST MATCH THE TRANSLATION FILES. Pages carry the
+          # translated text baked in, and client-side i18n re-applies it on load -
+          # so a stale prerender is invisible in a browser while Google, social
+          # previews and no-JS visitors keep reading the old text. Three untrue
+          # claims ("100% anonymous", "No tracking", "compare with millions of
+          # people") sat in the crawled HTML after being corrected everywhere else.
+          echo "[3g] served HTML matches js/i18n"
+          ( cd _stage && cp -r ../_build . 2>/dev/null; python3 _build/check_prerender.py . )
+          [ $? -eq 0 ] || fail=1
+
           # 4) ads.txt must name our publisher id.
           grep -q 'pub-5798786176755576' _stage/ads.txt || { echo "::error::ads.txt wrong or missing"; fail=1; }
 
