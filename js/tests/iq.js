@@ -19,6 +19,7 @@ const N_OPTIONS = 6;
 const TIME_LIMIT = 30*60;
 
 let ITEMS=[], current=0, answers={}, phase='idle', timer=null, elapsed=0, seed=0;
+let shownAt=0, times={};
 
 // ── Scoring ───────────────────────────────────────────────────────────────
 // Correction for guessing is the standard formula: with k options, a taker who
@@ -132,6 +133,7 @@ function renderShell(){
 
 function renderQ(){
   const it=ITEMS[current];
+  shownAt=Date.now();
   const prog=document.getElementById('iq-prog');
   if(prog) prog.style.width=`${(current/ITEMS.length)*100}%`;
   const secs=Math.max(0,TIME_LIMIT-elapsed);
@@ -241,12 +243,36 @@ function finishTest(){
   window._iqResult={iq,p,text,score:raw,lo,hi,floored};
 
   if(!floored) requestAnimationFrame(()=>drawIQBell(iq,color,lo,hi));
+  sendCalibration(raw);
   setTimeout(()=>{
     document.querySelectorAll('.trait-bar-fill').forEach(b=>{
       const w=b.style.width; b.style.width='0';
       setTimeout(()=>{b.style.transition='width 1s cubic-bezier(.4,0,.2,1)';b.style.width=w;},50);
     });
   },100);
+}
+
+// ── Calibration data ──────────────────────────────────────────────────────
+// Sent once, after the result is already rendered, so it can never delay or
+// break what the visitor sees. This is what turns the test from "well built"
+// into "measured": item difficulty and discrimination cannot be derived from
+// theory, only from responses. Nothing identifying is included - see
+// functions/api/response.js for exactly what is and is not sent.
+function sendCalibration(raw){
+  try{
+    if(!ITEMS.length) return;
+    const items=ITEMS.map((it,i)=>({
+      p:i+1,
+      sig:['shape','count','fill','rot'].map(a=>a+':'+it.rules[a]).join('|'),
+      d:it.difficulty,
+      ok:answers[i]===it.ans?1:0,
+      ms:times[i]||0
+    }));
+    const payload={v:1,test:'iq',lang:(window.I18n&&window.I18n.lang)||'en',
+                   n:ITEMS.length,raw:raw,secs:elapsed,items:items};
+    fetch('/api/response',{method:'POST',keepalive:true,
+      headers:{'content-type':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});
+  }catch(e){/* never let telemetry affect the result screen */}
 }
 
 function drawIQBell(iq,color,lo,hi){
@@ -305,7 +331,7 @@ window.IQTest={
     let t=window.MatrixGen.generateTest(seed,N_ITEMS);
     for(let i=0;!t&&i<20;i++) t=window.MatrixGen.generateTest((seed+i+1)>>>0,N_ITEMS);
     if(!t){ console.error('could not generate a test'); return; }
-    ITEMS=t; current=0; answers={}; elapsed=0; phase='running';
+    ITEMS=t; current=0; answers={}; times={}; elapsed=0; phase='running';
     document.getElementById('iq-results')?.classList.remove('show');
     renderQ();
     startTimer();
@@ -319,6 +345,7 @@ window.IQTest={
     if(answers[current]!==undefined) return;
     const it=ITEMS[current];
     answers[current]=idx;
+    times[current]=Math.max(0, Date.now()-shownAt);
     document.querySelectorAll('.pattern-choice').forEach((el,i)=>{
       if(i===it.ans) el.style.cssText+=';border-color:var(--success);background:rgba(16,185,129,.15)';
       else if(i===idx) el.style.cssText+=';border-color:var(--danger);background:rgba(239,68,68,.1)';
