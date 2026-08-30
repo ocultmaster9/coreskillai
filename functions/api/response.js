@@ -22,6 +22,13 @@
  * personal data under Breyer (CJEU C-582/14); a rule signature and a boolean is
  * not. Keeping it that way is what lets this stay anonymous statistics.
  *
+ * WHERE THE BINDING LIVES
+ * There are TWO things called "coreskillai" in the Cloudflare account: a Worker
+ * with no routes, and the Pages project that actually serves the site. Bindings
+ * added to the Worker do nothing here. The binding must be on
+ *   Pages project -> Settings -> (Production) -> Bindings -> D1 -> RESPONSES
+ * and it only takes effect on the NEXT deployment after it is saved.
+ *
  * FAILS SAFE
  * If the D1 binding is absent - which is the case until someone creates the
  * database and binds it - this returns 204 and stores nothing. So it is safe to
