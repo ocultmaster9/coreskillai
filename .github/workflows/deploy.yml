@@ -501,6 +501,14 @@ jobs:
           echo "[3e] IQ item generator: key uniformity + solvability"
           ( cd _stage && node _build/verify_matrixgen.js 1500 ) || fail=1
 
+          # 3h) THE STROOP TEST MUST MEASURE THE STROOP EFFECT. It previously
+          # scored `accuracy*100 - avgMs/12`, never recorded trial congruency,
+          # and drew congruent/incongruent at random - so it measured general
+          # quickness, not interference. This drives the page with a controlled
+          # clock and asserts the 160 ms simulated effect is recovered exactly.
+          echo "[3h] Stroop interference effect is measured correctly"
+          ( cd _stage && cp -r ../_build . 2>/dev/null; node _build/verify_stroop.js . ) || fail=1
+
           # 3f) Every IQ page must actually load the generator. iq.js is inert
           # without it and the start button would do nothing.
           echo "[3f] every IQ page loads matrixgen.js"

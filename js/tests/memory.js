@@ -1,7 +1,13 @@
 /* CoreSkillAI — Working Memory Test (Digit Span) */
 (function(){
 function _t(k,fb){return window.I18n?.t(k)||fb||k;}
-let level=3, correct=0, wrong=0, seq=[], phase='idle';
+// TWO TRIALS PER SPAN LENGTH, like the Wechsler digit span this is modelled on.
+// The previous version ended the entire test on the first wrong answer, so a
+// single lapse at seven digits recorded a span of six for someone who could
+// reliably do nine. `wrong` was declared and never used. Standard practice is
+// two sequences at each length, discontinuing only when BOTH fail; the span is
+// the longest length with at least one correct recall.
+let level=3, correct=0, attempt=0, maxSpan=0, seq=[], phase='idle';
 
 // Norms: Miller's Law. Digit span percentiles from WAIS-IV normative data.
 function pct(span){
@@ -114,7 +120,7 @@ function showResults(maxSpan){
 
 window.MemTest={
   start(){
-    level=3;correct=0;wrong=0;phase='show';
+    level=3;correct=0;attempt=0;maxSpan=0;phase='show';
     document.getElementById('mem-results')?.classList.remove('show');
     seq=randSeq(level);
     document.getElementById('mem-level-badge').textContent=_t('mem_level',"Level {l} — {n} digits").replace('{l}',correct+1).replace('{n}',level);
@@ -123,21 +129,26 @@ window.MemTest={
   submit(){
     const val=(document.getElementById('mem-input')?.value||'').replace(/\s/g,'');
     const ans=seq.join('');
+    const body=document.getElementById('mem-body');
+    const badge=document.getElementById('mem-level-badge');
     if(val===ans){
-      correct++;level++;
-      const badge=document.getElementById('mem-level-badge');
-      const body=document.getElementById('mem-body');
+      correct++; maxSpan=Math.max(maxSpan,level); level++; attempt=0;
       body.innerHTML=`<div class="memory-display" style="color:var(--success);font-size:1.5rem">${_t('mem_correct_msg','✓ Correct!')}</div>`;
       badge.textContent=_t('mem_level',"Level {l} — {n} digits").replace('{l}',correct+1).replace('{n}',level);
       setTimeout(()=>{seq=randSeq(level);showSequence();},900);
+    } else if(attempt===0){
+      // First miss at this length: offer the second sequence before giving up.
+      attempt=1;
+      body.innerHTML=`<div class="memory-display" style="color:var(--danger);font-size:1.2rem">✗ ${_t('mem_wrong_msg','That was:')} ${ans}</div>
+        <p style="font-size:.85rem;color:var(--text-2);margin-top:10px">${_t('mem_second_try','One more sequence of the same length.')}</p>`;
+      setTimeout(()=>{seq=randSeq(level);showSequence();},1400);
     } else {
-      const maxSpan=level-1;
-      document.getElementById('mem-body').innerHTML=`
-      <div class="memory-display" style="color:var(--danger);font-size:1.2rem">✗ ${_t('mem_wrong_msg','That was:')} ${ans}</div>`;
+      // Both sequences at this length failed - this is the discontinue rule.
+      body.innerHTML=`<div class="memory-display" style="color:var(--danger);font-size:1.2rem">✗ ${_t('mem_wrong_msg','That was:')} ${ans}</div>`;
       setTimeout(()=>showResults(Math.max(2,maxSpan)),900);
     }
   },
-  reset(){level=3;correct=0;render();},
+  reset(){level=3;correct=0;attempt=0;maxSpan=0;render();},
   copy(){const r=window._memResult;if(!r)return;const t=window.shareText('mem_result_label', r.span+' '+_t('mem_digits','digits'), r.text, r.pct);navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent='📋 '+_t('share_copy','Copy Result'),2000);});},
   tweet(){const r=window._memResult;if(!r)return;const t=window.shareText('mem_result_label', r.span+' '+_t('mem_digits','digits'), r.text, r.pct);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };

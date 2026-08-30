@@ -78,7 +78,11 @@
   // Difficulty weight per rule. A matrix where everything is constant is
   // trivial; one where three attributes each follow a different distribution
   // rule is genuinely hard. This is what orders the test.
-  const RULE_COST = { fixed: 0, row: 1, col: 1, progression: 2, dist3: 3 };
+  // 'xor' is the hardest Raven family and was missing: the third cell is the
+  // LOGICAL COMBINATION of the first two, not a value drawn from a set. Without
+  // it the generator topped out at five difficulty levels with half the test
+  // bunched on one of them, so the hard end of the scale did not exist.
+  const RULE_COST = { fixed: 0, row: 1, col: 1, progression: 2, dist3: 3, xor: 4 };
 
   // ── Rule engines: each returns a 3x3 grid of concrete attribute values ─────
   function gridFixed(v) {
@@ -111,10 +115,26 @@
     return chosen.map(s => [0, 1, 2].map(c => s + c * step));
   }
 
+  // Logical combination along the row: cell3 = cell1 (op) cell2 over a 0..2 code.
+  // XOR-like on three values is the standard generalisation used in matrix-item
+  // generators; the solver has to hold two cells in mind at once rather than
+  // read a single progression, which is what makes it the hard family.
+  function gridXor(rng, vals) {
+    const p = shuffle(rng, vals);
+    const g = [];
+    for (let r = 0; r < 3; r++) {
+      const a = Math.floor(rng() * 3), b = Math.floor(rng() * 3);
+      g.push([p[a], p[b], p[(a + b) % 3]]);
+    }
+    // Reject a grid where the rule is invisible because every row is identical.
+    if (g[0][0] === g[1][0] && g[1][0] === g[2][0]) return null;
+    return g;
+  }
+
   // ── Item construction ─────────────────────────────────────────────────────
   // An item varies 1-3 attributes; every other attribute is pinned to one value
   // for the whole matrix so the varying structure is the only thing to solve.
-  const NOMINAL_RULES = ['row', 'col', 'dist3'];
+  const NOMINAL_RULES = ['row', 'col', 'dist3', 'xor'];
 
   function buildAttrGrid(rng, attr, rule) {
     if (rule === 'fixed') {
@@ -138,6 +158,7 @@
                :                    sample(rng, ROTS, 3);
     if (rule === 'row')   return gridRow(rng, vals);
     if (rule === 'col')   return gridCol(rng, vals);
+    if (rule === 'xor')   return gridXor(rng, vals);
     return gridDist3(rng, vals);
   }
 
@@ -279,10 +300,29 @@
     }
     if (pool.length < n) return null;
 
-    // Spread across the difficulty range rather than taking the n easiest.
+    // STRATIFIED BY DIFFICULTY, not evenly spaced through the pool. Sampling the
+    // pool at even intervals just reproduces the pool's own lopsided shape - a
+    // third of generated items sit at one level, so a third of the test did too.
+    // Instead, walk a target ladder across the whole observed range and take the
+    // nearest unused item at each rung. That turns the test into a real ramp,
+    // which is what makes an ability estimate possible at both ends.
     pool.sort((a, b) => a.difficulty - b.difficulty);
+    const lo = pool[0].difficulty, hi = pool[pool.length - 1].difficulty;
+    const used = new Set();
     const chosen = [];
-    for (let i = 0; i < n; i++) chosen.push(pool[Math.floor(i * pool.length / n)]);
+    for (let i = 0; i < n; i++) {
+      const target = lo + (hi - lo) * (i / Math.max(1, n - 1));
+      let best = -1, bestGap = Infinity;
+      for (let j = 0; j < pool.length; j++) {
+        if (used.has(j)) continue;
+        const gap = Math.abs(pool[j].difficulty - target);
+        if (gap < bestGap) { bestGap = gap; best = j; }
+      }
+      if (best < 0) break;
+      used.add(best);
+      chosen.push(pool[best]);
+    }
+    if (chosen.length < n) return null;
     chosen.sort((a, b) => a.difficulty - b.difficulty);
     return chosen;
   }

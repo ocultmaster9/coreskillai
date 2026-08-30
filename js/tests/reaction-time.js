@@ -1,8 +1,27 @@
 /* CoreSkillAI — Reaction Time Test */
 (function(){
 function _t(k,fb){return window.I18n?.t(k)||fb||k;}
-const MAX_TRIALS = 5;
+// Twelve trials, not five. Reaction time is noisy: a single lapse or lucky
+// early press moves a 5-trial mean by tens of milliseconds, which is larger
+// than the differences the test is trying to report. Twelve is the smallest
+// count that gives a stable estimate without becoming tedious.
+const MAX_TRIALS = 12;
 let trials = [], state = 'idle', timer = null, t0 = 0;
+
+// RT distributions are right-skewed - one slow lapse drags a mean far more than
+// it drags a median, so the median is the standard summary. Responses under
+// 120 ms are anticipations that happened to land after the green (nobody sees,
+// decides and clicks that fast) and responses over 1000 ms are attention
+// lapses; both are discarded rather than allowed to define the score.
+const MIN_VALID = 120, MAX_VALID = 1000;
+function summarise(all){
+  const clean = all.filter(t => t >= MIN_VALID && t <= MAX_VALID);
+  const use = clean.length >= 5 ? clean : all;      // never leave the taker unscored
+  const sorted = use.slice().sort((a,b)=>a-b);
+  const m = sorted.length >> 1;
+  const med = sorted.length % 2 ? sorted[m] : (sorted[m-1]+sorted[m])/2;
+  return { median: med, best: Math.min(...use), kept: clean.length, total: all.length };
+}
 
 // Percentile from reaction time in ms (normal distribution, mean=261ms, sd=51ms)
 // Source: Jain et al. 2015, replicated across 50k+ participants
@@ -107,8 +126,9 @@ function updateDots(current) {
 }
 
 function showResults() {
-  const avg  = trials.reduce((a,b)=>a+b,0)/trials.length;
-  const best = Math.min(...trials);
+  const st   = summarise(trials);
+  const avg  = st.median;                 // median, not mean - see summarise()
+  const best = st.best;
   const p    = pct(avg);
   const {text,color} = label(p);
 
