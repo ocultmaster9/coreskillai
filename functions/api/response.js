@@ -130,7 +130,18 @@ export async function onRequestGet({ env }) {
       'SELECT test, COUNT(*) AS n FROM sessions GROUP BY test'
     ).all();
     const total = await env.RESPONSES.prepare('SELECT COUNT(*) AS n FROM sessions').first();
-    return json({ storage: 'ok', sessions: (total && total.n) || 0, byTest: r.results || [] });
+    // Item responses matter more than sessions: calibration needs roughly 250
+    // people for stable Rasch difficulties and 500-1000 for a 2PL model, and
+    // each completed IQ test contributes 36 item responses toward that.
+    const items = await env.RESPONSES.prepare('SELECT COUNT(*) AS n FROM responses').first();
+    const sessions = (total && total.n) || 0;
+    return json({
+      storage: 'ok',
+      sessions,
+      itemResponses: (items && items.n) || 0,
+      byTest: r.results || [],
+      milestones: { rasch: 250, twoPL: 1000, remainingToRasch: Math.max(0, 250 - sessions) },
+    });
   } catch (e) {
     return json({ storage: 'error' }, 200);
   }
