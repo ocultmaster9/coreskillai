@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.it = {
+    rot_big_turn:"Rotazioni ampie",
+    rot_desc:"20 rompicapi spaziali che misurano quanto bene ruoti le forme nella mente. Nessuna parola, nessun numero.",
+    rot_how1:"In alto compare una figura, sotto sei candidate.",
+    rot_how2:"Esattamente una è la stessa figura ruotata a una nuova angolazione. Le altre sono immagini speculari: la stessa forma ribaltata.",
+    rot_how3:"Ruota la figura nella mente per confrontarla. Più ampia la rotazione, più difficile.",
+    rot_how4:"Niente da leggere, e figure nuove a ogni tentativo.",
+    rot_how_title:"Come funziona questo test",
+    rot_note:"I punteggi sono corretti per il caso. È un compito di screening breve, non una batteria spaziale standardizzata, e non è tarato su un campione rappresentativo.",
+    rot_q:"Quale è la stessa figura, solo ruotata?",
+    rot_result_label:"Ragionamento spaziale",
+    rot_small_turn:"Rotazioni piccole",
+    rot_start:"Inizia il test →",
+    rot_target:"Figura bersaglio",
+    rot_title:"Test di rotazione mentale",
     pat_accuracy:"Precisione",
     pat_chance:"Livello del caso",
     iq_floor:"Il tuo punteggio è al livello prodotto dal puro caso, quindi il test non può stimarti una cifra. Di solito significa che è finito il tempo o che si è risposto a caso, non che il tuo ragionamento sia scarso.",

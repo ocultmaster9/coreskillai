@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tl = {
+    rot_big_turn:"Malalaking ikot",
+    rot_desc:"20 palaisipang pang-espasyo na sumusukat kung gaano kahusay mong pinaiikot ang mga hugis sa isip. Walang salita, walang numero.",
+    rot_how1:"May lalabas na hugis sa itaas. Sa ilalim nito ay anim na kandidato.",
+    rot_how2:"Iisa lang ang siya ring hugis na ipinihit sa bagong anggulo. Ang iba ay salamin — parehong hugis na binaligtad.",
+    rot_how3:"Iikot ang hugis sa isip mo para ikumpara. Habang lumalaki ang ikot, lalong humihirap.",
+    rot_how4:"Walang babasahin, at bagong hugis sa bawat pagsubok.",
+    rot_how_title:"Paano Ito Gumagana",
+    rot_note:"Itinatama ang iskor para sa panghuhula. Maikling screening ito, hindi standardisadong baterya ng pagsusulit sa espasyo, at hindi pa naisasanaysay sa kinatawang sampol.",
+    rot_q:"Alin ang siya ring hugis, ipinihit lang?",
+    rot_result_label:"Pangangatwirang Pang-espasyo",
+    rot_small_turn:"Maliliit na ikot",
+    rot_start:"Simulan ang Pagsusulit →",
+    rot_target:"Hugis na target",
+    rot_title:"Pagsusulit sa Mental Rotation",
     pat_accuracy:"Katumpakan",
     pat_chance:"Antas ng tsamba",
     iq_floor:"Nasa antas ng purong tsamba ang iskor mo, kaya hindi makapagtantiya ng bilang ang pagsusulit na ito para sa iyo. Karaniwan itong nangangahulugang naubusan ka ng oras o sumagot nang basta-basta, hindi na mahina ang pangangatwiran mo.",

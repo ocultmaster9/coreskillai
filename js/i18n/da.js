@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.da = {
+    rot_big_turn:"Store drejninger",
+    rot_desc:"20 rumlige opgaver, der måler, hvor godt du drejer former i hovedet. Ingen ord, ingen tal.",
+    rot_how1:"Øverst vises en figur. Nedenunder står seks kandidater.",
+    rot_how2:"Præcis én er den samme figur drejet til en ny vinkel. Resten er spejlbilleder — samme form vendt om.",
+    rot_how3:"Drej figuren i hovedet for at sammenligne. Jo større drejning, jo sværere.",
+    rot_how4:"Intet at læse, og nye figurer hver gang.",
+    rot_how_title:"Sådan fungerer testen",
+    rot_note:"Scoren er korrigeret for gætteri. Dette er en kort screeningsopgave, ikke et standardiseret rumligt testbatteri, og den er ikke normeret på en repræsentativ stikprøve.",
+    rot_q:"Hvilken er den samme figur, bare drejet?",
+    rot_result_label:"Rumlig tænkning",
+    rot_small_turn:"Små drejninger",
+    rot_start:"Start test →",
+    rot_target:"Målfigur",
+    rot_title:"Mental rotationstest",
     pat_accuracy:"Præcision",
     pat_chance:"Tilfældighedsniveau",
     iq_floor:"Din score ligger på det niveau, ren tilfældighed giver, så testen kan ikke estimere et tal for dig. Det betyder normalt, at tiden løb ud, eller at der blev svaret tilfældigt — ikke at dit ræsonnement er svagt.",

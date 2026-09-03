@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.et = {
+    rot_big_turn:"Suured pöörded",
+    rot_desc:"20 ruumilist ülesannet, mis mõõdavad, kui hästi pöörad kujundeid peas. Ei sõnu, ei numbreid.",
+    rot_how1:"Üleval ilmub kujund, all on kuus kandidaati.",
+    rot_how2:"Täpselt üks on sama kujund uue nurga all. Ülejäänud on peegelpildid — sama kujund ümber pööratud.",
+    rot_how3:"Pööra kujundit peas ja võrdle. Mida suurem pööre, seda raskem.",
+    rot_how4:"Midagi pole lugeda ja iga katse annab uued kujundid.",
+    rot_how_title:"Kuidas test töötab",
+    rot_note:"Tulemused on äraarvamise suhtes korrigeeritud. See on lühike sõelumisülesanne, mitte standarditud ruumitestide komplekt, ja seda pole esindusliku valimi peal normitud.",
+    rot_q:"Milline on sama kujund, lihtsalt pööratud?",
+    rot_result_label:"Ruumiline mõtlemine",
+    rot_small_turn:"Väikesed pöörded",
+    rot_start:"Alusta testi →",
+    rot_target:"Sihtkujund",
+    rot_title:"Vaimse pöörlemise test",
     pat_accuracy:"Täpsus",
     pat_chance:"Juhuse tase",
     iq_floor:"Sinu tulemus on tasemel, mille annab pelk juhus, seega ei saa test sulle arvu hinnata. Tavaliselt tähendab see, et aeg sai otsa või vastati juhuslikult, mitte et su arutlusvõime oleks madal.",

@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ro = {
+    rot_big_turn:"Rotații mari",
+    rot_desc:"20 de puzzle-uri spațiale care măsoară cât de bine rotești forme în minte. Fără cuvinte, fără cifre.",
+    rot_how1:"Sus apare o figură. Dedesubt sunt șase variante.",
+    rot_how2:"Exact una este aceeași figură rotită la un unghi nou. Restul sunt imagini în oglindă — aceeași formă întoarsă.",
+    rot_how3:"Rotește figura în minte ca să compari. Cu cât rotația e mai mare, cu atât e mai greu.",
+    rot_how4:"Nimic de citit, iar figurile sunt noi la fiecare încercare.",
+    rot_how_title:"Cum funcționează acest test",
+    rot_note:"Scorurile sunt corectate pentru ghicire. Este o sarcină scurtă de screening, nu o baterie spațială etalonată, și nu a fost normată pe un eșantion reprezentativ.",
+    rot_q:"Care este aceeași figură, doar rotită?",
+    rot_result_label:"Raționament spațial",
+    rot_small_turn:"Rotații mici",
+    rot_start:"Începe testul →",
+    rot_target:"Figura țintă",
+    rot_title:"Test de rotație mentală",
     pat_accuracy:"Acuratețe",
     pat_chance:"Nivelul întâmplării",
     iq_floor:"Scorul tău este la nivelul pe care îl produce pura întâmplare, așa că testul nu îți poate estima o cifră. De obicei înseamnă că a expirat timpul sau că s-a răspuns la întâmplare, nu că raționamentul tău este slab.",

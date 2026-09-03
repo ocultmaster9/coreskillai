@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.id = {
+    rot_big_turn:"Putaran besar",
+    rot_desc:"20 teka-teki spasial yang mengukur seberapa baik Anda memutar bentuk dalam pikiran. Tanpa kata, tanpa angka.",
+    rot_how1:"Sebuah gambar muncul di atas. Di bawahnya ada enam kandidat.",
+    rot_how2:"Tepat satu adalah gambar yang sama diputar ke sudut baru. Sisanya bayangan cermin — bentuk yang sama dibalik.",
+    rot_how3:"Putar gambar dalam kepala untuk membandingkan. Makin besar putaran, makin sulit.",
+    rot_how4:"Tak ada yang perlu dibaca, dan gambar baru setiap percobaan.",
+    rot_how_title:"Cara Kerja Tes Ini",
+    rot_note:"Skor dikoreksi untuk tebakan. Ini tugas penyaringan singkat, bukan baterai spasial baku, dan belum dinormakan pada sampel representatif.",
+    rot_q:"Mana yang merupakan gambar sama, hanya diputar?",
+    rot_result_label:"Penalaran Spasial",
+    rot_small_turn:"Putaran kecil",
+    rot_start:"Mulai Tes →",
+    rot_target:"Gambar acuan",
+    rot_title:"Tes Rotasi Mental",
     pat_accuracy:"Akurasi",
     pat_chance:"Tingkat kebetulan",
     iq_floor:"Skor Anda setara dengan hasil menebak semata, sehingga tes ini tidak dapat memperkirakan angka untuk Anda. Biasanya itu berarti waktu habis atau dijawab acak, bukan bahwa penalaran Anda rendah.",

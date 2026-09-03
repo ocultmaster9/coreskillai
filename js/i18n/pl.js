@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pl = {
+    rot_big_turn:"Duże obroty",
+    rot_desc:"20 zadań przestrzennych mierzących, jak dobrze obracasz kształty w głowie. Bez słów i bez liczb.",
+    rot_how1:"U góry pojawia się figura, pod nią sześć kandydatek.",
+    rot_how2:"Dokładnie jedna to ta sama figura obrócona pod nowym kątem. Pozostałe to odbicia lustrzane — ten sam kształt odwrócony.",
+    rot_how3:"Obróć figurę w myślach i porównaj. Im większy obrót, tym trudniej.",
+    rot_how4:"Nic do czytania, a figury są nowe przy każdym podejściu.",
+    rot_how_title:"Jak działa ten test",
+    rot_note:"Wyniki są korygowane o zgadywanie. To krótkie zadanie przesiewowe, a nie znormalizowana bateria testów przestrzennych, i nie zostało znormalizowane na reprezentatywnej próbie.",
+    rot_q:"Która to ta sama figura, tylko obrócona?",
+    rot_result_label:"Myślenie przestrzenne",
+    rot_small_turn:"Małe obroty",
+    rot_start:"Rozpocznij test →",
+    rot_target:"Figura wzorcowa",
+    rot_title:"Test rotacji mentalnej",
     pat_accuracy:"Trafność",
     pat_chance:"Poziom przypadku",
     iq_floor:"Twój wynik odpowiada temu, co daje sam przypadek, więc test nie może oszacować dla ciebie liczby. Zwykle oznacza to, że skończył się czas albo odpowiadano losowo, a nie że twoje rozumowanie jest słabe.",

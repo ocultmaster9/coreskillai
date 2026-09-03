@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ja = {
+    rot_big_turn:"大きな回転",
+    rot_desc:"頭の中で形を回す力を測る20問の空間課題です。文字も数字も使いません。",
+    rot_how1:"上に図形が出て、その下に6つの候補が並びます。",
+    rot_how2:"そのうち1つだけが同じ図形を別の角度に回したものです。残りは鏡像、つまり同じ形を裏返したものです。",
+    rot_how3:"頭の中で図形を回して見比べてください。回す角度が大きいほど難しくなります。",
+    rot_how4:"読むものはなく、毎回新しい図形が出ます。",
+    rot_how_title:"このテストの進め方",
+    rot_note:"得点は当て推量の分を補正しています。これは短い簡易課題であり、標準化された空間能力検査ではありません。代表標本による基準値もありません。",
+    rot_q:"同じ図形を回したものはどれでしょう。",
+    rot_result_label:"空間認識",
+    rot_small_turn:"小さな回転",
+    rot_start:"テストを始める →",
+    rot_target:"基準となる図形",
+    rot_title:"心的回転テスト",
     pat_accuracy:"正答率",
     pat_chance:"偶然の水準",
     iq_floor:"得点が偶然だけで得られる水準のため、この検査ではあなたの数値を推定できません。多くは時間切れか無作為な回答が原因であり、推理力が低いことを意味しません。",

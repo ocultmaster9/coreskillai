@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.vi = {
+    rot_big_turn:"Xoay nhiều",
+    rot_desc:"20 câu đố không gian đo khả năng xoay hình trong đầu của bạn. Không chữ, không số.",
+    rot_how1:"Một hình xuất hiện ở trên, bên dưới là sáu lựa chọn.",
+    rot_how2:"Đúng một lựa chọn là chính hình đó được xoay sang góc mới. Số còn lại là ảnh phản chiếu — cùng hình dạng nhưng bị lật.",
+    rot_how3:"Hãy xoay hình trong đầu để so sánh. Góc xoay càng lớn càng khó.",
+    rot_how4:"Không có gì để đọc, và mỗi lần làm lại có hình mới.",
+    rot_how_title:"Bài kiểm tra hoạt động thế nào",
+    rot_note:"Điểm đã được hiệu chỉnh cho việc đoán. Đây là bài sàng lọc ngắn, không phải bộ trắc nghiệm không gian chuẩn hóa, và chưa được xây dựng chuẩn trên mẫu đại diện.",
+    rot_q:"Hình nào là cùng một hình, chỉ được xoay?",
+    rot_result_label:"Tư duy không gian",
+    rot_small_turn:"Xoay ít",
+    rot_start:"Bắt đầu →",
+    rot_target:"Hình mẫu",
+    rot_title:"Bài kiểm tra xoay hình trong đầu",
     pat_accuracy:"Độ chính xác",
     pat_chance:"Mức đoán mò",
     iq_floor:"Điểm của bạn ở mức mà chỉ đoán mò cũng đạt được, nên bài kiểm tra này không thể ước lượng con số cho bạn. Thường là do hết giờ hoặc trả lời ngẫu nhiên, chứ không phải khả năng suy luận của bạn thấp.",

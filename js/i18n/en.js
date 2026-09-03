@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.en = {
+    rot_big_turn:"Large turns",
+    rot_desc:"20 spatial puzzles measuring how well you turn shapes in your mind. No words, no numbers.",
+    rot_how1:"A figure appears at the top. Below it are six candidates.",
+    rot_how2:"Exactly one is that figure turned to a new angle. The rest are mirror images — the same shape flipped over.",
+    rot_how3:"Turn the figure in your head to compare. The wider the turn, the harder it gets.",
+    rot_how4:"Nothing to read, and fresh figures every attempt.",
+    rot_how_title:"How This Test Works",
+    rot_note:"Scores are corrected for guessing. This is a short screening task, not a standardised spatial battery, and it has not been normed on a representative sample.",
+    rot_q:"Which one is the same figure, rotated?",
+    rot_result_label:"Spatial Reasoning",
+    rot_small_turn:"Small turns",
+    rot_start:"Start Test →",
+    rot_target:"Target figure",
+    rot_title:"Mental Rotation Test",
     pat_accuracy:"Accuracy",
     pat_chance:"Chance level",
     iq_floor:"Your score is at the level chance alone produces, so this test cannot estimate a figure for you. That usually means time ran out or the puzzles were answered at random, not that your reasoning is low.",

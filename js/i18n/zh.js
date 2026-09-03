@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.zh = {
+    rot_big_turn:"大角度旋转",
+    rot_desc:"20 道空间题目，测量你在脑中旋转图形的能力。不涉及文字与数字。",
+    rot_how1:"上方出现一个图形，下方是六个选项。",
+    rot_how2:"其中只有一个是同一图形转到了新的角度，其余都是镜像，也就是同一形状被翻转过来。",
+    rot_how3:"在脑中把图形转一转再比较。转动的角度越大越难。",
+    rot_how4:"没有需要阅读的内容，每次作答都是全新图形。",
+    rot_how_title:"这项测验怎么进行",
+    rot_note:"分数已做猜测校正。这是一项简短的初筛任务，不是标准化的空间能力测验组合，也未在代表性样本上建立常模。",
+    rot_q:"哪一个是同一图形，只是旋转过？",
+    rot_result_label:"空间推理",
+    rot_small_turn:"小角度旋转",
+    rot_start:"开始测验 →",
+    rot_target:"目标图形",
+    rot_title:"心理旋转测验",
     pat_accuracy:"正确率",
     pat_chance:"猜测水平",
     iq_floor:"你的得分处于纯靠猜测就能达到的水平，因此本测验无法为你估计数值。这通常意味着时间不够或作答随意，并不代表你的推理能力低。",

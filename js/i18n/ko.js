@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ko = {
+    rot_big_turn:"큰 회전",
+    rot_desc:"머릿속에서 도형을 얼마나 잘 돌리는지 재는 20개의 공간 문제입니다. 글자도 숫자도 없습니다.",
+    rot_how1:"위에 도형이 하나 나오고 아래에 여섯 개의 후보가 있습니다.",
+    rot_how2:"그중 하나만 같은 도형을 새 각도로 돌린 것입니다. 나머지는 거울상, 곧 같은 모양을 뒤집은 것입니다.",
+    rot_how3:"머릿속에서 도형을 돌려 비교해 보세요. 각도가 클수록 어려워집니다.",
+    rot_how4:"읽을 것이 없고, 시도할 때마다 새로운 도형이 나옵니다.",
+    rot_how_title:"검사 진행 방식",
+    rot_note:"점수는 추측을 보정한 값입니다. 짧은 선별 과제이며 표준화된 공간 능력 검사가 아니고, 대표 표본으로 규준을 만들지도 않았습니다.",
+    rot_q:"같은 도형을 돌린 것은 어느 것일까요?",
+    rot_result_label:"공간 추론",
+    rot_small_turn:"작은 회전",
+    rot_start:"검사 시작 →",
+    rot_target:"기준 도형",
+    rot_title:"심적 회전 검사",
     pat_accuracy:"정답률",
     pat_chance:"우연 수준",
     iq_floor:"점수가 우연만으로 나오는 수준이어서 이 검사로는 수치를 추정할 수 없습니다. 대개 시간이 부족했거나 무작위로 답한 경우이며, 추론 능력이 낮다는 뜻은 아닙니다.",

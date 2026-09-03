@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pt = {
+    rot_big_turn:"Rotações grandes",
+    rot_desc:"20 puzzles espaciais que medem o quão bem roda formas na sua cabeça. Sem palavras nem números.",
+    rot_how1:"No topo aparece uma figura. Abaixo estão seis candidatas.",
+    rot_how2:"Exatamente uma é a mesma figura rodada para um novo ângulo. As restantes são imagens espelhadas — a mesma forma invertida.",
+    rot_how3:"Rode a figura na sua cabeça para comparar. Quanto maior a rotação, mais difícil.",
+    rot_how4:"Nada para ler, e figuras novas em cada tentativa.",
+    rot_how_title:"Como funciona este teste",
+    rot_note:"As pontuações são corrigidas para o acaso. Esta é uma tarefa de rastreio breve, não uma bateria espacial aferida, e não foi normalizada numa amostra representativa.",
+    rot_q:"Qual é a mesma figura, apenas rodada?",
+    rot_result_label:"Raciocínio espacial",
+    rot_small_turn:"Rotações pequenas",
+    rot_start:"Começar teste →",
+    rot_target:"Figura alvo",
+    rot_title:"Teste de rotação mental",
     pat_accuracy:"Precisão",
     pat_chance:"Nível do acaso",
     iq_floor:"A sua pontuação está ao nível que o puro acaso produz, pelo que este teste não consegue estimar um valor para si. Normalmente significa que o tempo acabou ou que se respondeu ao acaso, não que o seu raciocínio seja fraco.",

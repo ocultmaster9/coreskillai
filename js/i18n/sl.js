@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sl = {
+    rot_big_turn:"Veliki zasuki",
+    rot_desc:"20 prostorskih nalog, ki merijo, kako dobro v mislih vrtite oblike. Brez besed in brez številk.",
+    rot_how1:"Zgoraj se pojavi lik, pod njim šest kandidatov.",
+    rot_how2:"Natanko en je isti lik, zavrten pod novim kotom. Ostali so zrcalne slike — ista oblika, obrnjena.",
+    rot_how3:"Zavrtite lik v mislih in primerjajte. Večji kot je zasuk, težje je.",
+    rot_how4:"Ni ničesar za branje, liki pa so ob vsakem poskusu novi.",
+    rot_how_title:"Kako deluje ta test",
+    rot_note:"Rezultati so popravljeni za ugibanje. To je kratka presejalna naloga, ne standardizirana prostorska baterija, in ni normirana na reprezentativnem vzorcu.",
+    rot_q:"Kateri je isti lik, le zavrten?",
+    rot_result_label:"Prostorsko sklepanje",
+    rot_small_turn:"Majhni zasuki",
+    rot_start:"Začni test →",
+    rot_target:"Ciljni lik",
+    rot_title:"Test miselne rotacije",
     pat_accuracy:"Natančnost",
     pat_chance:"Raven naključja",
     iq_floor:"Vaš rezultat je na ravni, ki jo da zgolj naključje, zato vam test ne more oceniti številke. To navadno pomeni, da je zmanjkalo časa ali da ste odgovarjali naključno, ne da je vaše sklepanje šibko.",

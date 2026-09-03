@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.af = {
+    rot_big_turn:"Groot draaie",
+    rot_desc:"20 ruimtelike raaisels wat meet hoe goed jy vorms in jou kop draai. Geen woorde, geen syfers.",
+    rot_how1:"'n Figuur verskyn bo. Daaronder is ses kandidate.",
+    rot_how2:"Presies een is daardie figuur na 'n nuwe hoek gedraai. Die res is spieëlbeelde — dieselfde vorm omgekeer.",
+    rot_how3:"Draai die figuur in jou kop om te vergelyk. Hoe wyer die draai, hoe moeiliker.",
+    rot_how4:"Niks om te lees nie, en nuwe figure elke keer.",
+    rot_how_title:"Hoe Hierdie Toets Werk",
+    rot_note:"Tellings word vir raaiwerk reggestel. Dit is 'n kort siftingstaak, nie 'n gestandaardiseerde ruimtelike battery nie, en dit is nie op 'n verteenwoordigende steekproef genormeer nie.",
+    rot_q:"Watter een is dieselfde figuur, gedraai?",
+    rot_result_label:"Ruimtelike Redenasie",
+    rot_small_turn:"Klein draaie",
+    rot_start:"Begin Toets →",
+    rot_target:"Teikenfiguur",
+    rot_title:"Geestelike Rotasietoets",
     pat_accuracy:"Akkuraatheid",
     pat_chance:"Kansvlak",
     iq_floor:"Jou telling is op die vlak wat blote kans oplewer, dus kan hierdie toets nie 'n syfer vir jou skat nie. Dit beteken gewoonlik die tyd het opgeraak of die puzzels is lukraak beantwoord, nie dat jou redenasie swak is nie.",

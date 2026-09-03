@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tr = {
+    rot_big_turn:"Büyük dönüşler",
+    rot_desc:"Şekilleri zihninizde ne kadar iyi döndürdüğünüzü ölçen 20 uzamsal bulmaca. Kelime yok, sayı yok.",
+    rot_how1:"Üstte bir şekil görünür, altında altı aday vardır.",
+    rot_how2:"Yalnızca biri aynı şeklin yeni bir açıya döndürülmüş hâlidir. Geri kalanlar ayna görüntüsüdür — aynı şeklin ters çevrilmişi.",
+    rot_how3:"Şekli zihninizde döndürüp karşılaştırın. Açı büyüdükçe zorlaşır.",
+    rot_how4:"Okunacak bir şey yok ve her denemede yeni şekiller gelir.",
+    rot_how_title:"Bu Test Nasıl İşler",
+    rot_note:"Puanlar tahmine göre düzeltilmiştir. Bu kısa bir tarama görevidir, standardize edilmiş bir uzamsal test bataryası değildir ve temsili bir örneklem üzerinde normlanmamıştır.",
+    rot_q:"Hangisi aynı şeklin döndürülmüş hâli?",
+    rot_result_label:"Uzamsal Muhakeme",
+    rot_small_turn:"Küçük dönüşler",
+    rot_start:"Teste Başla →",
+    rot_target:"Hedef şekil",
+    rot_title:"Zihinsel Döndürme Testi",
     pat_accuracy:"İsabet",
     pat_chance:"Şans düzeyi",
     iq_floor:"Puanınız yalnızca şansın ürettiği düzeyde, bu nedenle test size bir değer kestiremiyor. Bu genellikle sürenin dolduğu ya da rastgele yanıtlandığı anlamına gelir, muhakemenizin zayıf olduğu değil.",

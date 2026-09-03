@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.nl = {
+    rot_big_turn:"Grote draaiingen",
+    rot_desc:"20 ruimtelijke puzzels die meten hoe goed je vormen in je hoofd draait. Geen woorden, geen cijfers.",
+    rot_how1:"Bovenaan verschijnt een figuur. Daaronder staan zes kandidaten.",
+    rot_how2:"Precies één is dezelfde figuur onder een nieuwe hoek. De rest zijn spiegelbeelden — dezelfde vorm omgeklapt.",
+    rot_how3:"Draai de figuur in je hoofd om te vergelijken. Hoe groter de draai, hoe lastiger.",
+    rot_how4:"Niets te lezen, en elke poging nieuwe figuren.",
+    rot_how_title:"Hoe deze test werkt",
+    rot_note:"Scores zijn gecorrigeerd voor gokken. Dit is een korte screeningstaak, geen genormeerde ruimtelijke testbatterij, en hij is niet genormeerd op een representatieve steekproef.",
+    rot_q:"Welke is dezelfde figuur, maar gedraaid?",
+    rot_result_label:"Ruimtelijk redeneren",
+    rot_small_turn:"Kleine draaiingen",
+    rot_start:"Test starten →",
+    rot_target:"Doelfiguur",
+    rot_title:"Mentale rotatietest",
     pat_accuracy:"Nauwkeurigheid",
     pat_chance:"Kansniveau",
     iq_floor:"Je score ligt op het niveau dat puur toeval oplevert, dus deze test kan geen getal voor je schatten. Meestal betekent dat dat de tijd op was of dat er willekeurig is geantwoord, niet dat je redeneervermogen laag is.",

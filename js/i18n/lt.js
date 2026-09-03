@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lt = {
+    rot_big_turn:"Dideli posūkiai",
+    rot_desc:"20 erdvinių užduočių, matuojančių, kaip gerai mintyse sukate figūras. Jokių žodžių ir skaičių.",
+    rot_how1:"Viršuje pasirodo figūra, po ja – šeši variantai.",
+    rot_how2:"Lygiai vienas yra ta pati figūra, pasukta nauju kampu. Kiti – veidrodiniai atvaizdai, ta pati forma apversta.",
+    rot_how3:"Pasukite figūrą mintyse ir palyginkite. Kuo didesnis posūkis, tuo sunkiau.",
+    rot_how4:"Nieko skaityti nereikia, o figūros kaskart naujos.",
+    rot_how_title:"Kaip veikia šis testas",
+    rot_note:"Rezultatai pataisyti dėl spėliojimo. Tai trumpa atrankos užduotis, o ne standartizuota erdvinių testų baterija, ir ji nestandartizuota reprezentatyvioje imtyje.",
+    rot_q:"Kuri yra ta pati figūra, tik pasukta?",
+    rot_result_label:"Erdvinis mąstymas",
+    rot_small_turn:"Maži posūkiai",
+    rot_start:"Pradėti testą →",
+    rot_target:"Tikslinė figūra",
+    rot_title:"Mintinio sukimo testas",
     pat_accuracy:"Tikslumas",
     pat_chance:"Atsitiktinumo lygis",
     iq_floor:"Jūsų rezultatas atitinka tai, ką duoda vien atsitiktinumas, todėl testas negali įvertinti jūsų skaičiaus. Paprastai tai reiškia, kad baigėsi laikas arba buvo atsakinėjama atsitiktinai, o ne kad jūsų mąstymas silpnas.",

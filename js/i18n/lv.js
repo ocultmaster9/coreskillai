@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lv = {
+    rot_big_turn:"Lieli pagriezieni",
+    rot_desc:"20 telpiski uzdevumi, kas mēra, cik labi prātā pagriežat formas. Bez vārdiem un cipariem.",
+    rot_how1:"Augšā parādās figūra, zem tās – seši varianti.",
+    rot_how2:"Tieši viens ir tā pati figūra, pagriezta jaunā leņķī. Pārējie ir spoguļattēli — tā pati forma apgriezta.",
+    rot_how3:"Pagrieziet figūru prātā un salīdziniet. Jo lielāks pagrieziens, jo grūtāk.",
+    rot_how4:"Nekas nav jālasa, un figūras katrā mēģinājumā ir jaunas.",
+    rot_how_title:"Kā šis tests darbojas",
+    rot_note:"Rezultāti ir koriģēti pēc minēšanas. Šis ir īss skrīninga uzdevums, nevis standartizēta telpisko testu baterija, un tas nav normēts reprezentatīvā izlasē.",
+    rot_q:"Kura ir tā pati figūra, tikai pagriezta?",
+    rot_result_label:"Telpiskā domāšana",
+    rot_small_turn:"Mazi pagriezieni",
+    rot_start:"Sākt testu →",
+    rot_target:"Mērķa figūra",
+    rot_title:"Mentālās rotācijas tests",
     pat_accuracy:"Precizitāte",
     pat_chance:"Nejaušības līmenis",
     iq_floor:"Jūsu rezultāts ir līmenī, ko dod tikai nejaušība, tāpēc tests nevar aplēst jums skaitli. Parasti tas nozīmē, ka beidzās laiks vai atbildēts nejauši, nevis ka jūsu spriešana ir vāja.",

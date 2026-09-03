@@ -482,6 +482,17 @@ function wpm(chars, seconds, lang){
     ? Math.round((chars/5)/(seconds/60))   // words per minute
     : Math.round(chars/(seconds/60));      // characters per minute
 }
+// NET speed, not gross. The score used `typed.length` - every character the
+// person entered, right or wrong - so mashing the keyboard randomly produced a
+// very high WPM alongside a terrible accuracy figure that did not affect it.
+// Only characters typed in the correct position count toward speed, which is
+// what "net WPM" means and what every serious typing test reports.
+function correctChars(original, input){
+  let n=0;
+  const len=Math.min(original.length,input.length);
+  for(let i=0;i<len;i++) if(original[i]===input[i]) n++;
+  return n;
+}
 function accuracy(original, input){
   let correct=0;
   const len=Math.min(original.length,input.length);
@@ -567,7 +578,7 @@ function initInput(){
         const elapsed=(Date.now()-startTime)/1000;
         const left=Math.max(0,timeLimit-Math.round(elapsed));
         const t=document.getElementById('typ-timer'); if(t) t.textContent=left;
-        const w=wpm(typed.length,Math.max(1,elapsed));
+        const w=wpm(correctChars(passage,typed),Math.max(1,elapsed));
         const wEl=document.getElementById('typ-wpm-live'); if(wEl) wEl.textContent=w;
         if(left<=0){ clearInterval(timerInterval); endTest(); }
       },500);
@@ -590,7 +601,7 @@ function endTest(){
   phase='done';
   if(!endTime) endTime=Date.now();
   const secs=(endTime-startTime)/1000;
-  const w=wpm(typed.length,secs);
+  const w=wpm(correctChars(passage,typed),secs);
   const acc=accuracy(passage,typed);
   const p=pct(w);
   const {text,color}=label(w);

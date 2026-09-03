@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.de = {
+    rot_big_turn:"Große Drehungen",
+    rot_desc:"20 räumliche Aufgaben, die messen, wie gut Sie Formen im Kopf drehen. Keine Wörter, keine Zahlen.",
+    rot_how1:"Oben erscheint eine Figur, darunter sechs Kandidaten.",
+    rot_how2:"Genau eine ist dieselbe Figur in einem neuen Winkel. Die übrigen sind Spiegelbilder — dieselbe Form umgeklappt.",
+    rot_how3:"Drehen Sie die Figur im Kopf und vergleichen Sie. Je größer die Drehung, desto schwerer.",
+    rot_how4:"Nichts zu lesen, und bei jedem Versuch neue Figuren.",
+    rot_how_title:"So funktioniert der Test",
+    rot_note:"Die Punktzahl ist um Rateeffekte bereinigt. Dies ist eine kurze Screening-Aufgabe, keine normierte räumliche Testbatterie, und sie wurde nicht an einer repräsentativen Stichprobe geeicht.",
+    rot_q:"Welche ist dieselbe Figur, nur gedreht?",
+    rot_result_label:"Räumliches Denken",
+    rot_small_turn:"Kleine Drehungen",
+    rot_start:"Test starten →",
+    rot_target:"Zielfigur",
+    rot_title:"Test zur mentalen Rotation",
     pat_accuracy:"Trefferquote",
     pat_chance:"Zufallsniveau",
     iq_floor:"Ihr Ergebnis liegt auf dem Niveau des reinen Zufalls, daher kann dieser Test keinen Wert für Sie schätzen. Meist bedeutet das, dass die Zeit ablief oder zufällig geantwortet wurde — nicht, dass Ihr Denkvermögen gering wäre.",

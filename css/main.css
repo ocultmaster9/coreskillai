@@ -409,6 +409,19 @@ footer ul a:hover { color: var(--primary); }
 .pattern-choice.wrong { border-color: var(--danger); background: rgba(239,68,68,.1); }
 .pattern-question { font-size: .85rem; color: var(--text-2); text-align: center; }
 
+/* Six-option tests (IQ, mental rotation) laid out 3x2 rather than inheriting
+   the 4-column grid, which wrapped them 4+2 and made the last row look like a
+   different kind of answer. */
+.pattern-choices.six { grid-template-columns: repeat(3, 1fr); max-width: 380px; }
+
+/* ── Mental rotation ────────────────────────────────────── */
+.rot-target {
+  background: var(--surface-2); border: 2px solid var(--primary);
+  border-radius: var(--radius); padding: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary);
+}
+
 /* ── Color vision ───────────────────────────────────────── */
 .hue-test-area { width: 100%; max-width: 480px; }
 .hue-row { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }

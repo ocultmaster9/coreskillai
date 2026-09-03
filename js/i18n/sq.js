@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sq = {
+    rot_big_turn:"Rrotullime të mëdha",
+    rot_desc:"20 enigma hapësinore që matin sa mirë i rrotulloni format në mendje. Pa fjalë dhe pa numra.",
+    rot_how1:"Lart shfaqet një figurë. Poshtë saj janë gjashtë kandidate.",
+    rot_how2:"Vetëm një është e njëjta figurë e rrotulluar në një kënd të ri. Të tjerat janë pasqyrime — e njëjta formë e kthyer.",
+    rot_how3:"Rrotullojeni figurën në mendje për ta krahasuar. Sa më i madh rrotullimi, aq më e vështirë.",
+    rot_how4:"Asgjë për të lexuar dhe figura të reja çdo herë.",
+    rot_how_title:"Si funksionon ky test",
+    rot_note:"Rezultatet korrigjohen për hamendësimin. Kjo është një detyrë e shkurtër filtruese, jo një bateri hapësinore e standardizuar, dhe nuk është normuar mbi një kampion përfaqësues.",
+    rot_q:"Cila është e njëjta figurë, vetëm e rrotulluar?",
+    rot_result_label:"Arsyetim hapësinor",
+    rot_small_turn:"Rrotullime të vogla",
+    rot_start:"Fillo testin →",
+    rot_target:"Figura e synuar",
+    rot_title:"Testi i rrotullimit mendor",
     pat_accuracy:"Saktësia",
     pat_chance:"Niveli i rastësisë",
     iq_floor:"Rezultati juaj është në nivelin që jep vetëm rastësia, prandaj ky test nuk mund të vlerësojë një shifër për ju. Zakonisht do të thotë se mbaroi koha ose u përgjigjët rastësisht, jo se arsyetimi juaj është i ulët.",

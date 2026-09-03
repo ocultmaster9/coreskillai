@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sv = {
+    rot_big_turn:"Stora vridningar",
+    rot_desc:"20 rumsliga uppgifter som mäter hur väl du vrider former i huvudet. Inga ord, inga siffror.",
+    rot_how1:"Överst visas en figur. Under den finns sex kandidater.",
+    rot_how2:"Exakt en är samma figur vriden till en ny vinkel. Resten är spegelbilder — samma form vänd.",
+    rot_how3:"Vrid figuren i huvudet och jämför. Ju större vridning, desto svårare.",
+    rot_how4:"Inget att läsa, och nya figurer varje gång.",
+    rot_how_title:"Så fungerar testet",
+    rot_note:"Poängen är korrigerade för gissning. Detta är en kort screeninguppgift, inte ett normerat rumsligt testbatteri, och det är inte normerat på ett representativt urval.",
+    rot_q:"Vilken är samma figur, fast vriden?",
+    rot_result_label:"Rumsligt tänkande",
+    rot_small_turn:"Små vridningar",
+    rot_start:"Starta testet →",
+    rot_target:"Målfigur",
+    rot_title:"Test i mental rotation",
     pat_accuracy:"Träffsäkerhet",
     pat_chance:"Slumpnivå",
     iq_floor:"Din poäng ligger på den nivå som ren slump ger, så testet kan inte skatta någon siffra åt dig. Det betyder oftast att tiden tog slut eller att svaren gavs på måfå, inte att ditt resonemang är svagt.",

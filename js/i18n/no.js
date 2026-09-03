@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.no = {
+    rot_big_turn:"Store dreininger",
+    rot_desc:"20 romlige oppgaver som måler hvor godt du snur former i hodet. Ingen ord, ingen tall.",
+    rot_how1:"Øverst vises en figur. Under den står seks kandidater.",
+    rot_how2:"Nøyaktig én er den samme figuren snudd til en ny vinkel. Resten er speilbilder — samme form vendt om.",
+    rot_how3:"Snu figuren i hodet for å sammenligne. Jo større dreining, jo vanskeligere.",
+    rot_how4:"Ingenting å lese, og nye figurer hver gang.",
+    rot_how_title:"Slik fungerer testen",
+    rot_note:"Skårene er korrigert for gjetting. Dette er en kort screeningoppgave, ikke et normert romlig testbatteri, og det er ikke normert på et representativt utvalg.",
+    rot_q:"Hvilken er den samme figuren, bare dreid?",
+    rot_result_label:"Romlig tenkning",
+    rot_small_turn:"Små dreininger",
+    rot_start:"Start test →",
+    rot_target:"Målfigur",
+    rot_title:"Mental rotasjonstest",
     pat_accuracy:"Treffsikkerhet",
     pat_chance:"Tilfeldighetsnivå",
     iq_floor:"Skåren din ligger på nivået ren tilfeldighet gir, så testen kan ikke anslå et tall for deg. Det betyr som regel at tiden gikk ut eller at det ble svart tilfeldig, ikke at resonneringen din er svak.",

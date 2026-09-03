@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sw = {
+    rot_big_turn:"Mizunguko mikubwa",
+    rot_desc:"Mafumbo 20 ya nafasi yanayopima jinsi unavyozungusha maumbo akilini. Hakuna maneno wala namba.",
+    rot_how1:"Umbo linaonekana juu. Chini yake kuna chaguo sita.",
+    rot_how2:"Moja tu ndilo umbo lilelile lililozungushwa kwa pembe mpya. Mengine ni taswira za kioo — umbo lilelile likiwa limegeuzwa.",
+    rot_how3:"Zungusha umbo akilini ili kulinganisha. Kadri pembe inavyokuwa kubwa, ndivyo inavyokuwa vigumu.",
+    rot_how4:"Hakuna cha kusoma, na maumbo mapya kila jaribio.",
+    rot_how_title:"Jinsi Kipimo Hiki Kinavyofanya Kazi",
+    rot_note:"Alama zimerekebishwa kwa ubashiri. Hii ni kazi fupi ya uchunguzi, si mkusanyiko wa vipimo vya nafasi vilivyosawazishwa, na haijasawazishwa kwa sampuli wakilishi.",
+    rot_q:"Ni lipi lenye umbo lilelile, likiwa limezungushwa?",
+    rot_result_label:"Ufikiri wa Nafasi",
+    rot_small_turn:"Mizunguko midogo",
+    rot_start:"Anza Kipimo →",
+    rot_target:"Umbo lengwa",
+    rot_title:"Kipimo cha Mzunguko wa Kiakili",
     pat_accuracy:"Usahihi",
     pat_chance:"Kiwango cha bahati",
     iq_floor:"Alama yako iko kwenye kiwango kinachotokana na bahati pekee, hivyo jaribio hili haliwezi kukadiria namba kwako. Mara nyingi hii inamaanisha muda uliisha au majibu yalitolewa bila mpangilio, si kwamba ufikiri wako ni hafifu.",

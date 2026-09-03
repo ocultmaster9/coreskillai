@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hu = {
+    rot_big_turn:"Nagy fordulatok",
+    rot_desc:"20 téri feladat, amely azt méri, milyen jól forgat alakzatokat fejben. Se szavak, se számok.",
+    rot_how1:"Fent megjelenik egy alakzat, alatta hat jelölt.",
+    rot_how2:"Pontosan egy ugyanaz az alakzat új szögben. A többi tükörkép — ugyanaz az alak átfordítva.",
+    rot_how3:"Forgassa el fejben az alakzatot és hasonlítsa össze. Minél nagyobb a fordulat, annál nehezebb.",
+    rot_how4:"Semmit sem kell olvasni, és minden próbálkozáskor új alakzatok.",
+    rot_how_title:"Hogyan működik a teszt",
+    rot_note:"A pontszám a találgatásra korrigált. Ez rövid szűrőfeladat, nem szabványosított téri tesztsorozat, és nem normálták reprezentatív mintán.",
+    rot_q:"Melyik ugyanaz az alakzat, csak elforgatva?",
+    rot_result_label:"Téri gondolkodás",
+    rot_small_turn:"Kis fordulatok",
+    rot_start:"Teszt indítása →",
+    rot_target:"Célalakzat",
+    rot_title:"Mentális forgatás teszt",
     pat_accuracy:"Pontosság",
     pat_chance:"Véletlen szintje",
     iq_floor:"Az eredménye azon a szinten van, amit a puszta véletlen ad, ezért a teszt nem tud Önre értéket becsülni. Ez rendszerint azt jelenti, hogy elfogyott az idő vagy találomra ment a válaszadás, nem azt, hogy gyenge a gondolkodása.",

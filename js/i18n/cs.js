@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.cs = {
+    rot_big_turn:"Velká otočení",
+    rot_desc:"20 prostorových úloh měřících, jak dobře otáčíte tvary v hlavě. Žádná slova, žádná čísla.",
+    rot_how1:"Nahoře se objeví obrazec. Pod ním je šest kandidátů.",
+    rot_how2:"Právě jeden je tentýž obrazec otočený do nového úhlu. Ostatní jsou zrcadlové obrazy — týž tvar převrácený.",
+    rot_how3:"Otočte si obrazec v hlavě a porovnejte. Čím větší otočení, tím obtížnější.",
+    rot_how4:"Nic se nečte a obrazce jsou při každém pokusu nové.",
+    rot_how_title:"Jak tento test funguje",
+    rot_note:"Skóre je opraveno o hádání. Jde o krátkou screeningovou úlohu, ne o standardizovanou prostorovou baterii, a není normována na reprezentativním vzorku.",
+    rot_q:"Který je tentýž obrazec, jen otočený?",
+    rot_result_label:"Prostorové uvažování",
+    rot_small_turn:"Malá otočení",
+    rot_start:"Spustit test →",
+    rot_target:"Cílový obrazec",
+    rot_title:"Test mentální rotace",
     pat_accuracy:"Přesnost",
     pat_chance:"Úroveň náhody",
     iq_floor:"Vaše skóre je na úrovni, kterou přinese pouhá náhoda, proto vám test nedokáže odhadnout hodnotu. Obvykle to znamená, že došel čas nebo se odpovídalo náhodně, ne že je vaše uvažování slabé.",

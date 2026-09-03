@@ -156,7 +156,7 @@ function renderQ(){
       <span class="iq-timer" style="font-weight:700;color:${secs<180?'var(--danger)':'var(--text-2)'}">⏱ ${mm}:${ss}</span>
     </div>
     <div class="pattern-grid" style="width:230px;height:230px">${cells.join('')}</div>
-    <div class="pattern-choices" style="max-width:380px">${choices}</div>`;
+    <div class="pattern-choices six">${choices}</div>`;
 }
 
 function startTimer(){

@@ -38,7 +38,10 @@
 
 const MAX_ITEMS = 60;
 const MAX_BODY = 16 * 1024;
-const TESTS = { iq: 1, pattern: 1 };
+// Whitelist. A test missing from here has its data silently discarded, which
+// is the right default for an open endpoint but easy to forget when adding
+// a new test - the page works, the POST returns 204, and nothing is stored.
+const TESTS = { iq: 1, pattern: 1, rotation: 1 };
 
 const json = (obj, status) =>
   new Response(JSON.stringify(obj), {

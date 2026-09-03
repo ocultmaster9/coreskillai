@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ms = {
+    rot_big_turn:"Putaran besar",
+    rot_desc:"20 teka-teki ruang yang mengukur sebaik mana anda memutar bentuk dalam fikiran. Tiada perkataan, tiada nombor.",
+    rot_how1:"Satu rajah muncul di atas. Di bawahnya ada enam calon.",
+    rot_how2:"Tepat satu ialah rajah yang sama diputar ke sudut baharu. Selebihnya imej cermin — bentuk yang sama diterbalikkan.",
+    rot_how3:"Putarkan rajah dalam fikiran untuk membanding. Semakin besar putaran, semakin sukar.",
+    rot_how4:"Tiada apa untuk dibaca, dan rajah baharu setiap percubaan.",
+    rot_how_title:"Cara Ujian Ini Berfungsi",
+    rot_note:"Skor diperbetulkan untuk tekaan. Ini tugas saringan ringkas, bukan bateri ujian ruang piawai, dan belum dinormakan pada sampel mewakili.",
+    rot_q:"Yang mana rajah yang sama, cuma diputar?",
+    rot_result_label:"Penaakulan Ruang",
+    rot_small_turn:"Putaran kecil",
+    rot_start:"Mula Ujian →",
+    rot_target:"Rajah sasaran",
+    rot_title:"Ujian Putaran Mental",
     pat_accuracy:"Ketepatan",
     pat_chance:"Aras nasib",
     iq_floor:"Skor anda berada pada tahap yang dihasilkan oleh nasib semata-mata, jadi ujian ini tidak dapat menganggarkan angka untuk anda. Biasanya ini bermakna masa telah tamat atau dijawab secara rawak, bukan penaakulan anda rendah.",

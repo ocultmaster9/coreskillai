@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hr = {
+    rot_big_turn:"Veliki zaokreti",
+    rot_desc:"20 prostornih zadataka koji mjere koliko dobro okrećete oblike u glavi. Bez riječi i bez brojeva.",
+    rot_how1:"Gore se pojavi lik, ispod njega šest kandidata.",
+    rot_how2:"Točno jedan je isti lik okrenut pod novim kutom. Ostali su zrcalne slike — isti oblik preokrenut.",
+    rot_how3:"Okrenite lik u glavi i usporedite. Što je zaokret veći, to je teže.",
+    rot_how4:"Nema se što čitati, a likovi su novi pri svakom pokušaju.",
+    rot_how_title:"Kako ovaj test radi",
+    rot_note:"Rezultati su ispravljeni za pogađanje. Ovo je kratak probirni zadatak, a ne standardizirana prostorna baterija, i nije normiran na reprezentativnom uzorku.",
+    rot_q:"Koji je isti lik, samo zakrenut?",
+    rot_result_label:"Prostorno zaključivanje",
+    rot_small_turn:"Mali zaokreti",
+    rot_start:"Pokreni test →",
+    rot_target:"Ciljni lik",
+    rot_title:"Test mentalne rotacije",
     pat_accuracy:"Točnost",
     pat_chance:"Razina slučajnosti",
     iq_floor:"Vaš je rezultat na razini koju daje puka slučajnost, pa vam test ne može procijeniti broj. To obično znači da je isteklo vrijeme ili se odgovaralo nasumično, a ne da vam je zaključivanje slabo.",

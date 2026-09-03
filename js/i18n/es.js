@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.es = {
+    rot_big_turn:"Giros grandes",
+    rot_desc:"20 puzles espaciales que miden lo bien que giras formas en tu mente. Sin palabras ni números.",
+    rot_how1:"Arriba aparece una figura. Debajo hay seis candidatas.",
+    rot_how2:"Solo una es esa misma figura girada a un ángulo nuevo. Las demás son imágenes especulares: la misma forma volteada.",
+    rot_how3:"Gira la figura mentalmente para comparar. Cuanto mayor el giro, más difícil.",
+    rot_how4:"Nada que leer, y figuras nuevas en cada intento.",
+    rot_how_title:"Cómo funciona este test",
+    rot_note:"Las puntuaciones se corrigen por azar. Es una tarea breve de cribado, no una batería espacial estandarizada, y no está baremada con una muestra representativa.",
+    rot_q:"¿Cuál es la misma figura, girada?",
+    rot_result_label:"Razonamiento espacial",
+    rot_small_turn:"Giros pequeños",
+    rot_start:"Empezar test →",
+    rot_target:"Figura objetivo",
+    rot_title:"Test de rotación mental",
     pat_accuracy:"Precisión",
     pat_chance:"Nivel de azar",
     iq_floor:"Tu puntuación está al nivel que produce el puro azar, así que este test no puede estimarte una cifra. Normalmente significa que se acabó el tiempo o que se respondió al azar, no que tu razonamiento sea bajo.",

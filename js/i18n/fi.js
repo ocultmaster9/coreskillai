@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fi = {
+    rot_big_turn:"Suuret käännökset",
+    rot_desc:"20 avaruudellista tehtävää, jotka mittaavat kuinka hyvin käännät muotoja mielessäsi. Ei sanoja, ei numeroita.",
+    rot_how1:"Ylhäällä näkyy kuvio. Sen alla on kuusi vaihtoehtoa.",
+    rot_how2:"Täsmälleen yksi on sama kuvio uuteen kulmaan käännettynä. Muut ovat peilikuvia — sama muoto käännettynä ympäri.",
+    rot_how3:"Käännä kuviota mielessäsi ja vertaa. Mitä suurempi käännös, sitä vaikeampi.",
+    rot_how4:"Ei mitään luettavaa, ja uudet kuviot joka kerta.",
+    rot_how_title:"Näin testi toimii",
+    rot_note:"Pisteet on korjattu arvaamisen varalta. Tämä on lyhyt seulontatehtävä, ei normitettu avaruudellinen testipatteristo, eikä sitä ole normitettu edustavalla otoksella.",
+    rot_q:"Mikä on sama kuvio käännettynä?",
+    rot_result_label:"Avaruudellinen päättely",
+    rot_small_turn:"Pienet käännökset",
+    rot_start:"Aloita testi →",
+    rot_target:"Kohdekuvio",
+    rot_title:"Mielikuvarotaatiotesti",
     pat_accuracy:"Osumatarkkuus",
     pat_chance:"Sattuman taso",
     iq_floor:"Pistemääräsi on tasolla, jonka pelkkä sattuma tuottaa, joten testi ei voi arvioida sinulle lukua. Yleensä se tarkoittaa, että aika loppui tai vastattiin sattumanvaraisesti — ei sitä, että päättelysi olisi heikko.",

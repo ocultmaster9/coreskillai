@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fr = {
+    rot_big_turn:"Grandes rotations",
+    rot_desc:"20 énigmes spatiales mesurant votre aptitude à faire tourner des formes mentalement. Ni mots ni chiffres.",
+    rot_how1:"Une figure apparaît en haut. En dessous, six candidates.",
+    rot_how2:"Une seule est cette figure tournée d'un nouvel angle. Les autres sont des images miroir : la même forme retournée.",
+    rot_how3:"Faites tourner la figure dans votre tête pour comparer. Plus l'angle est grand, plus c'est difficile.",
+    rot_how4:"Rien à lire, et des figures nouvelles à chaque essai.",
+    rot_how_title:"Comment fonctionne ce test",
+    rot_note:"Les scores sont corrigés du hasard. Il s'agit d'une tâche de dépistage brève, non d'une batterie spatiale étalonnée, et elle n'a pas été normée sur un échantillon représentatif.",
+    rot_q:"Laquelle est la même figure, simplement tournée ?",
+    rot_result_label:"Raisonnement spatial",
+    rot_small_turn:"Petites rotations",
+    rot_start:"Commencer le test →",
+    rot_target:"Figure cible",
+    rot_title:"Test de rotation mentale",
     pat_accuracy:"Précision",
     pat_chance:"Niveau du hasard",
     iq_floor:"Votre score correspond à ce que produit le pur hasard : ce test ne peut donc pas estimer de chiffre pour vous. Cela signifie généralement que le temps a manqué ou que les réponses ont été données au hasard, pas que votre raisonnement soit faible.",

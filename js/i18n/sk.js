@@ -2,6 +2,20 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sk = {
+    rot_big_turn:"Veľké otočenia",
+    rot_desc:"20 priestorových úloh, ktoré merajú, ako dobre otáčate tvary v hlave. Žiadne slová, žiadne čísla.",
+    rot_how1:"Hore sa objaví útvar, pod ním šesť kandidátov.",
+    rot_how2:"Práve jeden je ten istý útvar otočený do nového uhla. Ostatné sú zrkadlové obrazy — ten istý tvar prevrátený.",
+    rot_how3:"Otočte si útvar v hlave a porovnajte. Čím väčšie otočenie, tým ťažšie.",
+    rot_how4:"Nič sa nečíta a útvary sú pri každom pokuse nové.",
+    rot_how_title:"Ako tento test funguje",
+    rot_note:"Skóre je opravené o hádanie. Ide o krátku skríningovú úlohu, nie o štandardizovanú priestorovú batériu, a nie je normovaná na reprezentatívnej vzorke.",
+    rot_q:"Ktorý je ten istý útvar, len otočený?",
+    rot_result_label:"Priestorové uvažovanie",
+    rot_small_turn:"Malé otočenia",
+    rot_start:"Spustiť test →",
+    rot_target:"Cieľový útvar",
+    rot_title:"Test mentálnej rotácie",
     pat_accuracy:"Presnosť",
     pat_chance:"Úroveň náhody",
     iq_floor:"Vaše skóre je na úrovni, ktorú prináša samotná náhoda, preto vám test nedokáže odhadnúť hodnotu. Zvyčajne to znamená, že vypršal čas alebo sa odpovedalo náhodne, nie že je vaše uvažovanie slabé.",
