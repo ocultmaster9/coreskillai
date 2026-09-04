@@ -1,8 +1,8 @@
 # coreskillai.com
 
 Nine free cognitive tests (IQ, reaction time, working memory, pattern recognition,
-colour vision, Big Five, emotional IQ, focus, typing) in five languages
-(EN, ES, PT, FR, DE). Static site on Cloudflare Pages.
+colour vision, Big Five, emotional IQ, focus, typing) plus mental rotation, in 43
+markets. Static site on Cloudflare Pages.
 
 ## Deploying
 
@@ -29,7 +29,10 @@ is why `www.coreskillai.com` shows a www canonical while `coreskillai.pages.dev`
 shows the apex.
 
 Do **not** rewrite the canonicals to `www` in this repo without retiring that
-Worker first, or the rewrite double-applies. This layout also once looked like
+Worker first, or the rewrite double-applies. `og:image` is the exception: the
+Worker rewrites `canonical` and `og:url` only and leaves `og:image` alone, so
+that one tag carries `www` **in this repo** and must not be added to the
+Worker's rewrite list. This layout also once looked like
 "the local folder is stale" — it isn't; compare against `coreskillai.pages.dev`
 (the raw origin), never against `www`.
 
@@ -61,6 +64,19 @@ when they are not.
    `3th`. This is the guard for the 2026-08-24 bugs where the IQ result panel
    read "Your IQ Score 3% % of people" and "BETTER THAN 3th".
 7. A sitemap URL with no file behind it.
+8. **Runtime i18n keys.** `_t('foc_interference','Stroop effect')` silently
+   returns its English fallback when the key is missing, so a key the test JS
+   uses but no language file defines ships as English in all 42 non-English
+   markets. Nine did: the Stroop result panel, the memory retry line and two
+   mental-rotation result branches. `check_js_keys.py` fails on a key the test
+   JS asks for that en.js lacks, and on a ready market missing a key en.js has.
+   Nothing else covers this - these strings live in the RESULT panel, which
+   appears only after the test has been played to the end.
+
+All ten tests (the nine plus mental rotation) have been played end to end in a
+real browser - Chromium via Playwright against the built files, in English and
+in Arabic - asserting that a result panel renders and that its text carries no
+raw i18n key, no doubled `%`, no `undefined`/`NaN` and no fabricated ordinal.
 
 Live verification then confirms all nine tests and their scripts return 200, the
 Worker still rewrites the canonical, `iq.js` still carries the double-click guard,
@@ -69,7 +85,9 @@ and the served translations have no doubled `%`.
 ## Known issues
 
 - Origin canonicals depend on the Worker (above). Worth simplifying one day.
-- `og:image` still points at the apex on every page.
-- Interactive verification of the eight non-IQ tests is outstanding — they load,
-  start and score under jsdom, but only the IQ test has been played end to end in
-  a real browser.
+- The typing test has no paste guard and no plausibility ceiling. Pasting the
+  passage scores in the thousands of WPM and renders a shareable "Impressive
+  speed" result.
+- `tests/rotation` is in `tools.PAGES` but not in `audit.TESTS` or in
+  `verify_tests.js`, so the mental-rotation page is outside the science-section
+  and per-test render checks.

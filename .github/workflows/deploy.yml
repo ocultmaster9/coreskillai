@@ -267,6 +267,21 @@ jobs:
           ( cd _stage && cp -r ../_build . 2>/dev/null; python3 _build/check_prerender.py . )
           [ $? -eq 0 ] || fail=1
 
+          # 3i) EVERY i18n KEY THE TEST SCRIPTS ASK FOR MUST EXIST. _t(key, fallback)
+          # returns the English fallback when a key is absent, so a missing key is
+          # invisible in testing and in English - it only shows up as English text
+          # in the other 42 markets, on a screen you have to finish a test to see.
+          # Nine keys were missing this way (foc_congruent, foc_incongruent,
+          # foc_interference, foc_res_new, foc_res_unscored, foc_unscored,
+          # mem_second_try, rot_floor, rot_unanswered) and shipped the whole Stroop
+          # result panel in English to every non-English market. Guard 3d cannot
+          # catch this: the English IS a legitimate fallback argument in the source.
+          # Two halves - a key the JS asks for that en.js lacks, and a key en.js has
+          # that a ready market lacks. Both fail the deploy.
+          echo "[3i] every key used in js/tests/*.js exists in js/i18n"
+          ( cd _stage && cp -r ../_build . 2>/dev/null; python3 _build/check_js_keys.py . )
+          [ $? -eq 0 ] || fail=1
+
           # 4) ads.txt must name our publisher id.
           grep -q 'pub-5798786176755576' _stage/ads.txt || { echo "::error::ads.txt wrong or missing"; fail=1; }
 

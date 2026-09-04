@@ -148,7 +148,26 @@ def han_share(texts):
     return han / float(letters) if letters else 0.0
 
 
-def thin_count(ratios, texts=()):
+def density(lang):
+    """This language's natural character expansion against English.
+
+    Measured on the shared UI strings in js/i18n/<lang>.js, which are a faithful
+    translation of the same English source in every market. That makes the number
+    a property of the WRITING SYSTEM alone: unlike a median over page lengths it
+    cannot be moved by how much or how little a given page happens to say, which
+    is precisely the confound that broke every previous version of this check.
+    Returns 0.0 when the strings file is missing or too sparse to trust.
+    """
+    EN = strings('en')
+    S = strings(lang) if lang else {}
+    keys = [k for k in EN if k in S and S[k].strip() and EN[k].strip()]
+    if len(keys) < 20:
+        return 0.0
+    en = float(sum(len(EN[k]) for k in keys))
+    return (sum(len(S[k]) for k in keys) / en) if en else 0.0
+
+
+def thin_count(ratios, texts=(), lang=None):
     """Flag pages that are short FOR THIS LANGUAGE.
 
     Comparing raw character counts against English is invalid across scripts.
@@ -158,13 +177,35 @@ def thin_count(ratios, texts=()):
     flagged Finnish - fixed then by switching words to characters - but
     characters are just as script-dependent as words.
 
-    So: take this language's own median ratio to English as its natural
-    density and flag only pages falling well below that. No per-language
-    constants, and it works for any script added later. The absolute floor
-    still catches a language that is genuinely under-written everywhere.
+    The next fix took this language's own MEDIAN page length as its natural
+    density. That fails whenever a market's pages are not uniformly rich, and
+    18 markets are exactly that shape: ar bg cs el et fa he hi hr hu ja lt lv
+    mk sk sl sr uk carry a longer, market-specific science section on eight of
+    the nine test pages - the Bulgarian typing page discusses BDS versus
+    phonetic Cyrillic layouts, content English does not have at all. Those
+    eight pull the median up to 1.52x English, so the cutoff lands at 1.22x and
+    every REMAINING page is flagged thin while carrying MORE text than the
+    English original it is measured against. All 18 markets were held out of
+    the sitemap and the language selector on that reading. Structurally the
+    flagged pages are identical to English - same paragraphs, headings, list
+    items and data-i18n nodes - so nothing was missing.
+
+    A baseline drawn from page lengths cannot tell "eight pages too short" from
+    "eight pages unusually long". So the baseline no longer comes from the
+    pages: density() reads it off the shared UI strings, which say the same
+    thing in every market. Empirically it tracks the shortest real page in each
+    of the 43 markets closely (ja 0.45 vs 0.47, zh 0.33 vs 0.34, he 0.80 vs
+    0.78, tl 1.23 vs 1.21), so 80% of it leaves room for honest variation while
+    still catching a page that has lost a section or reverted to English.
+
+    The old median rule stays as the fallback for a market whose strings file
+    is missing or too sparse to measure.
     """
     if not ratios:
         return 0
+    d = density(lang)
+    if d:
+        return sum(1 for _, r in ratios if r < d * 0.80)
     vals = sorted(r for _, r in ratios)
     med = vals[len(vals) // 2]
     # The absolute floor catches a language that is under-written everywhere.
@@ -240,7 +281,7 @@ def audit():
                     ratios.append((pg, len(bt) / float(en_chars)))
         rows.append(dict(lang=lang, keys=len(T), keys_ok=keys_ok, pages=pages_ok,
                          eng_title=eng_title, sci_missing=sci_missing, sci_english=sci_english,
-                         thin=thin_count(ratios, page_texts), passages=passages(lang),
+                         thin=thin_count(ratios, page_texts, lang), passages=passages(lang),
                          stroop=stroop(lang), b5=items('big-five',lang), eq=items('eq',lang)))
     return rows, nkeys
 

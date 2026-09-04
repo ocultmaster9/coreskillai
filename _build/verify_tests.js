@@ -155,6 +155,83 @@ function firstQuestion(r, spec) {
   return el ? el.textContent.trim() : null;
 }
 
+// ── Anti-cheat: an impossible run must REFUSE to score ─────────────────────
+// Both of these shipped as real bugs. The typing test reported gross WPM, so a
+// scripted burst scored like a champion; the reaction test fell back to the raw
+// trials when fewer than five survived the 120 ms filter, so twelve scripted
+// 5 ms clicks reported a world record. Both are fixed, and both fixes are one
+// deleted line away from coming back with nothing to notice - the refusal only
+// appears after a test is played to the end, which no other check does.
+//
+// The assertion is deliberately two-part: the panel must SAY it was not scored,
+// in this market's own language, and it must offer no share buttons. A refusal
+// that is still shareable is not a refusal - the share is what makes the claim
+// public.
+function refusedProperly(w, panel, lang, key) {
+  if (!panel) return 'no results panel';
+  const txt = (panel.textContent || '').replace(/\s+/g, ' ').trim();
+  const T = w.TRANSLATIONS || {};
+  const expected = (T[lang] && T[lang][key]) || (T.en && T.en[key]);
+  if (!expected) return `no ${key} string for ${lang}`;
+  if (!txt.includes(expected)) {
+    return `panel never says ${JSON.stringify(expected)} -> ${JSON.stringify(txt.slice(0, 90))}`;
+  }
+  if (panel.querySelector('.share-row, #share-copy, .share-btn')) {
+    return 'share buttons offered on an unscored run';
+  }
+  return null;
+}
+
+// 1500 WPM: the passage typed in one go, with the clock advanced 8 ms per
+// character. That is five times the 300 WPM ceiling in any language family.
+function scriptedTypingRun(lang) {
+  const r = loadPage(lang, 'typing');
+  const w = r.dom.window, doc = r.doc;
+  let clock = 1e6;
+  w.Date.now = () => clock;
+  w.setInterval = () => 0;
+  w.clearInterval = () => {};
+
+  const inp = doc.getElementById('typ-input');
+  if (!inp) return 'no typing input rendered';
+  const fire = () => inp.dispatchEvent(new w.Event('input', { bubbles: true }));
+
+  inp.value = 'x';
+  fire();                                   // first keystroke starts the clock
+  const passage = (doc.getElementById('typ-display').textContent || '')
+                    .replace(/\u00a0/g, ' ');   // renderPassage() writes spaces as &nbsp;
+  if (passage.length < 40) return 'passage did not render';
+
+  clock += Math.round(passage.length * 8);  // 8 ms/char == 1500 WPM exactly
+  inp.value = passage;
+  fire();                                   // passage complete -> endTest()
+
+  if (w._typResult) return 'a shareable result was published for a 1500 WPM run';
+  return refusedProperly(w, doc.getElementById('typ-results'), lang, 'typ_unscored');
+}
+
+// Twelve 5 ms clicks: every one below the 120 ms floor, so nothing survives the
+// filter and there is no median to report.
+function scriptedReactionRun(lang) {
+  const r = loadPage(lang, 'reaction-time');
+  const w = r.dom.window, doc = r.doc;
+  let clock = 1e6;
+  Object.defineProperty(w.performance, 'now', { value: () => clock, configurable: true });
+  w.setTimeout = fn => { fn(); return 0; };   // collapse every wait to nothing
+  w.clearTimeout = () => {};
+
+  const RT = w.RTTest;
+  if (!RT || typeof RT.start !== 'function') return 'no RTTest API';
+  RT.start();                                  // green fires immediately
+  for (let i = 0; i < 12; i++) { clock += 5; RT.click(); }
+
+  if (w._rtResult) return 'a shareable result was published for twelve 5 ms clicks';
+  return refusedProperly(w, doc.getElementById('rt-results'), lang, 'rt_unscored');
+}
+
+const CHEATS = [['typing', scriptedTypingRun], ['reaction-time', scriptedReactionRun]];
+
+
 function run(langs) {
   let fails = 0, checked = 0;
   const enText = {};
@@ -219,6 +296,14 @@ function run(langs) {
       const hasStart = !!r.doc.querySelector(
         '#start, #startBtn, .start-btn, [data-start], button');
       if (!hasStart) { bad.push(`${test}: no start control`); continue; }
+    }
+
+    // An impossible run must refuse to score, and say so in this language.
+    for (const [name, cheat] of CHEATS) {
+      checked++;
+      let why;
+      try { why = cheat(lang); } catch (e) { why = 'threw: ' + e.message; }
+      if (why) bad.push(`${name} anti-cheat: ${why}`);
     }
 
     if (bad.length) {

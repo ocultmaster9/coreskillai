@@ -442,6 +442,10 @@ function getPassage(){
 }
 
 let passage='', typed='', startTime=0, endTime=0, phase='idle', timerInterval=null, timeLimit=60;
+// Anti-forgery state. A scripted run produced 1,556 WPM and a shareable
+// "Impressive speed" card - every share is a public claim this test cannot
+// stand behind, which is the same failure as an answer key you can guess.
+let gaps=[], lastKeyAt=0, pasted=false;
 
 // ── Script-aware speed metric ─────────────────────────────
 // "chars / 5" is the LATIN typing convention (a "word" = 5 characters) and the
@@ -493,6 +497,41 @@ function correctChars(original, input){
   for(let i=0;i<len;i++) if(original[i]===input[i]) n++;
   return n;
 }
+// ── Is this run physically possible? ──────────────────────────────────────
+// Two independent checks, because either one alone is easy to slip past.
+//
+// 1. A SPEED CEILING. The verified sustained record is about 216 WPM and short
+//    bursts reach roughly 300. Above that we do not cap the number - a capped
+//    300 is a fabricated figure - we refuse to score it, the same way the IQ
+//    test refuses at chance level. Saying "we cannot score this" is true;
+//    printing a number we do not believe is not.
+// 2. KEYSTROKE TIMING. A script can stay under the ceiling and still be
+//    inhuman, so we also look at the gaps between keystrokes. At 300 WPM the
+//    mean gap is 40 ms; a median under 25 ms is not hands on a keyboard.
+//    Median, not mean, so ordinary bursts and pauses do not swing it.
+const CEILING = { alpha: 300, indic: 300, cjk: 900 };   // WPM, WPM, CPM
+const MIN_GAP_MS = 25;
+const MIN_KEYSTROKES = 20;   // below this the timing sample means nothing
+
+function medianGap(){
+  if(gaps.length < MIN_KEYSTROKES) return null;
+  const s = gaps.slice().sort((a,b)=>a-b);
+  const m = s.length >> 1;
+  return s.length % 2 ? s[m] : (s[m-1]+s[m])/2;
+}
+
+// Returns null when the run looks human, otherwise a short reason code. The
+// reason is kept internal - the visitor gets one honest message either way,
+// because spelling out exactly which check fired is a recipe for tuning around.
+function implausible(speed, lang){
+  if(pasted) return 'paste';
+  const ceil = CEILING[familyFor(lang || window.I18n?.lang || 'en')] || 300;
+  if(speed > ceil) return 'ceiling';
+  const g = medianGap();
+  if(g !== null && g < MIN_GAP_MS) return 'timing';
+  return null;
+}
+
 function accuracy(original, input){
   let correct=0;
   const len=Math.min(original.length,input.length);
@@ -539,6 +578,7 @@ function renderShell(){
     <div class="test-ui-body" style="flex-direction:column;gap:16px;align-items:stretch">
       <div class="typing-text" id="typ-display"></div>
       <textarea class="typing-input" id="typ-input" rows="3" placeholder="${_t('typ_start_placeholder','Start typing here…')}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+      <div id="typ-paste-note" style="display:none;font-size:.82rem;color:var(--danger);margin-top:6px;text-align:center"></div>
       <div class="typing-stats" id="typ-live-stats" style="justify-content:flex-start;gap:20px">
         <div class="typing-stat-item"><div class="typing-stat-num" id="typ-acc-live">100%</div><div class="typing-stat-label">${_t('typ_accuracy','Accuracy')}</div></div>
         <div class="typing-stat-item"><div class="typing-stat-num" id="typ-chars-live">0</div><div class="typing-stat-label">${_t('typ_chars',"Characters")}</div></div>
@@ -593,6 +633,30 @@ function initInput(){
   });
   inp.addEventListener('keydown',e=>{
     if(e.key==='Tab'){e.preventDefault();}
+    // Record the gap between real key presses. keydown fires for the physical
+    // key, so this is not fooled by a value assignment that skips the keyboard
+    // entirely - such a run simply collects no gaps and trips MIN_KEYSTROKES.
+    if(e.key.length===1 || e.key==='Backspace' || e.key===' '){
+      const now=Date.now();
+      if(lastKeyAt) gaps.push(now-lastKeyAt);
+      lastKeyAt=now;
+    }
+  });
+
+  // Pasting the passage is the one-click way to "win", so block it outright -
+  // and say so, because silently swallowing the paste reads as a broken box.
+  // drop is the same attack with the mouse; beforeinput catches the paths that
+  // never raise a paste event at all (context menu on some mobile keyboards).
+  const refuse=e=>{
+    e.preventDefault();
+    pasted=true;
+    const n=document.getElementById('typ-paste-note');
+    if(n){ n.textContent=_t('typ_paste_blocked','Pasting is turned off — type the passage to get a score.'); n.style.display='block'; }
+  };
+  inp.addEventListener('paste',refuse);
+  inp.addEventListener('drop',refuse);
+  inp.addEventListener('beforeinput',e=>{
+    if(e.inputType==='insertFromPaste'||e.inputType==='insertFromDrop') refuse(e);
   });
 }
 
@@ -610,6 +674,22 @@ function endTest(){
   const wpmLabel=_t(speedUnitKey(lang), familyFor(lang)==='alpha'?'WPM':'CPM');
 
   document.getElementById('typ-input').disabled=true;
+
+  // Refuse rather than print a figure we do not believe. No score ring, no
+  // percentile, no share buttons - a result we will not stand behind must not
+  // be shareable, because the share is the part that makes the claim public.
+  if(implausible(w, lang)){
+    window._typResult=null;
+    document.getElementById('typ-results').innerHTML=`
+    <div style="text-align:center;padding:8px 0 20px">
+      <div style="font-size:.8rem;font-weight:600;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">${_t('typ_result_label','Typing Speed')}</div>
+      <div style="font-size:4rem;font-weight:900;color:var(--text-3);letter-spacing:-.03em;line-height:1">—</div>
+      <div style="font-size:1rem;font-weight:700;color:var(--text);margin-top:8px">${_t('typ_unscored','Not scored')}</div>
+      <p style="font-size:.85rem;color:var(--text-2);margin:12px auto 0;max-width:440px;line-height:1.6">${_t('typ_res_unscored','This run was faster than a person can type, so it cannot be scored. The verified sustained record is about 216 {u}. Type the passage yourself, without pasting, for a result that means something.').replace('{u}',wpmLabel)}</p>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="TypTest.reset()">↺ ${_t('btn_try_again','Try Again')}</button></div>`;
+    return;
+  }
 
   document.getElementById('typ-results').innerHTML=`
   <div class="result-score-wrap">
@@ -652,7 +732,9 @@ function endTest(){
 }
 
 window.TypTest={
-  reset(){phase='idle';typed='';startTime=0;endTime=0;clearInterval(timerInterval);renderShell();},
+  // gaps/lastKeyAt/pasted must be cleared too, or one blocked paste would keep
+  // every later attempt in this tab unscored.
+  reset(){phase='idle';typed='';startTime=0;endTime=0;gaps=[];lastKeyAt=0;pasted=false;window._typResult=null;clearInterval(timerInterval);renderShell();},
   copy(){const r=window._typResult;if(!r)return;const t=window.shareText('typ_result_label', r.wpm+' '+_t(speedUnitKey(window.I18n?.lang),'WPM'), r.text, r.pct);navigator.clipboard?.writeText(t).then(()=>{const b=document.getElementById('share-copy');if(b){b.textContent='✓ '+_t('lbl_copied','Copied!');setTimeout(()=>b.textContent=`📋 ${_t('share_copy','Copy Result')}`,2000);}});},
   tweet(){const r=window._typResult;if(!r)return;const t=window.shareText('typ_result_label', r.wpm+' '+_t(speedUnitKey(window.I18n?.lang),'WPM'), r.text, r.pct);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };

@@ -14,13 +14,23 @@ let trials = [], state = 'idle', timer = null, t0 = 0;
 // decides and clicks that fast) and responses over 1000 ms are attention
 // lapses; both are discarded rather than allowed to define the score.
 const MIN_VALID = 120, MAX_VALID = 1000;
+const MIN_CLEAN = 5;
 function summarise(all){
   const clean = all.filter(t => t >= MIN_VALID && t <= MAX_VALID);
-  const use = clean.length >= 5 ? clean : all;      // never leave the taker unscored
-  const sorted = use.slice().sort((a,b)=>a-b);
+  // This used to fall back to the RAW trials when fewer than 5 survived, so as
+  // to "never leave the taker unscored". That defeated the filter in the one
+  // case it mattered: a scripted run of twelve 5 ms clicks kept nothing, fell
+  // back to all of them, and reported a world-record median. Refusing is the
+  // honest answer - the same stance the IQ and rotation tests take at chance
+  // level - and a human who really did lapse on 8 of 12 rounds has not produced
+  // a measurement either.
+  if (clean.length < MIN_CLEAN) {
+    return { median: null, best: null, kept: clean.length, total: all.length, unscored: true };
+  }
+  const sorted = clean.slice().sort((a,b)=>a-b);
   const m = sorted.length >> 1;
   const med = sorted.length % 2 ? sorted[m] : (sorted[m-1]+sorted[m])/2;
-  return { median: med, best: Math.min(...use), kept: clean.length, total: all.length };
+  return { median: med, best: Math.min(...clean), kept: clean.length, total: all.length, unscored: false };
 }
 
 // Percentile from reaction time in ms (normal distribution, mean=261ms, sd=51ms)
@@ -127,6 +137,27 @@ function updateDots(current) {
 
 function showResults() {
   const st   = summarise(trials);
+
+  // Nothing measurable survived the filter. Say so instead of printing a number
+  // built from anticipations and lapses - and show no percentile or share, so
+  // an unscorable run cannot be published as a record.
+  if (st.unscored) {
+    const panel = document.getElementById('rt-results');
+    if (panel) {
+      panel.innerHTML = `
+      <div style="text-align:center;padding:8px 0 20px">
+        <div style="font-size:.8rem;font-weight:600;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">${_t('rt_result_label',"Your Reaction Time")}</div>
+        <div style="font-size:4rem;font-weight:900;color:var(--text-3);letter-spacing:-.03em;line-height:1">—</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--text);margin-top:8px">${_t('rt_unscored','Not scored')}</div>
+        <p style="font-size:.85rem;color:var(--text-2);margin:12px auto 0;max-width:440px;line-height:1.6">${_t('rt_res_unscored','Only {k} of {n} rounds produced a usable time. Responses under {lo}ms land before anyone can see and react, and those over {hi}ms are lapses in attention. Try again somewhere without interruptions.').replace('{k}',st.kept).replace('{n}',st.total).replace('{lo}',MIN_VALID).replace('{hi}',MAX_VALID)}</p>
+      </div>
+      <div style="text-align:center;margin-top:20px"><button class="btn btn-secondary" onclick="RTTest.reset()">↺ ${_t('btn_try_again','Try Again')}</button></div>`;
+      panel.classList.add('show');
+    }
+    window._rtResult = null;
+    return;
+  }
+
   const avg  = st.median;                 // median, not mean - see summarise()
   const best = st.best;
   const p    = pct(avg);
@@ -244,6 +275,10 @@ window.RTTest = {
   },
   reset() {
     trials=[]; state='idle'; clearTimeout(timer);
+    // The unscored branch replaces the whole results panel, which destroys
+    // rt-avg-ms, rt-pct-badge and the rest. Without rebuilding, the NEXT run
+    // would throw on a null element the moment it tried to show a real score.
+    render();
     document.getElementById('rt-results').classList.remove('show');
     document.getElementById('rt-start-btn').style.display='';
     document.getElementById('rt-box').className='rt-box rt-idle';
