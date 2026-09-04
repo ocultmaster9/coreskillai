@@ -1,11 +1,11 @@
 {
  "home": {
   "title": "CoreSkillAI — Free IQ Test &amp; Brain Tests | Compare Globally",
-  "desc": "Take a free IQ test and 8 other scientific tests — reaction time, memory, color vision, Big Five personality, EQ and more. See how you compare worldwide."
+  "desc": "Take a free IQ test and 9 other scientific tests — reaction time, memory, color vision, Big Five personality, EQ and more. See how you compare worldwide."
  },
  "about": {
   "title": "About CoreSkillAI &#8212; Science-Backed Free Tests",
-  "desc": "CoreSkillAI offers 9 free scientific cognitive and personality tests with global comparison data. No account, no tracking, always free."
+  "desc": "CoreSkillAI offers 10 free scientific cognitive and personality tests with global comparison data. No account, no tracking, always free."
  },
  "privacy": {
   "title": "Privacy Policy &#8212; CoreSkillAI",
@@ -21,11 +21,11 @@
  },
  "tests": {
   "title": "All Free Brain &amp; IQ Tests — CoreSkillAI",
-  "desc": "9 free scientific tests: IQ test, reaction time, memory, pattern recognition, color vision, Big Five personality, emotional intelligence, focus, and typing speed."
+  "desc": "10 free scientific tests: IQ test, reaction time, memory, pattern recognition, colour vision, mental rotation, Big Five personality, EQ, focus and typing speed. No account needed."
  },
  "tests/iq": {
   "title": "IQ Test &#8212; Free Online Test | CoreSkillAI",
-  "desc": "Measure your cognitive reasoning with 40 questions across 3 domains. Free, instant results with global percentile comparison. No signup required."
+  "desc": "Measure your cognitive reasoning with 36 matrix questions. Free, instant results with global percentile comparison. No signup required."
  },
  "tests/reaction-time": {
   "title": "Reaction Time Test &#8212; Free Online Test | CoreSkillAI",
@@ -58,5 +58,9 @@
  "tests/typing": {
   "title": "Typing Speed Test &#8212; Free Online Test | CoreSkillAI",
   "desc": "How fast do you type? Find out your WPM and global ranking. Free, instant results with global percentile comparison. No signup required."
+ },
+ "tests/rotation": {
+  "title": "Mental Rotation Test &#8212; Free Spatial Reasoning Test | CoreSkillAI",
+  "desc": "Turn shapes in your mind: 20 procedurally generated spatial puzzles, no reading required. Free, instant results with a confidence interval."
  }
 }

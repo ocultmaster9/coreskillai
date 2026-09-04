@@ -18,7 +18,7 @@ const { JSDOM, VirtualConsole } = require('jsdom');
 
 const ROOT = path.resolve(__dirname, '..');
 const TESTS = ['iq', 'reaction-time', 'memory', 'pattern', 'color-vision',
-               'big-five', 'eq', 'focus', 'typing'];
+               'big-five', 'eq', 'focus', 'typing', 'rotation'];
 
 // Scripts that must never appear in the jsdom run: they reach the network,
 // and a failed ad/analytics fetch is not a test failure.
@@ -281,7 +281,8 @@ function run(langs) {
         if (spec) { try { firstQuestion(r, spec); } catch (e) {} }
         else {
           const api = r.dom.window[({iq:'IQTest','reaction-time':'RTTest',memory:'MemTest',
-            pattern:'PatTest','color-vision':'CVTest',focus:'FocusTest',typing:'TypTest'})[test]];
+            pattern:'PatTest','color-vision':'CVTest',focus:'FocusTest',typing:'TypTest',
+            rotation:'RotTest'})[test]];
           if (api && typeof api.start === 'function') { try { api.start(); } catch (e) {} }
         }
         const leaks = latinLeaks(r.doc);
@@ -311,7 +312,7 @@ function run(langs) {
       console.log(`FAIL ${lang}`);
       bad.forEach(b => console.log('       ' + b));
     } else {
-      console.log(`ok   ${lang}  ${TESTS.length}/9 tests render`);
+      console.log(`ok   ${lang}  ${TESTS.length}/${TESTS.length} tests render`);
     }
   }
 
