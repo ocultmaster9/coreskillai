@@ -33,10 +33,14 @@ const I18n = {
   // silent breakage. Derive it from the translations file instead.
   // Languages with real pages. Translations are loaded per-page (only en +
   // the current language), so Object.keys(TRANSLATIONS) is NOT the list.
+  // Every market in the registry has its full set of pages on disk, so every
+  // one is offered in the selector. `ready` in languages.js no longer hides a
+  // language from visitors: it only decides INDEXING (hreflang, sitemap and the
+  // noindex tag, all written by _build/refresh.py). Tying the two together is
+  // what made 33 languages vanish from the dropdown on 2026-10-10.
   codes() {
-    const reg = window.LANGS || {};
-    const ready = Object.keys(reg).filter(c => reg[c].ready);
-    return ready.length ? ready : Object.keys(window.TRANSLATIONS || { en: 1 });
+    const all = Object.keys(window.LANGS || {});
+    return all.length ? all : Object.keys(window.TRANSLATIONS || { en: 1 });
   },
   prefixes() { return this.codes().filter(c => c !== 'en'); },
   // Every market that has pages on disk, indexed or not. A noindex market keeps

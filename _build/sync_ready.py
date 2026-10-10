@@ -1,19 +1,20 @@
 # -*- coding: utf-8 -*-
 """`ready: true` is derived from the audit, not set by hand.
 
-A market is offered in the language selector, listed in hreflang and included in
-the sitemap ONLY when it is complete. Half-translated markets stay on disk and
-keep building, but no visitor is sent to a page that is partly English.
+A market is listed in hreflang and included in the sitemap ONLY when it is
+complete. Incomplete markets stay on disk, stay in the language selector and
+keep building, but are noindex.
 """
 import io, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import audit as A
 
-# Only these markets are offered in the selector, listed in hreflang and put in the
-# sitemap. Every other market stays on disk and keeps working, but is set to noindex
-# (refresh.py does that for any market that is not ready). To index another market,
-# add its code here once its pages pass the audit.
-INDEXED = ['en', 'es', 'pt', 'fr', 'de', 'it', 'ro', 'pl', 'ru', 'tr']
+# `ready: true` = INDEXED: listed in hreflang, in the sitemap, and without the
+# noindex tag. It is set for every market that passes the audit (all pages, native
+# titles, the full long-form article on every test page). A market that fails the
+# audit stays in the language selector and keeps working, but is noindex until its
+# content is complete. There is deliberately no hand-kept allowlist here: a fixed
+# list of ten hid 23 complete markets from Google.
 
 def complete_langs():
     rows, _ = A.audit()
@@ -27,7 +28,7 @@ def complete_langs():
     return out
 
 def sync():
-    done = set(complete_langs()) & set(INDEXED)
+    done = set(complete_langs())
     p = 'js/languages.js'; s = io.open(p, encoding='utf-8').read()
     def mark(m):
         code, name, d = m.group(1), m.group(2), m.group(3)
