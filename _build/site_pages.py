@@ -206,6 +206,16 @@ PRIVACY_ROTATION = {
     'uk': ('тест інтелекту або тест закономірностей, ми', 'тест інтелекту, тест закономірностей або тест на уявне обертання, ми'),
     'vi': ('bài kiểm tra trí tuệ hoặc bài kiểm tra quy luật, chúng', 'bài kiểm tra trí tuệ, bài kiểm tra quy luật hoặc bài kiểm tra xoay hình trong đầu, chúng'),
     'zh': ('当你完成智力测验或规律测验时', '当你完成智力测验、规律测验或心理旋转测验时'),
+    'af': ('die IK- of Patroontoets voltooi', 'die IK-toets, die Patroontoets of die Mentale Rotasietoets voltooi'),
+    'ar': ('اختبار الذكاء أو اختبار الأنماط نسجّل', 'اختبار الذكاء أو اختبار الأنماط أو اختبار التدوير الذهني نسجّل'),
+    'el': ('το τεστ νοημοσύνης ή μοτίβων, καταγράφουμε', 'το τεστ νοημοσύνης, μοτίβων ή νοερής περιστροφής, καταγράφουμε'),
+    'fa': ('آزمون هوش یا آزمون الگو را تمام', 'آزمون هوش، آزمون الگو یا آزمون چرخش ذهنی را تمام'),
+    'he': ('את מבחן האינטליגנציה או מבחן התבניות, אנחנו', 'את מבחן האינטליגנציה, מבחן התבניות או מבחן הסיבוב המנטלי, אנחנו'),
+    'hu': ('az IQ- vagy mintatesztet, rögzítjük', 'az IQ-tesztet, a mintatesztet vagy a mentális forgatás tesztjét, rögzítjük'),
+    'ko': ('지능 검사나 패턴 검사를 마치면', '지능 검사, 패턴 검사 또는 심적 회전 검사를 마치면'),
+    'mk': ('тестот за интелигенција или тестот за обрасци, забележуваме', 'тестот за интелигенција, тестот за обрасци или тестот за ментална ротација, забележуваме'),
+    'sq': ('testin e inteligjencës ose atë të modeleve, regjistrojmë', 'testin e inteligjencës, atë të modeleve ose atë të rrotullimit mendor, regjistrojmë'),
+    'th': ('แบบทดสอบเชาวน์ปัญญาหรือแบบทดสอบรูปแบบจนจบ', 'แบบทดสอบเชาวน์ปัญญา แบบทดสอบรูปแบบ หรือแบบทดสอบการหมุนภาพในใจจนจบ'),
 }
 
 def fix_translated_privacy():
