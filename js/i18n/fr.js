@@ -194,7 +194,7 @@ window.TRANSLATIONS.fr = {
     mem_how_title:"Comment Ça Marche",
     mem_how1:"Une séquence de chiffres s'affichera à l'écran.",
     mem_how2:"Quand elle disparaît, tapez la séquence exactement telle qu'elle était.",
-    mem_how3:"Chaque bonne réponse ajoute un chiffre. Le test se termine à la première erreur.",
+    mem_how3:"Chaque bonne réponse ajoute un chiffre. Vous avez deux essais à chaque longueur ; le test se termine quand vous échouez aux deux.",
     mem_start_desc:"Combien de chiffres pouvez-vous garder en mémoire de travail ?",
     mem_ready:"Mémorisez cette séquence :", mem_disappears:"Disparaît dans 3 secondes…",
     mem_type:"Tapez la séquence :", mem_confirm:"Confirmer",

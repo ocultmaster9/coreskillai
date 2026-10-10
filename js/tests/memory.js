@@ -31,7 +31,7 @@ function render(){
     <ul>
       <li>${_t('mem_how1','A sequence of digits will flash on screen.')}</li>
       <li>${_t('mem_how2','When it disappears, type the sequence exactly as shown.')}</li>
-      <li>${_t('mem_how3','Each correct answer adds one more digit. The test ends when you make a mistake.')}</li>
+      <li>${_t('mem_how3','Each correct answer adds one more digit. You get two tries at each length; the test ends when you miss both.')}</li>
     </ul>
   </div>
   <div class="test-card-ui">

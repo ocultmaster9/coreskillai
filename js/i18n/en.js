@@ -194,7 +194,7 @@ window.TRANSLATIONS.en = {
     mem_how_title:"How It Works",
     mem_how1:"A sequence of digits will flash on screen.",
     mem_how2:"When it disappears, type the sequence exactly as shown.",
-    mem_how3:"Each correct answer adds one more digit. Test ends on your first mistake.",
+    mem_how3:"Each correct answer adds one more digit. You get two tries at each length; the test ends when you miss both.",
     mem_start_desc:"How many digits can you hold in working memory?",
     mem_ready:"Memorize this sequence:", mem_disappears:"Disappears in 3 seconds…",
     mem_type:"Type the sequence:", mem_confirm:"Confirm",

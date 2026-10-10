@@ -91,3 +91,17 @@ and the served translations have no doubled `%`.
 - `tests/rotation` is in `tools.PAGES` but not in `audit.TESTS` or in
   `verify_tests.js`, so the mental-rotation page is outside the science-section
   and per-test render checks.
+
+## English-only editorial pages (blog, reference pages, methodology)
+
+Source: `_build/guides_data.py` (metadata) + `_build/content/guides/<slug>.html` (body).
+Render: `python3 _build/guides.py` (writes blog/, the reference pages and methodology/, adds
+the Blog/Methodology links, and the "related guides" block on each English test page).
+`_build/site_pages.py` rewrites the English About and Contact pages and removes the stale
+claims from translated About pages. `_build/refresh.py` adds these URLs to the sitemap.
+
+Indexed markets are limited by `INDEXED` in `_build/sync_ready.py`. Every other market stays
+on disk, works for visitors, is `noindex`, and is left out of the sitemap and hreflang.
+
+Build order: sync_ready -> fix_rotation_header -> prerender ready markets -> guides.py ->
+site_pages.py -> refresh.py -> check_untranslated, check_prerender, check_js_english (all exit 0).

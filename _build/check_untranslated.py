@@ -41,6 +41,11 @@ ALLOW = re.compile(
 STRIP = re.compile(r'(?is)<(script|style|head|select|option|noscript)[^>]*>.*?</\1>')
 # A data-i18n element and everything inside it is by definition translatable.
 I18N = re.compile(r'(?is)<([a-z0-9]+)[^>]*\bdata-i18n=.*?</\1>')
+# A reference list of published papers is cited in its original language on
+# every market, the way any localised article cites an English journal. It is
+# marked up explicitly, <ul class="sources" lang="en">, so this exemption is
+# narrow: only that exact list is skipped, never ordinary body text.
+SOURCES = re.compile(r'(?is)<ul class="sources" lang="en">.*?</ul>')
 
 
 def text_nodes(path, strip_i18n=True):
@@ -55,6 +60,7 @@ def text_nodes(path, strip_i18n=True):
     h = STRIP.sub(' ', h)
     if strip_i18n:
         h = I18N.sub(' ', h)
+        h = SOURCES.sub(' ', h)
     h = re.sub(r'(?s)<!--.*?-->', ' ', h)
     out = []
     for m in re.finditer(r'>([^<>]+)<', h):

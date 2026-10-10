@@ -194,7 +194,7 @@ window.TRANSLATIONS.de = {
     mem_how_title:"Wie Es Funktioniert",
     mem_how1:"Eine Zahlenfolge wird auf dem Bildschirm aufblinken.",
     mem_how2:"Wenn sie verschwindet, gib die Folge genau so ein, wie sie angezeigt wurde.",
-    mem_how3:"Jede richtige Antwort fügt eine weitere Ziffer hinzu. Der Test endet beim ersten Fehler.",
+    mem_how3:"Jede richtige Antwort fügt eine weitere Ziffer hinzu. Pro Länge haben Sie zwei Versuche; der Test endet, wenn beide falsch sind.",
     mem_start_desc:"Wie viele Ziffern kannst du im Arbeitsgedächtnis behalten?",
     mem_ready:"Merke dir diese Folge:", mem_disappears:"Verschwindet in 3 Sekunden…",
     mem_type:"Gib die Folge ein:", mem_confirm:"Bestätigen",

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology: How CoreSkillAI Tests Are Built and Scored</title>
+<meta name="description" content="How each CoreSkillAI test is designed, how scores and percentiles are calculated, what the limits are, and how we handle corrections.">
+<meta property="og:title" content="Methodology: How CoreSkillAI Tests Are Built and Scored">
+<meta property="og:description" content="How each CoreSkillAI test is designed, how scores and percentiles are calculated, what the limits are, and how we handle corrections.">
+<meta property="og:url" content="https://coreskillai.com/methodology/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.coreskillai.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Methodology: How CoreSkillAI Tests Are Built and Scored">
+<meta name="twitter:description" content="How each CoreSkillAI test is designed, how scores and percentiles are calculated, what the limits are, and how we handle corrections.">
+<link rel="canonical" href="https://coreskillai.com/methodology/">
+<link rel="stylesheet" href="/css/main.css?v=5b04a89a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Methodology: How CoreSkillAI Tests Are Built and Scored", "description": "How each CoreSkillAI test is designed, how scores and percentiles are calculated, what the limits are, and how we handle corrections.", "datePublished": "2026-10-10", "dateModified": "2026-10-10", "author": {"@type": "Person", "name": "Eduard-Dragos Condria", "url": "https://coreskillai.com/about/"}, "publisher": {"@type": "Organization", "name": "CoreSkillAI", "url": "https://coreskillai.com/"}, "mainEntityOfPage": "https://coreskillai.com/methodology/", "inLanguage": "en"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://coreskillai.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://coreskillai.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Methodology: How CoreSkillAI Tests Are Built and Scored", "item": "https://coreskillai.com/methodology/"}]}]}</script>
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="CoreSkillAI home">
+      <svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="12" stroke="#6366f1" stroke-width="2"/><circle cx="14" cy="14" r="5" fill="#6366f1"/><line x1="14" y1="2" x2="14" y2="8" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/><line x1="14" y1="20" x2="14" y2="26" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/><line x1="2" y1="14" x2="8" y2="14" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="14" x2="26" y2="14" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/></svg>
+      Core<span>Skill</span>AI
+    </a>
+    <div class="nav-links">
+      <a href="/tests/" data-i18n="nav_tests">Tests</a>
+      <a href="/about/" data-i18n="nav_about">About</a>
+      <a href="/blog/">Blog</a>
+    </div>
+    <div class="nav-right">
+      <select class="nav-lang" id="lang-select" aria-label="Language">
+        <option value="en" lang="en" selected>English</option>
+        <option value="es" lang="es">Español</option>
+        <option value="pt" lang="pt">Português</option>
+        <option value="fr" lang="fr">Français</option>
+        <option value="de" lang="de">Deutsch</option>
+      </select>
+      <button class="theme-btn" id="theme-btn" aria-label="Toggle dark/light mode">🌙</button>
+      <a href="/tests/iq/" class="btn-cta" data-i18n="nav_take">Take a Test</a>
+      <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/tests/" data-i18n="nav_tests">Tests</a>
+  <a href="/about/" data-i18n="nav_about">About</a>
+      <a href="/blog/">Blog</a>
+</div>
+<div class="page">
+<article class="article">
+<div class="crumbs"><a href="/">Home</a> › Methodology</div>
+<h1>Methodology: How CoreSkillAI Tests Are Built and Scored</h1>
+<p class="byline">By <a href="/about/">Eduard-Dragos Condria</a> · Published October 10, 2026 · 7 min read</p>
+<p class="lead">How each CoreSkillAI test is designed, how scores and percentiles are calculated, what the limits are, and how we handle corrections.</p>
+<p>This page explains how the CoreSkillAI tests are designed and scored, what each score can and cannot tell you, how the site is funded, and how to report an error. If a statement on any test page conflicts with this page, tell us and we will fix it.</p>
+
+<h2>Our principles</h2>
+<ul>
+<li><strong>Adapt established instruments, and say so.</strong> Each test is built on a published task or model: matrix reasoning (Raven, Carpenter, Just and Shell), digit span (Wechsler, Miller, Cowan), simple reaction time (Donders), hue arrangement (Farnsworth), the Stroop task, mental rotation (Shepard and Metzler), the four-branch model of emotional intelligence (Mayer and Salovey), and IPIP Big-Five markers (Goldberg).</li>
+<li><strong>Be clear when something is an assumption.</strong> Most of our percentile figures come from a stated statistical model, not from a norm table we collected. Each test page says so.</li>
+<li><strong>Prefer the honest answer to the impressive one.</strong> The IQ test caps scores at 135, shows a confidence interval, and refuses to print a number when performance is at chance level.</li>
+<li><strong>Not clinical.</strong> These are educational and self-exploration tools. They cannot diagnose anything or replace professional assessment.</li>
+</ul>
+
+<h2>The tests at a glance</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Test</th><th>Format</th><th>Score</th><th>Normed on a sample?</th></tr></thead>
+<tbody>
+<tr><td><a href="/tests/iq/">IQ</a></td><td>36 matrix puzzles, six options, 30 minutes</td><td>Guessing-corrected score mapped to the IQ scale (mean 100, SD 15); 95% interval; capped at 135</td><td>No. Stated statistical assumption</td></tr>
+<tr><td><a href="/tests/pattern/">Pattern recognition</a></td><td>16 matrix puzzles, six options</td><td>Guessing-corrected score and approximate percentile</td><td>No</td></tr>
+<tr><td><a href="/tests/rotation/">Mental rotation</a></td><td>20 items, six options (one rotation, five mirror images), 6 minutes</td><td>Guessing-corrected score, approximate percentile</td><td>No</td></tr>
+<tr><td><a href="/tests/memory/">Working memory</a></td><td>Forward digit span, two tries per length</td><td>Longest sequence recalled</td><td>No. Approximate percentile based on typical adult span</td></tr>
+<tr><td><a href="/tests/reaction-time/">Reaction time</a></td><td>12 rounds, random delay</td><td>Median of valid rounds (120–1,000 ms)</td><td>No. Model centred on 261 ms, SD 51 ms</td></tr>
+<tr><td><a href="/tests/focus/">Focus (Stroop)</a></td><td>32 trials, half incongruent</td><td>Interference: median incongruent minus median congruent time, correct trials only</td><td>No. Model centred on 120 ms</td></tr>
+<tr><td><a href="/tests/color-vision/">Colour vision</a></td><td>4 rows of 8 movable hue chips</td><td>Total error score, converted to bands</td><td>No. Screens are not calibrated</td></tr>
+<tr><td><a href="/tests/typing/">Typing</a></td><td>60 seconds, real text</td><td>Net WPM (or characters per minute) and accuracy</td><td>No. Reference curve near 52–55 WPM for Latin scripts</td></tr>
+<tr><td><a href="/tests/big-five/">Big Five</a></td><td>50 IPIP items, 10 per trait</td><td>Raw 10–50 per trait, shown out of 100</td><td>No. Not a percentile</td></tr>
+<tr><td><a href="/tests/eq/">Emotional intelligence</a></td><td>28 self-report statements, 7 per branch</td><td>Branch scores 60–140; overall is their average</td><td>No. Self-rating, not a percentile</td></tr>
+</tbody></table></div>
+
+<h2>How scores are calculated</h2>
+<h3>Correcting for guessing</h3>
+<p>For multiple-choice reasoning items we remove the credit that guessing alone would earn. With six options, a person answering at random gets about one item in six right. We convert your proportion correct as (proportion − 1/6) ÷ (1 − 1/6), floored at zero. If the result is at the level chance produces, the test says it cannot estimate a score.</p>
+<h3>Converting to a scale</h3>
+<p>The corrected proportion is placed on a normal scale under a stated assumption. For the IQ test, that gives a figure with mean 100 and standard deviation 15, which is then limited to the range our short test can support. These conversions are assumptions, not norm tables, and we label them as such.</p>
+<h3>Confidence intervals</h3>
+<p>Every test score has error. For the IQ test we assume a reliability of 0.85 (typical for matrix tests of this length), which gives a standard error of measurement of 15 × √(1 − 0.85) ≈ 5.8 points and a 95% interval of about ±11. This reliability is an assumption until we can estimate it from data.</p>
+<h3>Medians, filters and caps</h3>
+<p>Reaction times and Stroop times are skewed, with a few very slow trials, so we use medians. We drop responses that are too fast to be real reactions (anticipations) and responses so slow that they are lapses. A run is scored only if enough valid trials remain.</p>
+
+<h2>Reference figures we rely on</h2>
+<p>Where we cite a number, it comes from a source named on the page. Examples: about 52 WPM average typing speed (Dhakal et al., 2018, 168,000 participants); about 8% of men and 0.5% of women of Northern European descent with a red-green deficiency (Birch, 2012); a working memory capacity of about four chunks (Cowan, 2001). Our own articles list their sources at the end.</p>
+
+<h2>What data we collect</h2>
+<p>Results are computed in your browser. The IQ, pattern recognition and mental rotation tests can also send anonymous item-level data: which puzzle rules appeared, whether each was answered correctly, timings, the total score, the language and the date. We store no name, email, IP address, cookie or device identifier. Our aim is to use this to estimate item difficulty and reliability, so that the figures in the table above can eventually be measured instead of assumed. See the <a href="/privacy/">privacy policy</a> for the full statement.</p>
+
+<h2>How we write and check content</h2>
+<ul>
+<li>Articles and reference pages are written from published research and cite their sources.</li>
+<li>Numbers are checked against the source before publication. Where we cannot verify a figure, we leave it out.</li>
+<li>When a reader or a source shows us an error, we correct the page and, for substantive changes, note the update.</li>
+<li>Translations of the test pages are produced for each language and checked by automated tests for untranslated text, mixed scripts and missing sections. Languages that do not pass are set to "noindex" and left out of the sitemap until they do.</li>
+</ul>
+
+<h2>Funding and independence</h2>
+<p>CoreSkillAI is free to use and does not require an account. The site is funded by advertising (Google AdSense). Ads are placed by Google and are not related to your test results, and we do not sell personal data. Advertising does not influence what we write or how tests are scored. Page-level analytics are collected with Google Analytics. Details are in the privacy policy.</p>
+
+<h2>Who is responsible</h2>
+<p>The site is built and maintained by <a href="/about/">Eduard-Dragos Condria</a> in Romania. He is a web developer, not a psychologist, which is one reason we cite sources for everything and direct readers to professionals for anything that needs one.</p>
+
+<h2>Known limitations</h2>
+<ul>
+<li>No test here has been standardised on a representative sample of any population.</li>
+<li>Online conditions (screen, device, distractions) add noise, especially for reaction time, colour vision and typing.</li>
+<li>Short tests have wider error than long, professionally administered ones.</li>
+<li>Percentiles are approximate positions on stated models.</li>
+</ul>
+
+<h2>Corrections and contact</h2>
+<p>If you find a factual error, a scoring problem, a translation mistake or an accessibility barrier, please tell us on the <a href="/contact/">contact page</a>. Include the page address and what you think is wrong, and we will look into it.</p>
+
+<h2>Sources</h2>
+<ul class="sources">
+<li>American Educational Research Association, American Psychological Association &amp; National Council on Measurement in Education (2014). <em>Standards for Educational and Psychological Testing</em>.</li>
+<li>Carpenter, P. A., Just, M. A., &amp; Shell, P. (1990). What one intelligence test measures. <em>Psychological Review</em>, 97(3), 404–431.</li>
+<li>Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. <em>Psychological Assessment</em>, 4(1), 26–42.</li>
+<li>Mayer, J. D., &amp; Salovey, P. (1997). What is emotional intelligence? In P. Salovey &amp; D. Sluyter (Eds.), <em>Emotional Development and Emotional Intelligence</em>.</li>
+<li>Dhakal, V., Feit, A. M., Kristensson, P. O., &amp; Oulasvirta, A. (2018). Observations on typing from 136 million keystrokes. <em>CHI 2018</em>.</li>
+<li>Birch, J. (2012). Worldwide prevalence of red-green color deficiency. <em>Journal of the Optical Society of America A</em>, 29(3), 313–320.</li>
+<li>Cowan, N. (2001). The magical number 4 in short-term memory. <em>Behavioral and Brain Sciences</em>, 24(1), 87–114.</li>
+</ul>
+
+<div class="related"><h2>Related reading and tests</h2><ul></ul></div>
+<div class="author-box"><strong>About the author.</strong> Eduard-Dragos Condria builds and maintains CoreSkillAI from Romania. He is a web developer, not a clinician. Articles are written from published research, cited at the end, and corrected when a reader or a source shows an error. See the <a href="/methodology/">methodology page</a> and <a href="/about/">about page</a>. To report a mistake, use the <a href="/contact/">contact page</a>. Nothing on this site is medical or psychological advice.</div>
+</article>
+</div>
+<div class="ad-wrap">
+  <div>
+    <div class="ad-label" data-i18n="ad_label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5798786176755576" data-ad-slot="6610588103" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Core<span>Skill</span>AI</div>
+      <p data-i18n="footer_tagline">Free scientific tests for curious minds worldwide.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer_tests">Tests</h4>
+      <ul><li><a href="/tests/iq/" data-i18n="iq_title">IQ Test</a></li><li><a href="/tests/reaction-time/" data-i18n="rt_title">Reaction Time Test</a></li><li><a href="/tests/memory/" data-i18n="mem_title">Working Memory Test</a></li><li><a href="/tests/pattern/" data-i18n="pat_title">Pattern Recognition Test</a></li><li><a href="/tests/color-vision/" data-i18n="cv_title">Color Vision Test</a></li></ul>
+    </div>
+    <div>
+      <h4>&nbsp;</h4>
+      <ul><li><a href="/tests/big-five/" data-i18n="b5_title">Big Five Personality Test</a></li><li><a href="/tests/eq/" data-i18n="eq_title">Emotional Intelligence Test</a></li><li><a href="/tests/focus/" data-i18n="foc_title">Focus &amp; Attention Test</a></li><li><a href="/tests/typing/" data-i18n="typ_title">Typing Speed Test</a></li></ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer_company">Company</h4>
+      <ul>
+        <li><a href="/about/" data-i18n="footer_about">About</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/methodology/">Methodology</a></li>
+        <li><a href="/tests/" data-i18n="nav_tests">Tests</a></li>
+        <li><a href="/privacy/" data-i18n="footer_privacy">Privacy</a></li>
+        <li><a href="/terms/" data-i18n="footer_terms">Terms</a></li>
+        <li><a href="/contact/" data-i18n="footer_contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="footer_copy">© 2026 CoreSkillAI. All rights reserved.</span>
+    <span data-i18n="footer_promise">Research-based • Free forever • No account required</span>
+  </div>
+</footer>
+<script>window.EN_ONLY=true;</script><script src="/js/languages.js?v=e07fd14f"></script><script src="/js/i18n/en.js?v=4297be3b"></script>
+<script src="/js/main.js?v=fc3dc1ec"></script>
+</body></html>

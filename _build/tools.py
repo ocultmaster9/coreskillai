@@ -151,8 +151,13 @@ def add_passages(lang, arr, expect=8):
 SEC = re.compile(r'<section style="max-width:860px[^"]*">.*?</section>', re.S)
 WRAP = '<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65">%s</section>'
 
+# Cited papers keep their original (English) titles in every market. They sit
+# in <ul class="sources" lang="en"> and are left out of the script check, which
+# would otherwise read a correct Russian page as "Latin bleeding into Cyrillic".
+SOURCES = re.compile(r'(?is)<ul class="sources" lang="en">.*?</ul>')
+
 def add_science(lang, articles):
-    mixed_script_guard(lang, list(articles.values()))
+    mixed_script_guard(lang, [SOURCES.sub(' ', v) for v in articles.values()])
     n = 0
     for slug, html in articles.items():
         f = os.path.join('' if lang == 'en' else lang, 'tests', slug, 'index.html')

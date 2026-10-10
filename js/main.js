@@ -39,10 +39,14 @@ const I18n = {
     return ready.length ? ready : Object.keys(window.TRANSLATIONS || { en: 1 });
   },
   prefixes() { return this.codes().filter(c => c !== 'en'); },
+  // Every market that has pages on disk, indexed or not. A noindex market keeps
+  // working for visitors who reach it; only the selector, hreflang and sitemap
+  // are limited to the ready set.
+  allPrefixes() { return Object.keys(window.LANGS || {}).filter(c => c !== 'en'); },
   init() {
     const VALID = this.codes();
     // 1. URL path wins (e.g. /es/tests/ -> 'es')
-    const urlLang = location.pathname.split('/').find(s => this.prefixes().includes(s)) || null;
+    const urlLang = location.pathname.split('/').find(s => this.allPrefixes().includes(s)) || null;
     // 2. window.PAGE_LANG set by template for lang pages
     const pageLang = (window.PAGE_LANG && VALID.includes(window.PAGE_LANG)) ? window.PAGE_LANG : null;
     // 3. The unprefixed URLs ARE the English edition, but they carry no /xx/
@@ -107,8 +111,11 @@ const I18n = {
     localStorage.setItem('csa-lang', lang);
     // Navigate to language-prefixed version of current page
     const parts    = location.pathname.split('/').filter(Boolean);
-    const hasLang  = this.prefixes().includes(parts[0]);
+    const hasLang  = this.allPrefixes().includes(parts[0]);
     const base     = hasLang ? parts.slice(1) : parts;
+    // English-only editorial pages (blog, guides) have no translated twin, so send
+    // the visitor to that market's home page instead of a 404.
+    if (window.EN_ONLY) { localStorage.setItem('csa-lang', lang); location.href = lang === 'en' ? '/' : '/' + lang + '/'; return; }
     const newPath  = lang === 'en'
       ? '/' + (base.length ? base.join('/') + '/' : '')
       : '/' + lang + '/' + (base.length ? base.join('/') + '/' : '');

@@ -230,7 +230,7 @@ window.TRANSLATIONS.sq = {
     mem_how_title:"Si Funksionon",
     mem_how1:"Një varg shifrash do të shfaqet në ekran.",
     mem_how2:"Kur të zhduket, shkruani vargun saktësisht siç u tregua.",
-    mem_how3:"Çdo përgjigje e saktë shton edhe një shifër. Testi mbaron me gabimin tuaj të parë.",
+    mem_how3:"Çdo përgjigje e saktë shton edhe një shifër. Keni dy përpjekje për çdo gjatësi; testi mbaron kur gaboni në të dyja.",
     mem_start_desc:"Sa shifra mund të mbani në kujtesën e punës?",
     mem_ready:"Mësoni përmendsh këtë varg:",
     mem_disappears:"Zhduket për 3 sekonda…",

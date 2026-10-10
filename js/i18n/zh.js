@@ -230,7 +230,7 @@ window.TRANSLATIONS.zh = {
     mem_how_title:"测试方式",
     mem_how1:"屏幕上会短暂闪现一串数字。",
     mem_how2:"数字消失后，请按原样准确输入。",
-    mem_how3:"每答对一次就增加一位数字，答错一次即结束。",
+    mem_how3:"每答对一次就增加一位数字。每个长度有两次机会，两次都答错时测试结束。",
     mem_start_desc:"你的工作记忆能装下多少位数字",
     mem_ready:"记住这串数字",
     mem_disappears:"三秒后消失…",

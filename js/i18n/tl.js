@@ -230,7 +230,7 @@ window.TRANSLATIONS.tl = {
     mem_how_title:"Paano Ito Gumagana",
     mem_how1:"May seryeng digit na kikislap sa screen.",
     mem_how2:"Kapag nawala ito, i-type ang serye nang eksakto gaya ng ipinakita.",
-    mem_how3:"Bawat tamang sagot ay nagdadagdag ng isang digit. Nagtatapos ang pagsusulit sa unang mali.",
+    mem_how3:"Bawat tamang sagot ay nagdadagdag ng isang digit. May dalawang subok ka sa bawat haba; nagtatapos ang pagsusulit kapag mali ang pareho.",
     mem_start_desc:"Ilang digit ang kaya mong panatilihin sa working memory?",
     mem_ready:"Isaulo ang seryeng ito:",
     mem_disappears:"Mawawala sa loob ng 3 segundo…",

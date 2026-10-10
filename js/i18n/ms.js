@@ -230,7 +230,7 @@ window.TRANSLATIONS.ms = {
     mem_how_title:"Cara Ia Berfungsi",
     mem_how1:"Satu siri digit akan berkelip pada skrin.",
     mem_how2:"Apabila ia hilang, taip siri itu tepat seperti yang ditunjukkan.",
-    mem_how3:"Setiap jawapan betul menambah satu digit lagi. Ujian tamat pada kesilapan pertama anda.",
+    mem_how3:"Setiap jawapan betul menambah satu digit lagi. Anda ada dua cubaan bagi setiap panjang; ujian tamat apabila kedua-duanya salah.",
     mem_start_desc:"Berapa banyak digit yang boleh anda simpan dalam memori kerja?",
     mem_ready:"Hafal siri ini:",
     mem_disappears:"Hilang dalam 3 saat…",

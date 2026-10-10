@@ -230,7 +230,7 @@ window.TRANSLATIONS.af = {
     mem_how_title:"Hoe Dit Werk",
     mem_how1:"'n Reeks syfers sal op die skerm flits.",
     mem_how2:"Wanneer dit verdwyn, tik die reeks presies soos gewys.",
-    mem_how3:"Elke korrekte antwoord voeg nog een syfer by. Die toets eindig by jou eerste fout.",
+    mem_how3:"Elke korrekte antwoord voeg nog een syfer by. Jy kry twee kanse by elke lengte; die toets eindig wanneer jy albei mis.",
     mem_start_desc:"Hoeveel syfers kan jy in jou werkgeheue hou?",
     mem_ready:"Memoriseer hierdie reeks:",
     mem_disappears:"Verdwyn oor 3 sekondes…",

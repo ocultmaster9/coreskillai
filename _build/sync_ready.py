@@ -9,6 +9,12 @@ import io, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import audit as A
 
+# Only these markets are offered in the selector, listed in hreflang and put in the
+# sitemap. Every other market stays on disk and keeps working, but is set to noindex
+# (refresh.py does that for any market that is not ready). To index another market,
+# add its code here once its pages pass the audit.
+INDEXED = ['en', 'es', 'pt', 'fr', 'de', 'it', 'ro', 'pl', 'ru', 'tr']
+
 def complete_langs():
     rows, _ = A.audit()
     out = []
@@ -21,7 +27,7 @@ def complete_langs():
     return out
 
 def sync():
-    done = set(complete_langs())
+    done = set(complete_langs()) & set(INDEXED)
     p = 'js/languages.js'; s = io.open(p, encoding='utf-8').read()
     def mark(m):
         code, name, d = m.group(1), m.group(2), m.group(3)

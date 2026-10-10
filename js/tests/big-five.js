@@ -2269,8 +2269,12 @@ const TRAIT_INFO={
 const TRAIT_ORDER=['O','C','E','A','N'];
 let current=0, answers={};
 
-function pct(raw){ // raw 10-50 per trait → percentile (based on normative data)
-  const t=(raw-10)/40; return Math.round(t*94+3);
+// raw 10-50 per trait -> 0-100 position on the answer scale.
+// This used to be labelled a "percentile" "based on normative data". There is
+// no norm sample behind it - it is a linear rescale of the raw score - so it is
+// shown as a score out of 100, never as a comparison with other people.
+function pct(raw){
+  return Math.round((raw-10)/40*100);
 }
 
 function renderShell(){
@@ -2340,7 +2344,7 @@ function showResults(){
     return `<div class="trait-bar-item">
       <div class="trait-bar-top">
         <span class="trait-name" style="color:${info.color}">${traitName(t)}</span>
-        <span class="trait-pct">${(window.ordinal?window.ordinal(p):p+'th')} ${_t('label_percentile',"Percentile")}</span>
+        <span class="trait-pct">${p}/100</span>
       </div>
       <div class="trait-bar-track"><div class="trait-bar-fill" style="width:${p}%;background:${info.color}"></div></div>
       <p style="font-size:.78rem;color:var(--text-2);margin-top:6px;line-height:1.5">${desc}</p>
@@ -2436,7 +2440,7 @@ window.B5Test={
   reset(){answers={};current=0;renderShell();},
   copy(){
     const r=window._b5Result;if(!r)return;
-    const txt=TRAIT_ORDER.map(t=>`${_t('b5_'+t.toLowerCase(),TRAIT_INFO[t].name)}: ${r.pcts[t]}%`).join(' | ');
+    const txt=TRAIT_ORDER.map(t=>`${_t('b5_'+t.toLowerCase(),TRAIT_INFO[t].name)}: ${r.pcts[t]}/100`).join(' | ');
     navigator.clipboard?.writeText(`Big Five: ${txt} 🪄 Test yours: coreskillai.com`);
   },
   tweet(){

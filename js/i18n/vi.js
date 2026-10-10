@@ -230,7 +230,7 @@ window.TRANSLATIONS.vi = {
     mem_how_title:"Cách thức hoạt động",
     mem_how1:"Một dãy chữ số sẽ hiện lên màn hình.",
     mem_how2:"Khi nó biến mất, hãy gõ lại chính xác dãy số đó.",
-    mem_how3:"Mỗi câu đúng sẽ thêm một chữ số. Bài kết thúc ở lỗi đầu tiên.",
+    mem_how3:"Mỗi câu đúng sẽ thêm một chữ số. Mỗi độ dài có hai lượt thử; bài kết thúc khi bạn sai cả hai.",
     mem_start_desc:"Bạn có thể giữ bao nhiêu chữ số trong trí nhớ làm việc?",
     mem_ready:"Ghi nhớ dãy số này:",
     mem_disappears:"Biến mất sau 3 giây…",

@@ -32,6 +32,12 @@ def main():
             if not os.path.isfile(f): continue
             body.append('  <url>\n    <loc>%s</loc>\n    <changefreq>monthly</changefreq>\n    <priority>%s</priority>\n  </url>'
                         % (url_for(lg, pg), '1.0' if pg == 'home' else ('0.9' if pg.startswith('tests') else '0.5')))
+    try:
+        from guides_data import extra_urls
+        for url, prio in extra_urls():
+            body.append('  <url>\n    <loc>%s</loc>\n    <changefreq>monthly</changefreq>\n    <priority>%s</priority>\n  </url>' % (url, prio))
+    except ImportError:
+        pass
     io.open('sitemap.xml', 'w', encoding='utf-8', newline='\n').write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "\n".join(body) + '\n</urlset>\n')

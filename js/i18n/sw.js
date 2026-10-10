@@ -230,7 +230,7 @@ window.TRANSLATIONS.sw = {
     mem_how_title:"Jinsi Inavyofanya Kazi",
     mem_how1:"Mfululizo wa tarakimu utaonekana kwenye skrini.",
     mem_how2:"Ukitoweka, andika mfululizo huo kama ulivyoonyeshwa hasa.",
-    mem_how3:"Kila jibu sahihi huongeza tarakimu moja zaidi. Jaribio linaisha kwa kosa lako la kwanza.",
+    mem_how3:"Kila jibu sahihi huongeza tarakimu moja zaidi. Una majaribio mawili kwa kila urefu; jaribio linaisha ukikosea yote mawili.",
     mem_start_desc:"Ni tarakimu ngapi unaweza kuhifadhi katika kumbukumbu ya kazi?",
     mem_ready:"Kariri mfululizo huu:",
     mem_disappears:"Unatoweka baada ya sekunde 3…",

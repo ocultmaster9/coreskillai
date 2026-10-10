@@ -194,7 +194,7 @@ window.TRANSLATIONS.es = {
     mem_how_title:"Cómo Funciona",
     mem_how1:"Una secuencia de dígitos parpadeará en pantalla.",
     mem_how2:"Cuando desaparezca, escribe la secuencia exactamente como se mostró.",
-    mem_how3:"Cada respuesta correcta agrega un dígito más. El test termina con el primer error.",
+    mem_how3:"Cada respuesta correcta agrega un dígito más. Tienes dos intentos en cada longitud; el test termina cuando fallas ambos.",
     mem_start_desc:"¿Cuántos dígitos puedes mantener en la memoria de trabajo?",
     mem_ready:"Memoriza esta secuencia:", mem_disappears:"Desaparece en 3 segundos…",
     mem_type:"Escribe la secuencia:", mem_confirm:"Confirmar",

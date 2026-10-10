@@ -1328,10 +1328,12 @@ function scoreToEQ(raw){
   // Map 7-35 → EQ component score 60-140
   const t=(raw-7)/28; return Math.round(60+t*80);
 }
-function eqPct(eqScore){
-  // EQ 100 = 50th percentile; SD~15
-  const z=(eqScore-100)/15;
-  return Math.max(1,Math.min(99,Math.round(normalCDF(z)*100)));
+// Position of a 60-140 score on its own scale, 0-100, for the ring and bars.
+// This used to be a percentile off an assumed mean of 100 and SD of 15,
+// printed as "Better than X% of people". No population sample stands behind
+// this self-report questionnaire, so that comparison was not true and is gone.
+function scalePos(eqScore){
+  return Math.max(0,Math.min(100,Math.round((eqScore-60)/80*100)));
 }
 function normalCDF(z){
   const a=[0.319381530,-0.356563782,1.781477937,-1.821255978,1.330274429];
@@ -1395,12 +1397,12 @@ function showResults(){
   const eqScores={};
   ORDER.forEach(b=>{ eqScores[b]=scoreToEQ(raw[b]); });
   const totalEQ=Math.round(ORDER.reduce((s,b)=>s+eqScores[b],0)/ORDER.length);
-  const p=eqPct(totalEQ);
+  const p=scalePos(totalEQ);
   const {text,color}=label(totalEQ);
   const circ=2*Math.PI*55;
 
   const bars=ORDER.map(b=>{
-    const info=BRANCHES[b]; const eq=eqScores[b]; const bp=eqPct(eq);
+    const info=BRANCHES[b]; const eq=eqScores[b]; const bp=scalePos(eq);
     const bk='eq_b_'+b.toLowerCase();
     const bname=_t(bk,info.name), bdesc=_t(bk+'_desc',info.desc);
     return `<div class="trait-bar-item">
@@ -1424,10 +1426,8 @@ function showResults(){
     <div class="result-info">
       <h2>${text}</h2>
       <p class="result-desc">${totalEQ>=115?_t('eq_res_high',"Your emotional intelligence is genuinely high. You read, use and manage emotions with exceptional skill — a strong predictor of relationship quality and teamwork."):totalEQ>=95?_t('eq_res_mid',"Your EQ is solid and functional. You navigate emotions well in most situations, with room to deepen specific dimensions."):_t('eq_res_low',"Your EQ has room to grow. Emotional intelligence is one of the most trainable skills there is — labelling feelings precisely and deliberate practice both show measurable gains.")}</p>
-      <div class="result-percentile" style="background:${color}22;color:${color}">${_t('percentile_prefix',"Better than")} ${p}% ${_t('percentile_suffix',"of people")}</div>
     </div>
   </div>
-  <div class="bell-curve-wrap"><canvas id="eq-bell" style="width:100%;display:block"></canvas></div>
   <div class="trait-bars" style="margin-top:20px">${bars}</div>
   <div class="result-breakdown" style="margin-top:20px">
     ${ORDER.map(b=>`<div class="breakdown-item"><div class="b-label">${_t('eq_b_'+b.toLowerCase(),BRANCHES[b].name)}</div><div class="b-val" style="color:${BRANCHES[b].color}">${eqScores[b]}</div></div>`).join('')}
@@ -1444,7 +1444,6 @@ function showResults(){
   ring.style.stroke=color;ring.setAttribute('stroke-dasharray',circ);ring.setAttribute('stroke-dashoffset',circ);
   setTimeout(()=>{ring.style.transition='stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)';ring.setAttribute('stroke-dashoffset',circ*(1-p/100));},100);
   setTimeout(()=>document.querySelectorAll('.trait-bar-fill').forEach(b=>{const w=b.style.width;b.style.width='0';setTimeout(()=>{b.style.transition='width 1s cubic-bezier(.4,0,.2,1)';b.style.width=w;},50);}),100);
-  requestAnimationFrame(()=>window.drawBellCurve?.('eq-bell',p,color));
 }
 
 window.EQTest={
@@ -1455,8 +1454,8 @@ window.EQTest={
     setTimeout(()=>{ current++; if(current>=ITEMS.length) showResults(); else renderQ(); },280);
   },
   reset(){answers={};current=0;renderShell();},
-  copy(){const r=window._eqResult;if(!r)return;const t=window.shareText('eq_result_label', r.totalEQ, r.text, r.p);navigator.clipboard?.writeText(t);},
-  tweet(){const r=window._eqResult;if(!r)return;const t=window.shareText('eq_result_label', r.totalEQ, r.text, r.p);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
+  copy(){const r=window._eqResult;if(!r)return;const t=window.shareText('eq_result_label', r.totalEQ, r.text, null);navigator.clipboard?.writeText(t);},
+  tweet(){const r=window._eqResult;if(!r)return;const t=window.shareText('eq_result_label', r.totalEQ, r.text, null);window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');}
 };
 document.addEventListener('DOMContentLoaded',renderShell);
 })();
