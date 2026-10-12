@@ -152,7 +152,7 @@ window.TRANSLATIONS.tr = {
     stat_tests:"Tamamlanan test",
     stat_countries:"Ülke",
     stat_free:"Ücretsiz test",
-    stat_anon:"% Anonim",
+    stat_anon:"% ücretsiz",
     how_title:"Nasıl çalışır",
     how_sub:"Yeteneklerinizi keşfetmek için üç basit adım",
     step1_title:"Bir test seçin",

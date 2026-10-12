@@ -152,7 +152,7 @@ window.TRANSLATIONS.el = {
     stat_tests:"Τεστ που ολοκληρώθηκαν",
     stat_countries:"Χώρες",
     stat_free:"Δωρεάν τεστ",
-    stat_anon:"% Ανώνυμα",
+    stat_anon:"% δωρεάν",
     how_title:"Πώς λειτουργεί",
     how_sub:"Τρία απλά βήματα για να ανακαλύψετε τις ικανότητές σας",
     step1_title:"Επιλέξτε τεστ",

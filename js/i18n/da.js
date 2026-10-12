@@ -152,7 +152,7 @@ window.TRANSLATIONS.da = {
     stat_tests:"Gennemførte tests",
     stat_countries:"Lande",
     stat_free:"Gratis tests",
-    stat_anon:"% Anonymt",
+    stat_anon:"% gratis",
     how_title:"Sådan virker det",
     how_sub:"Tre enkle trin til at opdage dine evner",
     step1_title:"Vælg en test",

@@ -145,7 +145,7 @@ window.TRANSLATIONS.en = {
     hero_title:"Discover What Your Brain Can Actually Do",
     hero_sub:"10 free tests built on published research. Clear results in minutes, in 43 languages.",
     btn_iq:"Take IQ Test Free", btn_start:"Start Testing", btn_view_all:"View All Tests",
-    stat_tests:"Tests Completed", stat_countries:"Countries", stat_free:"Free Tests", stat_anon:"% Anonymous",
+    stat_tests:"Tests Completed", stat_countries:"Countries", stat_free:"Free Tests", stat_anon:"% Free",
     how_title:"How It Works", how_sub:"Three simple steps to discover your abilities",
     step1_title:"Pick a Test", step1_desc:"Choose from 10 scientifically-backed cognitive and personality assessments.",
     step2_title:"Complete It", step2_desc:"Follow the instructions with full focus. Most tests take 3–7 minutes.",

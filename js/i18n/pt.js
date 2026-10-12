@@ -145,7 +145,7 @@ window.TRANSLATIONS.pt = {
     hero_title:"Descubra o que seu cérebro é realmente capaz de fazer",
     hero_sub:"10 testes gratuitos construídos sobre investigação publicada. Resultados claros em minutos, em 43 línguas.",
     btn_iq:"Fazer Teste de QI Grátis", btn_start:"Começar", btn_view_all:"Ver Todos os Testes",
-    stat_tests:"Testes Realizados", stat_countries:"Países", stat_free:"Testes Grátis", stat_anon:"% Anônimo",
+    stat_tests:"Testes Realizados", stat_countries:"Países", stat_free:"Testes Grátis", stat_anon:"% grátis",
     how_title:"Como Funciona", how_sub:"Três passos simples para descobrir suas habilidades",
     step1_title:"Escolha um Teste", step1_desc:"Escolha entre 10 avaliações cognitivas e de personalidade com base científica.",
     step2_title:"Complete-o", step2_desc:"Siga as instruções com total concentração. A maioria dura 3–7 minutos.",

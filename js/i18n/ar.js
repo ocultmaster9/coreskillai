@@ -152,7 +152,7 @@ window.TRANSLATIONS.ar = {
     stat_tests:"اختبار مكتمل",
     stat_countries:"دولة",
     stat_free:"اختبار مجاني",
-    stat_anon:"% دون هوية",
+    stat_anon:"% مجاني",
     how_title:"كيف يعمل",
     how_sub:"ثلاث خطوات بسيطة لتكتشف قدراتك",
     step1_title:"اختر اختبارًا",

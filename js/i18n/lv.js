@@ -152,7 +152,7 @@ window.TRANSLATIONS.lv = {
     stat_tests:"Veikto testu",
     stat_countries:"Valstis",
     stat_free:"Bezmaksas testi",
-    stat_anon:"% Anonīmi",
+    stat_anon:"% bezmaksas",
     how_title:"Kā tas darbojas",
     how_sub:"Trīs vienkārši soļi, lai uzzinātu savas spējas",
     step1_title:"Izvēlieties testu",

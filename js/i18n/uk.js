@@ -152,7 +152,7 @@ window.TRANSLATIONS.uk = {
     stat_tests:"Пройдено тестів",
     stat_countries:"Країн",
     stat_free:"Безкоштовних тестів",
-    stat_anon:"% Анонімно",
+    stat_anon:"% безкоштовно",
     how_title:"Як це працює",
     how_sub:"Три прості кроки, щоб дізнатися свої здібності",
     step1_title:"Оберіть тест",

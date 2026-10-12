@@ -152,7 +152,7 @@ window.TRANSLATIONS.th = {
     stat_tests:"แบบทดสอบที่ทำเสร็จ",
     stat_countries:"ประเทศ",
     stat_free:"แบบทดสอบฟรี",
-    stat_anon:"% ไม่ระบุตัวตน",
+    stat_anon:"% ฟรี",
     how_title:"วิธีการทำงาน",
     how_sub:"สามขั้นตอนง่ายๆ เพื่อค้นพบความสามารถของคุณ",
     step1_title:"เลือกแบบทดสอบ",

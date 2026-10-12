@@ -145,7 +145,7 @@ window.TRANSLATIONS.fr = {
     hero_title:"Découvrez ce que votre cerveau peut vraiment faire",
     hero_sub:"10 tests gratuits fondés sur des recherches publiées. Des résultats clairs en quelques minutes, en 43 langues.",
     btn_iq:"Passer le Test de QI Gratuitement", btn_start:"Commencer", btn_view_all:"Voir Tous les Tests",
-    stat_tests:"Tests Réalisés", stat_countries:"Pays", stat_free:"Tests Gratuits", stat_anon:"% Anonyme",
+    stat_tests:"Tests Réalisés", stat_countries:"Pays", stat_free:"Tests Gratuits", stat_anon:"% gratuit",
     how_title:"Comment Ça Marche", how_sub:"Trois étapes simples pour découvrir vos capacités",
     step1_title:"Choisissez un Test", step1_desc:"Choisissez parmi 10 évaluations cognitives et de personnalité scientifiquement validées.",
     step2_title:"Complétez-le", step2_desc:"Suivez les instructions avec toute votre concentration. La plupart durent 3–7 minutes.",

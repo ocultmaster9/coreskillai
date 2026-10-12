@@ -152,7 +152,7 @@ window.TRANSLATIONS.af = {
     stat_tests:"Toetse Voltooi",
     stat_countries:"Lande",
     stat_free:"Gratis Toetse",
-    stat_anon:"% Anoniem",
+    stat_anon:"% Gratis",
     how_title:"Hoe Dit Werk",
     how_sub:"Drie eenvoudige stappe om jou vermoëns te ontdek",
     step1_title:"Kies 'n Toets",

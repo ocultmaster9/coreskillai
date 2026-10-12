@@ -152,7 +152,7 @@ window.TRANSLATIONS.ms = {
     stat_tests:"Ujian Disiapkan",
     stat_countries:"Negara",
     stat_free:"Ujian Percuma",
-    stat_anon:"% Tanpa Nama",
+    stat_anon:"% percuma",
     how_title:"Cara Ia Berfungsi",
     how_sub:"Tiga langkah mudah untuk menemui kebolehan anda",
     step1_title:"Pilih Ujian",

@@ -152,7 +152,7 @@ window.TRANSLATIONS.ja = {
     stat_tests:"受験数",
     stat_countries:"か国",
     stat_free:"無料テスト",
-    stat_anon:"％ 匿名",
+    stat_anon:"％ 無料",
     how_title:"テストの進め方",
     how_sub:"3つの手順で自分の力を確かめられます",
     step1_title:"テストを選ぶ",

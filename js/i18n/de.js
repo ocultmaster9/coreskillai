@@ -145,7 +145,7 @@ window.TRANSLATIONS.de = {
     hero_title:"Entdecke, wozu dein Gehirn wirklich fähig ist",
     hero_sub:"10 kostenlose Tests auf Basis publizierter Forschung. Klare Ergebnisse in Minuten, in 43 Sprachen.",
     btn_iq:"Kostenlosen IQ-Test machen", btn_start:"Testen starten", btn_view_all:"Alle Tests anzeigen",
-    stat_tests:"Tests gemacht", stat_countries:"Länder", stat_free:"Kostenlose Tests", stat_anon:"% Anonym",
+    stat_tests:"Tests gemacht", stat_countries:"Länder", stat_free:"Kostenlose Tests", stat_anon:"% Kostenlos",
     how_title:"Wie Es Funktioniert", how_sub:"Drei einfache Schritte, um deine Fähigkeiten zu entdecken",
     step1_title:"Test auswählen", step1_desc:"Wähle aus 10 wissenschaftlich fundierten kognitiven und Persönlichkeitsbewertungen.",
     step2_title:"Abschließen", step2_desc:"Folge den Anweisungen mit voller Konzentration. Die meisten Tests dauern 3–7 Minuten.",

@@ -152,7 +152,7 @@ window.TRANSLATIONS.nl = {
     stat_tests:"Tests voltooid",
     stat_countries:"Landen",
     stat_free:"Gratis tests",
-    stat_anon:"% Anoniem",
+    stat_anon:"% gratis",
     how_title:"Hoe het werkt",
     how_sub:"Drie eenvoudige stappen om je vaardigheden te ontdekken",
     step1_title:"Kies een test",

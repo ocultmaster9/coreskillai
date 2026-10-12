@@ -152,7 +152,7 @@ window.TRANSLATIONS.no = {
     stat_tests:"Fullførte tester",
     stat_countries:"Land",
     stat_free:"Gratis tester",
-    stat_anon:"% Anonymt",
+    stat_anon:"% gratis",
     how_title:"Slik fungerer det",
     how_sub:"Tre enkle steg for å oppdage evnene dine",
     step1_title:"Velg en test",

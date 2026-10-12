@@ -152,7 +152,7 @@ window.TRANSLATIONS.sv = {
     stat_tests:"Genomförda tester",
     stat_countries:"Länder",
     stat_free:"Gratis tester",
-    stat_anon:"% Anonymt",
+    stat_anon:"% gratis",
     how_title:"Så fungerar det",
     how_sub:"Tre enkla steg för att upptäcka dina förmågor",
     step1_title:"Välj ett test",

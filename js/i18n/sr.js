@@ -152,7 +152,7 @@ window.TRANSLATIONS.sr = {
     stat_tests:"Урађених тестова",
     stat_countries:"Земаља",
     stat_free:"Бесплатних тестова",
-    stat_anon:"% Анонимно",
+    stat_anon:"% бесплатно",
     how_title:"Како функционише",
     how_sub:"Три једноставна корака до откривања ваших способности",
     step1_title:"Изаберите тест",

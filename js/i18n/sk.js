@@ -152,7 +152,7 @@ window.TRANSLATIONS.sk = {
     stat_tests:"Dokončených testov",
     stat_countries:"Krajín",
     stat_free:"Bezplatných testov",
-    stat_anon:"% Anonymne",
+    stat_anon:"% zadarmo",
     how_title:"Ako to funguje",
     how_sub:"Tri jednoduché kroky k poznaniu vašich schopností",
     step1_title:"Vyberte test",

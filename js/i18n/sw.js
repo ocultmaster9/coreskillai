@@ -152,7 +152,7 @@ window.TRANSLATIONS.sw = {
     stat_tests:"Majaribio Yaliyokamilika",
     stat_countries:"Nchi",
     stat_free:"Majaribio Bila Malipo",
-    stat_anon:"% Bila Jina",
+    stat_anon:"% bure",
     how_title:"Jinsi Inavyofanya Kazi",
     how_sub:"Hatua tatu rahisi za kugundua uwezo wako",
     step1_title:"Chagua Jaribio",

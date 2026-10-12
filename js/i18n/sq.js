@@ -152,7 +152,7 @@ window.TRANSLATIONS.sq = {
     stat_tests:"Teste të Përfunduara",
     stat_countries:"Vende",
     stat_free:"Teste Falas",
-    stat_anon:"% Anonim",
+    stat_anon:"% falas",
     how_title:"Si Funksionon",
     how_sub:"Tre hapa të thjeshtë për të zbuluar aftësitë tuaja",
     step1_title:"Zgjidh një Test",

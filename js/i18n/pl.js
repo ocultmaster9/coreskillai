@@ -152,7 +152,7 @@ window.TRANSLATIONS.pl = {
     stat_tests:"Ukończone testy",
     stat_countries:"Kraje",
     stat_free:"Darmowe testy",
-    stat_anon:"% Anonimowo",
+    stat_anon:"% za darmo",
     how_title:"Jak to działa",
     how_sub:"Trzy proste kroki, by poznać swoje możliwości",
     step1_title:"Wybierz test",

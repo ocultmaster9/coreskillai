@@ -152,7 +152,7 @@ window.TRANSLATIONS.id = {
     stat_tests:"Tes Selesai",
     stat_countries:"Negara",
     stat_free:"Tes Gratis",
-    stat_anon:"% Anonim",
+    stat_anon:"% gratis",
     how_title:"Cara Kerjanya",
     how_sub:"Tiga langkah sederhana untuk menemukan kemampuan Anda",
     step1_title:"Pilih Tes",

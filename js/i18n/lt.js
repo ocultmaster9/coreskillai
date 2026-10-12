@@ -152,7 +152,7 @@ window.TRANSLATIONS.lt = {
     stat_tests:"Atliktų testų",
     stat_countries:"Šalių",
     stat_free:"Nemokamų testų",
-    stat_anon:"% Anonimiškai",
+    stat_anon:"% nemokama",
     how_title:"Kaip tai veikia",
     how_sub:"Trys paprasti žingsniai sužinoti savo gebėjimus",
     step1_title:"Pasirinkite testą",

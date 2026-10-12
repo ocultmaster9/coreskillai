@@ -152,7 +152,7 @@ window.TRANSLATIONS.he = {
     stat_tests:"מבחנים שהושלמו",
     stat_countries:"מדינות",
     stat_free:"מבחנים בחינם",
-    stat_anon:"% אנונימי",
+    stat_anon:"% חינם",
     how_title:"איך זה עובד",
     how_sub:"שלושה צעדים פשוטים לגילוי היכולות שלכם",
     step1_title:"בחרו מבחן",

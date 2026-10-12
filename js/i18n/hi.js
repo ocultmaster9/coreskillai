@@ -152,7 +152,7 @@ window.TRANSLATIONS.hi = {
     stat_tests:"पूर्ण परीक्षण",
     stat_countries:"देश",
     stat_free:"नि:शुल्क परीक्षण",
-    stat_anon:"% गुमनाम",
+    stat_anon:"% निःशुल्क",
     how_title:"यह कैसे काम करता है",
     how_sub:"अपनी क्षमताएँ जानने के तीन सरल चरण",
     step1_title:"परीक्षण चुनिए",

@@ -152,7 +152,7 @@ window.TRANSLATIONS.vi = {
     stat_tests:"Lượt hoàn thành",
     stat_countries:"Quốc gia",
     stat_free:"Bài miễn phí",
-    stat_anon:"% Ẩn danh",
+    stat_anon:"% miễn phí",
     how_title:"Cách thức hoạt động",
     how_sub:"Ba bước đơn giản để khám phá năng lực của bạn",
     step1_title:"Chọn bài kiểm tra",

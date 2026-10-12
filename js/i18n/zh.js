@@ -152,7 +152,7 @@ window.TRANSLATIONS.zh = {
     stat_tests:"已完成测试",
     stat_countries:"国家",
     stat_free:"免费测试",
-    stat_anon:"% 匿名",
+    stat_anon:"% 免费",
     how_title:"测试方式",
     how_sub:"三个简单步骤，发现你的能力",
     step1_title:"选择测试",

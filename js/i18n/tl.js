@@ -152,7 +152,7 @@ window.TRANSLATIONS.tl = {
     stat_tests:"Natapos na Pagsusulit",
     stat_countries:"Mga Bansa",
     stat_free:"Libreng Pagsusulit",
-    stat_anon:"% Hindi Nagpapakilala",
+    stat_anon:"% libre",
     how_title:"Paano Ito Gumagana",
     how_sub:"Tatlong simpleng hakbang para matuklasan ang iyong kakayahan",
     step1_title:"Pumili ng Pagsusulit",

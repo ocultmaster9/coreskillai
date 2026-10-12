@@ -152,7 +152,7 @@ window.TRANSLATIONS.fi = {
     stat_tests:"Tehtyä testiä",
     stat_countries:"Maata",
     stat_free:"Ilmaista testiä",
-    stat_anon:"% Anonyymi",
+    stat_anon:"% ilmaista",
     how_title:"Näin se toimii",
     how_sub:"Kolme yksinkertaista askelta kykyjesi selvittämiseen",
     step1_title:"Valitse testi",

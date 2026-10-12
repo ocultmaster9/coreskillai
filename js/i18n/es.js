@@ -145,7 +145,7 @@ window.TRANSLATIONS.es = {
     hero_title:"Descubre lo que tu cerebro puede hacer de verdad",
     hero_sub:"10 tests gratuitos basados en investigación publicada. Resultados claros en minutos, en 43 idiomas.",
     btn_iq:"Hacer Test de CI Gratis", btn_start:"Comenzar", btn_view_all:"Ver Todos los Tests",
-    stat_tests:"Tests Realizados", stat_countries:"Países", stat_free:"Tests Gratis", stat_anon:"% Anónimo",
+    stat_tests:"Tests Realizados", stat_countries:"Países", stat_free:"Tests Gratis", stat_anon:"% gratis",
     how_title:"Cómo Funciona", how_sub:"Tres simples pasos para descubrir tus habilidades",
     step1_title:"Elige un Test", step1_desc:"Escoge entre 10 evaluaciones cognitivas y de personalidad respaldadas científicamente.",
     step2_title:"Complétalo", step2_desc:"Sigue las instrucciones con total concentración. La mayoría duran 3–7 minutos.",

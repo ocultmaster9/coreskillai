@@ -152,7 +152,7 @@ window.TRANSLATIONS.ru = {
     stat_tests:"Тестов пройдено",
     stat_countries:"Стран",
     stat_free:"Бесплатных тестов",
-    stat_anon:"% Анонимно",
+    stat_anon:"% бесплатно",
     how_title:"Как это работает",
     how_sub:"Три простых шага, чтобы узнать свои способности",
     step1_title:"Выберите тест",

@@ -152,7 +152,7 @@ window.TRANSLATIONS.bg = {
     stat_tests:"Направени теста",
     stat_countries:"Държави",
     stat_free:"Безплатни теста",
-    stat_anon:"% Анонимно",
+    stat_anon:"% безплатно",
     how_title:"Как работи",
     how_sub:"Три прости стъпки, за да откриете способностите си",
     step1_title:"Изберете тест",

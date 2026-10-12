@@ -152,7 +152,7 @@ window.TRANSLATIONS.fa = {
     stat_tests:"آزمون انجام‌شده",
     stat_countries:"کشور",
     stat_free:"آزمون رایگان",
-    stat_anon:"٪ ناشناس",
+    stat_anon:"% رایگان",
     how_title:"چگونه کار می‌کند",
     how_sub:"سه گام ساده تا شناخت توانایی‌هایتان",
     step1_title:"آزمونی برگزینید",

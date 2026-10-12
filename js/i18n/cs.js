@@ -152,7 +152,7 @@ window.TRANSLATIONS.cs = {
     stat_tests:"Dokončených testů",
     stat_countries:"Zemí",
     stat_free:"Bezplatných testů",
-    stat_anon:"% Anonymně",
+    stat_anon:"% zdarma",
     how_title:"Jak to funguje",
     how_sub:"Tři jednoduché kroky k poznání vašich schopností",
     step1_title:"Vyberte test",

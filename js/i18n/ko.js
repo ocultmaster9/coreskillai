@@ -152,7 +152,7 @@ window.TRANSLATIONS.ko = {
     stat_tests:"완료된 테스트",
     stat_countries:"국가",
     stat_free:"무료 테스트",
-    stat_anon:"% 익명",
+    stat_anon:"% 무료",
     how_title:"진행 방식",
     how_sub:"자신의 능력을 알아보는 간단한 세 단계",
     step1_title:"테스트 선택",

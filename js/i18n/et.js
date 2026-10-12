@@ -152,7 +152,7 @@ window.TRANSLATIONS.et = {
     stat_tests:"Tehtud teste",
     stat_countries:"Riiki",
     stat_free:"Tasuta testi",
-    stat_anon:"% Anonüümne",
+    stat_anon:"% tasuta",
     how_title:"Kuidas see toimib",
     how_sub:"Kolm lihtsat sammu oma võimete teadasaamiseks",
     step1_title:"Valige test",

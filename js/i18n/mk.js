@@ -152,7 +152,7 @@ window.TRANSLATIONS.mk = {
     stat_tests:"Направени тестови",
     stat_countries:"Земји",
     stat_free:"Бесплатни тестови",
-    stat_anon:"% Анонимно",
+    stat_anon:"% бесплатно",
     how_title:"Како функционира",
     how_sub:"Три едноставни чекори до откривање на вашите способности",
     step1_title:"Изберете тест",

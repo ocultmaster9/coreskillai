@@ -152,7 +152,7 @@ window.TRANSLATIONS.hu = {
     stat_tests:"Kitöltött teszt",
     stat_countries:"Ország",
     stat_free:"Ingyenes teszt",
-    stat_anon:"% Névtelen",
+    stat_anon:"% ingyenes",
     how_title:"Hogyan működik",
     how_sub:"Három egyszerű lépés a képességei megismeréséhez",
     step1_title:"Válasszon tesztet",

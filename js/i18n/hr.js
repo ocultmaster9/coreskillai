@@ -152,7 +152,7 @@ window.TRANSLATIONS.hr = {
     stat_tests:"Riješenih testova",
     stat_countries:"Zemalja",
     stat_free:"Besplatnih testova",
-    stat_anon:"% Anonimno",
+    stat_anon:"% besplatno",
     how_title:"Kako funkcionira",
     how_sub:"Tri jednostavna koraka do otkrivanja vaših sposobnosti",
     step1_title:"Odaberite test",

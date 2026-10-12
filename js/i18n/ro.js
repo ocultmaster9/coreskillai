@@ -152,7 +152,7 @@ window.TRANSLATIONS.ro = {
     stat_tests:"Teste finalizate",
     stat_countries:"Țări",
     stat_free:"Teste gratuite",
-    stat_anon:"% Anonim",
+    stat_anon:"% gratuit",
     how_title:"Cum funcționează",
     how_sub:"Trei pași simpli pentru a-ți descoperi abilitățile",
     step1_title:"Alege un test",
