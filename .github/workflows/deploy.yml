@@ -635,6 +635,17 @@ jobs:
           curl -s "$S/js/translations.js" | grep -q 'percentile_suffix:"%' \
             && { echo "FAIL - percentile_suffix carries a % again"; fail=1; } || echo OK
 
+          # Retired URLs of the domain's former tools site must answer 410 Gone,
+          # and live paths that share a prefix must not be caught by the rule.
+          for u in /products/ai-self-improvement /tools/password-generator/ /services /api/capture-email; do
+            chk "retired $u is 410"
+            c=$(curl -s -o /dev/null -w '%{http_code}' "$S$u")
+            [ "$c" = 410 ] && echo OK || { echo "FAIL ($c)"; fail=1; }
+          done
+          chk "/privacy-policy/ 301s to /privacy/"
+          c=$(curl -s -o /dev/null -w '%{http_code}' "$S/privacy-policy/")
+          [ "$c" = 301 ] && echo OK || { echo "FAIL ($c)"; fail=1; }
+
           chk "404 page has no ads"
           curl -s "$S/definitely-not-a-page-xyz" | grep -qE '<ins[^>]*adsbygoogle' && { echo FAIL; fail=1; } || echo OK
 
