@@ -380,7 +380,7 @@ jobs:
           for j in _stage/js/*.js _stage/js/tests/*.js; do
             node --check "$j" || { echo "::error::$j is not valid JavaScript"; fail=1; }
           done
-          for t in iq reaction-time memory pattern color-vision big-five eq focus typing rotation career; do
+          for t in iq reaction-time memory pattern color-vision big-five eq focus typing rotation career hearing; do
             p="_stage/tests/$t/index.html"
             [ -f "$p" ] || { echo "::error::missing test page $t"; fail=1; continue; }
             grep -q "/js/tests/$t.js" "$p" || { echo "::error::$t page does not load /js/tests/$t.js"; fail=1; }
@@ -619,8 +619,8 @@ jobs:
             fail=1
           fi
 
-          # All eleven tests must be reachable and serve their script.
-          for t in iq reaction-time memory pattern color-vision big-five eq focus typing rotation career; do
+          # All twelve tests must be reachable and serve their script.
+          for t in iq reaction-time memory pattern color-vision big-five eq focus typing rotation career hearing; do
             chk "test page /tests/$t/"
             c=$(curl -s -o /dev/null -w '%{http_code}' "$S/tests/$t/")
             j=$(curl -s -o /dev/null -w '%{http_code}' "$S/js/tests/$t.js")

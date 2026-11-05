@@ -86,6 +86,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/af/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/ar/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -167,6 +172,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/ar/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/ar/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -256,6 +266,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/bg/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/cs/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -337,6 +352,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/cs/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/cs/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -426,6 +446,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/da/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/de/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -507,6 +532,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/de/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/de/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -596,6 +626,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/el/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -677,6 +712,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -766,6 +806,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/es/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/et/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -847,6 +892,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/et/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/et/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -936,6 +986,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/fa/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/fi/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1017,6 +1072,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/fi/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/fi/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1106,6 +1166,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/fr/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/he/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1187,6 +1252,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/he/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/he/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1276,6 +1346,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/hi/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/hr/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1357,6 +1432,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/hr/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/hr/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1446,6 +1526,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/hu/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/id/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1527,6 +1612,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/id/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/id/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1616,6 +1706,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/it/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/ja/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1697,6 +1792,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/ja/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/ja/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1786,6 +1886,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/ko/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/lt/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1867,6 +1972,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/lt/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/lt/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1956,6 +2066,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/lv/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/mk/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2037,6 +2152,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/mk/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/mk/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2126,6 +2246,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/ms/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/nl/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2207,6 +2332,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/nl/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/nl/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2296,6 +2426,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/no/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/pl/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2377,6 +2512,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/pl/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/pl/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2466,6 +2606,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/pt/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/ro/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2547,6 +2692,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/ro/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/ro/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2636,6 +2786,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/ru/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/sk/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2717,6 +2872,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/sk/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/sk/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2806,6 +2966,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/sl/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/sq/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2887,6 +3052,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/sq/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/sq/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2976,6 +3146,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/sr/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/sv/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3057,6 +3232,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/sv/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/sv/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3146,6 +3326,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/sw/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/th/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3227,6 +3412,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/th/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/th/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3316,6 +3506,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/tl/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/tr/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3397,6 +3592,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/tr/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/tr/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3486,6 +3686,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/uk/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/vi/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3571,6 +3776,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/vi/tests/hearing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/zh/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3652,6 +3862,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/zh/tests/career/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/zh/tests/hearing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

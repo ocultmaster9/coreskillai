@@ -41,7 +41,7 @@ ALLOW = re.compile(
 # Proper names of instruments, websites and licences, cited verbatim in every
 # market (career test). Exact whole-string matches only - never a word list.
 NAMES = {'O*NET Interest Profiler Short Form', 'My Next Move',
-         'O*NET Tools Developer License', 'CC BY 4.0'}
+         'O*NET Tools Developer License', 'CC BY 4.0', 'dB HL'}
 
 STRIP = re.compile(r'(?is)<(script|style|head|select|option|noscript)[^>]*>.*?</\1>')
 # A data-i18n element and everything inside it is by definition translatable.

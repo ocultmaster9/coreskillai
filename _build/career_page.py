@@ -76,6 +76,7 @@ def main():
             # links to EN pages). Cloned from EN, the markets would link to 404s.
             h = re.sub(r'\n[ \t]*<a href="/%s/blog/">[^<]*</a>' % l, '', h)
             h = re.sub(r'\n[ \t]*<li><a href="/%s/(?:blog|methodology)/">[^<]*</a></li>' % l, '', h)
+            h = h.replace('"url":"https://coreskillai.com/tests/career/"', '"url":"https://coreskillai.com/%s/tests/career/"' % l, 1)
             h = re.sub(r'(<meta property="og:url" content=")https://coreskillai\.com/tests/career/', r'\1https://coreskillai.com/%s/tests/career/' % l, h, count=1)
         io.open(f, 'w', encoding='utf-8', newline='\n').write(h)
         art = io.open(os.path.join(C, '%s/career.html' % l), encoding='utf-8').read().strip().replace('{{SOURCES}}', SRC)
