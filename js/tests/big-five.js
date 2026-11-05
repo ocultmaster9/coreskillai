@@ -2316,7 +2316,8 @@ function renderQ(){
   document.getElementById('b5-body').innerHTML=`
     <p class="q-counter" style="margin-bottom:4px">Q${current+1} / ${ITEMS.length}</p>
     <p class="question-text">"${text}"</p>
-    <div class="likert">${btns}</div>`;
+    <div class="likert">${btns}</div>
+    <p class="likert-scale-note">1 = ${_t('likert_1').replace('\n',' ')} · 5 = ${_t('likert_5').replace('\n',' ')}</p>`;
 }
 
 function calcScores(){

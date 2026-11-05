@@ -710,3 +710,21 @@ footer ul a:hover { color: var(--primary); }
 .contact-form label { display: block; font-weight: 600; margin: 12px 0 4px; color: var(--text); }
 .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-s); background: var(--bg); color: var(--text); font: inherit; }
 @media (max-width: 600px) { .article h1 { font-size: 1.7rem; } }
+
+/* Phone nav: logo + language + theme + CTA + menu measured 495px wide at a
+   360-420px viewport, so the menu button sat off-screen and phone visitors
+   could not open the menu at all. Drop the CTA (the menu links to every test)
+   and tighten the row. */
+@media (max-width: 640px) {
+  .btn-cta { display: none; }
+  .nav-inner { padding: 0 14px; gap: 8px; }
+  .nav-lang { max-width: 128px; }
+}
+@media (max-width: 400px) {
+  .nav-lang { max-width: 92px; padding-right: 22px; }
+  .nav-logo { font-size: 1.05rem; }
+  .nav-logo svg { width: 24px; height: 24px; }
+}
+.share-btn.selected { border-color: var(--primary); color: var(--primary); background: var(--surface-2); }
+.likert-scale-note { display: none; font-size: .8rem; color: var(--text-2); margin-top: 8px; }
+@media (max-width: 640px) { .likert-scale-note { display: block; } }

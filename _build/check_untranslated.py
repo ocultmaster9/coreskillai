@@ -38,6 +38,11 @@ ALLOW = re.compile(
     r'Mayer|Salovey|Caruso|Raven|Flynn|Miller|Cattell|Horn|Carroll|'
     r'Farnsworth|Munsell|Spearman|Cowan|Binet|Goleman|USB|QWERTY|QWERTZ)$', re.I)
 
+# Proper names of instruments, websites and licences, cited verbatim in every
+# market (career test). Exact whole-string matches only - never a word list.
+NAMES = {'O*NET Interest Profiler Short Form', 'My Next Move',
+         'O*NET Tools Developer License', 'CC BY 4.0'}
+
 STRIP = re.compile(r'(?is)<(script|style|head|select|option|noscript)[^>]*>.*?</\1>')
 # A data-i18n element and everything inside it is by definition translatable.
 I18N = re.compile(r'(?is)<([a-z0-9]+)[^>]*\bdata-i18n=.*?</\1>')
@@ -90,7 +95,7 @@ def offenders(lang_path, en_path):
     if not os.path.isfile(en_path):
         return []
     en = set(text_nodes(en_path, strip_i18n=False))
-    return [t for t in text_nodes(lang_path) if t in en]
+    return [t for t in text_nodes(lang_path) if t in en and t not in NAMES]
 
 
 # Cleared 2026-08-27: about/privacy/terms/contact are now written natively in

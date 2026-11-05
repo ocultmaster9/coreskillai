@@ -1386,7 +1386,8 @@ function renderQ(){
   document.getElementById('eq-body').innerHTML=`
     <p class="q-counter">Q${current+1} / ${ITEMS.length}</p>
     <p class="question-text">"${text}"</p>
-    <div class="likert">${btns}</div>`;
+    <div class="likert">${btns}</div>
+    <p class="likert-scale-note">1 = ${_t('likert_1').replace('\n',' ')} · 5 = ${_t('likert_5').replace('\n',' ')}</p>`;
 }
 
 function showResults(){

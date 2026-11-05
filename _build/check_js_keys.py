@@ -45,6 +45,9 @@ import audit as A
 PREFIXES = re.compile(r'_$')
 
 KEY_CALL = re.compile(r"""_t\(\s*['"]([a-z0-9_]+)['"]""")
+# `_t('car_zf'+z)` - a literal followed by + is a prefix too (no trailing _).
+# It passes only if en.js defines at least one key that starts with it.
+PREFIX_CALL = re.compile(r"""_t\(\s*['"]([a-z0-9_]+)['"]\s*\+""")
 
 
 def keys_of(root, lang):
@@ -77,8 +80,11 @@ def main(root='.'):
         if '/i18n/' in f.replace(os.sep, '/'):
             continue
         s = io.open(f, encoding='utf-8').read()
+        pre = set(PREFIX_CALL.findall(s))
         for k in set(KEY_CALL.findall(s)):
             if PREFIXES.search(k) or k in have:
+                continue
+            if k in pre and any(h.startswith(k) for h in have):
                 continue
             missing.setdefault(k, []).append(os.path.relpath(f, root).replace(os.sep, '/'))
     bad = 0

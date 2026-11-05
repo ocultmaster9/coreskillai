@@ -5,8 +5,9 @@ import io, os, re, sys, glob, unicodedata
 
 PAGES = ['home','about','privacy','terms','contact','tests',
          'tests/iq','tests/reaction-time','tests/memory','tests/pattern',
-         'tests/color-vision','tests/big-five','tests/eq','tests/focus','tests/typing']
-TESTS = ['iq','reaction-time','memory','pattern','color-vision','big-five','eq','focus','typing']
+         'tests/color-vision','tests/big-five','tests/eq','tests/focus','tests/typing',
+         'tests/rotation','tests/career']
+TESTS = ['iq','reaction-time','memory','pattern','color-vision','big-five','eq','focus','typing','rotation','career']
 SCRIPT_OF = {'ru':'CYRILLIC','uk':'CYRILLIC','bg':'CYRILLIC','sr':'CYRILLIC','mk':'CYRILLIC',
              'el':'GREEK','he':'HEBREW','ar':'ARABIC','fa':'ARABIC','hi':'DEVANAGARI','th':'THAI',
              'ja':'CJK','zh':'CJK','ko':'HANGUL'}
@@ -291,7 +292,7 @@ if __name__=='__main__':
           ('lang','keys','pages','enTitle','sciMiss','sciEng','thin','pass/8','stroop/5','b5/50','eq/28'))
     bad=0
     for r in rows:
-        ok = (r['keys_ok'] and r['pages']==15 and r['eng_title']==0
+        ok = (r['keys_ok'] and r['pages']==len(PAGES) and r['eng_title']==0
               and r['sci_missing']==0 and r['sci_english']==0 and r['thin']==0
               and r['passages']>=8 and r['stroop']==5
               and (r['b5']==50 or r['lang']=='en') and (r['eq']==28 or r['lang']=='en'))

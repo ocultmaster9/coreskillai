@@ -20,7 +20,7 @@ def complete_langs():
     rows, _ = A.audit()
     out = []
     for r in rows:
-        ok = (r['keys_ok'] and r['pages'] == 15 and r['eng_title'] == 0
+        ok = (r['keys_ok'] and r['pages'] == len(A.PAGES) and r['eng_title'] == 0
               and r['sci_missing'] == 0 and r['sci_english'] == 0 and r['thin'] == 0
               and r['passages'] >= 8 and r['stroop'] == 5
               and (r['b5'] == 50 or r['lang'] == 'en') and (r['eq'] == 28 or r['lang'] == 'en'))
