@@ -36,7 +36,7 @@ import io, re, glob, os, sys
 # identifiers that legitimately appear as literal text.
 OK = re.compile(r"^(CoreSkillAI|AdSense|Google|IQ|EQ|WPM|CPM|MBTI|Stroop|Raven|Miller|"
                 r"Goldberg|IPIP|MSCEIT|WAIS|Binet|Ishihara|Farnsworth|Munsell|OCEAN|Mayer|"
-                r"Salovey|Caruso|QWERTY|ms|min|avg|px|err|of|Q|X|v)$", re.I)
+                r"Salovey|Caruso|QWERTY|logMAR|ms|min|avg|px|err|of|Q|X|v)$", re.I)
 
 
 def template_texts(src):

@@ -28,6 +28,9 @@ CONF = {
   'hearing': dict(prefix='hea', icon='🎧', accent='#14b8a6', minutes=6, template='career',
                   tpl_prefix='car', tpl_minutes=8, after='career', footer_after='car_title',
                   diff='diff_easy'),
+  'vision': dict(prefix='vis', icon='👁️', accent='#6366f1', minutes=5, template='career',
+                 tpl_prefix='car', tpl_minutes=8, after='hearing', footer_after='hea_title',
+                 diff='diff_easy'),
 }
 
 def structure(h):
