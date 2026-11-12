@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sw = {
+    cat_cog:"Akili na kufikiri",
+    cat_pers:"Haiba na taaluma",
+    cat_sense:"Hisia na afya",
+    cat_speed:"Kasi na ujuzi",
     rot_big_turn:"Mizunguko mikubwa",
     rot_desc:"Mafumbo 20 ya nafasi yanayopima jinsi unavyozungusha maumbo akilini. Hakuna maneno wala namba.",
     rot_how1:"Umbo linaonekana juu. Chini yake kuna chaguo sita.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.sw = {
     rt_r_superior:"Bora",
     typ_chars:"Herufi",
     tests_badge:"Majaribio 11 Bila Malipo Yanapatikana",
-    home_sci_body:"Kila moja ya majaribio kumi na moja katika CoreSkillAI yametoholewa kutoka vifaa vinavyotumika katika utafiti halisi wa saikolojia: jaribio la IQ linategemea mapokeo ya utambuzi wa matriki, jaribio la kumbukumbu linatumia mfumo wa kawaida wa mfululizo wa tarakimu, jaribio la umakini linatumia athari ya Stroop yenye umri wa miaka 90, na jaribio la utu linafuata muundo wa Big Five unaotawala kisayansi. Kila ukurasa wa jaribio unaeleza sayansi iliyo nyuma ya kazi hiyo, jinsi ya kutafsiri alama zako, na yale ambayo utafiti unasema kuhusu kuiboresha. Majaribio yote yanaendeshwa kabisa ndani ya kivinjari chako, huchukua kati ya dakika 2 na 20, na hulinganisha matokeo yako na asilimia za kimataifa — bila malipo, bila jina, bila kuhitaji akaunti.",
+    home_sci_body:"Kila kipimo kwenye CoreSkillAI kimetokana na mbinu zinazotumiwa katika utafiti uliochapishwa: kipimo cha IQ kutoka kufikiri kwa matriki, kipimo cha kumbukumbu kutoka kazi ya kukumbuka tarakimu, kipimo cha umakini kutoka athari ya Stroop, kipimo cha haiba kutoka modeli ya Big Five, na kipimo cha macho kutoka chati za macho za kliniki. Kila ukurasa wa kipimo unaeleza sayansi iliyo nyuma ya kazi, jinsi ya kusoma alama yako na kile isichoweza kukuambia. Vipimo vyote vinafanya kazi kwenye kivinjari chako, bure na bila kujulikana, bila akaunti.",
     home_sci_title:"Kwa Nini Upime Ujuzi Wako wa Kiakili?",
     step4_desc:"Mbofyo mmoja kushiriki alama zako — washinde marafiki zako.",
     step4_title:"Shiriki",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.sw = {
     nav_take:"Fanya Jaribio",
     hero_badge:"Bure • Hakuna akaunti • Hakuna malipo",
     hero_title:"Gundua Kile Ubongo Wako Unachoweza Kufanya Kweli",
-    hero_sub:"Vipimo 11 bure vilivyojengwa juu ya utafiti uliochapishwa. Matokeo wazi ndani ya dakika, kwa lugha 43.",
+    hero_sub:"Vipimo vya bure vilivyojengwa juu ya utafiti uliochapishwa, vimepangwa kulingana na kile vinachopima. Matokeo wazi kwa dakika chache, katika lugha 43.",
     btn_iq:"Fanya Jaribio la IQ Bila Malipo",
     btn_start:"Anza Kupima",
     btn_view_all:"Tazama Majaribio Yote",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.sw = {
     how_title:"Jinsi Inavyofanya Kazi",
     how_sub:"Hatua tatu rahisi za kugundua uwezo wako",
     step1_title:"Chagua Jaribio",
-    step1_desc:"Chagua kutoka tathmini 11 za kiakili na za utu zinazoungwa mkono kisayansi.",
+    step1_desc:"Chagua kipimo kwa kategoria: akili, kasi, haiba, au hisia na afya.",
     step2_title:"Likamilishe",
     step2_desc:"Fuata maelekezo kwa umakini kamili. Majaribio mengi huchukua dakika 3–7.",
     step3_title:"Ona Alama Zako",

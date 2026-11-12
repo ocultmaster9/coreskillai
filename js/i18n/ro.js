@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ro = {
+    cat_cog:"Minte și raționament",
+    cat_pers:"Personalitate și carieră",
+    cat_sense:"Simțuri și sănătate",
+    cat_speed:"Viteză și abilități",
     rot_big_turn:"Rotații mari",
     rot_desc:"20 de puzzle-uri spațiale care măsoară cât de bine rotești forme în minte. Fără cuvinte, fără cifre.",
     rot_how1:"Sus apare o figură. Dedesubt sunt șase variante.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.ro = {
     rt_r_superior:"Superior",
     typ_chars:"Caractere",
     tests_badge:"11 teste gratuite disponibile",
-    home_sci_body:"Fiecare dintre cele unsprezece teste de pe CoreSkillAI este adaptat după instrumente folosite cu adevărat în cercetarea psihologică: testul de IQ se înscrie în tradiția raționamentului pe matrice, cel de memorie aplică paradigma clasică a seriei de cifre, cel de atenție folosește efectul Stroop, vechi de 90 de ani, iar cel de personalitate urmează modelul Big Five, dominant științific. Fiecare pagină explică știința din spatele sarcinii, cum să-ți interpretezi rezultatul și ce spune cercetarea despre îmbunătățirea lui. Toate testele rulează integral în browser, durează între 2 și 20 de minute și îți compară rezultatul cu percentile mondiale — gratuit, anonim și fără cont.",
+    home_sci_body:"Fiecare test de pe CoreSkillAI este adaptat după metode folosite în cercetarea publicată: testul IQ se bazează pe raționamentul cu matrice, testul de memorie pe sarcina de memorare a cifrelor, testul de concentrare pe efectul Stroop, testul de personalitate pe modelul Big Five, iar testul de vedere pe tabelele optometrice din cabinete. Fiecare pagină explică știința din spatele sarcinii, cum îți citești scorul și ce nu îți poate spune. Toate testele rulează în browser, gratuit și anonim, fără cont.",
     home_sci_title:"De ce să-ți măsori abilitățile cognitive?",
     step4_desc:"Un clic ca să-ți împărtășești rezultatul — provoacă-ți prietenii.",
     step4_title:"Distribuie",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.ro = {
     nav_take:"Dă un test",
     hero_badge:"Gratuit • Fără cont • Fără plată",
     hero_title:"Descoperă de ce este cu adevărat capabil creierul tău",
-    hero_sub:"11 teste gratuite construite pe cercetare publicată. Rezultate clare în câteva minute, în 43 de limbi.",
+    hero_sub:"Teste gratuite construite pe cercetare publicată, grupate după ce măsoară. Rezultate clare în câteva minute, în 43 de limbi.",
     btn_iq:"Dă testul IQ gratuit",
     btn_start:"Începe testele",
     btn_view_all:"Vezi toate testele",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.ro = {
     how_title:"Cum funcționează",
     how_sub:"Trei pași simpli pentru a-ți descoperi abilitățile",
     step1_title:"Alege un test",
-    step1_desc:"Alege dintre 11 evaluări cognitive și de personalitate bazate pe cercetare.",
+    step1_desc:"Alege un test după categorie: minte, viteză, personalitate sau simțuri și sănătate.",
     step2_title:"Finalizează-l",
     step2_desc:"Urmează instrucțiunile cu atenție deplină. Majoritatea testelor durează 3–7 minute.",
     step3_title:"Vezi scorul",

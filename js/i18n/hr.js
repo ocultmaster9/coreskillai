@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hr = {
+    cat_cog:"Razmišljanje i zaključivanje",
+    cat_pers:"Osobnost i karijera",
+    cat_sense:"Osjetila i zdravlje",
+    cat_speed:"Brzina i vještine",
     rot_big_turn:"Veliki zaokreti",
     rot_desc:"20 prostornih zadataka koji mjere koliko dobro okrećete oblike u glavi. Bez riječi i bez brojeva.",
     rot_how1:"Gore se pojavi lik, ispod njega šest kandidata.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.hr = {
     rt_r_superior:"Nadmoćno",
     typ_chars:"Znakovi",
     tests_badge:"11 besplatnih testova",
-    home_sci_body:"Svaki od jedanaest testova na CoreSkillAI izveden je iz alata koji se doista koriste u psihologijskim istraživanjima: test inteligencije pripada tradiciji zaključivanja matricama, test pamćenja provodi klasični raspon znamenki, test pažnje koristi devedeset godina star Stroopov učinak, a test osobnosti slijedi znanstveno prevladavajući model Velikih pet. Svaka stranica testa objašnjava znanost iza zadatka, kako čitati svoj rezultat i što istraživanja kažu o njegovu poboljšanju. Svi testovi rade u cijelosti u pregledniku, traju od 2 do 20 minuta i uspoređuju rezultat sa svjetskim percentilima — besplatno, anonimno i bez računa.",
+    home_sci_body:"Svaki test na CoreSkillAI-ju prilagođen je metodama iz objavljenih istraživanja: test inteligencije temelji se na matričnom zaključivanju, test pamćenja na zadatku ponavljanja brojeva, test koncentracije na Stroopovu efektu, test osobnosti na modelu Velikih pet, a test vida na kliničkim tablicama za vid. Svaka stranica testa objašnjava znanost iza zadatka, kako čitati rezultat i što vam on ne može reći. Svi testovi rade u vašem pregledniku, besplatno i anonimno, bez računa.",
     home_sci_title:"Zašto mjeriti vlastite spoznajne sposobnosti?",
     step4_desc:"Jednim klikom podijeli rezultat — izazovi prijatelje.",
     step4_title:"Podijeli",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.hr = {
     nav_take:"Riješi test",
     hero_badge:"Besplatno • Bez računa • Bez naplate",
     hero_title:"Otkrijte što vaš mozak doista može",
-    hero_sub:"11 besplatnih testova građenih na objavljenim istraživanjima. Jasni rezultati u nekoliko minuta, na 43 jezika.",
+    hero_sub:"Besplatni testovi temeljeni na objavljenim istraživanjima, razvrstani prema onome što mjere. Jasni rezultati za nekoliko minuta, na 43 jezika.",
     btn_iq:"Riješi besplatan IQ test",
     btn_start:"Pokreni test",
     btn_view_all:"Svi testovi",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.hr = {
     how_title:"Kako funkcionira",
     how_sub:"Tri jednostavna koraka do otkrivanja vaših sposobnosti",
     step1_title:"Odaberite test",
-    step1_desc:"Odaberite jedan od 11 znanstveno utemeljenih testova spoznaje i osobnosti.",
+    step1_desc:"Odaberite test prema kategoriji: razmišljanje, brzina, osobnost ili osjetila i zdravlje.",
     step2_title:"Riješite ga",
     step2_desc:"Slijedite upute bez ometanja. Većina testova traje 3–7 minuta.",
     step3_title:"Pogledajte rezultat",

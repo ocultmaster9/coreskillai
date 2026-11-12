@@ -201,6 +201,19 @@ button { cursor: pointer; font-family: inherit; }
 }
 .section-subtitle { color: var(--text-2); font-size: .95rem; margin-bottom: 36px; }
 
+/* ── Test categories (home + /tests/) ───────────────────── */
+.cat-nav { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 28px; }
+.cat-chip { display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
+  border:1px solid var(--border); border-radius:999px; background:var(--surface);
+  color:var(--text); font-weight:600; font-size:.92rem; transition:border-color var(--trans), color var(--trans); }
+.cat-chip:hover, .cat-chip:focus-visible { border-color:var(--primary); color:var(--primary); }
+.cat-n { font-size:.78rem; font-weight:700; color:var(--text-2); background:var(--bg-alt);
+  border-radius:999px; padding:1px 8px; }
+.test-cat { margin-bottom:40px; scroll-margin-top:80px; }
+.cat-title { display:flex; align-items:center; gap:10px; font-size:1.25rem; font-weight:800;
+  letter-spacing:-.02em; margin:0 0 16px; }
+@media (max-width:600px){ .cat-chip{ padding:8px 12px; font-size:.86rem; } }
+
 /* ── Test cards grid ────────────────────────────────────── */
 .tests-grid {
   display: grid;

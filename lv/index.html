@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Bez maksas • Bez konta • Bez samaksas</span></div>
     <h1 data-i18n="hero_title">Uzziniet, ko jūsu smadzenes patiesībā spēj</h1>
-    <p data-i18n="hero_sub">11 bezmaksas testi, balstīti publicētos pētījumos. Skaidri rezultāti dažās minūtēs, 43 valodās.</p>
+    <p data-i18n="hero_sub">Bezmaksas testi, kas balstīti publicētos pētījumos un sagrupēti pēc tā, ko tie mēra. Skaidri rezultāti dažās minūtēs, 43 valodās.</p>
     <div class="hero-btns">
       <a href="/lv/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">Veikt bezmaksas IQ testu</a>
       <a href="/lv/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">Visi testi</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">Visi testi</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">Visi testi</h2>
     <p class="section-subtitle" data-i18n="tests_sub">Atklājiet savu patieso izziņas un personības profilu</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Domāšana un spriešana</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Ātrums un prasmes</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Personība un karjera</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Maņas un veselība</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Domāšana un spriešana</span></h2>
+<div class="tests-grid">
 <a href="/lv/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~20 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/lv/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">Reakcijas ātruma tests</h3>
-    <p data-i18n="rt_desc">Izmēriet, cik ātri jūsu smadzenes reaģē uz vizuālu signālu.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Viegli</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/lv/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">Darba atmiņas tests</h3>
-    <p data-i18n="mem_desc">Pārbaudiet īstermiņa atmiņas ciparu apjomu — klasisks smadzeņu darbības rādītājs.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Vidēji</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/lv/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/lv/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/lv/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">Krāsu redzes tests</h3>
-    <p data-i18n="cv_desc">Sakārtojiet toņus, lai izmērītu savas krāsu uztveres precizitāti.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">Darba atmiņas tests</h3>
+    <p data-i18n="mem_desc">Pārbaudiet īstermiņa atmiņas ciparu apjomu — klasisks smadzeņu darbības rādītājs.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">Vidēji</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
+<a href="/lv/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">Mentālās rotācijas tests</h3>
+    <p data-i18n="rot_desc">20 telpiski uzdevumi, kas mēra, cik labi prātā pagriežat formas. Bez vārdiem un cipariem.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">Grūti</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/lv/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">Uzmanības un koncentrēšanās tests</h3>
+    <p data-i18n="foc_desc">Strūpa efekts — izmēriet savu kognitīvo kontroli un apstrādes ātrumu.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Vidēji</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Ātrums un prasmes</span></h2>
+<div class="tests-grid">
+<a href="/lv/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">Reakcijas ātruma tests</h3>
+    <p data-i18n="rt_desc">Izmēriet, cik ātri jūsu smadzenes reaģē uz vizuālu signālu.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Viegli</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/lv/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">Rakstīšanas ātruma tests</h3>
+    <p data-i18n="typ_desc">Uzziniet, cik ātri rakstāt un kāda ir jūsu vieta pasaulē.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Viegli</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Personība un karjera</span></h2>
+<div class="tests-grid">
 <a href="/lv/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/lv/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">Uzmanības un koncentrēšanās tests</h3>
-    <p data-i18n="foc_desc">Strūpa efekts — izmēriet savu kognitīvo kontroli un apstrādes ātrumu.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Vidēji</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/lv/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">Rakstīšanas ātruma tests</h3>
-    <p data-i18n="typ_desc">Uzziniet, cik ātri rakstāt un kāda ir jūsu vieta pasaulē.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Viegli</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/lv/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">Mentālās rotācijas tests</h3>
-    <p data-i18n="rot_desc">20 telpiski uzdevumi, kas mēra, cik labi prātā pagriežat formas. Bez vārdiem un cipariem.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">Grūti</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
-</a>
 <a href="/lv/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~8 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Maņas un veselība</span></h2>
+<div class="tests-grid">
+<a href="/lv/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">Krāsu redzes tests</h3>
+    <p data-i18n="cv_desc">Sakārtojiet toņus, lai izmērītu savas krāsu uztveres precizitāti.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Vidēji</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/lv/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Veikt testu</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">Kā tas darbojas</h2>
     <p class="section-subtitle" data-i18n="how_sub">Trīs vienkārši soļi, lai uzzinātu savas spējas</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Izvēlieties testu</h4><p data-i18n="step1_desc">Izvēlieties vienu no 11 zinātniski pamatotiem izziņas un personības testiem.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Izvēlieties testu</h4><p data-i18n="step1_desc">Izvēlies testu pēc kategorijas: domāšana, ātrums, personība vai maņas un veselība.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">Veiciet to</h4><p data-i18n="step2_desc">Sekojiet norādēm bez traucēkļiem. Vairums testu ilgst 3–7 minūtes.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">Apskatiet rezultātu</h4><p data-i18n="step3_desc">Tūlītējs rezultāts ar pasaules procentili. Dalieties ar to vienā klikšķī.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">Dalīties</h4><p data-i18n="step4_desc">Ar vienu klikšķi padalies ar rezultātu — izaicini draugus.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Kāpēc mērīt savas izziņas spējas?</h2><p data-i18n="home_sci_body">Katrs no vienpadsmit CoreSkillAI testiem cēlies no rīkiem, kurus patiešām izmanto psiholoģijas pētījumos: intelekta tests pieder matricu spriešanas tradīcijai, atmiņas tests īsteno klasisko ciparu apjomu, uzmanības tests izmanto deviņdesmit gadus veco Strūpa efektu, bet personības tests seko zinātnē valdošajam Lielā piecinieka modelim. Katra testa lapa skaidro zinātni aiz uzdevuma, kā lasīt savu rezultātu un ko pētījumi saka par tā uzlabošanu. Visi testi darbojas tikai pārlūkā, aizņem no 2 līdz 20 minūtēm un salīdzina rezultātu ar pasaules procentilēm — bez maksas, anonīmi un bez konta.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Kāpēc mērīt savas izziņas spējas?</h2><p data-i18n="home_sci_body">Katrs CoreSkillAI tests ir pielāgots no publicētos pētījumos izmantotām metodēm: IQ tests no matricu spriešanas, atmiņas tests no ciparu virknes uzdevuma, koncentrēšanās tests no Strūpa efekta, personības tests no Lielā piecinieka modeļa un redzes tests no klīniskajām redzes tabulām. Katra testa lapa izskaidro uzdevuma zinātnisko pamatu, kā lasīt rezultātu un ko tas nevar pateikt. Visi testi darbojas tavā pārlūkā, bez maksas un anonīmi, bez konta.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">Balstīts pētījumos • Vienmēr bez maksas • Bez konta</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="lv";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/lv.js?v=9c52d71d"></script>
+<script>window.PAGE_LANG="lv";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/lv.js?v=09d26516"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

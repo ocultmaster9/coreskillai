@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.id = {
+    cat_cog:"Pikiran dan penalaran",
+    cat_pers:"Kepribadian dan karier",
+    cat_sense:"Indra dan kesehatan",
+    cat_speed:"Kecepatan dan keterampilan",
     rot_big_turn:"Putaran besar",
     rot_desc:"20 teka-teki spasial yang mengukur seberapa baik Anda memutar bentuk dalam pikiran. Tanpa kata, tanpa angka.",
     rot_how1:"Sebuah gambar muncul di atas. Di bawahnya ada enam kandidat.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.id = {
     rt_r_superior:"Unggul",
     typ_chars:"Karakter",
     tests_badge:"11 tes gratis tersedia",
-    home_sci_body:"Masing-masing dari sebelas tes di CoreSkillAI diadaptasi dari instrumen yang benar-benar dipakai dalam riset psikologi: tes IQ berakar pada tradisi penalaran matriks, tes memori menerapkan paradigma rentang angka klasik, tes fokus memakai efek Stroop yang berusia 90 tahun, dan tes kepribadian mengikuti model Lima Besar yang dominan secara ilmiah. Setiap halaman tes menjelaskan sains di balik tugasnya, cara membaca skor Anda, dan apa kata riset tentang meningkatkannya. Semua tes berjalan sepenuhnya di peramban Anda, memakan waktu 2 hingga 20 menit, dan membandingkan hasil Anda dengan persentil global — gratis, anonim, tanpa perlu akun.",
+    home_sci_body:"Setiap tes di CoreSkillAI diadaptasi dari metode yang dipakai dalam riset yang dipublikasikan: tes IQ dari penalaran matriks, tes memori dari tugas rentang angka, tes fokus dari efek Stroop, tes kepribadian dari model Lima Besar, dan tes mata dari bagan mata klinis. Setiap halaman tes menjelaskan ilmu di balik tugasnya, cara membaca skor Anda, dan apa yang tidak bisa diungkapkannya. Semua tes berjalan di browser Anda, gratis dan anonim, tanpa akun.",
     home_sci_title:"Mengapa menguji kemampuan kognitif Anda?",
     step4_desc:"Satu klik untuk membagikan skor Anda — tantang teman-teman Anda.",
     step4_title:"Bagikan",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.id = {
     nav_take:"Ikuti Tes",
     hero_badge:"Gratis • Tanpa akun • Tanpa bayar",
     hero_title:"Temukan Apa yang Sebenarnya Mampu Dilakukan Otak Anda",
-    hero_sub:"11 tes gratis yang dibangun dari riset yang dipublikasikan. Hasil jelas dalam hitungan menit, dalam 43 bahasa.",
+    hero_sub:"Tes gratis berbasis riset yang dipublikasikan, dikelompokkan menurut apa yang diukurnya. Hasil jelas dalam hitungan menit, dalam 43 bahasa.",
     btn_iq:"Ikuti Tes IQ Gratis",
     btn_start:"Mulai Tes",
     btn_view_all:"Lihat Semua Tes",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.id = {
     how_title:"Cara Kerjanya",
     how_sub:"Tiga langkah sederhana untuk menemukan kemampuan Anda",
     step1_title:"Pilih Tes",
-    step1_desc:"Pilih dari 11 asesmen kognitif dan kepribadian yang berbasis penelitian.",
+    step1_desc:"Pilih tes menurut kategori: pikiran, kecepatan, kepribadian, atau indra dan kesehatan.",
     step2_title:"Selesaikan",
     step2_desc:"Ikuti instruksi dengan fokus penuh. Sebagian besar tes memakan 3–7 menit.",
     step3_title:"Lihat Skor Anda",

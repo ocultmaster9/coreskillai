@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.vi = {
+    cat_cog:"Tư duy và suy luận",
+    cat_pers:"Tính cách và nghề nghiệp",
+    cat_sense:"Giác quan và sức khỏe",
+    cat_speed:"Tốc độ và kỹ năng",
     rot_big_turn:"Xoay nhiều",
     rot_desc:"20 câu đố không gian đo khả năng xoay hình trong đầu của bạn. Không chữ, không số.",
     rot_how1:"Một hình xuất hiện ở trên, bên dưới là sáu lựa chọn.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.vi = {
     rt_r_superior:"Ưu tú",
     typ_chars:"Ký tự",
     tests_badge:"11 bài kiểm tra miễn phí",
-    home_sci_body:"Mỗi bài trong mười một bài kiểm tra trên CoreSkillAI đều được phỏng theo những công cụ dùng trong nghiên cứu tâm lý học thực thụ: bài IQ dựa trên truyền thống suy luận ma trận, bài trí nhớ áp dụng mô hình đo dãy số kinh điển, bài tập trung sử dụng hiệu ứng Stroop đã 90 năm tuổi, và bài tính cách theo mô hình Big Five đang chiếm ưu thế về mặt khoa học. Mỗi trang kiểm tra đều giải thích cơ sở khoa học phía sau nhiệm vụ, cách diễn giải điểm số của bạn, và những gì nghiên cứu nói về việc cải thiện nó. Tất cả bài kiểm tra chạy hoàn toàn trong trình duyệt, mất từ 2 đến 20 phút, và so sánh kết quả của bạn với phân vị toàn cầu — miễn phí, ẩn danh, không cần tài khoản.",
+    home_sci_body:"Mỗi bài kiểm tra trên CoreSkillAI được điều chỉnh từ các phương pháp dùng trong nghiên cứu đã công bố: bài IQ dựa trên suy luận ma trận, bài trí nhớ dựa trên nhiệm vụ nhớ dãy số, bài tập trung dựa trên hiệu ứng Stroop, bài tính cách dựa trên mô hình Năm yếu tố lớn và bài thị lực dựa trên bảng thị lực lâm sàng. Mỗi trang giải thích cơ sở khoa học của nhiệm vụ, cách đọc điểm của bạn và những gì nó không thể cho bạn biết. Mọi bài kiểm tra chạy trong trình duyệt của bạn, miễn phí và ẩn danh, không cần tài khoản.",
     home_sci_title:"Vì sao nên kiểm tra năng lực nhận thức?",
     step4_desc:"Chỉ một cú nhấp để chia sẻ điểm số — thi tài với bạn bè.",
     step4_title:"Chia sẻ",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.vi = {
     nav_take:"Làm bài",
     hero_badge:"Miễn phí • Không tài khoản • Không trả phí",
     hero_title:"Khám phá năng lực thật sự của bộ não bạn",
-    hero_sub:"11 bài kiểm tra miễn phí dựng trên nghiên cứu đã công bố. Kết quả rõ ràng trong vài phút, bằng 43 ngôn ngữ.",
+    hero_sub:"Các bài kiểm tra miễn phí dựa trên nghiên cứu đã công bố, được nhóm theo điều chúng đo lường. Kết quả rõ ràng trong vài phút, bằng 43 ngôn ngữ.",
     btn_iq:"Làm bài IQ miễn phí",
     btn_start:"Bắt đầu kiểm tra",
     btn_view_all:"Xem tất cả bài kiểm tra",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.vi = {
     how_title:"Cách thức hoạt động",
     how_sub:"Ba bước đơn giản để khám phá năng lực của bạn",
     step1_title:"Chọn bài kiểm tra",
-    step1_desc:"Chọn trong 11 bài đánh giá nhận thức và tính cách có cơ sở khoa học.",
+    step1_desc:"Chọn bài kiểm tra theo danh mục: tư duy, tốc độ, tính cách, hoặc giác quan và sức khỏe.",
     step2_title:"Hoàn thành bài",
     step2_desc:"Làm theo hướng dẫn với sự tập trung cao. Hầu hết bài mất 3–7 phút.",
     step3_title:"Xem điểm số",

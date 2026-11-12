@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lt = {
+    cat_cog:"Mąstymas ir samprotavimas",
+    cat_pers:"Asmenybė ir karjera",
+    cat_sense:"Pojūčiai ir sveikata",
+    cat_speed:"Greitis ir įgūdžiai",
     rot_big_turn:"Dideli posūkiai",
     rot_desc:"20 erdvinių užduočių, matuojančių, kaip gerai mintyse sukate figūras. Jokių žodžių ir skaičių.",
     rot_how1:"Viršuje pasirodo figūra, po ja – šeši variantai.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.lt = {
     rt_r_superior:"Puikus",
     typ_chars:"Simboliai",
     tests_badge:"11 nemokami testai",
-    home_sci_body:"Kiekvienas iš vienuolikos CoreSkillAI testų kilęs iš priemonių, iš tiesų naudojamų psichologijos tyrimuose: intelekto testas priklauso matricų samprotavimo tradicijai, atminties testas įgyvendina klasikinę skaitmenų apimtį, dėmesio testas naudoja devyniasdešimties metų senumo Stroopo efektą, o asmenybės testas remiasi moksle vyraujančiu Didžiojo penketo modeliu. Kiekviename testo puslapyje paaiškinama, kokiu mokslu remiasi užduotis, kaip skaityti savo rezultatą ir ką tyrimai sako apie jo gerinimą. Visi testai veikia vien naršyklėje, trunka nuo 2 iki 20 minučių ir lygina rezultatą su pasaulio procentiliais — nemokamai, anonimiškai ir be paskyros.",
+    home_sci_body:"Kiekvienas CoreSkillAI testas pritaikytas pagal paskelbtuose tyrimuose naudojamus metodus: IQ testas pagal matricų samprotavimą, atminties testas pagal skaitmenų sekos užduotį, dėmesio testas pagal Strupo efektą, asmenybės testas pagal Didžiojo penketo modelį, o regėjimo testas pagal klinikines regėjimo lenteles. Kiekvieno testo puslapis paaiškina užduoties mokslinį pagrindą, kaip skaityti rezultatą ir ko jis negali pasakyti. Visi testai veikia jūsų naršyklėje, nemokamai ir anonimiškai, be paskyros.",
     home_sci_title:"Kodėl verta įvertinti savo pažintinius gebėjimus?",
     step4_desc:"Vienu paspaudimu pasidalyk rezultatu — mesk iššūkį draugams.",
     step4_title:"Pasidalyti",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.lt = {
     nav_take:"Atlikti testą",
     hero_badge:"Nemokama • Be paskyros • Be mokesčių",
     hero_title:"Sužinokite, ką iš tiesų gali jūsų smegenys",
-    hero_sub:"11 nemokami testai, sukurti pagal paskelbtus tyrimus. Aiškūs rezultatai per kelias minutes, 43 kalbomis.",
+    hero_sub:"Nemokami testai, paremti paskelbtais tyrimais ir sugrupuoti pagal tai, ką jie matuoja. Aiškūs rezultatai per kelias minutes, 43 kalbomis.",
     btn_iq:"Atlikti nemokamą IQ testą",
     btn_start:"Pradėti testą",
     btn_view_all:"Visi testai",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.lt = {
     how_title:"Kaip tai veikia",
     how_sub:"Trys paprasti žingsniai sužinoti savo gebėjimus",
     step1_title:"Pasirinkite testą",
-    step1_desc:"Rinkitės vieną iš 11 moksliškai pagrįstų pažinimo ir asmenybės testų.",
+    step1_desc:"Pasirinkite testą pagal kategoriją: mąstymas, greitis, asmenybė arba pojūčiai ir sveikata.",
     step2_title:"Atlikite jį",
     step2_desc:"Vadovaukitės nurodymais be blaškymosi. Dauguma testų trunka 3–7 minutes.",
     step3_title:"Peržiūrėkite rezultatą",

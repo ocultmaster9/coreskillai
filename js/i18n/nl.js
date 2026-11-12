@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.nl = {
+    cat_cog:"Denken en redeneren",
+    cat_pers:"Persoonlijkheid en loopbaan",
+    cat_sense:"Zintuigen en gezondheid",
+    cat_speed:"Snelheid en vaardigheden",
     rot_big_turn:"Grote draaiingen",
     rot_desc:"20 ruimtelijke puzzels die meten hoe goed je vormen in je hoofd draait. Geen woorden, geen cijfers.",
     rot_how1:"Bovenaan verschijnt een figuur. Daaronder staan zes kandidaten.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.nl = {
     rt_r_superior:"Superieur",
     typ_chars:"Tekens",
     tests_badge:"11 gratis tests beschikbaar",
-    home_sci_body:"Elk van de elf tests op CoreSkillAI is afgeleid van instrumenten die daadwerkelijk in psychologisch onderzoek worden gebruikt: de IQ-test staat in de traditie van matrixredeneren, de geheugentest voert het klassieke cijferreeksparadigma uit, de aandachtstest gebruikt het 90 jaar oude Stroop-effect en de persoonlijkheidstest volgt het wetenschappelijk dominante Big Five-model. Elke testpagina legt uit welke wetenschap achter de taak schuilt, hoe je je score moet lezen en wat het onderzoek zegt over verbeteren. Alle tests draaien volledig in je browser, duren tussen 2 en 20 minuten en vergelijken je resultaat met wereldwijde percentielen — gratis, anoniem en zonder account.",
+    home_sci_body:"Elke test op CoreSkillAI is afgeleid van methoden uit gepubliceerd onderzoek: de IQ-test van matrixredeneren, de geheugentest van de cijferreeks-taak, de concentratietest van het Stroop-effect, de persoonlijkheidstest van het Big Five-model en de ogentest van klinische oogkaarten. Elke testpagina legt de wetenschap achter de taak uit, hoe je je score leest en wat die je niet kan vertellen. Alle tests draaien in je browser, gratis en anoniem, zonder account.",
     home_sci_title:"Waarom je cognitieve vaardigheden testen?",
     step4_desc:"Eén klik om je score te delen — daag je vrienden uit.",
     step4_title:"Delen",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.nl = {
     nav_take:"Doe een test",
     hero_badge:"Gratis • Geen account • Geen betaalmuur",
     hero_title:"Ontdek wat je brein echt kan",
-    hero_sub:"11 gratis tests gebouwd op gepubliceerd onderzoek. Heldere resultaten in minuten, in 43 talen.",
+    hero_sub:"Gratis tests gebaseerd op gepubliceerd onderzoek, ingedeeld naar wat ze meten. Duidelijke resultaten in enkele minuten, in 43 talen.",
     btn_iq:"Doe de IQ-test gratis",
     btn_start:"Begin met testen",
     btn_view_all:"Bekijk alle tests",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.nl = {
     how_title:"Hoe het werkt",
     how_sub:"Drie eenvoudige stappen om je vaardigheden te ontdekken",
     step1_title:"Kies een test",
-    step1_desc:"Kies uit 11 wetenschappelijk onderbouwde cognitieve en persoonlijkheidstests.",
+    step1_desc:"Kies een test per categorie: denken, snelheid, persoonlijkheid, of zintuigen en gezondheid.",
     step2_title:"Voltooi hem",
     step2_desc:"Volg de instructies met volle aandacht. De meeste tests duren 3–7 minuten.",
     step3_title:"Bekijk je score",

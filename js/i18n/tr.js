@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tr = {
+    cat_cog:"Zihin ve akıl yürütme",
+    cat_pers:"Kişilik ve kariyer",
+    cat_sense:"Duyular ve sağlık",
+    cat_speed:"Hız ve beceriler",
     rot_big_turn:"Büyük dönüşler",
     rot_desc:"Şekilleri zihninizde ne kadar iyi döndürdüğünüzü ölçen 20 uzamsal bulmaca. Kelime yok, sayı yok.",
     rot_how1:"Üstte bir şekil görünür, altında altı aday vardır.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.tr = {
     rt_r_superior:"Üstün",
     typ_chars:"Karakter",
     tests_badge:"11 ücretsiz test mevcut",
-    home_sci_body:"CoreSkillAI'daki on bir testin her biri, psikoloji araştırmalarında gerçekten kullanılan araçlardan uyarlanmıştır: IQ testi matris akıl yürütme geleneğinden gelir, bellek testi klasik sayı dizisi paradigmasını uygular, dikkat testi 90 yıllık Stroop etkisinden yararlanır ve kişilik testi bilimsel olarak baskın Beş Faktör modelini izler. Her test sayfası görevin ardındaki bilimi, sonucunu nasıl okuyacağını ve araştırmaların gelişim hakkında ne söylediğini anlatır. Tüm testler tamamen tarayıcında çalışır, 2 ila 20 dakika sürer ve sonucunu dünya yüzdelikleriyle karşılaştırır — ücretsiz, anonim ve hesap gerektirmeden.",
+    home_sci_body:"CoreSkillAI'daki her test yayımlanmış araştırmalarda kullanılan yöntemlerden uyarlanmıştır: IQ testi matris akıl yürütmeye, hafıza testi sayı dizisi görevine, odaklanma testi Stroop etkisine, kişilik testi Beş Faktör modeline, görme testi ise klinik göz tablolarına dayanır. Her test sayfası görevin arkasındaki bilimi, puanınızı nasıl okuyacağınızı ve size neyi söyleyemeyeceğini açıklar. Tüm testler tarayıcınızda, ücretsiz ve anonim olarak, hesap gerektirmeden çalışır.",
     home_sci_title:"Bilişsel becerilerini ölçmek neden önemli?",
     step4_desc:"Tek tıkla sonucunu paylaş — arkadaşlarına meydan oku.",
     step4_title:"Paylaş",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.tr = {
     nav_take:"Test yap",
     hero_badge:"Ücretsiz • Hesap yok • Ödeme yok",
     hero_title:"Beyninizin gerçekte neler yapabildiğini keşfedin",
-    hero_sub:"Yayımlanmış araştırmalara dayanan 11 ücretsiz test. Dakikalar içinde net sonuç, 43 dilde.",
+    hero_sub:"Yayımlanmış araştırmalara dayanan, neyi ölçtüklerine göre gruplanmış ücretsiz testler. Dakikalar içinde net sonuçlar, 43 dilde.",
     btn_iq:"Ücretsiz IQ testi yap",
     btn_start:"Teste başla",
     btn_view_all:"Tüm testleri gör",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.tr = {
     how_title:"Nasıl çalışır",
     how_sub:"Yeteneklerinizi keşfetmek için üç basit adım",
     step1_title:"Bir test seçin",
-    step1_desc:"Bilimsel temelli 11 bilişsel ve kişilik testinden birini seçin.",
+    step1_desc:"Kategoriye göre bir test seçin: zihin, hız, kişilik ya da duyular ve sağlık.",
     step2_title:"Testi tamamlayın",
     step2_desc:"Yönergeleri tam odakla izleyin. Çoğu test 3–7 dakika sürer.",
     step3_title:"Puanınızı görün",

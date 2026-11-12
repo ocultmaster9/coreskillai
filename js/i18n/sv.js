@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sv = {
+    cat_cog:"Tänkande och logik",
+    cat_pers:"Personlighet och karriär",
+    cat_sense:"Sinnen och hälsa",
+    cat_speed:"Snabbhet och färdigheter",
     rot_big_turn:"Stora vridningar",
     rot_desc:"20 rumsliga uppgifter som mäter hur väl du vrider former i huvudet. Inga ord, inga siffror.",
     rot_how1:"Överst visas en figur. Under den finns sex kandidater.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.sv = {
     rt_r_superior:"Överlägsen",
     typ_chars:"Tecken",
     tests_badge:"11 gratis tester tillgängliga",
-    home_sci_body:"Vart och ett av de elva testerna på CoreSkillAI är hämtat från instrument som faktiskt används i psykologisk forskning: IQ-testet står i matrisresonemangets tradition, minnestestet bygger på det klassiska sifferspannet, koncentrationstestet använder den 90 år gamla Stroop-effekten och personlighetstestet följer den vetenskapligt dominerande femfaktormodellen. Varje testsida förklarar vetenskapen bakom uppgiften, hur du tolkar ditt resultat och vad forskningen säger om att förbättra det. Alla tester körs helt i webbläsaren, tar mellan 2 och 20 minuter och jämför ditt resultat med globala percentiler — gratis, anonymt och utan konto.",
+    home_sci_body:"Varje test på CoreSkillAI bygger på metoder från publicerad forskning: IQ-testet på matrisresonemang, minnestestet på sifferspann, koncentrationstestet på Stroop-effekten, personlighetstestet på femfaktormodellen och syntestet på kliniska syntavlor. Varje testsida förklarar vetenskapen bakom uppgiften, hur du läser ditt resultat och vad det inte kan säga. Alla tester körs i din webbläsare, gratis och anonymt, utan konto.",
     home_sci_title:"Varför testa din kognitiva förmåga?",
     step4_desc:"Ett klick för att dela ditt resultat — utmana dina vänner.",
     step4_title:"Dela",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.sv = {
     nav_take:"Gör ett test",
     hero_badge:"Gratis • Inget konto • Ingen betalvägg",
     hero_title:"Upptäck vad din hjärna faktiskt klarar",
-    hero_sub:"11 gratis test byggda på publicerad forskning. Tydliga resultat på minuter, på 43 språk.",
+    hero_sub:"Gratis tester byggda på publicerad forskning, sorterade efter vad de mäter. Tydliga resultat på några minuter, på 43 språk.",
     btn_iq:"Gör IQ-testet gratis",
     btn_start:"Börja testa",
     btn_view_all:"Visa alla tester",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.sv = {
     how_title:"Så fungerar det",
     how_sub:"Tre enkla steg för att upptäcka dina förmågor",
     step1_title:"Välj ett test",
-    step1_desc:"Välj bland 11 vetenskapligt grundade kognitiva tester och personlighetstester.",
+    step1_desc:"Välj ett test efter kategori: tänkande, snabbhet, personlighet eller sinnen och hälsa.",
     step2_title:"Genomför det",
     step2_desc:"Följ instruktionerna med full koncentration. De flesta tester tar 3–7 minuter.",
     step3_title:"Se ditt resultat",

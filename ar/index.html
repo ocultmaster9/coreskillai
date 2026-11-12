@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">مجاني • بلا حساب • بلا اشتراك</span></div>
     <h1 data-i18n="hero_title">اكتشف ما يقدر عليه دماغك حقًا</h1>
-    <p data-i18n="hero_sub">١١ اختبارًا مجانيًا مبنية على أبحاث منشورة. نتائج واضحة في دقائق، بـ٤٣ لغة.</p>
+    <p data-i18n="hero_sub">اختبارات مجانية مبنية على أبحاث منشورة، مصنّفة حسب ما تقيسه. نتائج واضحة في دقائق، بـ43 لغة.</p>
     <div class="hero-btns">
       <a href="/ar/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">ابدأ اختبار الذكاء مجانًا</a>
       <a href="/ar/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">كل الاختبارات</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">كل الاختبارات</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">كل الاختبارات</h2>
     <p class="section-subtitle" data-i18n="tests_sub">اكتشف ملفك المعرفي والشخصي الحقيقي</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">التفكير والاستدلال</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">السرعة والمهارات</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">الشخصية والمسار المهني</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">الحواس والصحة</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">التفكير والاستدلال</span></h2>
+<div class="tests-grid">
 <a href="/ar/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~20 <span data-i18n="card_min">دقيقة</span></span></div>
-</a>
-<a href="/ar/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">اختبار سرعة رد الفعل</h3>
-    <p data-i18n="rt_desc">قِس سرعة استجابة دماغك لإشارة بصرية.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">سهل</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">دقيقة</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~2 <span data-i18n="card_min">دقيقة</span></span></div>
-</a>
-<a href="/ar/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">اختبار الذاكرة العاملة</h3>
-    <p data-i18n="mem_desc">تحقق من سعة ذاكرتك القصيرة للأرقام — مؤشر كلاسيكي على عمل الدماغ.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">متوسط</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">دقيقة</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~3 <span data-i18n="card_min">دقيقة</span></span></div>
 </a>
 <a href="/ar/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~5 <span data-i18n="card_min">دقيقة</span></span></div>
 </a>
-<a href="/ar/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/ar/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">اختبار رؤية الألوان</h3>
-    <p data-i18n="cv_desc">رتّب الدرجات اللونية لقياس دقة إدراكك للألوان.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">اختبار الذاكرة العاملة</h3>
+    <p data-i18n="mem_desc">تحقق من سعة ذاكرتك القصيرة للأرقام — مؤشر كلاسيكي على عمل الدماغ.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">متوسط</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">دقيقة</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~3 <span data-i18n="card_min">دقيقة</span></span></div>
 </a>
+<a href="/ar/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">اختبار الدوران الذهني</h3>
+    <p data-i18n="rot_desc">٢٠ لغزًا مكانيًا يقيس قدرتك على تدوير الأشكال في ذهنك. بلا كلمات ولا أرقام.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">صعب</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">دقيقة</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~6 <span data-i18n="card_min">دقيقة</span></span></div>
+</a>
+<a href="/ar/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">اختبار الانتباه والتركيز</h3>
+    <p data-i18n="foc_desc">تأثير ستروب — قِس تحكّمك المعرفي وسرعة معالجتك.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">متوسط</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">دقيقة</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~3 <span data-i18n="card_min">دقيقة</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">السرعة والمهارات</span></h2>
+<div class="tests-grid">
+<a href="/ar/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">اختبار سرعة رد الفعل</h3>
+    <p data-i18n="rt_desc">قِس سرعة استجابة دماغك لإشارة بصرية.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">سهل</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">دقيقة</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~2 <span data-i18n="card_min">دقيقة</span></span></div>
+</a>
+<a href="/ar/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">اختبار سرعة الكتابة</h3>
+    <p data-i18n="typ_desc">اعرف سرعتك في الكتابة وموقعك بين مستخدمي العالم.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">سهل</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">دقيقة</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~2 <span data-i18n="card_min">دقيقة</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">الشخصية والمسار المهني</span></h2>
+<div class="tests-grid">
 <a href="/ar/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~5 <span data-i18n="card_min">دقيقة</span></span></div>
 </a>
-<a href="/ar/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">اختبار الانتباه والتركيز</h3>
-    <p data-i18n="foc_desc">تأثير ستروب — قِس تحكّمك المعرفي وسرعة معالجتك.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">متوسط</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">دقيقة</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~3 <span data-i18n="card_min">دقيقة</span></span></div>
-</a>
-<a href="/ar/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">اختبار سرعة الكتابة</h3>
-    <p data-i18n="typ_desc">اعرف سرعتك في الكتابة وموقعك بين مستخدمي العالم.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">سهل</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">دقيقة</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~2 <span data-i18n="card_min">دقيقة</span></span></div>
-</a>
-<a href="/ar/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">اختبار الدوران الذهني</h3>
-    <p data-i18n="rot_desc">٢٠ لغزًا مكانيًا يقيس قدرتك على تدوير الأشكال في ذهنك. بلا كلمات ولا أرقام.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">صعب</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">دقيقة</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~6 <span data-i18n="card_min">دقيقة</span></span></div>
-</a>
 <a href="/ar/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~8 <span data-i18n="card_min">دقيقة</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">الحواس والصحة</span></h2>
+<div class="tests-grid">
+<a href="/ar/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">اختبار رؤية الألوان</h3>
+    <p data-i18n="cv_desc">رتّب الدرجات اللونية لقياس دقة إدراكك للألوان.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">متوسط</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">دقيقة</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~3 <span data-i18n="card_min">دقيقة</span></span></div>
 </a>
 <a href="/ar/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">ابدأ الاختبار</span> &#8594; <span>~5 <span data-i18n="card_min">دقيقة</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">كيف يعمل</h2>
     <p class="section-subtitle" data-i18n="how_sub">ثلاث خطوات بسيطة لتكتشف قدراتك</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">اختر اختبارًا</h4><p data-i18n="step1_desc">اختر واحدًا من 11 اختبارًا مبنيًا على أسس علمية للقدرات المعرفية والشخصية.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">اختر اختبارًا</h4><p data-i18n="step1_desc">اختر اختبارًا حسب الفئة: التفكير، أو السرعة، أو الشخصية، أو الحواس والصحة.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">أدِّ الاختبار</h4><p data-i18n="step2_desc">اتبع التعليمات دون مشتتات. تستغرق معظم الاختبارات من 3 إلى 7 دقائق.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">اطّلع على النتيجة</h4><p data-i18n="step3_desc">نتيجة فورية مع النسبة المئوية العالمية. شاركها بنقرة واحدة.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">شارك النتيجة</h4><p data-i18n="step4_desc">بنقرة واحدة تشارك نتيجتك — تحدَّ أصدقاءك.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">لماذا تقيس قدراتك المعرفية؟</h2><p data-i18n="home_sci_body">كل اختبار من الاختبارات الأحد عشر في CoreSkillAI مقتبس من أدوات تُستعمل فعلًا في البحث النفسي: اختبار الذكاء ينتمي إلى تقليد الاستدلال بالمصفوفات، واختبار الذاكرة يطبّق نموذج مدى الأرقام الكلاسيكي، واختبار الانتباه يستعمل تأثير ستروب البالغ من العمر تسعين عامًا، واختبار الشخصية يتبع نموذج العوامل الخمسة السائد علميًا. تشرح كل صفحة العلم الكامن وراء المهمة، وكيف تقرأ نتيجتك، وما تقوله الأبحاث عن تحسينها. تعمل الاختبارات كلها داخل متصفحك بالكامل، وتستغرق بين دقيقتين وعشرين دقيقة، وتقارن نتيجتك بنِسب مئوية عالمية — مجانًا، دون هوية، ودون حساب.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">لماذا تقيس قدراتك المعرفية؟</h2><p data-i18n="home_sci_body">كل اختبار على CoreSkillAI مقتبس من أساليب مستخدمة في أبحاث منشورة: اختبار الذكاء من الاستدلال بالمصفوفات، واختبار الذاكرة من مهمة تذكّر الأرقام، واختبار التركيز من تأثير ستروب، واختبار الشخصية من نموذج العوامل الخمسة الكبرى، واختبار النظر من لوحات فحص النظر في العيادات. تشرح كل صفحة اختبار العلم الذي تقوم عليه المهمة، وكيف تقرأ نتيجتك، وما لا يمكنها أن تخبرك به. تعمل كل الاختبارات في متصفحك، مجانًا وبدون كشف هويتك، ومن دون حساب.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">قائم على البحث • مجاني دائمًا • دون حساب</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="ar";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/ar.js?v=ad66f081"></script>
+<script>window.PAGE_LANG="ar";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/ar.js?v=bacd3379"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

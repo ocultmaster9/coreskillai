@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pl = {
+    cat_cog:"Umysł i rozumowanie",
+    cat_pers:"Osobowość i kariera",
+    cat_sense:"Zmysły i zdrowie",
+    cat_speed:"Szybkość i umiejętności",
     rot_big_turn:"Duże obroty",
     rot_desc:"20 zadań przestrzennych mierzących, jak dobrze obracasz kształty w głowie. Bez słów i bez liczb.",
     rot_how1:"U góry pojawia się figura, pod nią sześć kandydatek.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.pl = {
     rt_r_superior:"Znakomity",
     typ_chars:"Znaki",
     tests_badge:"11 darmowych testów",
-    home_sci_body:"Każdy z jedenastu testów na CoreSkillAI wywodzi się z narzędzi realnie stosowanych w badaniach psychologicznych: test IQ należy do tradycji rozumowania na macierzach, test pamięci realizuje klasyczny paradygmat rozpiętości cyfr, test uwagi wykorzystuje liczący 90 lat efekt Stroopa, a test osobowości opiera się na dominującym naukowo modelu Wielkiej Piątki. Każda strona testu wyjaśnia naukę stojącą za zadaniem, jak odczytać swój wynik i co badania mówią o jego poprawie. Wszystkie testy działają w całości w przeglądarce, trwają od 2 do 20 minut i porównują wynik z percentylami światowymi — bezpłatnie, anonimowo i bez zakładania konta.",
+    home_sci_body:"Każdy test na CoreSkillAI jest oparty na metodach stosowanych w opublikowanych badaniach: test IQ na rozumowaniu matrycowym, test pamięci na zadaniu powtarzania cyfr, test koncentracji na efekcie Stroopa, test osobowości na modelu Wielkiej Piątki, a test wzroku na klinicznych tablicach okulistycznych. Każda strona testu wyjaśnia naukę stojącą za zadaniem, jak odczytać wynik i czego on nie powie. Wszystkie testy działają w przeglądarce, za darmo i anonimowo, bez zakładania konta.",
     home_sci_title:"Po co badać własne zdolności poznawcze?",
     step4_desc:"Jedno kliknięcie, by pokazać wynik — rzuć wyzwanie znajomym.",
     step4_title:"Udostępnij",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.pl = {
     nav_take:"Zrób test",
     hero_badge:"Za darmo • Bez konta • Bez opłat",
     hero_title:"Odkryj, do czego naprawdę zdolny jest Twój mózg",
-    hero_sub:"11 darmowych testów opartych na opublikowanych badaniach. Jasne wyniki w kilka minut, w 43 językach.",
+    hero_sub:"Darmowe testy oparte na opublikowanych badaniach, pogrupowane według tego, co mierzą. Jasne wyniki w kilka minut, w 43 językach.",
     btn_iq:"Zrób darmowy test IQ",
     btn_start:"Zacznij testy",
     btn_view_all:"Zobacz wszystkie testy",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.pl = {
     how_title:"Jak to działa",
     how_sub:"Trzy proste kroki, by poznać swoje możliwości",
     step1_title:"Wybierz test",
-    step1_desc:"Wybierz spośród 11 testów poznawczych i osobowości opartych na badaniach.",
+    step1_desc:"Wybierz test według kategorii: umysł, szybkość, osobowość albo zmysły i zdrowie.",
     step2_title:"Wykonaj go",
     step2_desc:"Postępuj zgodnie z instrukcją i skup się. Większość testów trwa 3–7 minut.",
     step3_title:"Zobacz wynik",

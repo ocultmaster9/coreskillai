@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">חינם • בלי חשבון • בלי תשלום</span></div>
     <h1 data-i18n="hero_title">גלו מה המוח שלכם באמת מסוגל לעשות</h1>
-    <p data-i18n="hero_sub">11 מבחנים חינמיים הבנויים על מחקר שפורסם. תוצאות ברורות בדקות, ב-43 שפות.</p>
+    <p data-i18n="hero_sub">מבחנים חינמיים המבוססים על מחקר שפורסם, מסודרים לפי מה שהם מודדים. תוצאות ברורות בתוך דקות, ב-43 שפות.</p>
     <div class="hero-btns">
       <a href="/he/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">התחילו מבחן משכל בחינם</a>
       <a href="/he/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">כל המבחנים</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">כל המבחנים</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">כל המבחנים</h2>
     <p class="section-subtitle" data-i18n="tests_sub">גלו את הפרופיל הקוגניטיבי והאישיותי האמיתי שלכם</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">חשיבה והסקה</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">מהירות ומיומנויות</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">אישיות וקריירה</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">חושים ובריאות</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">חשיבה והסקה</span></h2>
+<div class="tests-grid">
 <a href="/he/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~20 <span data-i18n="card_min">דק'</span></span></div>
-</a>
-<a href="/he/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">מבחן מהירות תגובה</h3>
-    <p data-i18n="rt_desc">מדדו כמה מהר המוח שלכם מגיב לאות חזותי.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">קל</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">דק'</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~2 <span data-i18n="card_min">דק'</span></span></div>
-</a>
-<a href="/he/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">מבחן זיכרון עבודה</h3>
-    <p data-i18n="mem_desc">בדקו את טווח הזיכרון קצר הטווח שלכם לספרות — מדד קלאסי לפעילות המוח.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">בינוני</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">דק'</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~3 <span data-i18n="card_min">דק'</span></span></div>
 </a>
 <a href="/he/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~5 <span data-i18n="card_min">דק'</span></span></div>
 </a>
-<a href="/he/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/he/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">מבחן ראיית צבעים</h3>
-    <p data-i18n="cv_desc">סדרו את הגוונים כדי למדוד את דיוק תפיסת הצבע שלכם.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">מבחן זיכרון עבודה</h3>
+    <p data-i18n="mem_desc">בדקו את טווח הזיכרון קצר הטווח שלכם לספרות — מדד קלאסי לפעילות המוח.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">בינוני</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">דק'</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~3 <span data-i18n="card_min">דק'</span></span></div>
 </a>
+<a href="/he/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">מבחן סיבוב מנטלי</h3>
+    <p data-i18n="rot_desc">20 חידות מרחביות שמודדות כמה טוב אתם מסובבים צורות בראש. בלי מילים ובלי מספרים.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">קשה</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">דק'</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~6 <span data-i18n="card_min">דק'</span></span></div>
+</a>
+<a href="/he/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">מבחן קשב וריכוז</h3>
+    <p data-i18n="foc_desc">אפקט סטרופ — מדדו את השליטה הקוגניטיבית ומהירות העיבוד שלכם.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">בינוני</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">דק'</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~3 <span data-i18n="card_min">דק'</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">מהירות ומיומנויות</span></h2>
+<div class="tests-grid">
+<a href="/he/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">מבחן מהירות תגובה</h3>
+    <p data-i18n="rt_desc">מדדו כמה מהר המוח שלכם מגיב לאות חזותי.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">קל</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">דק'</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~2 <span data-i18n="card_min">דק'</span></span></div>
+</a>
+<a href="/he/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">מבחן מהירות הקלדה</h3>
+    <p data-i18n="typ_desc">גלו כמה מהר אתם מקלידים ומה מקומכם בעולם.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">קל</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">דק'</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~2 <span data-i18n="card_min">דק'</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">אישיות וקריירה</span></h2>
+<div class="tests-grid">
 <a href="/he/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~5 <span data-i18n="card_min">דק'</span></span></div>
 </a>
-<a href="/he/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">מבחן קשב וריכוז</h3>
-    <p data-i18n="foc_desc">אפקט סטרופ — מדדו את השליטה הקוגניטיבית ומהירות העיבוד שלכם.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">בינוני</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">דק'</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~3 <span data-i18n="card_min">דק'</span></span></div>
-</a>
-<a href="/he/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">מבחן מהירות הקלדה</h3>
-    <p data-i18n="typ_desc">גלו כמה מהר אתם מקלידים ומה מקומכם בעולם.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">קל</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">דק'</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~2 <span data-i18n="card_min">דק'</span></span></div>
-</a>
-<a href="/he/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">מבחן סיבוב מנטלי</h3>
-    <p data-i18n="rot_desc">20 חידות מרחביות שמודדות כמה טוב אתם מסובבים צורות בראש. בלי מילים ובלי מספרים.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">קשה</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">דק'</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~6 <span data-i18n="card_min">דק'</span></span></div>
-</a>
 <a href="/he/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~8 <span data-i18n="card_min">דק'</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">חושים ובריאות</span></h2>
+<div class="tests-grid">
+<a href="/he/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">מבחן ראיית צבעים</h3>
+    <p data-i18n="cv_desc">סדרו את הגוונים כדי למדוד את דיוק תפיסת הצבע שלכם.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">בינוני</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">דק'</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~3 <span data-i18n="card_min">דק'</span></span></div>
 </a>
 <a href="/he/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">התחל מבחן</span> &#8594; <span>~5 <span data-i18n="card_min">דק'</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">איך זה עובד</h2>
     <p class="section-subtitle" data-i18n="how_sub">שלושה צעדים פשוטים לגילוי היכולות שלכם</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">בחרו מבחן</h4><p data-i18n="step1_desc">בחרו אחד מתוך 11 מבחנים מבוססי מחקר ליכולות קוגניטיביות ולאישיות.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">בחרו מבחן</h4><p data-i18n="step1_desc">בחרו מבחן לפי קטגוריה: חשיבה, מהירות, אישיות, או חושים ובריאות.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">בצעו אותו</h4><p data-i18n="step2_desc">עקבו אחר ההנחיות בלי הסחות דעת. רוב המבחנים אורכים 3–7 דקות.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">צפו בתוצאה</h4><p data-i18n="step3_desc">תוצאה מיידית עם אחוזון עולמי. שתפו אותה בלחיצה אחת.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">שיתוף</h4><p data-i18n="step4_desc">בלחיצה אחת אפשר לשתף את התוצאה — אתגרו את החברים.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">למה כדאי למדוד את היכולות הקוגניטיביות שלכם?</h2><p data-i18n="home_sci_body">כל אחד מאחד־עשר המבחנים ב-CoreSkillAI נגזר מכלים שנעשה בהם שימוש ממשי במחקר הפסיכולוגי: מבחן המשכל שייך למסורת ההיסק על מטריצות, מבחן הזיכרון מיישם את מוטת הספרות הקלאסית, מבחן הקשב משתמש באפקט סטרופ בן תשעים השנים, ומבחן האישיות הולך בעקבות מודל חמשת הגדולים, הדומיננטי במדע. כל עמוד מבחן מסביר את המדע שמאחורי המשימה, כיצד לקרוא את התוצאה ומה אומר המחקר על שיפורה. כל המבחנים רצים כולם בדפדפן, נמשכים בין 2 ל-20 דקות ומשווים את התוצאה לאחוזונים עולמיים — בחינם, אנונימית וללא חשבון.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">למה כדאי למדוד את היכולות הקוגניטיביות שלכם?</h2><p data-i18n="home_sci_body">כל מבחן ב-CoreSkillAI מבוסס על שיטות ממחקר שפורסם: מבחן ה-IQ על הסקה במטריצות, מבחן הזיכרון על משימת טווח הספרות, מבחן הריכוז על אפקט סטרופ, מבחן האישיות על מודל חמשת הגורמים הגדולים ובדיקת הראייה על לוחות ראייה קליניים. כל עמוד מבחן מסביר את המדע שמאחורי המשימה, איך לקרוא את התוצאה ומה היא אינה יכולה לומר. כל המבחנים פועלים בדפדפן שלכם, בחינם ובאופן אנונימי, ללא חשבון.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">מבוסס מחקר • חינם לתמיד • ללא חשבון</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="he";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/he.js?v=2ccd395e"></script>
+<script>window.PAGE_LANG="he";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/he.js?v=931f45d7"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

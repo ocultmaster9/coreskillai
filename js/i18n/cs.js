@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.cs = {
+    cat_cog:"Myšlení a uvažování",
+    cat_pers:"Osobnost a kariéra",
+    cat_sense:"Smysly a zdraví",
+    cat_speed:"Rychlost a dovednosti",
     rot_big_turn:"Velká otočení",
     rot_desc:"20 prostorových úloh měřících, jak dobře otáčíte tvary v hlavě. Žádná slova, žádná čísla.",
     rot_how1:"Nahoře se objeví obrazec. Pod ním je šest kandidátů.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.cs = {
     rt_r_superior:"Vynikající",
     typ_chars:"Znaky",
     tests_badge:"11 testů zdarma",
-    home_sci_body:"Každý z jedenácti testů na CoreSkillAI vychází z nástrojů, které se skutečně používají v psychologickém výzkumu: IQ test patří do tradice uvažování nad maticemi, paměťový test realizuje klasické rozpětí číslic, test pozornosti využívá devadesát let starý Stroopův efekt a osobnostní test se drží vědecky převládajícího modelu Velké pětky. Každá stránka testu vysvětluje vědu za úlohou, jak číst svůj výsledek a co výzkum říká o jeho zlepšování. Všechny testy běží zcela v prohlížeči, trvají 2 až 20 minut a porovnávají výsledek se světovými percentily — zdarma, anonymně a bez účtu.",
+    home_sci_body:"Každý test na CoreSkillAI vychází z metod používaných v publikovaném výzkumu: test IQ z maticového uvažování, test paměti z úlohy opakování číslic, test soustředění ze Stroopova efektu, test osobnosti z modelu Velké pětky a test zraku z klinických optotypových tabulí. Každá stránka testu vysvětluje vědu za úlohou, jak číst výsledek a co vám říct nemůže. Všechny testy běží ve vašem prohlížeči, zdarma a anonymně, bez účtu.",
     home_sci_title:"Proč měřit vlastní poznávací schopnosti?",
     step4_desc:"Jedním kliknutím sdílíš výsledek — vyzvi kamarády.",
     step4_title:"Sdílet",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.cs = {
     nav_take:"Vyzkoušet test",
     hero_badge:"Zdarma • Bez účtu • Bez placení",
     hero_title:"Zjistěte, co váš mozek doopravdy dokáže",
-    hero_sub:"11 testů zdarma postavených na publikovaném výzkumu. Jasné výsledky během minut, ve 43 jazycích.",
+    hero_sub:"Bezplatné testy založené na publikovaném výzkumu, seřazené podle toho, co měří. Jasné výsledky během pár minut, ve 43 jazycích.",
     btn_iq:"Vyzkoušet IQ test zdarma",
     btn_start:"Spustit test",
     btn_view_all:"Všechny testy",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.cs = {
     how_title:"Jak to funguje",
     how_sub:"Tři jednoduché kroky k poznání vašich schopností",
     step1_title:"Vyberte test",
-    step1_desc:"Zvolte jeden z 11 vědecky podložených testů poznávacích schopností a osobnosti.",
+    step1_desc:"Vyberte test podle kategorie: myšlení, rychlost, osobnost nebo smysly a zdraví.",
     step2_title:"Absolvujte ho",
     step2_desc:"Postupujte podle pokynů bez rozptylování. Většina testů trvá 3–7 minut.",
     step3_title:"Podívejte se na výsledek",

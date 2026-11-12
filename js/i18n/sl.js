@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sl = {
+    cat_cog:"Mišljenje in sklepanje",
+    cat_pers:"Osebnost in kariera",
+    cat_sense:"Čutila in zdravje",
+    cat_speed:"Hitrost in spretnosti",
     rot_big_turn:"Veliki zasuki",
     rot_desc:"20 prostorskih nalog, ki merijo, kako dobro v mislih vrtite oblike. Brez besed in brez številk.",
     rot_how1:"Zgoraj se pojavi lik, pod njim šest kandidatov.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.sl = {
     rt_r_superior:"Vrhunsko",
     typ_chars:"Znaki",
     tests_badge:"11 brezplačnih testov",
-    home_sci_body:"Vsak od enajstih testov na CoreSkillAI izhaja iz orodij, ki se resnično uporabljajo v psiholoških raziskavah: test inteligentnosti sodi v tradicijo sklepanja z matrikami, spominski test uresničuje klasični razpon števk, test pozornosti uporablja devetdeset let star Stroopov učinek, osebnostni test pa sledi znanstveno prevladujočemu modelu Velikih pet. Vsaka stran testa pojasni znanost za nalogo, kako brati svoj rezultat in kaj raziskave pravijo o njegovem izboljšanju. Vsi testi tečejo v celoti v brskalniku, trajajo od 2 do 20 minut in primerjajo rezultat s svetovnimi percentili — brezplačno, anonimno in brez računa.",
+    home_sci_body:"Vsak test na CoreSkillAI je prirejen po metodah iz objavljenih raziskav: test IQ po matričnem sklepanju, test spomina po nalogi ponavljanja števk, test zbranosti po Stroopovem učinku, osebnostni test po modelu velikih pet in test vida po kliničnih tablicah za vid. Vsaka stran testa razloži znanost za nalogo, kako brati rezultat in česa vam ne more povedati. Vsi testi tečejo v vašem brskalniku, brezplačno in anonimno, brez računa.",
     home_sci_title:"Zakaj meriti lastne spoznavne sposobnosti?",
     step4_desc:"En klik za delitev rezultata — izzovi prijatelje.",
     step4_title:"Deli",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.sl = {
     nav_take:"Opravi test",
     hero_badge:"Brezplačno • Brez računa • Brez plačila",
     hero_title:"Odkrijte, kaj vaši možgani zares zmorejo",
-    hero_sub:"11 brezplačnih testov, zgrajenih na objavljenih raziskavah. Jasni rezultati v nekaj minutah, v 43 jezikih.",
+    hero_sub:"Brezplačni testi, ki temeljijo na objavljenih raziskavah, razvrščeni po tem, kaj merijo. Jasni rezultati v nekaj minutah, v 43 jezikih.",
     btn_iq:"Opravi brezplačen IQ test",
     btn_start:"Začni test",
     btn_view_all:"Vsi testi",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.sl = {
     how_title:"Kako deluje",
     how_sub:"Trije preprosti koraki do odkrivanja vaših sposobnosti",
     step1_title:"Izberite test",
-    step1_desc:"Izberite enega od 11 znanstveno utemeljenih testov spoznavanja in osebnosti.",
+    step1_desc:"Izberite test po kategoriji: mišljenje, hitrost, osebnost ali čutila in zdravje.",
     step2_title:"Opravite ga",
     step2_desc:"Sledite navodilom brez motenj. Večina testov traja 3–7 minut.",
     step3_title:"Poglejte rezultat",

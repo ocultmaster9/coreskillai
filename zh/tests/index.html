@@ -58,7 +58,7 @@
 <link rel="alternate" hreflang="vi" href="https://coreskillai.com/vi/tests/">
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/tests/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/tests/">
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -94,9 +94,18 @@
 <div class="page">
   <section class="section" style="padding-top:48px">
     <div class="hero-badge" style="margin-bottom:16px"><span class="dot"></span><span data-i18n="tests_badge">11 项免费测试</span></div>
-    <h1 class="section-title" style="font-size:2.2rem;margin-bottom:8px" data-i18n="tests_title">全部测试</h1>
+    <h1 class="section-title" id="tests-h" style="font-size:2.2rem;margin-bottom:8px" data-i18n="tests_title">全部测试</h1>
     <p class="section-subtitle" data-i18n="tests_sub">发现你真实的认知与人格画像</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">思维与推理</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">速度与技能</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">性格与职业</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">感官与健康</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">思维与推理</span></h2>
+<div class="tests-grid">
 <a href="/zh/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -109,32 +118,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~20 <span data-i18n="card_min">分钟</span></span></div>
-</a>
-<a href="/zh/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">反应速度测试</h3>
-    <p data-i18n="rt_desc">测量你的大脑对视觉刺激的反应有多快。</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">简单</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">分钟</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~2 <span data-i18n="card_min">分钟</span></span></div>
-</a>
-<a href="/zh/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">工作记忆测试</h3>
-    <p data-i18n="mem_desc">测量你的短时数字广度，这是最经典的大脑基准。</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">中等</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">分钟</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~3 <span data-i18n="card_min">分钟</span></span></div>
 </a>
 <a href="/zh/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -149,12 +132,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~5 <span data-i18n="card_min">分钟</span></span></div>
 </a>
-<a href="/zh/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/zh/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">色觉测试</h3>
-    <p data-i18n="cv_desc">按顺序排列色相，测量你色彩感知的精确度。</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">工作记忆测试</h3>
+    <p data-i18n="mem_desc">测量你的短时数字广度，这是最经典的大脑基准。</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">中等</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">分钟</span></span>
@@ -162,6 +145,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~3 <span data-i18n="card_min">分钟</span></span></div>
 </a>
+<a href="/zh/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">心理旋转测验</h3>
+    <p data-i18n="rot_desc">20 道空间题目，测量你在脑中旋转图形的能力。不涉及文字与数字。</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">困难</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">分钟</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~6 <span data-i18n="card_min">分钟</span></span></div>
+</a>
+<a href="/zh/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">专注力与注意力测试</h3>
+    <p data-i18n="foc_desc">斯特鲁普效应，测量你的认知控制与处理速度。</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">中等</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">分钟</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~3 <span data-i18n="card_min">分钟</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">速度与技能</span></h2>
+<div class="tests-grid">
+<a href="/zh/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">反应速度测试</h3>
+    <p data-i18n="rt_desc">测量你的大脑对视觉刺激的反应有多快。</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">简单</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">分钟</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~2 <span data-i18n="card_min">分钟</span></span></div>
+</a>
+<a href="/zh/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">打字速度测试</h3>
+    <p data-i18n="typ_desc">看看你打字有多快，以及在全球处于什么水平。</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">简单</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">分钟</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~2 <span data-i18n="card_min">分钟</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">性格与职业</span></h2>
+<div class="tests-grid">
 <a href="/zh/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -188,45 +231,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~5 <span data-i18n="card_min">分钟</span></span></div>
 </a>
-<a href="/zh/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">专注力与注意力测试</h3>
-    <p data-i18n="foc_desc">斯特鲁普效应，测量你的认知控制与处理速度。</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">中等</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">分钟</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~3 <span data-i18n="card_min">分钟</span></span></div>
-</a>
-<a href="/zh/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">打字速度测试</h3>
-    <p data-i18n="typ_desc">看看你打字有多快，以及在全球处于什么水平。</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">简单</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">分钟</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~2 <span data-i18n="card_min">分钟</span></span></div>
-</a>
-<a href="/zh/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">心理旋转测验</h3>
-    <p data-i18n="rot_desc">20 道空间题目，测量你在脑中旋转图形的能力。不涉及文字与数字。</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">困难</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">分钟</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~6 <span data-i18n="card_min">分钟</span></span></div>
-</a>
 <a href="/zh/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -239,6 +243,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~8 <span data-i18n="card_min">分钟</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">感官与健康</span></h2>
+<div class="tests-grid">
+<a href="/zh/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">色觉测试</h3>
+    <p data-i18n="cv_desc">按顺序排列色相，测量你色彩感知的精确度。</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">中等</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">分钟</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~3 <span data-i18n="card_min">分钟</span></span></div>
 </a>
 <a href="/zh/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -266,6 +287,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">开始测试</span> &#8594; <span>~5 <span data-i18n="card_min">分钟</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -307,6 +330,6 @@
     <span data-i18n="footer_promise">基于研究 • 永久免费 • 无需账号</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="zh";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/zh.js?v=01d915af"></script>
+<script>window.PAGE_LANG="zh";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/zh.js?v=f84b9cc8"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

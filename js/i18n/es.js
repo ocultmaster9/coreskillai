@@ -2,6 +2,11 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.es = {
+    cat_cog:"Mente y razonamiento",
+    cat_pers:"Personalidad y carrera",
+    cat_sense:"Sentidos y salud",
+    cat_speed:"Velocidad y habilidades",
+    step1_desc:"Elige un test por categoría: mente, velocidad, personalidad o sentidos y salud.",
     rot_big_turn:"Giros grandes",
     rot_desc:"20 puzles espaciales que miden lo bien que giras formas en tu mente. Sin palabras ni números.",
     rot_how1:"Arriba aparece una figura. Debajo hay seis candidatas.",
@@ -77,7 +82,7 @@ window.TRANSLATIONS.es = {
     rt_r_superior:"Superior",
     typ_chars:"Caracteres",
     tests_badge:"11 pruebas gratuitas disponibles",
-    home_sci_body:"Cada una de las once pruebas de CoreSkillAI está adaptada de instrumentos empleados en investigación psicológica real: el test de inteligencia sigue la tradición del razonamiento con matrices, el de memoria aplica el clásico paradigma de amplitud de dígitos, el de atención usa el efecto Stroop, que tiene 90 años, y el de personalidad sigue el modelo de los Cinco Grandes, dominante en la ciencia. Cada página explica la ciencia que hay detrás de la tarea, cómo interpretar tu resultado y qué dice la investigación sobre mejorarlo. Todas las pruebas se ejecutan por completo en tu navegador, duran entre 2 y 20 minutos y comparan tu resultado con percentiles mundiales: gratis, anónimo y sin necesidad de cuenta.",
+    home_sci_body:"Cada test de CoreSkillAI está adaptado de métodos usados en investigación publicada: el test de CI se basa en el razonamiento con matrices, el de memoria en la tarea de amplitud de dígitos, el de concentración en el efecto Stroop, el de personalidad en el modelo de los Cinco Grandes y el de visión en las cartas optométricas clínicas. Cada página explica la ciencia detrás de la tarea, cómo leer tu resultado y lo que no puede decirte. Todos los tests funcionan en tu navegador, gratis y de forma anónima, sin necesidad de cuenta.",
     home_sci_title:"¿Por qué medir tus capacidades cognitivas?",
     step4_desc:"Un clic para compartir tu resultado — supera a tus amigos.",
     step4_title:"Compártelo",
@@ -143,7 +148,7 @@ window.TRANSLATIONS.es = {
     nav_tests:"Tests", nav_about:"Acerca de", nav_take:"Hacer un Test",
     hero_badge:"Gratis • Sin cuenta • Sin pago",
     hero_title:"Descubre lo que tu cerebro puede hacer de verdad",
-    hero_sub:"11 tests gratuitos basados en investigación publicada. Resultados claros en minutos, en 43 idiomas.",
+    hero_sub:"Tests gratuitos basados en investigación publicada, agrupados según lo que miden. Resultados claros en minutos, en 43 idiomas.",
     btn_iq:"Hacer Test de CI Gratis", btn_start:"Comenzar", btn_view_all:"Ver Todos los Tests",
     stat_tests:"Tests Realizados", stat_countries:"Países", stat_free:"Tests Gratis", stat_anon:"% gratis",
     how_title:"Cómo Funciona", how_sub:"Tres simples pasos para descubrir tus habilidades",

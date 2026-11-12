@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Gratis • Geen rekening • Geen betaalmuur</span></div>
     <h1 data-i18n="hero_title">Ontdek Wat Jou Brein Werklik Kan Doen</h1>
-    <p data-i18n="hero_sub">11 gratis toetse gebou op gepubliseerde navorsing. Duidelike uitslae in minute, in 43 tale.</p>
+    <p data-i18n="hero_sub">Gratis toetse gebou op gepubliseerde navorsing, gegroepeer volgens wat hulle meet. Duidelike resultate binne minute, in 43 tale.</p>
     <div class="hero-btns">
       <a href="/af/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">Doen Gratis IK-toets</a>
       <a href="/af/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">Bekyk Alle Toetse</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">Alle Toetse</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">Alle Toetse</h2>
     <p class="section-subtitle" data-i18n="tests_sub">Ontdek jou ware kognitiewe en persoonlikheidsprofiel</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Denke en redenering</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Spoed en vaardighede</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Persoonlikheid en loopbaan</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Sintuie en gesondheid</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Denke en redenering</span></h2>
+<div class="tests-grid">
 <a href="/af/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~20 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/af/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">Reaksietydtoets</h3>
-    <p data-i18n="rt_desc">Meet hoe vinnig jou brein op visuele prikkels reageer.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Maklik</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/af/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">Werkgeheuetoets</h3>
-    <p data-i18n="mem_desc">Toets jou korttermyn-syferspan — die oorspronklike breinmaatstaf.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Matig</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/af/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/af/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/af/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">Kleursigtoets</h3>
-    <p data-i18n="cv_desc">Rangskik kleure in volgorde om die akkuraatheid van jou kleurwaarneming te meet.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">Werkgeheuetoets</h3>
+    <p data-i18n="mem_desc">Toets jou korttermyn-syferspan — die oorspronklike breinmaatstaf.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">Matig</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
+<a href="/af/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">Geestelike Rotasietoets</h3>
+    <p data-i18n="rot_desc">20 ruimtelike raaisels wat meet hoe goed jy vorms in jou kop draai. Geen woorde, geen syfers.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">Moeilik</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/af/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">Fokus- en Aandagtoets</h3>
+    <p data-i18n="foc_desc">Die Stroop-effek — meet jou kognitiewe beheer en verwerkingspoed.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Matig</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Spoed en vaardighede</span></h2>
+<div class="tests-grid">
+<a href="/af/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">Reaksietydtoets</h3>
+    <p data-i18n="rt_desc">Meet hoe vinnig jou brein op visuele prikkels reageer.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Maklik</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/af/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">Tikspoedtoets</h3>
+    <p data-i18n="typ_desc">Vind uit hoe vinnig jy tik en waar jy wêreldwyd staan.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Maklik</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Persoonlikheid en loopbaan</span></h2>
+<div class="tests-grid">
 <a href="/af/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/af/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">Fokus- en Aandagtoets</h3>
-    <p data-i18n="foc_desc">Die Stroop-effek — meet jou kognitiewe beheer en verwerkingspoed.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Matig</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/af/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">Tikspoedtoets</h3>
-    <p data-i18n="typ_desc">Vind uit hoe vinnig jy tik en waar jy wêreldwyd staan.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Maklik</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/af/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">Geestelike Rotasietoets</h3>
-    <p data-i18n="rot_desc">20 ruimtelike raaisels wat meet hoe goed jy vorms in jou kop draai. Geen woorde, geen syfers.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">Moeilik</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
-</a>
 <a href="/af/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~8 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Sintuie en gesondheid</span></h2>
+<div class="tests-grid">
+<a href="/af/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">Kleursigtoets</h3>
+    <p data-i18n="cv_desc">Rangskik kleure in volgorde om die akkuraatheid van jou kleurwaarneming te meet.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Matig</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/af/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doen Toets</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">Hoe Dit Werk</h2>
     <p class="section-subtitle" data-i18n="how_sub">Drie eenvoudige stappe om jou vermoëns te ontdek</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Kies 'n Toets</h4><p data-i18n="step1_desc">Kies uit 11 wetenskaplik gegronde kognitiewe en persoonlikheidsbeoordelings.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Kies 'n Toets</h4><p data-i18n="step1_desc">Kies 'n toets volgens kategorie: denke, spoed, persoonlikheid, of sintuie en gesondheid.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">Voltooi Dit</h4><p data-i18n="step2_desc">Volg die instruksies met volle fokus. Die meeste toetse neem 3–7 minute.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">Sien Jou Telling</h4><p data-i18n="step3_desc">Onmiddellike uitslae met wêreldwye persentieldata. Deel jou telling met een klik.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">Deel Dit</h4><p data-i18n="step4_desc">Een klik om jou telling te deel — klop jou vriende.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Hoekom Jou Kognitiewe Vaardighede Toets?</h2><p data-i18n="home_sci_body">Elkeen van die elf toetse op CoreSkillAI is aangepas uit instrumente wat in werklike sielkundige navorsing gebruik word: die IK-toets steun op matriksredenering, die geheuetoets implementeer die klassieke syferspan-paradigma, die fokustoets gebruik die 90 jaar oue Stroop-effek, en die persoonlikheidstoets volg die wetenskaplik dominante Groot Vyf-model. Elke toetsbladsy verduidelik die wetenskap agter die taak, hoe om jou telling te vertolk, en wat die navorsing sê oor die verbetering daarvan. Alle toetse loop volledig in jou blaaier, neem tussen 2 en 20 minute, en vergelyk jou uitslae met wêreldwye persentiele — gratis, anoniem, sonder 'n rekening.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Hoekom Jou Kognitiewe Vaardighede Toets?</h2><p data-i18n="home_sci_body">Elke toets op CoreSkillAI is aangepas uit metodes wat in gepubliseerde navorsing gebruik word: die IK-toets uit matriksredenering, die geheuetoets uit die syferreekstaak, die fokustoets uit die Stroop-effek, die persoonlikheidstoets uit die Groot Vyf-model en die oogtoets uit kliniese oogkaarte. Elke toetsbladsy verduidelik die wetenskap agter die taak, hoe om jou telling te lees en wat dit jou nie kan vertel nie. Alle toetse loop in jou blaaier, gratis en anoniem, sonder 'n rekening.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">Navorsingsgebaseer • Vir altyd gratis • Geen rekening nodig</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="af";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/af.js?v=d2adde40"></script>
+<script>window.PAGE_LANG="af";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/af.js?v=61945f5f"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

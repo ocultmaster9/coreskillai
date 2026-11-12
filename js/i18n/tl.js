@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.tl = {
+    cat_cog:"Isip at pangangatwiran",
+    cat_pers:"Personalidad at karera",
+    cat_sense:"Pandama at kalusugan",
+    cat_speed:"Bilis at kasanayan",
     rot_big_turn:"Malalaking ikot",
     rot_desc:"20 palaisipang pang-espasyo na sumusukat kung gaano kahusay mong pinaiikot ang mga hugis sa isip. Walang salita, walang numero.",
     rot_how1:"May lalabas na hugis sa itaas. Sa ilalim nito ay anim na kandidato.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.tl = {
     rt_r_superior:"Nakahihigit",
     typ_chars:"Mga karakter",
     tests_badge:"11 Libreng Pagsusulit na Available",
-    home_sci_body:"Ang bawat isa sa labing-isang pagsusulit sa CoreSkillAI ay hango sa mga instrumentong ginagamit sa tunay na pananaliksik sa sikolohiya: ang IQ test ay nakabatay sa tradisyon ng matrix reasoning, ang memory test ay gumagamit ng klasikong digit span paradigm, ang focus test ay gumagamit ng 90-taong gulang na Stroop effect, at ang personality test ay sumusunod sa Big Five na siyang nangingibabaw sa agham. Ipinapaliwanag ng bawat pahina ng pagsusulit ang agham sa likod ng gawain, kung paano bigyang-kahulugan ang iyong iskor, at kung ano ang sinasabi ng pananaliksik tungkol sa pagpapabuti nito. Lahat ng pagsusulit ay tumatakbo nang buo sa iyong browser, tumatagal ng 2 hanggang 20 minuto, at inihahambing ang iyong resulta sa pandaigdigang persentil — libre, hindi nagpapakilala, walang kailangang account.",
+    home_sci_body:"Bawat test sa CoreSkillAI ay hango sa mga pamamaraang ginagamit sa nailathalang pananaliksik: ang IQ test ay mula sa matrix reasoning, ang memory test sa digit span, ang focus test sa Stroop effect, ang personality test sa modelong Big Five, at ang eye test sa mga clinical eye chart. Ipinapaliwanag ng bawat pahina ng test ang agham sa likod ng gawain, paano basahin ang iyong resulta, at kung ano ang hindi nito masasabi. Tumatakbo ang lahat ng test sa iyong browser, libre at anonimo, nang walang account.",
     home_sci_title:"Bakit Dapat Subukin ang Iyong Kakayahang Kognitibo?",
     step4_desc:"Isang klik para ibahagi ang iyong iskor — talunin ang iyong mga kaibigan.",
     step4_title:"Ibahagi",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.tl = {
     nav_take:"Sagutan",
     hero_badge:"Libre • Walang account • Walang bayad",
     hero_title:"Tuklasin ang Tunay na Kayang Gawin ng Iyong Utak",
-    hero_sub:"11 libreng pagsusulit na nakabatay sa nailathalang pananaliksik. Malinaw na resulta sa loob ng minuto, sa 43 wika.",
+    hero_sub:"Libreng mga test na batay sa nailathalang pananaliksik, nakagrupo ayon sa sinusukat nila. Malinaw na resulta sa ilang minuto, sa 43 wika.",
     btn_iq:"Sagutan ang Libreng IQ Test",
     btn_start:"Simulan ang Pagsusulit",
     btn_view_all:"Tingnan Lahat ng Pagsusulit",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.tl = {
     how_title:"Paano Ito Gumagana",
     how_sub:"Tatlong simpleng hakbang para matuklasan ang iyong kakayahan",
     step1_title:"Pumili ng Pagsusulit",
-    step1_desc:"Pumili mula sa 11 na pagtatasa ng kognisyon at personalidad na suportado ng agham.",
+    step1_desc:"Pumili ng test ayon sa kategorya: isip, bilis, personalidad, o pandama at kalusugan.",
     step2_title:"Tapusin Ito",
     step2_desc:"Sundin ang mga tagubilin nang buong pokus. Karamihan ay tumatagal ng 3–7 minuto.",
     step3_title:"Tingnan ang Iskor",

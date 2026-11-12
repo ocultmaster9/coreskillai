@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.et = {
+    cat_cog:"Mõtlemine ja arutlemine",
+    cat_pers:"Isiksus ja karjäär",
+    cat_sense:"Meeled ja tervis",
+    cat_speed:"Kiirus ja oskused",
     rot_big_turn:"Suured pöörded",
     rot_desc:"20 ruumilist ülesannet, mis mõõdavad, kui hästi pöörad kujundeid peas. Ei sõnu, ei numbreid.",
     rot_how1:"Üleval ilmub kujund, all on kuus kandidaati.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.et = {
     rt_r_superior:"Väga hea",
     typ_chars:"Tähemärki",
     tests_badge:"11 tasuta testi",
-    home_sci_body:"Iga CoreSkillAI üheteistkümnest testist pärineb vahenditest, mida psühholoogiauuringutes tegelikult kasutatakse: IQ test kuulub maatriksarutluse traditsiooni, mälutest teostab klassikalise numbriulatuse, tähelepanutest kasutab üheksakümne aasta vanust Stroopi efekti ja isiksusetest järgib teaduses valitsevat Suure viisiku mudelit. Iga testileht selgitab ülesande taga olevat teadust, kuidas oma tulemust lugeda ja mida uuringud selle parandamise kohta ütlevad. Kõik testid töötavad täielikult brauseris, kestavad 2 kuni 20 minutit ja võrdlevad tulemust ülemaailmsete protsentiilidega — tasuta, anonüümselt ja kontot loomata.",
+    home_sci_body:"Iga CoreSkillAI test on kohandatud avaldatud uuringutes kasutatud meetoditest: IQ-test maatriksarutlusest, mälutest numbrijada ülesandest, keskendumistest Stroopi efektist, isiksusetest viie suure isiksuseomaduse mudelist ja nägemistest kliinilistest nägemistabelitest. Iga testi leht selgitab ülesande taga olevat teadust, kuidas tulemust lugeda ja mida see öelda ei saa. Kõik testid töötavad sinu brauseris, tasuta ja anonüümselt, ilma kontota.",
     home_sci_title:"Miks oma tunnetusvõimeid mõõta?",
     step4_desc:"Ühe klõpsuga jagad oma tulemust — kutsu sõbrad võistlema.",
     step4_title:"Jaga",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.et = {
     nav_take:"Tee test",
     hero_badge:"Tasuta • Kontot pole • Tasumüüri pole",
     hero_title:"Avastage, mida teie aju tegelikult suudab",
-    hero_sub:"11 tasuta testi, mis põhinevad avaldatud uuringutel. Selged tulemused minutitega, 43 keeles.",
+    hero_sub:"Avaldatud uuringutel põhinevad tasuta testid, rühmitatud selle järgi, mida need mõõdavad. Selged tulemused mõne minutiga, 43 keeles.",
     btn_iq:"Tee tasuta IQ test",
     btn_start:"Alusta testi",
     btn_view_all:"Kõik testid",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.et = {
     how_title:"Kuidas see toimib",
     how_sub:"Kolm lihtsat sammu oma võimete teadasaamiseks",
     step1_title:"Valige test",
-    step1_desc:"Valige üks 11 teaduslikult põhjendatud tunnetus- ja isiksusetesti seast.",
+    step1_desc:"Vali test kategooria järgi: mõtlemine, kiirus, isiksus või meeled ja tervis.",
     step2_title:"Tehke see ära",
     step2_desc:"Järgige juhiseid ilma segajateta. Enamik teste kestab 3–7 minutit.",
     step3_title:"Vaadake tulemust",

@@ -2,6 +2,11 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.pt = {
+    cat_cog:"Mente e raciocínio",
+    cat_pers:"Personalidade e carreira",
+    cat_sense:"Sentidos e saúde",
+    cat_speed:"Velocidade e habilidades",
+    step1_desc:"Escolha um teste por categoria: mente, velocidade, personalidade ou sentidos e saúde.",
     rot_big_turn:"Rotações grandes",
     rot_desc:"20 puzzles espaciais que medem o quão bem roda formas na sua cabeça. Sem palavras nem números.",
     rot_how1:"No topo aparece uma figura. Abaixo estão seis candidatas.",
@@ -77,7 +82,7 @@ window.TRANSLATIONS.pt = {
     rt_r_superior:"Superior",
     typ_chars:"Caracteres",
     tests_badge:"11 testes gratuitos disponíveis",
-    home_sci_body:"Cada um dos onze testes do CoreSkillAI é adaptado de instrumentos usados em investigação psicológica real: o teste de QI segue a tradição do raciocínio por matrizes, o de memória aplica o clássico paradigma da amplitude de dígitos, o de atenção usa o efeito Stroop, com 90 anos, e o de personalidade segue o modelo dos Cinco Grandes, dominante na ciência. Cada página explica a ciência por trás da tarefa, como interpretar o seu resultado e o que a investigação diz sobre melhorá-lo. Todos os testes correm inteiramente no seu navegador, demoram entre 2 e 20 minutos e comparam os seus resultados com percentis mundiais — grátis, anónimo e sem conta.",
+    home_sci_body:"Cada teste do CoreSkillAI é adaptado de métodos usados em pesquisa publicada: o teste de QI baseia-se no raciocínio com matrizes, o de memória na tarefa de span de dígitos, o de concentração no efeito Stroop, o de personalidade no modelo dos Cinco Grandes e o de visão nas tabelas optométricas clínicas. Cada página explica a ciência por trás da tarefa, como ler seu resultado e o que ele não pode dizer. Todos os testes rodam no seu navegador, de graça e de forma anônima, sem conta.",
     home_sci_title:"Porquê avaliar as suas capacidades cognitivas?",
     step4_desc:"Um clique para partilhar o seu resultado — desafie os seus amigos.",
     step4_title:"Partilhar",
@@ -143,7 +148,7 @@ window.TRANSLATIONS.pt = {
     nav_tests:"Testes", nav_about:"Sobre", nav_take:"Fazer um Teste",
     hero_badge:"Grátis • Sem conta • Sem pagamento",
     hero_title:"Descubra o que seu cérebro é realmente capaz de fazer",
-    hero_sub:"11 testes gratuitos construídos sobre investigação publicada. Resultados claros em minutos, em 43 línguas.",
+    hero_sub:"Testes gratuitos baseados em pesquisa publicada, agrupados pelo que medem. Resultados claros em minutos, em 43 idiomas.",
     btn_iq:"Fazer Teste de QI Grátis", btn_start:"Começar", btn_view_all:"Ver Todos os Testes",
     stat_tests:"Testes Realizados", stat_countries:"Países", stat_free:"Testes Grátis", stat_anon:"% grátis",
     how_title:"Como Funciona", how_sub:"Três passos simples para descobrir suas habilidades",

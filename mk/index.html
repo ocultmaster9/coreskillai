@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Бесплатно • Без сметка • Без плаќање</span></div>
     <h1 data-i18n="hero_title">Откријте што навистина може вашиот мозок</h1>
-    <p data-i18n="hero_sub">11 бесплатни тестови изградени врз објавени истражувања. Јасни резултати за неколку минути, на 43 јазици.</p>
+    <p data-i18n="hero_sub">Бесплатни тестови засновани на објавени истражувања, групирани според она што го мерат. Јасни резултати за неколку минути, на 43 јазици.</p>
     <div class="hero-btns">
       <a href="/mk/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">Направи бесплатен IQ тест</a>
       <a href="/mk/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">Сите тестови</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">Сите тестови</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">Сите тестови</h2>
     <p class="section-subtitle" data-i18n="tests_sub">Откријте го вашиот вистински когнитивен профил и профил на личност</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Размислување и заклучување</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Брзина и вештини</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Личност и кариера</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Сетила и здравје</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Размислување и заклучување</span></h2>
+<div class="tests-grid">
 <a href="/mk/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~20 <span data-i18n="card_min">мин</span></span></div>
-</a>
-<a href="/mk/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">Тест за брзина на реакција</h3>
-    <p data-i18n="rt_desc">Измерете колку брзо вашиот мозок реагира на визуелен сигнал.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Лесно</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">мин</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~2 <span data-i18n="card_min">мин</span></span></div>
-</a>
-<a href="/mk/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">Тест за работна меморија</h3>
-    <p data-i18n="mem_desc">Проверете го распонот на краткорочната меморија за цифри — класичен показател за работата на мозокот.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Средно</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">мин</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~3 <span data-i18n="card_min">мин</span></span></div>
 </a>
 <a href="/mk/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~5 <span data-i18n="card_min">мин</span></span></div>
 </a>
-<a href="/mk/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/mk/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">Тест за вид за бои</h3>
-    <p data-i18n="cv_desc">Подредете ги нијансите за да ја измерите точноста на вашето восприемање бои.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">Тест за работна меморија</h3>
+    <p data-i18n="mem_desc">Проверете го распонот на краткорочната меморија за цифри — класичен показател за работата на мозокот.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">Средно</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">мин</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~3 <span data-i18n="card_min">мин</span></span></div>
 </a>
+<a href="/mk/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">Тест за ментална ротација</h3>
+    <p data-i18n="rot_desc">20 просторни задачи што мерат колку добро вртите форми во главата. Без зборови и без бројки.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">Тешко</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">мин</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~6 <span data-i18n="card_min">мин</span></span></div>
+</a>
+<a href="/mk/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">Тест за внимание и усредоточеност</h3>
+    <p data-i18n="foc_desc">Струповиот ефект — измерете го когнитивниот контрол и брзината на обработка.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Средно</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">мин</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~3 <span data-i18n="card_min">мин</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Брзина и вештини</span></h2>
+<div class="tests-grid">
+<a href="/mk/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">Тест за брзина на реакција</h3>
+    <p data-i18n="rt_desc">Измерете колку брзо вашиот мозок реагира на визуелен сигнал.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Лесно</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">мин</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~2 <span data-i18n="card_min">мин</span></span></div>
+</a>
+<a href="/mk/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">Тест за брзина на пишување</h3>
+    <p data-i18n="typ_desc">Дознајте колку брзо пишувате и какво е вашето место во светот.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Лесно</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">мин</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~2 <span data-i18n="card_min">мин</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Личност и кариера</span></h2>
+<div class="tests-grid">
 <a href="/mk/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~5 <span data-i18n="card_min">мин</span></span></div>
 </a>
-<a href="/mk/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">Тест за внимание и усредоточеност</h3>
-    <p data-i18n="foc_desc">Струповиот ефект — измерете го когнитивниот контрол и брзината на обработка.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Средно</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">мин</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~3 <span data-i18n="card_min">мин</span></span></div>
-</a>
-<a href="/mk/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">Тест за брзина на пишување</h3>
-    <p data-i18n="typ_desc">Дознајте колку брзо пишувате и какво е вашето место во светот.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Лесно</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">мин</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~2 <span data-i18n="card_min">мин</span></span></div>
-</a>
-<a href="/mk/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">Тест за ментална ротација</h3>
-    <p data-i18n="rot_desc">20 просторни задачи што мерат колку добро вртите форми во главата. Без зборови и без бројки.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">Тешко</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">мин</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~6 <span data-i18n="card_min">мин</span></span></div>
-</a>
 <a href="/mk/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~8 <span data-i18n="card_min">мин</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Сетила и здравје</span></h2>
+<div class="tests-grid">
+<a href="/mk/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">Тест за вид за бои</h3>
+    <p data-i18n="cv_desc">Подредете ги нијансите за да ја измерите точноста на вашето восприемање бои.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Средно</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">мин</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~3 <span data-i18n="card_min">мин</span></span></div>
 </a>
 <a href="/mk/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Направи тест</span> &#8594; <span>~5 <span data-i18n="card_min">мин</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">Како функционира</h2>
     <p class="section-subtitle" data-i18n="how_sub">Три едноставни чекори до откривање на вашите способности</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Изберете тест</h4><p data-i18n="step1_desc">Изберете еден од 11 научно засновани тестови за спознание и личност.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Изберете тест</h4><p data-i18n="step1_desc">Изберете тест по категорија: размислување, брзина, личност или сетила и здравје.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">Направете го</h4><p data-i18n="step2_desc">Следете ги упатствата без попречување. Повеќето тестови траат 3–7 минути.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">Видете го резултатот</h4><p data-i18n="step3_desc">Веднаш резултат со светски перцентил. Споделете го со еден клик.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">Сподели</h4><p data-i18n="step4_desc">Со едно кликнување го споделуваш резултатот — предизвикај ги пријателите.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Зошто да ги мериш своите спознајни способности?</h2><p data-i18n="home_sci_body">Секој од единаесетте тестови на CoreSkillAI потекнува од алатки што навистина се користат во психолошките истражувања: тестот за интелигенција припаѓа на традицијата на расудување со матрици, тестот за меморија го спроведува класичниот опсег на цифри, тестот за внимание го користи деведесетгодишниот Струпов ефект, а тестот за личност го следи научно преовладувачкиот модел на Големите пет. Секоја страница објаснува која наука стои зад задачата, како да го прочиташ својот резултат и што велат истражувањата за неговото подобрување. Сите тестови работат целосно во прелистувачот, траат од 2 до 20 минути и го споредуваат резултатот со светски перцентили — бесплатно, анонимно и без сметка.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Зошто да ги мериш своите спознајни способности?</h2><p data-i18n="home_sci_body">Секој тест на CoreSkillAI е прилагоден од методи од објавени истражувања: тестот за IQ од матричното заклучување, тестот за меморија од задачата за повторување цифри, тестот за концентрација од ефектот на Струп, тестот за личност од моделот Големи пет, а тестот за вид од клиничките табели за вид. Страницата на секој тест ја објаснува науката зад задачата, како да го читате резултатот и што не може да ви каже. Сите тестови работат во вашиот прелистувач, бесплатно и анонимно, без сметка.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">Засновано на истражувања • Засекогаш бесплатно • Без сметка</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="mk";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/mk.js?v=8b2d9b0c"></script>
+<script>window.PAGE_LANG="mk";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/mk.js?v=05985b3c"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

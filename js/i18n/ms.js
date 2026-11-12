@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.ms = {
+    cat_cog:"Minda dan penaakulan",
+    cat_pers:"Personaliti dan kerjaya",
+    cat_sense:"Deria dan kesihatan",
+    cat_speed:"Kelajuan dan kemahiran",
     rot_big_turn:"Putaran besar",
     rot_desc:"20 teka-teki ruang yang mengukur sebaik mana anda memutar bentuk dalam fikiran. Tiada perkataan, tiada nombor.",
     rot_how1:"Satu rajah muncul di atas. Di bawahnya ada enam calon.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.ms = {
     rt_r_superior:"Unggul",
     typ_chars:"Aksara",
     tests_badge:"11 Ujian Percuma Tersedia",
-    home_sci_body:"Setiap satu daripada sebelas ujian di CoreSkillAI diadaptasi daripada instrumen yang digunakan dalam penyelidikan psikologi sebenar: ujian IQ berasaskan tradisi penaakulan matriks, ujian memori melaksanakan paradigma jangkauan digit klasik, ujian fokus menggunakan kesan Stroop berusia 90 tahun, dan ujian personaliti mengikut model Big Five yang dominan secara saintifik. Setiap halaman ujian menerangkan sains di sebalik tugasan itu, cara mentafsir skor anda, dan apa yang dikatakan penyelidikan tentang cara memperbaikinya. Semua ujian berjalan sepenuhnya dalam pelayar anda, mengambil masa antara 2 hingga 20 minit, dan membandingkan keputusan anda dengan persentil global — percuma, tanpa nama, tanpa perlu akaun.",
+    home_sci_body:"Setiap ujian di CoreSkillAI disesuaikan daripada kaedah yang digunakan dalam penyelidikan yang diterbitkan: ujian IQ daripada penaakulan matriks, ujian memori daripada tugasan rentang digit, ujian fokus daripada kesan Stroop, ujian personaliti daripada model Lima Besar dan ujian mata daripada carta mata klinikal. Setiap halaman ujian menerangkan sains di sebalik tugasan, cara membaca skor anda dan perkara yang tidak dapat diberitahunya. Semua ujian berjalan dalam pelayar anda, percuma dan tanpa nama, tanpa akaun.",
     home_sci_title:"Mengapa Perlu Menguji Kemahiran Kognitif Anda?",
     step4_desc:"Satu klik untuk berkongsi skor anda — kalahkan rakan-rakan anda.",
     step4_title:"Kongsikan",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.ms = {
     nav_take:"Ambil Ujian",
     hero_badge:"Percuma • Tanpa akaun • Tanpa bayaran",
     hero_title:"Temui Apa Yang Otak Anda Benar-benar Mampu Lakukan",
-    hero_sub:"11 ujian percuma dibina daripada penyelidikan diterbitkan. Keputusan jelas dalam beberapa minit, dalam 43 bahasa.",
+    hero_sub:"Ujian percuma berasaskan penyelidikan yang diterbitkan, dikumpulkan mengikut apa yang diukur. Keputusan jelas dalam beberapa minit, dalam 43 bahasa.",
     btn_iq:"Ambil Ujian IQ Percuma",
     btn_start:"Mula Menguji",
     btn_view_all:"Lihat Semua Ujian",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.ms = {
     how_title:"Cara Ia Berfungsi",
     how_sub:"Tiga langkah mudah untuk menemui kebolehan anda",
     step1_title:"Pilih Ujian",
-    step1_desc:"Pilih daripada 11 penilaian kognitif dan personaliti yang disokong sains.",
+    step1_desc:"Pilih ujian mengikut kategori: minda, kelajuan, personaliti, atau deria dan kesihatan.",
     step2_title:"Siapkan Ia",
     step2_desc:"Ikut arahan dengan tumpuan penuh. Kebanyakan ujian mengambil masa 3–7 minit.",
     step3_title:"Lihat Skor Anda",

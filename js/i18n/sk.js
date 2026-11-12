@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sk = {
+    cat_cog:"Myslenie a uvažovanie",
+    cat_pers:"Osobnosť a kariéra",
+    cat_sense:"Zmysly a zdravie",
+    cat_speed:"Rýchlosť a zručnosti",
     rot_big_turn:"Veľké otočenia",
     rot_desc:"20 priestorových úloh, ktoré merajú, ako dobre otáčate tvary v hlave. Žiadne slová, žiadne čísla.",
     rot_how1:"Hore sa objaví útvar, pod ním šesť kandidátov.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.sk = {
     rt_r_superior:"Vynikajúce",
     typ_chars:"Znaky",
     tests_badge:"11 testov zadarmo",
-    home_sci_body:"Každý z jedenástich testov na CoreSkillAI vychádza z nástrojov, ktoré sa naozaj používajú v psychologickom výskume: IQ test patrí do tradície uvažovania nad maticami, pamäťový test realizuje klasické rozpätie číslic, test pozornosti využíva deväťdesiat rokov starý Stroopov efekt a osobnostný test sa drží vedecky prevládajúceho modelu Veľkej päťky. Každá stránka testu vysvetľuje vedu za úlohou, ako čítať svoj výsledok a čo výskum hovorí o jeho zlepšovaní. Všetky testy bežia úplne v prehliadači, trvajú 2 až 20 minút a porovnávajú výsledok so svetovými percentilmi — zadarmo, anonymne a bez účtu.",
+    home_sci_body:"Každý test na CoreSkillAI vychádza z metód používaných v publikovanom výskume: test IQ z maticového uvažovania, test pamäti z úlohy opakovania číslic, test sústredenia zo Stroopovho efektu, test osobnosti z modelu Veľkej päťky a test zraku z klinických optotypových tabúľ. Každá stránka testu vysvetľuje vedu za úlohou, ako čítať výsledok a čo vám povedať nemôže. Všetky testy bežia vo vašom prehliadači, zadarmo a anonymne, bez účtu.",
     home_sci_title:"Prečo merať vlastné poznávacie schopnosti?",
     step4_desc:"Jedným kliknutím zdieľaš výsledok — vyzvi kamarátov.",
     step4_title:"Zdieľať",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.sk = {
     nav_take:"Vyskúšať test",
     hero_badge:"Zadarmo • Bez účtu • Bez platby",
     hero_title:"Zistite, čo váš mozog naozaj dokáže",
-    hero_sub:"11 bezplatných testov postavených na publikovanom výskume. Jasné výsledky za pár minút, v 43 jazykoch.",
+    hero_sub:"Bezplatné testy založené na publikovanom výskume, zoradené podľa toho, čo merajú. Jasné výsledky za pár minút, v 43 jazykoch.",
     btn_iq:"Vyskúšať IQ test zadarmo",
     btn_start:"Spustiť test",
     btn_view_all:"Všetky testy",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.sk = {
     how_title:"Ako to funguje",
     how_sub:"Tri jednoduché kroky k poznaniu vašich schopností",
     step1_title:"Vyberte test",
-    step1_desc:"Zvoľte jeden z 11 vedecky podložených testov poznávacích schopností a osobnosti.",
+    step1_desc:"Vyberte test podľa kategórie: myslenie, rýchlosť, osobnosť alebo zmysly a zdravie.",
     step2_title:"Absolvujte ho",
     step2_desc:"Postupujte podľa pokynov bez rozptyľovania. Väčšina testov trvá 3–7 minút.",
     step3_title:"Pozrite si výsledok",

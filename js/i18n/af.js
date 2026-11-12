@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.af = {
+    cat_cog:"Denke en redenering",
+    cat_pers:"Persoonlikheid en loopbaan",
+    cat_sense:"Sintuie en gesondheid",
+    cat_speed:"Spoed en vaardighede",
     rot_big_turn:"Groot draaie",
     rot_desc:"20 ruimtelike raaisels wat meet hoe goed jy vorms in jou kop draai. Geen woorde, geen syfers.",
     rot_how1:"'n Figuur verskyn bo. Daaronder is ses kandidate.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.af = {
     rt_r_superior:"Superieur",
     typ_chars:"Karakters",
     tests_badge:"11 Gratis Toetse Beskikbaar",
-    home_sci_body:"Elkeen van die elf toetse op CoreSkillAI is aangepas uit instrumente wat in werklike sielkundige navorsing gebruik word: die IK-toets steun op matriksredenering, die geheuetoets implementeer die klassieke syferspan-paradigma, die fokustoets gebruik die 90 jaar oue Stroop-effek, en die persoonlikheidstoets volg die wetenskaplik dominante Groot Vyf-model. Elke toetsbladsy verduidelik die wetenskap agter die taak, hoe om jou telling te vertolk, en wat die navorsing sê oor die verbetering daarvan. Alle toetse loop volledig in jou blaaier, neem tussen 2 en 20 minute, en vergelyk jou uitslae met wêreldwye persentiele — gratis, anoniem, sonder 'n rekening.",
+    home_sci_body:"Elke toets op CoreSkillAI is aangepas uit metodes wat in gepubliseerde navorsing gebruik word: die IK-toets uit matriksredenering, die geheuetoets uit die syferreekstaak, die fokustoets uit die Stroop-effek, die persoonlikheidstoets uit die Groot Vyf-model en die oogtoets uit kliniese oogkaarte. Elke toetsbladsy verduidelik die wetenskap agter die taak, hoe om jou telling te lees en wat dit jou nie kan vertel nie. Alle toetse loop in jou blaaier, gratis en anoniem, sonder 'n rekening.",
     home_sci_title:"Hoekom Jou Kognitiewe Vaardighede Toets?",
     step4_desc:"Een klik om jou telling te deel — klop jou vriende.",
     step4_title:"Deel Dit",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.af = {
     nav_take:"Doen 'n Toets",
     hero_badge:"Gratis • Geen rekening • Geen betaalmuur",
     hero_title:"Ontdek Wat Jou Brein Werklik Kan Doen",
-    hero_sub:"11 gratis toetse gebou op gepubliseerde navorsing. Duidelike uitslae in minute, in 43 tale.",
+    hero_sub:"Gratis toetse gebou op gepubliseerde navorsing, gegroepeer volgens wat hulle meet. Duidelike resultate binne minute, in 43 tale.",
     btn_iq:"Doen Gratis IK-toets",
     btn_start:"Begin Toets",
     btn_view_all:"Bekyk Alle Toetse",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.af = {
     how_title:"Hoe Dit Werk",
     how_sub:"Drie eenvoudige stappe om jou vermoëns te ontdek",
     step1_title:"Kies 'n Toets",
-    step1_desc:"Kies uit 11 wetenskaplik gegronde kognitiewe en persoonlikheidsbeoordelings.",
+    step1_desc:"Kies 'n toets volgens kategorie: denke, spoed, persoonlikheid, of sintuie en gesondheid.",
     step2_title:"Voltooi Dit",
     step2_desc:"Volg die instruksies met volle fokus. Die meeste toetse neem 3–7 minute.",
     step3_title:"Sien Jou Telling",

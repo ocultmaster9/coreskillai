@@ -60,7 +60,7 @@
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
 <script>window.PAGE_LANG="fr";</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -97,7 +97,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Gratuit • Sans compte • Sans paiement</span></div>
     <h1 data-i18n="hero_title">Découvrez ce que votre cerveau peut vraiment faire</h1>
-    <p data-i18n="hero_sub">11 tests gratuits fondés sur des recherches publiées. Des résultats clairs en quelques minutes, en 43 langues.</p>
+    <p data-i18n="hero_sub">Des tests gratuits fondés sur la recherche publiée, regroupés selon ce qu'ils mesurent. Des résultats clairs en quelques minutes, en 43 langues.</p>
     <div class="hero-btns">
       <a href="/fr/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">Passer le Test de QI Gratuitement</a>
       <a href="/fr/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">Voir Tous les Tests</a>
@@ -112,9 +112,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">Tous les Tests</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">Tous les Tests</h2>
     <p class="section-subtitle" data-i18n="tests_sub">Découvrez votre profil cognitif et de personnalité</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Esprit et raisonnement</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Vitesse et compétences</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Personnalité et carrière</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Sens et santé</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Esprit et raisonnement</span></h2>
+<div class="tests-grid">
 <a href="/fr/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -127,32 +136,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~20 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/fr/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">Reaction Time Test</h3>
-    <p data-i18n="rt_desc">How fast is your brain's response to visual stimuli?</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Facile</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/fr/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">Working Memory Test</h3>
-    <p data-i18n="mem_desc">How many digits can you hold in your short-term memory?</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Moyen</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/fr/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -167,12 +150,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/fr/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/fr/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">Color Vision Test</h3>
-    <p data-i18n="cv_desc">How precisely does your brain perceive and order colors?</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">Working Memory Test</h3>
+    <p data-i18n="mem_desc">How many digits can you hold in your short-term memory?</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">Moyen</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
@@ -180,6 +163,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
+<a href="/fr/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">Test de rotation mentale</h3>
+    <p data-i18n="rot_desc">20 énigmes spatiales mesurant votre aptitude à faire tourner des formes mentalement. Ni mots ni chiffres.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">Difficile</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/fr/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">Focus & Attention Test</h3>
+    <p data-i18n="foc_desc">Measure your cognitive control with the classic Stroop test.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Moyen</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Vitesse et compétences</span></h2>
+<div class="tests-grid">
+<a href="/fr/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">Reaction Time Test</h3>
+    <p data-i18n="rt_desc">How fast is your brain's response to visual stimuli?</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Facile</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/fr/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">Typing Speed Test</h3>
+    <p data-i18n="typ_desc">How fast do you type? Find out your WPM and global ranking.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Facile</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Personnalité et carrière</span></h2>
+<div class="tests-grid">
 <a href="/fr/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -206,45 +249,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/fr/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">Focus & Attention Test</h3>
-    <p data-i18n="foc_desc">Measure your cognitive control with the classic Stroop test.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Moyen</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/fr/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">Typing Speed Test</h3>
-    <p data-i18n="typ_desc">How fast do you type? Find out your WPM and global ranking.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Facile</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/fr/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">Test de rotation mentale</h3>
-    <p data-i18n="rot_desc">20 énigmes spatiales mesurant votre aptitude à faire tourner des formes mentalement. Ni mots ni chiffres.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">Difficile</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
-</a>
 <a href="/fr/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -257,6 +261,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~8 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Sens et santé</span></h2>
+<div class="tests-grid">
+<a href="/fr/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">Color Vision Test</h3>
+    <p data-i18n="cv_desc">How precisely does your brain perceive and order colors?</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Moyen</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/fr/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -284,6 +305,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Faire le test</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -297,7 +320,7 @@
     <h2 class="section-title" data-i18n="how_title">Comment Ça Marche</h2>
     <p class="section-subtitle" data-i18n="how_sub">Trois étapes simples pour découvrir vos capacités</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Choisissez un Test</h4><p data-i18n="step1_desc">Choisissez parmi 9 évaluations cognitives et de personnalité scientifiquement validées.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Choisissez un Test</h4><p data-i18n="step1_desc">Choisissez un test par catégorie : esprit, vitesse, personnalité, ou sens et santé.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">Complétez-le</h4><p data-i18n="step2_desc">Suivez les instructions avec toute votre concentration. La plupart durent 3–7 minutes.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">Voir votre Score</h4><p data-i18n="step3_desc">Obtenez votre résultat instantanément avec des données de percentile mondial.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">Partager</h4><p data-i18n="step4_desc">Un clic pour partager votre score — défiez vos amis.</p></div></div>
@@ -322,7 +345,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Pourquoi évaluer ses capacités cognitives ?</h2><p data-i18n="home_sci_body">Chacun des onze tests de CoreSkillAI est adapté d'instruments réellement employés en recherche psychologique : le test de QI s'inscrit dans la tradition du raisonnement sur matrices, le test de mémoire reprend le paradigme classique de l'empan de chiffres, le test d'attention utilise l'effet Stroop, vieux de 90 ans, et le test de personnalité suit le modèle des Big Five, dominant scientifiquement. Chaque page explique la science derrière la tâche, comment interpréter votre score et ce que dit la recherche sur son amélioration. Tous les tests s'exécutent entièrement dans votre navigateur, durent entre 2 et 20 minutes et comparent vos résultats à des percentiles mondiaux — gratuitement, anonymement et sans compte.</p></section>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Pourquoi évaluer ses capacités cognitives ?</h2><p data-i18n="home_sci_body">Chaque test de CoreSkillAI est adapté de méthodes utilisées dans la recherche publiée : le test de QI s'appuie sur le raisonnement par matrices, le test de mémoire sur l'empan de chiffres, le test de concentration sur l'effet Stroop, le test de personnalité sur le modèle des Big Five et le test de vision sur les échelles d'acuité des cabinets. Chaque page explique la science derrière la tâche, comment lire votre score et ce qu'il ne peut pas vous dire. Tous les tests s'exécutent dans votre navigateur, gratuitement et anonymement, sans compte.</p></section>
 
 <footer>
   <div class="footer-inner">
@@ -354,6 +377,6 @@
     <span data-i18n="footer_promise">Fondé sur la recherche • Gratuit pour toujours • Sans compte</span>
   </div>
 </footer>
-<script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/fr.js?v=e69321a7"></script>
+<script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/fr.js?v=8745ee86"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

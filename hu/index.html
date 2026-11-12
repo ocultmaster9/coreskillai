@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Ingyenes • Nincs fiók • Nincs fizetés</span></div>
     <h1 data-i18n="hero_title">Fedezze fel, mire képes valójában az agya</h1>
-    <p data-i18n="hero_sub">11 ingyenes teszt publikált kutatás alapján. Világos eredmény percek alatt, 43 nyelven.</p>
+    <p data-i18n="hero_sub">Publikált kutatásokra épülő ingyenes tesztek, aszerint csoportosítva, hogy mit mérnek. Világos eredmények percek alatt, 43 nyelven.</p>
     <div class="hero-btns">
       <a href="/hu/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">Ingyenes IQ-teszt kitöltése</a>
       <a href="/hu/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">Összes teszt</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">Összes teszt</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">Összes teszt</h2>
     <p class="section-subtitle" data-i18n="tests_sub">Fedezze fel valódi kognitív és személyiségprofilját</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Gondolkodás és logika</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Gyorsaság és készségek</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Személyiség és pálya</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Érzékek és egészség</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Gondolkodás és logika</span></h2>
+<div class="tests-grid">
 <a href="/hu/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~20 <span data-i18n="card_min">perc</span></span></div>
-</a>
-<a href="/hu/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">Reakciósebesség-teszt</h3>
-    <p data-i18n="rt_desc">Mérje meg, milyen gyorsan reagál az agya vizuális jelre.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Könnyű</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">perc</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~2 <span data-i18n="card_min">perc</span></span></div>
-</a>
-<a href="/hu/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">Munkamemória-teszt</h3>
-    <p data-i18n="mem_desc">Ellenőrizze rövid távú memóriájának számjegyterjedelmét — az agyműködés klasszikus mutatója.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Közepes</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">perc</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~3 <span data-i18n="card_min">perc</span></span></div>
 </a>
 <a href="/hu/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~5 <span data-i18n="card_min">perc</span></span></div>
 </a>
-<a href="/hu/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/hu/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">Színlátásteszt</h3>
-    <p data-i18n="cv_desc">Rendezze sorba az árnyalatokat, hogy megmérje színérzékelése pontosságát.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">Munkamemória-teszt</h3>
+    <p data-i18n="mem_desc">Ellenőrizze rövid távú memóriájának számjegyterjedelmét — az agyműködés klasszikus mutatója.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">Közepes</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">perc</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~3 <span data-i18n="card_min">perc</span></span></div>
 </a>
+<a href="/hu/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">Mentális forgatás teszt</h3>
+    <p data-i18n="rot_desc">20 téri feladat, amely azt méri, milyen jól forgat alakzatokat fejben. Se szavak, se számok.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">Nehéz</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">perc</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~6 <span data-i18n="card_min">perc</span></span></div>
+</a>
+<a href="/hu/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">Figyelem- és összpontosításteszt</h3>
+    <p data-i18n="foc_desc">A Stroop-hatás — mérje fel kognitív kontrollját és feldolgozási sebességét.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Közepes</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">perc</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~3 <span data-i18n="card_min">perc</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Gyorsaság és készségek</span></h2>
+<div class="tests-grid">
+<a href="/hu/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">Reakciósebesség-teszt</h3>
+    <p data-i18n="rt_desc">Mérje meg, milyen gyorsan reagál az agya vizuális jelre.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Könnyű</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">perc</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~2 <span data-i18n="card_min">perc</span></span></div>
+</a>
+<a href="/hu/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">Gépelési sebesség teszt</h3>
+    <p data-i18n="typ_desc">Tudja meg, milyen gyorsan gépel és hol áll a világban.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Könnyű</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">perc</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~2 <span data-i18n="card_min">perc</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Személyiség és pálya</span></h2>
+<div class="tests-grid">
 <a href="/hu/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~5 <span data-i18n="card_min">perc</span></span></div>
 </a>
-<a href="/hu/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">Figyelem- és összpontosításteszt</h3>
-    <p data-i18n="foc_desc">A Stroop-hatás — mérje fel kognitív kontrollját és feldolgozási sebességét.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Közepes</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">perc</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~3 <span data-i18n="card_min">perc</span></span></div>
-</a>
-<a href="/hu/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">Gépelési sebesség teszt</h3>
-    <p data-i18n="typ_desc">Tudja meg, milyen gyorsan gépel és hol áll a világban.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Könnyű</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">perc</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~2 <span data-i18n="card_min">perc</span></span></div>
-</a>
-<a href="/hu/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">Mentális forgatás teszt</h3>
-    <p data-i18n="rot_desc">20 téri feladat, amely azt méri, milyen jól forgat alakzatokat fejben. Se szavak, se számok.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">Nehéz</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">perc</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~6 <span data-i18n="card_min">perc</span></span></div>
-</a>
 <a href="/hu/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~8 <span data-i18n="card_min">perc</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Érzékek és egészség</span></h2>
+<div class="tests-grid">
+<a href="/hu/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">Színlátásteszt</h3>
+    <p data-i18n="cv_desc">Rendezze sorba az árnyalatokat, hogy megmérje színérzékelése pontosságát.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Közepes</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">perc</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~3 <span data-i18n="card_min">perc</span></span></div>
 </a>
 <a href="/hu/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Teszt indítása</span> &#8594; <span>~5 <span data-i18n="card_min">perc</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">Hogyan működik</h2>
     <p class="section-subtitle" data-i18n="how_sub">Három egyszerű lépés a képességei megismeréséhez</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Válasszon tesztet</h4><p data-i18n="step1_desc">Válasszon a 11 tudományosan megalapozott megismerési és személyiségteszt közül.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Válasszon tesztet</h4><p data-i18n="step1_desc">Válassz tesztet kategória szerint: gondolkodás, gyorsaság, személyiség vagy érzékek és egészség.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">Töltse ki</h4><p data-i18n="step2_desc">Kövesse az útmutatót zavaró tényezők nélkül. A legtöbb teszt 3–7 percig tart.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">Nézze meg az eredményt</h4><p data-i18n="step3_desc">Azonnali eredmény világszintű percentilissel. Egy kattintással megosztható.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">Megosztás</h4><p data-i18n="step4_desc">Egy kattintás, és megoszthatod az eredményed — hívd ki a barátaidat.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Miért érdemes felmérni a kognitív képességeidet?</h2><p data-i18n="home_sci_body">A CoreSkillAI tizenegy tesztje mind olyan eszközökből származik, amelyeket ténylegesen használnak a pszichológiai kutatásban: az IQ-teszt a mátrixos következtetés hagyományába illeszkedik, a memóriateszt a klasszikus számterjedelmet valósítja meg, a figyelemteszt a kilencven éves Stroop-hatásra épül, a személyiségteszt pedig a tudományosan uralkodó Nagy Ötök modellt követi. Minden tesztoldal elmagyarázza a feladat mögötti tudományt, az eredmény értelmezését és azt, amit a kutatás a fejlesztéséről mond. Minden teszt teljes egészében a böngésződben fut, 2 és 20 perc között tart, és világszintű percentilisekhez méri az eredményed — ingyen, névtelenül, fiók nélkül.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Miért érdemes felmérni a kognitív képességeidet?</h2><p data-i18n="home_sci_body">A CoreSkillAI minden tesztje publikált kutatásokban használt módszerekre épül: az IQ-teszt a mátrixos gondolkodásra, a memóriateszt a számterjedelem-feladatra, a koncentrációs teszt a Stroop-hatásra, a személyiségteszt a Big Five modellre, a látásteszt pedig a klinikai látásvizsgáló táblákra. Minden tesztoldal elmagyarázza a feladat mögötti tudományt, hogyan olvasd az eredményed, és mit nem árulhat el. Minden teszt a böngésződben fut, ingyen és névtelenül, fiók nélkül.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">Kutatásalapú • Örökre ingyenes • Fiók nélkül</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="hu";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/hu.js?v=917be514"></script>
+<script>window.PAGE_LANG="hu";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/hu.js?v=5d674051"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

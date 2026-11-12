@@ -2,6 +2,11 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.de = {
+    cat_cog:"Denken und Logik",
+    cat_pers:"Persönlichkeit und Beruf",
+    cat_sense:"Sinne und Gesundheit",
+    cat_speed:"Tempo und Fertigkeiten",
+    step1_desc:"Wähle einen Test nach Kategorie: Denken, Tempo, Persönlichkeit oder Sinne und Gesundheit.",
     rot_big_turn:"Große Drehungen",
     rot_desc:"20 räumliche Aufgaben, die messen, wie gut Sie Formen im Kopf drehen. Keine Wörter, keine Zahlen.",
     rot_how1:"Oben erscheint eine Figur, darunter sechs Kandidaten.",
@@ -77,7 +82,7 @@ window.TRANSLATIONS.de = {
     rt_r_superior:"Überdurchschnittlich",
     typ_chars:"Zeichen",
     tests_badge:"11 kostenlose Tests verfügbar",
-    home_sci_body:"Jeder der elf Tests auf CoreSkillAI ist von Verfahren abgeleitet, die in der psychologischen Forschung tatsächlich eingesetzt werden: Der IQ-Test steht in der Tradition des Matrizen-Schließens, der Gedächtnistest setzt die klassische Zahlenspanne um, der Konzentrationstest nutzt den 90 Jahre alten Stroop-Effekt, und der Persönlichkeitstest folgt dem wissenschaftlich vorherrschenden Fünf-Faktoren-Modell. Jede Testseite erklärt die Wissenschaft hinter der Aufgabe, wie du dein Ergebnis einordnest und was die Forschung über Verbesserung sagt. Alle Tests laufen vollständig im Browser, dauern zwischen 2 und 20 Minuten und vergleichen dein Ergebnis mit weltweiten Perzentilen — kostenlos, anonym und ohne Konto.",
+    home_sci_body:"Jeder Test auf CoreSkillAI ist an Methoden aus der publizierten Forschung angelehnt: der IQ-Test an Matrizenaufgaben, der Gedächtnistest an der Zahlenspanne, der Konzentrationstest am Stroop-Effekt, der Persönlichkeitstest am Big-Five-Modell und der Sehtest an klinischen Sehtafeln. Jede Testseite erklärt die Wissenschaft hinter der Aufgabe, wie du dein Ergebnis liest und was es nicht aussagen kann. Alle Tests laufen in deinem Browser, kostenlos und anonym, ohne Konto.",
     home_sci_title:"Warum die eigenen kognitiven Fähigkeiten testen?",
     step4_desc:"Ein Klick, um dein Ergebnis zu teilen — zeig es deinen Freunden.",
     step4_title:"Teilen",
@@ -143,7 +148,7 @@ window.TRANSLATIONS.de = {
     nav_tests:"Tests", nav_about:"Über uns", nav_take:"Test machen",
     hero_badge:"Kostenlos • Kein Konto • Keine Bezahlschranke",
     hero_title:"Entdecke, wozu dein Gehirn wirklich fähig ist",
-    hero_sub:"11 kostenlose Tests auf Basis publizierter Forschung. Klare Ergebnisse in Minuten, in 43 Sprachen.",
+    hero_sub:"Kostenlose Tests auf Basis publizierter Forschung, geordnet nach dem, was sie messen. Klare Ergebnisse in Minuten, in 43 Sprachen.",
     btn_iq:"Kostenlosen IQ-Test machen", btn_start:"Testen starten", btn_view_all:"Alle Tests anzeigen",
     stat_tests:"Tests gemacht", stat_countries:"Länder", stat_free:"Kostenlose Tests", stat_anon:"% Kostenlos",
     how_title:"Wie Es Funktioniert", how_sub:"Drei einfache Schritte, um deine Fähigkeiten zu entdecken",

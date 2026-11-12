@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Gratis • Geen account • Geen betaalmuur</span></div>
     <h1 data-i18n="hero_title">Ontdek wat je brein echt kan</h1>
-    <p data-i18n="hero_sub">11 gratis tests gebouwd op gepubliceerd onderzoek. Heldere resultaten in minuten, in 43 talen.</p>
+    <p data-i18n="hero_sub">Gratis tests gebaseerd op gepubliceerd onderzoek, ingedeeld naar wat ze meten. Duidelijke resultaten in enkele minuten, in 43 talen.</p>
     <div class="hero-btns">
       <a href="/nl/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">Doe de IQ-test gratis</a>
       <a href="/nl/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">Bekijk alle tests</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">Alle tests</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">Alle tests</h2>
     <p class="section-subtitle" data-i18n="tests_sub">Ontdek je echte cognitieve en persoonlijkheidsprofiel</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Denken en redeneren</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Snelheid en vaardigheden</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Persoonlijkheid en loopbaan</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Zintuigen en gezondheid</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Denken en redeneren</span></h2>
+<div class="tests-grid">
 <a href="/nl/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~20 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/nl/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">Reactiesnelheidstest</h3>
-    <p data-i18n="rt_desc">Meet hoe snel je brein reageert op een visuele prikkel.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Makkelijk</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/nl/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">Werkgeheugentest</h3>
-    <p data-i18n="mem_desc">Test je cijferreeks op korte termijn — de klassieke maatstaf voor het brein.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Gemiddeld</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/nl/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/nl/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/nl/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">Kleurenzichttest</h3>
-    <p data-i18n="cv_desc">Zet kleurtinten op volgorde om de nauwkeurigheid van je kleurwaarneming te meten.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">Werkgeheugentest</h3>
+    <p data-i18n="mem_desc">Test je cijferreeks op korte termijn — de klassieke maatstaf voor het brein.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">Gemiddeld</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
+<a href="/nl/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">Mentale rotatietest</h3>
+    <p data-i18n="rot_desc">20 ruimtelijke puzzels die meten hoe goed je vormen in je hoofd draait. Geen woorden, geen cijfers.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">Moeilijk</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/nl/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">Focus- en aandachtstest</h3>
+    <p data-i18n="foc_desc">Het Stroop-effect — meet je cognitieve controle en verwerkingssnelheid.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Gemiddeld</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Snelheid en vaardigheden</span></h2>
+<div class="tests-grid">
+<a href="/nl/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">Reactiesnelheidstest</h3>
+    <p data-i18n="rt_desc">Meet hoe snel je brein reageert op een visuele prikkel.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Makkelijk</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/nl/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">Typesnelheidstest</h3>
+    <p data-i18n="typ_desc">Ontdek hoe snel je typt en hoe je wereldwijd scoort.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Makkelijk</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Persoonlijkheid en loopbaan</span></h2>
+<div class="tests-grid">
 <a href="/nl/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/nl/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">Focus- en aandachtstest</h3>
-    <p data-i18n="foc_desc">Het Stroop-effect — meet je cognitieve controle en verwerkingssnelheid.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Gemiddeld</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/nl/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">Typesnelheidstest</h3>
-    <p data-i18n="typ_desc">Ontdek hoe snel je typt en hoe je wereldwijd scoort.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Makkelijk</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/nl/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">Mentale rotatietest</h3>
-    <p data-i18n="rot_desc">20 ruimtelijke puzzels die meten hoe goed je vormen in je hoofd draait. Geen woorden, geen cijfers.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">Moeilijk</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
-</a>
 <a href="/nl/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~8 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Zintuigen en gezondheid</span></h2>
+<div class="tests-grid">
+<a href="/nl/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">Kleurenzichttest</h3>
+    <p data-i18n="cv_desc">Zet kleurtinten op volgorde om de nauwkeurigheid van je kleurwaarneming te meten.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Gemiddeld</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/nl/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Doe de test</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">Hoe het werkt</h2>
     <p class="section-subtitle" data-i18n="how_sub">Drie eenvoudige stappen om je vaardigheden te ontdekken</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Kies een test</h4><p data-i18n="step1_desc">Kies uit 11 wetenschappelijk onderbouwde cognitieve en persoonlijkheidstests.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Kies een test</h4><p data-i18n="step1_desc">Kies een test per categorie: denken, snelheid, persoonlijkheid, of zintuigen en gezondheid.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">Voltooi hem</h4><p data-i18n="step2_desc">Volg de instructies met volle aandacht. De meeste tests duren 3–7 minuten.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">Bekijk je score</h4><p data-i18n="step3_desc">Direct resultaat met wereldwijde percentielen. Deel je score met één klik.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">Delen</h4><p data-i18n="step4_desc">Eén klik om je score te delen — daag je vrienden uit.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Waarom je cognitieve vaardigheden testen?</h2><p data-i18n="home_sci_body">Elk van de elf tests op CoreSkillAI is afgeleid van instrumenten die daadwerkelijk in psychologisch onderzoek worden gebruikt: de IQ-test staat in de traditie van matrixredeneren, de geheugentest voert het klassieke cijferreeksparadigma uit, de aandachtstest gebruikt het 90 jaar oude Stroop-effect en de persoonlijkheidstest volgt het wetenschappelijk dominante Big Five-model. Elke testpagina legt uit welke wetenschap achter de taak schuilt, hoe je je score moet lezen en wat het onderzoek zegt over verbeteren. Alle tests draaien volledig in je browser, duren tussen 2 en 20 minuten en vergelijken je resultaat met wereldwijde percentielen — gratis, anoniem en zonder account.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Waarom je cognitieve vaardigheden testen?</h2><p data-i18n="home_sci_body">Elke test op CoreSkillAI is afgeleid van methoden uit gepubliceerd onderzoek: de IQ-test van matrixredeneren, de geheugentest van de cijferreeks-taak, de concentratietest van het Stroop-effect, de persoonlijkheidstest van het Big Five-model en de ogentest van klinische oogkaarten. Elke testpagina legt de wetenschap achter de taak uit, hoe je je score leest en wat die je niet kan vertellen. Alle tests draaien in je browser, gratis en anoniem, zonder account.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">Op onderzoek gebaseerd • Altijd gratis • Geen account nodig</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="nl";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/nl.js?v=4ec52e75"></script>
+<script>window.PAGE_LANG="nl";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/nl.js?v=f3ff3003"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

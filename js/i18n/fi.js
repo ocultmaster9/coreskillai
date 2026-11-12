@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fi = {
+    cat_cog:"Ajattelu ja päättely",
+    cat_pers:"Persoonallisuus ja ura",
+    cat_sense:"Aistit ja terveys",
+    cat_speed:"Nopeus ja taidot",
     rot_big_turn:"Suuret käännökset",
     rot_desc:"20 avaruudellista tehtävää, jotka mittaavat kuinka hyvin käännät muotoja mielessäsi. Ei sanoja, ei numeroita.",
     rot_how1:"Ylhäällä näkyy kuvio. Sen alla on kuusi vaihtoehtoa.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.fi = {
     rt_r_superior:"Erinomainen",
     typ_chars:"Merkkiä",
     tests_badge:"11 maksutonta testiä",
-    home_sci_body:"Jokainen CoreSkillAI:n yhdestätoista testistä on johdettu välineistä, joita todella käytetään psykologisessa tutkimuksessa: älykkyystesti nojaa matriisipäättelyn perinteeseen, muistitesti toteuttaa klassisen numerosarjan, keskittymistesti hyödyntää 90 vuotta vanhaa Stroopin ilmiötä ja persoonallisuustesti seuraa tieteessä vallitsevaa viiden suuren mallia. Jokainen testisivu selittää tehtävän taustalla olevan tieteen, miten tulosta luetaan ja mitä tutkimus sanoo sen parantamisesta. Kaikki testit toimivat kokonaan selaimessa, kestävät 2–20 minuuttia ja vertaavat tulostasi maailmanlaajuisiin prosenttipisteisiin — maksutta, nimettömästi ja ilman tiliä.",
+    home_sci_body:"Jokainen CoreSkillAI:n testi on mukautettu julkaistussa tutkimuksessa käytetyistä menetelmistä: ÄO-testi matriisipäättelystä, muistitesti numerosarjatehtävästä, keskittymistesti Stroop-ilmiöstä, persoonallisuustesti viiden suuren piirteen mallista ja näkötesti kliinisistä näöntarkkuustauluista. Jokainen testisivu kertoo tehtävän taustalla olevasta tieteestä, tuloksen lukemisesta ja siitä, mitä tulos ei voi kertoa. Kaikki testit toimivat selaimessasi, ilmaiseksi ja nimettömästi, ilman tiliä.",
     home_sci_title:"Miksi mitata omia kognitiivisia kykyjä?",
     step4_desc:"Yhdellä napsautuksella jaat tuloksesi — haasta ystäväsi.",
     step4_title:"Jaa",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.fi = {
     nav_take:"Tee testi",
     hero_badge:"Ilmainen • Ei tiliä • Ei maksumuuria",
     hero_title:"Selvitä, mihin aivosi todella pystyvät",
-    hero_sub:"11 ilmaista testiä julkaistun tutkimuksen pohjalta. Selkeät tulokset minuuteissa, 43 kielellä.",
+    hero_sub:"Ilmaisia testejä, jotka perustuvat julkaistuun tutkimukseen ja on ryhmitelty sen mukaan, mitä ne mittaavat. Selkeät tulokset minuuteissa, 43 kielellä.",
     btn_iq:"Tee ÄO-testi ilmaiseksi",
     btn_start:"Aloita testaus",
     btn_view_all:"Katso kaikki testit",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.fi = {
     how_title:"Näin se toimii",
     how_sub:"Kolme yksinkertaista askelta kykyjesi selvittämiseen",
     step1_title:"Valitse testi",
-    step1_desc:"Valitse yhdestätoista tieteeseen perustuvasta kognitiivisesta ja persoonallisuustestistä.",
+    step1_desc:"Valitse testi luokan mukaan: ajattelu, nopeus, persoonallisuus tai aistit ja terveys.",
     step2_title:"Tee se loppuun",
     step2_desc:"Seuraa ohjeita täydellä keskittymisellä. Useimmat testit kestävät 3–7 minuuttia.",
     step3_title:"Katso tuloksesi",

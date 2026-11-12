@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">무료 • 계정 불필요 • 결제 없음</span></div>
     <h1 data-i18n="hero_title">당신의 뇌가 실제로 무엇을 할 수 있는지 알아보세요</h1>
-    <p data-i18n="hero_sub">공개된 연구를 바탕으로 만든 10가지 무료 검사. 몇 분 만에 분명한 결과를, 43개 언어로.</p>
+    <p data-i18n="hero_sub">발표된 연구를 바탕으로 한 무료 테스트를 측정 대상별로 묶었습니다. 몇 분 만에 명확한 결과를 43개 언어로 확인하세요.</p>
     <div class="hero-btns">
       <a href="/ko/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">무료 지능 테스트 하기</a>
       <a href="/ko/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">전체 테스트 보기</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">전체 테스트</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">전체 테스트</h2>
     <p class="section-subtitle" data-i18n="tests_sub">진짜 인지 및 성격 프로필을 확인해 보세요</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">사고와 추론</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">속도와 기술</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">성격과 진로</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">감각과 건강</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">사고와 추론</span></h2>
+<div class="tests-grid">
 <a href="/ko/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~20 <span data-i18n="card_min">분</span></span></div>
-</a>
-<a href="/ko/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">반응 속도 테스트</h3>
-    <p data-i18n="rt_desc">뇌가 시각 자극에 얼마나 빨리 반응하는지 측정합니다.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">쉬움</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">분</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~2 <span data-i18n="card_min">분</span></span></div>
-</a>
-<a href="/ko/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">작업 기억 테스트</h3>
-    <p data-i18n="mem_desc">단기 숫자 기억 폭을 측정합니다. 가장 오래된 뇌 지표입니다.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">보통</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">분</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~3 <span data-i18n="card_min">분</span></span></div>
 </a>
 <a href="/ko/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~5 <span data-i18n="card_min">분</span></span></div>
 </a>
-<a href="/ko/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/ko/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">색각 테스트</h3>
-    <p data-i18n="cv_desc">색조를 순서대로 배열해 색 지각의 정확도를 측정합니다.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">작업 기억 테스트</h3>
+    <p data-i18n="mem_desc">단기 숫자 기억 폭을 측정합니다. 가장 오래된 뇌 지표입니다.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">보통</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">분</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~3 <span data-i18n="card_min">분</span></span></div>
 </a>
+<a href="/ko/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">심적 회전 검사</h3>
+    <p data-i18n="rot_desc">머릿속에서 도형을 얼마나 잘 돌리는지 재는 20개의 공간 문제입니다. 글자도 숫자도 없습니다.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">어려움</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">분</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~6 <span data-i18n="card_min">분</span></span></div>
+</a>
+<a href="/ko/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">집중력과 주의력 테스트</h3>
+    <p data-i18n="foc_desc">스트룹 효과로 인지 통제력과 처리 속도를 측정합니다.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">보통</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">분</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~3 <span data-i18n="card_min">분</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">속도와 기술</span></h2>
+<div class="tests-grid">
+<a href="/ko/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">반응 속도 테스트</h3>
+    <p data-i18n="rt_desc">뇌가 시각 자극에 얼마나 빨리 반응하는지 측정합니다.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">쉬움</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">분</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~2 <span data-i18n="card_min">분</span></span></div>
+</a>
+<a href="/ko/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">타자 속도 테스트</h3>
+    <p data-i18n="typ_desc">얼마나 빨리 입력하는지, 전 세계에서 어느 정도인지 확인하세요.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">쉬움</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">분</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~2 <span data-i18n="card_min">분</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">성격과 진로</span></h2>
+<div class="tests-grid">
 <a href="/ko/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~5 <span data-i18n="card_min">분</span></span></div>
 </a>
-<a href="/ko/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">집중력과 주의력 테스트</h3>
-    <p data-i18n="foc_desc">스트룹 효과로 인지 통제력과 처리 속도를 측정합니다.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">보통</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">분</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~3 <span data-i18n="card_min">분</span></span></div>
-</a>
-<a href="/ko/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">타자 속도 테스트</h3>
-    <p data-i18n="typ_desc">얼마나 빨리 입력하는지, 전 세계에서 어느 정도인지 확인하세요.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">쉬움</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">분</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~2 <span data-i18n="card_min">분</span></span></div>
-</a>
-<a href="/ko/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">심적 회전 검사</h3>
-    <p data-i18n="rot_desc">머릿속에서 도형을 얼마나 잘 돌리는지 재는 20개의 공간 문제입니다. 글자도 숫자도 없습니다.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">어려움</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">분</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~6 <span data-i18n="card_min">분</span></span></div>
-</a>
 <a href="/ko/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~8 <span data-i18n="card_min">분</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">감각과 건강</span></h2>
+<div class="tests-grid">
+<a href="/ko/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">색각 테스트</h3>
+    <p data-i18n="cv_desc">색조를 순서대로 배열해 색 지각의 정확도를 측정합니다.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">보통</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">분</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~3 <span data-i18n="card_min">분</span></span></div>
 </a>
 <a href="/ko/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">테스트 하기</span> &#8594; <span>~5 <span data-i18n="card_min">분</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">진행 방식</h2>
     <p class="section-subtitle" data-i18n="how_sub">자신의 능력을 알아보는 간단한 세 단계</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">테스트 선택</h4><p data-i18n="step1_desc">과학적 근거를 갖춘 인지 및 성격 평가 10종 중에서 고르세요.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">테스트 선택</h4><p data-i18n="step1_desc">카테고리별로 테스트를 고르세요: 사고, 속도, 성격, 또는 감각과 건강.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">테스트 완료</h4><p data-i18n="step2_desc">안내에 따라 집중해서 진행하세요. 대부분 3분에서 7분이 걸립니다.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">점수 확인</h4><p data-i18n="step3_desc">전 세계 백분위 자료와 함께 즉시 결과를 확인하고 클릭 한 번으로 공유하세요.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">공유하기</h4><p data-i18n="step4_desc">클릭 한 번으로 점수를 공유하고 친구들을 이겨 보세요.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">인지 능력을 왜 측정해야 할까요</h2><p data-i18n="home_sci_body">이 사이트의 열한 가지 테스트는 모두 실제 심리학 연구에서 쓰이는 도구를 바탕으로 만들어졌습니다. 지능 테스트는 행렬 추론 전통에 기반하고, 기억력 테스트는 고전적인 숫자 폭 과제를 구현하며, 집중력 테스트는 90년 된 스트룹 효과를 사용하고, 성격 테스트는 과학적으로 가장 널리 인정받는 다섯 요인 모형을 따릅니다. 각 테스트 페이지는 과제 뒤에 있는 과학적 근거와 점수를 해석하는 방법, 그리고 향상 방법에 관해 연구가 밝힌 내용을 설명합니다. 모든 테스트는 브라우저 안에서만 실행되고 2분에서 20분이 걸리며, 결과를 전 세계 백분위와 비교해 줍니다. 무료이며 익명이고 계정도 필요하지 않습니다.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">인지 능력을 왜 측정해야 할까요</h2><p data-i18n="home_sci_body">CoreSkillAI의 모든 테스트는 발표된 연구에서 쓰이는 방법을 바탕으로 합니다. IQ 테스트는 행렬 추론, 기억력 테스트는 숫자 따라 하기 과제, 집중력 테스트는 스트룹 효과, 성격 테스트는 빅파이브 모델, 시력 검사는 임상 시력표에 기반합니다. 각 테스트 페이지는 과제의 과학적 배경, 점수를 읽는 법, 그리고 점수로 알 수 없는 것을 설명합니다. 모든 테스트는 브라우저에서 무료로, 익명으로, 계정 없이 실행됩니다.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">연구 기반 • 영원히 무료 • 계정 불필요</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="ko";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/ko.js?v=c412c456"></script>
+<script>window.PAGE_LANG="ko";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/ko.js?v=392045c2"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

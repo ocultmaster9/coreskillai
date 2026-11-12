@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.da = {
+    cat_cog:"Tænkning og logik",
+    cat_pers:"Personlighed og karriere",
+    cat_sense:"Sanser og helbred",
+    cat_speed:"Hastighed og færdigheder",
     rot_big_turn:"Store drejninger",
     rot_desc:"20 rumlige opgaver, der måler, hvor godt du drejer former i hovedet. Ingen ord, ingen tal.",
     rot_how1:"Øverst vises en figur. Nedenunder står seks kandidater.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.da = {
     rt_r_superior:"Overlegen",
     typ_chars:"Tegn",
     tests_badge:"11 gratis tests tilgængelige",
-    home_sci_body:"Hver af de elleve tests på CoreSkillAI er afledt af redskaber, der rent faktisk bruges i psykologisk forskning: IQ-testen står i matrixræsonnementets tradition, hukommelsestesten bygger på det klassiske ciffer-span, koncentrationstesten bruger den 90 år gamle Stroop-effekt, og personlighedstesten følger den videnskabeligt dominerende femfaktormodel. Hver testside forklarer videnskaben bag opgaven, hvordan du læser dit resultat, og hvad forskningen siger om at forbedre det. Alle tests kører helt i browseren, tager mellem 2 og 20 minutter og sammenligner dit resultat med globale percentiler — gratis, anonymt og uden konto.",
+    home_sci_body:"Hver test på CoreSkillAI bygger på metoder fra publiceret forskning: IQ-testen på matrixræsonnement, hukommelsestesten på cifferspændet, koncentrationstesten på Stroop-effekten, personlighedstesten på femfaktormodellen og synstesten på kliniske synstavler. Hver testside forklarer videnskaben bag opgaven, hvordan du læser dit resultat, og hvad det ikke kan fortælle dig. Alle test kører i din browser, gratis og anonymt, uden konto.",
     home_sci_title:"Hvorfor teste dine kognitive evner?",
     step4_desc:"Ét klik for at dele dit resultat — udfordr dine venner.",
     step4_title:"Del",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.da = {
     nav_take:"Tag en test",
     hero_badge:"Gratis • Ingen konto • Ingen betaling",
     hero_title:"Opdag hvad din hjerne faktisk kan",
-    hero_sub:"11 gratis tests bygget på publiceret forskning. Klare resultater på minutter, på 43 sprog.",
+    hero_sub:"Gratis test bygget på publiceret forskning, ordnet efter hvad de måler. Klare resultater på få minutter, på 43 sprog.",
     btn_iq:"Tag IQ-testen gratis",
     btn_start:"Begynd at teste",
     btn_view_all:"Se alle tests",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.da = {
     how_title:"Sådan virker det",
     how_sub:"Tre enkle trin til at opdage dine evner",
     step1_title:"Vælg en test",
-    step1_desc:"Vælg mellem 11 videnskabeligt funderede kognitive tests og personlighedstests.",
+    step1_desc:"Vælg en test efter kategori: tænkning, hastighed, personlighed eller sanser og helbred.",
     step2_title:"Gennemfør den",
     step2_desc:"Følg vejledningen med fuld koncentration. De fleste tests tager 3–7 minutter.",
     step3_title:"Se din score",

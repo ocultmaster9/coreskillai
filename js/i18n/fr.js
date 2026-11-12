@@ -2,6 +2,11 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.fr = {
+    cat_cog:"Esprit et raisonnement",
+    cat_pers:"Personnalité et carrière",
+    cat_sense:"Sens et santé",
+    cat_speed:"Vitesse et compétences",
+    step1_desc:"Choisissez un test par catégorie : esprit, vitesse, personnalité, ou sens et santé.",
     rot_big_turn:"Grandes rotations",
     rot_desc:"20 énigmes spatiales mesurant votre aptitude à faire tourner des formes mentalement. Ni mots ni chiffres.",
     rot_how1:"Une figure apparaît en haut. En dessous, six candidates.",
@@ -77,7 +82,7 @@ window.TRANSLATIONS.fr = {
     rt_r_superior:"Supérieur",
     typ_chars:"Caractères",
     tests_badge:"11 tests gratuits disponibles",
-    home_sci_body:"Chacun des onze tests de CoreSkillAI est adapté d'instruments réellement employés en recherche psychologique : le test de QI s'inscrit dans la tradition du raisonnement sur matrices, le test de mémoire reprend le paradigme classique de l'empan de chiffres, le test d'attention utilise l'effet Stroop, vieux de 90 ans, et le test de personnalité suit le modèle des Big Five, dominant scientifiquement. Chaque page explique la science derrière la tâche, comment interpréter votre score et ce que dit la recherche sur son amélioration. Tous les tests s'exécutent entièrement dans votre navigateur, durent entre 2 et 20 minutes et comparent vos résultats à des percentiles mondiaux — gratuitement, anonymement et sans compte.",
+    home_sci_body:"Chaque test de CoreSkillAI est adapté de méthodes utilisées dans la recherche publiée : le test de QI s'appuie sur le raisonnement par matrices, le test de mémoire sur l'empan de chiffres, le test de concentration sur l'effet Stroop, le test de personnalité sur le modèle des Big Five et le test de vision sur les échelles d'acuité des cabinets. Chaque page explique la science derrière la tâche, comment lire votre score et ce qu'il ne peut pas vous dire. Tous les tests s'exécutent dans votre navigateur, gratuitement et anonymement, sans compte.",
     home_sci_title:"Pourquoi évaluer ses capacités cognitives ?",
     step4_desc:"Un clic pour partager votre score — défiez vos amis.",
     step4_title:"Partager",
@@ -143,7 +148,7 @@ window.TRANSLATIONS.fr = {
     nav_tests:"Tests", nav_about:"À Propos", nav_take:"Passer un Test",
     hero_badge:"Gratuit • Sans compte • Sans paiement",
     hero_title:"Découvrez ce que votre cerveau peut vraiment faire",
-    hero_sub:"11 tests gratuits fondés sur des recherches publiées. Des résultats clairs en quelques minutes, en 43 langues.",
+    hero_sub:"Des tests gratuits fondés sur la recherche publiée, regroupés selon ce qu'ils mesurent. Des résultats clairs en quelques minutes, en 43 langues.",
     btn_iq:"Passer le Test de QI Gratuitement", btn_start:"Commencer", btn_view_all:"Voir Tous les Tests",
     stat_tests:"Tests Réalisés", stat_countries:"Pays", stat_free:"Tests Gratuits", stat_anon:"% gratuit",
     how_title:"Comment Ça Marche", how_sub:"Trois étapes simples pour découvrir vos capacités",

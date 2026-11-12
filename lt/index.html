@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Nemokama • Be paskyros • Be mokesčių</span></div>
     <h1 data-i18n="hero_title">Sužinokite, ką iš tiesų gali jūsų smegenys</h1>
-    <p data-i18n="hero_sub">11 nemokami testai, sukurti pagal paskelbtus tyrimus. Aiškūs rezultatai per kelias minutes, 43 kalbomis.</p>
+    <p data-i18n="hero_sub">Nemokami testai, paremti paskelbtais tyrimais ir sugrupuoti pagal tai, ką jie matuoja. Aiškūs rezultatai per kelias minutes, 43 kalbomis.</p>
     <div class="hero-btns">
       <a href="/lt/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">Atlikti nemokamą IQ testą</a>
       <a href="/lt/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">Visi testai</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">Visi testai</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">Visi testai</h2>
     <p class="section-subtitle" data-i18n="tests_sub">Atraskite tikrąjį savo pažintinį ir asmenybės profilį</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Mąstymas ir samprotavimas</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Greitis ir įgūdžiai</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Asmenybė ir karjera</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Pojūčiai ir sveikata</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Mąstymas ir samprotavimas</span></h2>
+<div class="tests-grid">
 <a href="/lt/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~20 <span data-i18n="card_min">min.</span></span></div>
-</a>
-<a href="/lt/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">Reakcijos greičio testas</h3>
-    <p data-i18n="rt_desc">Išmatuokite, kaip greitai jūsų smegenys reaguoja į regimąjį signalą.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Lengva</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min.</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~2 <span data-i18n="card_min">min.</span></span></div>
-</a>
-<a href="/lt/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">Darbinės atminties testas</h3>
-    <p data-i18n="mem_desc">Patikrinkite trumpalaikės atminties skaitmenų apimtį — klasikinį smegenų veiklos rodiklį.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Vidutiniška</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min.</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~3 <span data-i18n="card_min">min.</span></span></div>
 </a>
 <a href="/lt/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~5 <span data-i18n="card_min">min.</span></span></div>
 </a>
-<a href="/lt/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/lt/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">Spalvinės regos testas</h3>
-    <p data-i18n="cv_desc">Surikiuokite atspalvius, kad išmatuotumėte spalvų suvokimo tikslumą.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">Darbinės atminties testas</h3>
+    <p data-i18n="mem_desc">Patikrinkite trumpalaikės atminties skaitmenų apimtį — klasikinį smegenų veiklos rodiklį.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">Vidutiniška</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">min.</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~3 <span data-i18n="card_min">min.</span></span></div>
 </a>
+<a href="/lt/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">Mintinio sukimo testas</h3>
+    <p data-i18n="rot_desc">20 erdvinių užduočių, matuojančių, kaip gerai mintyse sukate figūras. Jokių žodžių ir skaičių.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">Sunku</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min.</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~6 <span data-i18n="card_min">min.</span></span></div>
+</a>
+<a href="/lt/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">Dėmesio ir susikaupimo testas</h3>
+    <p data-i18n="foc_desc">Stroopo efektas — išmatuokite kognityvinę kontrolę ir apdorojimo greitį.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Vidutiniška</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min.</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~3 <span data-i18n="card_min">min.</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Greitis ir įgūdžiai</span></h2>
+<div class="tests-grid">
+<a href="/lt/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">Reakcijos greičio testas</h3>
+    <p data-i18n="rt_desc">Išmatuokite, kaip greitai jūsų smegenys reaguoja į regimąjį signalą.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Lengva</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min.</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~2 <span data-i18n="card_min">min.</span></span></div>
+</a>
+<a href="/lt/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">Spausdinimo greičio testas</h3>
+    <p data-i18n="typ_desc">Sužinokite, kaip greitai spausdinate ir kokia jūsų vieta pasaulyje.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Lengva</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min.</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~2 <span data-i18n="card_min">min.</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Asmenybė ir karjera</span></h2>
+<div class="tests-grid">
 <a href="/lt/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~5 <span data-i18n="card_min">min.</span></span></div>
 </a>
-<a href="/lt/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">Dėmesio ir susikaupimo testas</h3>
-    <p data-i18n="foc_desc">Stroopo efektas — išmatuokite kognityvinę kontrolę ir apdorojimo greitį.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Vidutiniška</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min.</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~3 <span data-i18n="card_min">min.</span></span></div>
-</a>
-<a href="/lt/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">Spausdinimo greičio testas</h3>
-    <p data-i18n="typ_desc">Sužinokite, kaip greitai spausdinate ir kokia jūsų vieta pasaulyje.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Lengva</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min.</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~2 <span data-i18n="card_min">min.</span></span></div>
-</a>
-<a href="/lt/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">Mintinio sukimo testas</h3>
-    <p data-i18n="rot_desc">20 erdvinių užduočių, matuojančių, kaip gerai mintyse sukate figūras. Jokių žodžių ir skaičių.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">Sunku</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min.</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~6 <span data-i18n="card_min">min.</span></span></div>
-</a>
 <a href="/lt/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~8 <span data-i18n="card_min">min.</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Pojūčiai ir sveikata</span></h2>
+<div class="tests-grid">
+<a href="/lt/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">Spalvinės regos testas</h3>
+    <p data-i18n="cv_desc">Surikiuokite atspalvius, kad išmatuotumėte spalvų suvokimo tikslumą.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Vidutiniška</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min.</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~3 <span data-i18n="card_min">min.</span></span></div>
 </a>
 <a href="/lt/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Atlikti testą</span> &#8594; <span>~5 <span data-i18n="card_min">min.</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">Kaip tai veikia</h2>
     <p class="section-subtitle" data-i18n="how_sub">Trys paprasti žingsniai sužinoti savo gebėjimus</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Pasirinkite testą</h4><p data-i18n="step1_desc">Rinkitės vieną iš 11 moksliškai pagrįstų pažinimo ir asmenybės testų.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Pasirinkite testą</h4><p data-i18n="step1_desc">Pasirinkite testą pagal kategoriją: mąstymas, greitis, asmenybė arba pojūčiai ir sveikata.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">Atlikite jį</h4><p data-i18n="step2_desc">Vadovaukitės nurodymais be blaškymosi. Dauguma testų trunka 3–7 minutes.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">Peržiūrėkite rezultatą</h4><p data-i18n="step3_desc">Momentinis rezultatas su pasaulio procentiliu. Pasidalykite juo vienu spustelėjimu.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">Pasidalyti</h4><p data-i18n="step4_desc">Vienu paspaudimu pasidalyk rezultatu — mesk iššūkį draugams.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Kodėl verta įvertinti savo pažintinius gebėjimus?</h2><p data-i18n="home_sci_body">Kiekvienas iš vienuolikos CoreSkillAI testų kilęs iš priemonių, iš tiesų naudojamų psichologijos tyrimuose: intelekto testas priklauso matricų samprotavimo tradicijai, atminties testas įgyvendina klasikinę skaitmenų apimtį, dėmesio testas naudoja devyniasdešimties metų senumo Stroopo efektą, o asmenybės testas remiasi moksle vyraujančiu Didžiojo penketo modeliu. Kiekviename testo puslapyje paaiškinama, kokiu mokslu remiasi užduotis, kaip skaityti savo rezultatą ir ką tyrimai sako apie jo gerinimą. Visi testai veikia vien naršyklėje, trunka nuo 2 iki 20 minučių ir lygina rezultatą su pasaulio procentiliais — nemokamai, anonimiškai ir be paskyros.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Kodėl verta įvertinti savo pažintinius gebėjimus?</h2><p data-i18n="home_sci_body">Kiekvienas CoreSkillAI testas pritaikytas pagal paskelbtuose tyrimuose naudojamus metodus: IQ testas pagal matricų samprotavimą, atminties testas pagal skaitmenų sekos užduotį, dėmesio testas pagal Strupo efektą, asmenybės testas pagal Didžiojo penketo modelį, o regėjimo testas pagal klinikines regėjimo lenteles. Kiekvieno testo puslapis paaiškina užduoties mokslinį pagrindą, kaip skaityti rezultatą ir ko jis negali pasakyti. Visi testai veikia jūsų naršyklėje, nemokamai ir anonimiškai, be paskyros.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">Grįsta tyrimais • Visada nemokama • Paskyros nereikia</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="lt";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/lt.js?v=420ad0ab"></script>
+<script>window.PAGE_LANG="lt";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/lt.js?v=e1d65627"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

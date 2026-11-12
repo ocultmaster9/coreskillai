@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.zh = {
+    cat_cog:"思维与推理",
+    cat_pers:"性格与职业",
+    cat_sense:"感官与健康",
+    cat_speed:"速度与技能",
     rot_big_turn:"大角度旋转",
     rot_desc:"20 道空间题目，测量你在脑中旋转图形的能力。不涉及文字与数字。",
     rot_how1:"上方出现一个图形，下方是六个选项。",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.zh = {
     rt_r_superior:"出色",
     typ_chars:"字符数",
     tests_badge:"11 项免费测试",
-    home_sci_body:"本站的十一项测试均改编自真实心理学研究所使用的工具：智力测试基于矩阵推理传统，记忆测试采用经典的数字广度范式，专注力测试使用已有九十年历史的斯特鲁普效应，人格测试则遵循学界最主流的五因素模型。每个测试页面都会说明任务背后的科学依据、如何解读你的分数，以及研究对如何提升给出的建议。所有测试完全在你的浏览器中运行，用时二到二十分钟，并把你的结果与全球百分位进行比较。完全免费、匿名，无需注册账户。",
+    home_sci_body:"CoreSkillAI上的每项测验都改编自已发表研究中使用的方法：智商测验基于矩阵推理，记忆测验基于数字广度任务，专注力测验基于斯特鲁普效应，性格测验基于大五人格模型，视力检查基于临床视力表。每个测验页面都会解释任务背后的科学原理、如何解读你的分数，以及分数无法告诉你的内容。所有测验都在你的浏览器中运行，免费、匿名，无需注册账号。",
     home_sci_title:"为什么要测试你的认知能力",
     step4_desc:"一键分享你的成绩，和朋友一较高下。",
     step4_title:"分享",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.zh = {
     nav_take:"开始测试",
     hero_badge:"免费 • 无需账号 • 无需付费",
     hero_title:"发现你的大脑究竟能做到什么",
-    hero_sub:"11 项基于公开研究的免费测验。几分钟得出清晰结果，支持 43 种语言。",
+    hero_sub:"基于已发表研究的免费测验，按测量内容分类。几分钟得出清晰结果，支持43种语言。",
     btn_iq:"免费测智力",
     btn_start:"开始测试",
     btn_view_all:"查看全部测试",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.zh = {
     how_title:"测试方式",
     how_sub:"三个简单步骤，发现你的能力",
     step1_title:"选择测试",
-    step1_desc:"从十一项有科学依据的认知与人格测评中挑选。",
+    step1_desc:"按类别选择测验：思维、速度、性格，或感官与健康。",
     step2_title:"完成测试",
     step2_desc:"专注地按照说明作答，多数测试用时三到七分钟。",
     step3_title:"查看分数",

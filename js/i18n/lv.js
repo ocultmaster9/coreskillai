@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.lv = {
+    cat_cog:"Domāšana un spriešana",
+    cat_pers:"Personība un karjera",
+    cat_sense:"Maņas un veselība",
+    cat_speed:"Ātrums un prasmes",
     rot_big_turn:"Lieli pagriezieni",
     rot_desc:"20 telpiski uzdevumi, kas mēra, cik labi prātā pagriežat formas. Bez vārdiem un cipariem.",
     rot_how1:"Augšā parādās figūra, zem tās – seši varianti.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.lv = {
     rt_r_superior:"Lielisks",
     typ_chars:"Rakstzīmes",
     tests_badge:"11 bezmaksas testi",
-    home_sci_body:"Katrs no vienpadsmit CoreSkillAI testiem cēlies no rīkiem, kurus patiešām izmanto psiholoģijas pētījumos: intelekta tests pieder matricu spriešanas tradīcijai, atmiņas tests īsteno klasisko ciparu apjomu, uzmanības tests izmanto deviņdesmit gadus veco Strūpa efektu, bet personības tests seko zinātnē valdošajam Lielā piecinieka modelim. Katra testa lapa skaidro zinātni aiz uzdevuma, kā lasīt savu rezultātu un ko pētījumi saka par tā uzlabošanu. Visi testi darbojas tikai pārlūkā, aizņem no 2 līdz 20 minūtēm un salīdzina rezultātu ar pasaules procentilēm — bez maksas, anonīmi un bez konta.",
+    home_sci_body:"Katrs CoreSkillAI tests ir pielāgots no publicētos pētījumos izmantotām metodēm: IQ tests no matricu spriešanas, atmiņas tests no ciparu virknes uzdevuma, koncentrēšanās tests no Strūpa efekta, personības tests no Lielā piecinieka modeļa un redzes tests no klīniskajām redzes tabulām. Katra testa lapa izskaidro uzdevuma zinātnisko pamatu, kā lasīt rezultātu un ko tas nevar pateikt. Visi testi darbojas tavā pārlūkā, bez maksas un anonīmi, bez konta.",
     home_sci_title:"Kāpēc mērīt savas izziņas spējas?",
     step4_desc:"Ar vienu klikšķi padalies ar rezultātu — izaicini draugus.",
     step4_title:"Dalīties",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.lv = {
     nav_take:"Veikt testu",
     hero_badge:"Bez maksas • Bez konta • Bez samaksas",
     hero_title:"Uzziniet, ko jūsu smadzenes patiesībā spēj",
-    hero_sub:"11 bezmaksas testi, balstīti publicētos pētījumos. Skaidri rezultāti dažās minūtēs, 43 valodās.",
+    hero_sub:"Bezmaksas testi, kas balstīti publicētos pētījumos un sagrupēti pēc tā, ko tie mēra. Skaidri rezultāti dažās minūtēs, 43 valodās.",
     btn_iq:"Veikt bezmaksas IQ testu",
     btn_start:"Sākt testu",
     btn_view_all:"Visi testi",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.lv = {
     how_title:"Kā tas darbojas",
     how_sub:"Trīs vienkārši soļi, lai uzzinātu savas spējas",
     step1_title:"Izvēlieties testu",
-    step1_desc:"Izvēlieties vienu no 11 zinātniski pamatotiem izziņas un personības testiem.",
+    step1_desc:"Izvēlies testu pēc kategorijas: domāšana, ātrums, personība vai maņas un veselība.",
     step2_title:"Veiciet to",
     step2_desc:"Sekojiet norādēm bez traucēkļiem. Vairums testu ilgst 3–7 minūtes.",
     step3_title:"Apskatiet rezultātu",

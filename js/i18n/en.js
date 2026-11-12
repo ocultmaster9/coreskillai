@@ -2,6 +2,11 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.en = {
+    cat_cog:"Mind & Reasoning",
+    cat_pers:"Personality & Career",
+    cat_sense:"Senses & Health",
+    cat_speed:"Speed & Skills",
+    step1_desc:"Pick a test by category: mind, speed, personality, or senses and health.",
     rot_big_turn:"Large turns",
     rot_desc:"20 spatial puzzles measuring how well you turn shapes in your mind. No words, no numbers.",
     rot_how1:"A figure appears at the top. Below it are six candidates.",
@@ -77,7 +82,7 @@ window.TRANSLATIONS.en = {
     rt_r_superior:"Superior",
     typ_chars:"Characters",
     tests_badge:"11 Free Tests Available",
-    home_sci_body:"Each of the eleven tests on CoreSkillAI is adapted from instruments used in real psychological research: the IQ test draws on matrix-reasoning traditions, the memory test implements the classic digit span paradigm, the focus test uses the 90-year-old Stroop effect, and the personality test follows the scientifically dominant Big Five model. Every test page explains the science behind the task, how to interpret your score, and what the research says about improving it. All tests run entirely in your browser, take between 2 and 20 minutes, and compare your results against global percentiles — free, anonymous, with no account required.",
+    home_sci_body:"Every test on CoreSkillAI is adapted from methods used in published research: the IQ test draws on matrix reasoning, the memory test on the digit span task, the focus test on the Stroop effect, the personality test on the Big Five model and the vision test on clinical eye charts. Each test page explains the science behind the task, how to read your score and what it cannot tell you. All tests run in your browser, free and anonymous, with no account required.",
     home_sci_title:"Why Test Your Cognitive Skills?",
     step4_desc:"One click to share your score — beat your friends.",
     step4_title:"Share It",
@@ -143,7 +148,7 @@ window.TRANSLATIONS.en = {
     nav_tests:"Tests", nav_about:"About", nav_take:"Take a Test",
     hero_badge:"Free • No account • No paywall",
     hero_title:"Discover What Your Brain Can Actually Do",
-    hero_sub:"11 free tests built on published research. Clear results in minutes, in 43 languages.",
+    hero_sub:"Free tests built on published research, grouped by what they measure. Clear results in minutes, in 43 languages.",
     btn_iq:"Take IQ Test Free", btn_start:"Start Testing", btn_view_all:"View All Tests",
     stat_tests:"Tests Completed", stat_countries:"Countries", stat_free:"Free Tests", stat_anon:"% Free",
     how_title:"How It Works", how_sub:"Three simple steps to discover your abilities",

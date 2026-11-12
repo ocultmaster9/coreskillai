@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.sq = {
+    cat_cog:"Mendja dhe arsyetimi",
+    cat_pers:"Personaliteti dhe karriera",
+    cat_sense:"Shqisat dhe shëndeti",
+    cat_speed:"Shpejtësia dhe aftësitë",
     rot_big_turn:"Rrotullime të mëdha",
     rot_desc:"20 enigma hapësinore që matin sa mirë i rrotulloni format në mendje. Pa fjalë dhe pa numra.",
     rot_how1:"Lart shfaqet një figurë. Poshtë saj janë gjashtë kandidate.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.sq = {
     rt_r_superior:"Superior",
     typ_chars:"Karaktere",
     tests_badge:"11 Teste Falas në Dispozicion",
-    home_sci_body:"Secili prej njëmbëdhjetë testeve në CoreSkillAI është përshtatur nga instrumente të përdorura në kërkime reale psikologjike: testi i IQ-së mbështetet në traditën e arsyetimit me matrica, testi i kujtesës zbaton paradigmën klasike të diapazonit të shifrave, testi i përqendrimit përdor efektin Stroop 90-vjeçar, dhe testi i personalitetit ndjek modelin Big Five, dominues nga pikëpamja shkencore. Çdo faqe testi shpjegon shkencën pas detyrës, si të interpretohet rezultati juaj, dhe çfarë thotë kërkimi për përmirësimin e tij. Të gjitha testet ekzekutohen tërësisht në shfletuesin tuaj, zgjasin nga 2 deri në 20 minuta, dhe krahasojnë rezultatet tuaja me përqindjet globale — falas, në mënyrë anonime, pa nevojë për llogari.",
+    home_sci_body:"Çdo test në CoreSkillAI është përshtatur nga metoda të përdorura në kërkime të botuara: testi IQ nga arsyetimi me matrica, testi i kujtesës nga detyra e vargut të shifrave, testi i përqendrimit nga efekti Stroop, testi i personalitetit nga modeli i Pesë të Mëdhenjve dhe testi i syve nga tabelat klinike të shikimit. Çdo faqe testi shpjegon shkencën pas detyrës, si ta lexoni rezultatin dhe çfarë nuk mund t'ju tregojë. Të gjitha testet funksionojnë në shfletuesin tuaj, falas dhe në mënyrë anonime, pa llogari.",
     home_sci_title:"Pse t'i Testoni Aftësitë Tuaja Njohëse?",
     step4_desc:"Një klikim për të ndarë rezultatin tuaj — mundni miqtë tuaj.",
     step4_title:"Ndajeni",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.sq = {
     nav_take:"Bëj një Test",
     hero_badge:"Falas • Pa llogari • Pa pagesë",
     hero_title:"Zbuloni Çfarë Mund të Bëjë Vërtet Truri Juaj",
-    hero_sub:"11 teste falas të ndërtuara mbi kërkime të botuara. Rezultate të qarta për pak minuta, në 43 gjuhë.",
+    hero_sub:"Teste falas të ndërtuara mbi kërkime të botuara, të grupuara sipas asaj që masin. Rezultate të qarta për pak minuta, në 43 gjuhë.",
     btn_iq:"Bëni Testin e IQ-së Falas",
     btn_start:"Fillo Testimin",
     btn_view_all:"Shiko Të Gjitha Testet",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.sq = {
     how_title:"Si Funksionon",
     how_sub:"Tre hapa të thjeshtë për të zbuluar aftësitë tuaja",
     step1_title:"Zgjidh një Test",
-    step1_desc:"Zgjidhni nga 11 vlerësime njohëse dhe të personalitetit të mbështetura shkencërisht.",
+    step1_desc:"Zgjidhni një test sipas kategorisë: mendja, shpejtësia, personaliteti ose shqisat dhe shëndeti.",
     step2_title:"Përfundoje",
     step2_desc:"Ndiqni udhëzimet me përqendrim të plotë. Shumica e testeve zgjasin 3–7 minuta.",
     step3_title:"Shiko Rezultatin",

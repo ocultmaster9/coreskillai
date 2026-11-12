@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.it = {
+    cat_cog:"Mente e ragionamento",
+    cat_pers:"Personalità e carriera",
+    cat_sense:"Sensi e salute",
+    cat_speed:"Velocità e abilità",
     rot_big_turn:"Rotazioni ampie",
     rot_desc:"20 rompicapi spaziali che misurano quanto bene ruoti le forme nella mente. Nessuna parola, nessun numero.",
     rot_how1:"In alto compare una figura, sotto sei candidate.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.it = {
     rt_r_superior:"Superiore",
     typ_chars:"Caratteri",
     tests_badge:"11 test gratuiti disponibili",
-    home_sci_body:"Ognuno degli undici test di CoreSkillAI è adattato da strumenti realmente usati nella ricerca psicologica: il test del QI si inserisce nella tradizione del ragionamento per matrici, quello di memoria applica il classico paradigma dell'ampiezza di cifre, quello di attenzione usa l'effetto Stroop, vecchio di 90 anni, e quello di personalità segue il modello dei Big Five, dominante nella scienza. Ogni pagina spiega la scienza dietro il compito, come interpretare il punteggio e cosa dice la ricerca sul migliorarlo. Tutti i test girano interamente nel browser, durano fra 2 e 20 minuti e confrontano i risultati con percentili mondiali: gratis, anonimo e senza account.",
+    home_sci_body:"Ogni test di CoreSkillAI è adattato da metodi usati nella ricerca pubblicata: il test del QI si basa sul ragionamento con matrici, quello di memoria sullo span di cifre, quello di concentrazione sull'effetto Stroop, quello di personalità sul modello dei Big Five e quello della vista sulle tavole ottotipiche cliniche. Ogni pagina spiega la scienza dietro il compito, come leggere il risultato e cosa non può dirti. Tutti i test funzionano nel browser, gratis e in forma anonima, senza account.",
     home_sci_title:"Perché misurare le proprie capacità cognitive?",
     step4_desc:"Un clic per condividere il tuo punteggio — sfida i tuoi amici.",
     step4_title:"Condividi",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.it = {
     nav_take:"Fai un test",
     hero_badge:"Gratis • Nessun account • Nessun pagamento",
     hero_title:"Scopri di cosa è davvero capace il tuo cervello",
-    hero_sub:"11 test gratuiti costruiti su ricerca pubblicata. Risultati chiari in pochi minuti, in 43 lingue.",
+    hero_sub:"Test gratuiti basati sulla ricerca pubblicata, raggruppati in base a ciò che misurano. Risultati chiari in pochi minuti, in 43 lingue.",
     btn_iq:"Fai il test del QI gratis",
     btn_start:"Inizia i test",
     btn_view_all:"Vedi tutti i test",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.it = {
     how_title:"Come funziona",
     how_sub:"Tre semplici passi per scoprire le tue capacità",
     step1_title:"Scegli un test",
-    step1_desc:"Scegli tra 11 valutazioni cognitive e di personalità basate sulla scienza.",
+    step1_desc:"Scegli un test per categoria: mente, velocità, personalità oppure sensi e salute.",
     step2_title:"Completalo",
     step2_desc:"Segui le istruzioni con la massima concentrazione. La maggior parte dei test dura 3–7 minuti.",
     step3_title:"Vedi il punteggio",

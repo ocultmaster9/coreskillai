@@ -59,7 +59,7 @@
 <link rel="alternate" hreflang="zh" href="https://coreskillai.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://coreskillai.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CoreSkillAI","url":"https://coreskillai.com","description":"Free IQ test and scientific cognitive tests with global comparison"}</script>
-<link rel="stylesheet" href="/css/main.css?v=210fcf96">
+<link rel="stylesheet" href="/css/main.css?v=a1ccc005">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5798786176755576" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKSK3LMNKN"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RKSK3LMNKN");</script></head>
@@ -96,7 +96,7 @@
   <section class="hero">
     <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Percuma • Tanpa akaun • Tanpa bayaran</span></div>
     <h1 data-i18n="hero_title">Temui Apa Yang Otak Anda Benar-benar Mampu Lakukan</h1>
-    <p data-i18n="hero_sub">11 ujian percuma dibina daripada penyelidikan diterbitkan. Keputusan jelas dalam beberapa minit, dalam 43 bahasa.</p>
+    <p data-i18n="hero_sub">Ujian percuma berasaskan penyelidikan yang diterbitkan, dikumpulkan mengikut apa yang diukur. Keputusan jelas dalam beberapa minit, dalam 43 bahasa.</p>
     <div class="hero-btns">
       <a href="/ms/tests/iq/" class="btn btn-primary btn-lg" data-i18n="btn_iq">Ambil Ujian IQ Percuma</a>
       <a href="/ms/tests/" class="btn btn-secondary btn-lg" data-i18n="btn_view_all">Lihat Semua Ujian</a>
@@ -111,9 +111,18 @@
   </div>
 </div>
   <section class="section">
-    <h2 class="section-title" data-i18n="tests_title">Semua Ujian</h2>
+    <h2 class="section-title" id="tests-h" data-i18n="tests_title">Semua Ujian</h2>
     <p class="section-subtitle" data-i18n="tests_sub">Temui profil kognitif dan personaliti sebenar anda</p>
-    <div class="tests-grid">
+    <!--cats-->
+<nav class="cat-nav" aria-labelledby="tests-h">
+<a class="cat-chip" href="#cat-cog"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Minda dan penaakulan</span> <span class="cat-n">5</span></a>
+<a class="cat-chip" href="#cat-speed"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Kelajuan dan kemahiran</span> <span class="cat-n">2</span></a>
+<a class="cat-chip" href="#cat-pers"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Personaliti dan kerjaya</span> <span class="cat-n">3</span></a>
+<a class="cat-chip" href="#cat-sense"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Deria dan kesihatan</span> <span class="cat-n">3</span></a>
+</nav>
+<div class="test-cat" id="cat-cog">
+<h2 class="cat-title"><span aria-hidden="true">🧠</span> <span data-i18n="cat_cog">Minda dan penaakulan</span></h2>
+<div class="tests-grid">
 <a href="/ms/tests/iq/" class="test-card">
   <div class="test-card-accent" style="background:#6366f1"></div>
   <div class="test-card-body">
@@ -126,32 +135,6 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~20 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/ms/tests/reaction-time/" class="test-card">
-  <div class="test-card-accent" style="background:#ef4444"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⚡</div>
-    <h3 data-i18n="rt_title">Ujian Masa Tindak Balas</h3>
-    <p data-i18n="rt_desc">Ukur sepantas mana otak anda bertindak balas terhadap rangsangan visual.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Mudah</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/ms/tests/memory/" class="test-card">
-  <div class="test-card-accent" style="background:#3b82f6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">💭</div>
-    <h3 data-i18n="mem_title">Ujian Memori Kerja</h3>
-    <p data-i18n="mem_desc">Uji jangkauan digit jangka pendek anda — penanda aras otak yang asal.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Sederhana</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/ms/tests/pattern/" class="test-card">
   <div class="test-card-accent" style="background:#f59e0b"></div>
@@ -166,12 +149,12 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/ms/tests/color-vision/" class="test-card">
-  <div class="test-card-accent" style="background:#ec4899"></div>
+<a href="/ms/tests/memory/" class="test-card">
+  <div class="test-card-accent" style="background:#3b82f6"></div>
   <div class="test-card-body">
-    <div class="test-icon">🌈</div>
-    <h3 data-i18n="cv_title">Ujian Penglihatan Warna</h3>
-    <p data-i18n="cv_desc">Susun rona mengikut urutan untuk mengukur ketepatan persepsi warna anda.</p>
+    <div class="test-icon">💭</div>
+    <h3 data-i18n="mem_title">Ujian Memori Kerja</h3>
+    <p data-i18n="mem_desc">Uji jangkauan digit jangka pendek anda — penanda aras otak yang asal.</p>
     <div class="test-card-meta">
       <span class="badge badge-yellow" data-i18n="diff_medium">Sederhana</span>
       <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
@@ -179,6 +162,66 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
+<a href="/ms/tests/rotation/" class="test-card">
+  <div class="test-card-accent" style="background:#14b8a6"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🔄</div>
+    <h3 data-i18n="rot_title">Ujian Putaran Mental</h3>
+    <p data-i18n="rot_desc">20 teka-teki ruang yang mengukur sebaik mana anda memutar bentuk dalam fikiran. Tiada perkataan, tiada nombor.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-red" data-i18n="diff_hard">Sukar</span>
+      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/ms/tests/focus/" class="test-card">
+  <div class="test-card-accent" style="background:#06b6d4"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🎯</div>
+    <h3 data-i18n="foc_title">Ujian Fokus & Perhatian</h3>
+    <p data-i18n="foc_desc">Kesan Stroop — ukur kawalan kognitif dan kelajuan pemprosesan anda.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Sederhana</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-speed">
+<h2 class="cat-title"><span aria-hidden="true">⚡</span> <span data-i18n="cat_speed">Kelajuan dan kemahiran</span></h2>
+<div class="tests-grid">
+<a href="/ms/tests/reaction-time/" class="test-card">
+  <div class="test-card-accent" style="background:#ef4444"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⚡</div>
+    <h3 data-i18n="rt_title">Ujian Masa Tindak Balas</h3>
+    <p data-i18n="rt_desc">Ukur sepantas mana otak anda bertindak balas terhadap rangsangan visual.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Mudah</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a>
+<a href="/ms/tests/typing/" class="test-card">
+  <div class="test-card-accent" style="background:#10b981"></div>
+  <div class="test-card-body">
+    <div class="test-icon">⌨️</div>
+    <h3 data-i18n="typ_title">Ujian Kelajuan Menaip</h3>
+    <p data-i18n="typ_desc">Ketahui sepantas mana anda menaip dan kedudukan anda di peringkat global.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-green" data-i18n="diff_easy">Mudah</span>
+      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-pers">
+<h2 class="cat-title"><span aria-hidden="true">🎭</span> <span data-i18n="cat_pers">Personaliti dan kerjaya</span></h2>
+<div class="tests-grid">
 <a href="/ms/tests/big-five/" class="test-card">
   <div class="test-card-accent" style="background:#8b5cf6"></div>
   <div class="test-card-body">
@@ -205,45 +248,6 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a>
-<a href="/ms/tests/focus/" class="test-card">
-  <div class="test-card-accent" style="background:#06b6d4"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🎯</div>
-    <h3 data-i18n="foc_title">Ujian Fokus & Perhatian</h3>
-    <p data-i18n="foc_desc">Kesan Stroop — ukur kawalan kognitif dan kelajuan pemprosesan anda.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-yellow" data-i18n="diff_medium">Sederhana</span>
-      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/ms/tests/typing/" class="test-card">
-  <div class="test-card-accent" style="background:#10b981"></div>
-  <div class="test-card-body">
-    <div class="test-icon">⌨️</div>
-    <h3 data-i18n="typ_title">Ujian Kelajuan Menaip</h3>
-    <p data-i18n="typ_desc">Ketahui sepantas mana anda menaip dan kedudukan anda di peringkat global.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-green" data-i18n="diff_easy">Mudah</span>
-      <span class="badge">&#9203; ~2 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~2 <span data-i18n="card_min">min</span></span></div>
-</a>
-<a href="/ms/tests/rotation/" class="test-card">
-  <div class="test-card-accent" style="background:#14b8a6"></div>
-  <div class="test-card-body">
-    <div class="test-icon">🔄</div>
-    <h3 data-i18n="rot_title">Ujian Putaran Mental</h3>
-    <p data-i18n="rot_desc">20 teka-teki ruang yang mengukur sebaik mana anda memutar bentuk dalam fikiran. Tiada perkataan, tiada nombor.</p>
-    <div class="test-card-meta">
-      <span class="badge badge-red" data-i18n="diff_hard">Sukar</span>
-      <span class="badge">&#9203; ~6 <span data-i18n="card_min">min</span></span>
-    </div>
-  </div>
-  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~6 <span data-i18n="card_min">min</span></span></div>
-</a>
 <a href="/ms/tests/career/" class="test-card">
   <div class="test-card-accent" style="background:#0ea5e9"></div>
   <div class="test-card-body">
@@ -256,6 +260,23 @@
     </div>
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~8 <span data-i18n="card_min">min</span></span></div>
+</a></div>
+</div>
+<div class="test-cat" id="cat-sense">
+<h2 class="cat-title"><span aria-hidden="true">👁️</span> <span data-i18n="cat_sense">Deria dan kesihatan</span></h2>
+<div class="tests-grid">
+<a href="/ms/tests/color-vision/" class="test-card">
+  <div class="test-card-accent" style="background:#ec4899"></div>
+  <div class="test-card-body">
+    <div class="test-icon">🌈</div>
+    <h3 data-i18n="cv_title">Ujian Penglihatan Warna</h3>
+    <p data-i18n="cv_desc">Susun rona mengikut urutan untuk mengukur ketepatan persepsi warna anda.</p>
+    <div class="test-card-meta">
+      <span class="badge badge-yellow" data-i18n="diff_medium">Sederhana</span>
+      <span class="badge">&#9203; ~3 <span data-i18n="card_min">min</span></span>
+    </div>
+  </div>
+  <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~3 <span data-i18n="card_min">min</span></span></div>
 </a>
 <a href="/ms/tests/hearing/" class="test-card">
   <div class="test-card-accent" style="background:#14b8a6"></div>
@@ -283,6 +304,8 @@
   </div>
   <div class="test-card-foot"><span data-i18n="card_take">Ambil Ujian</span> &#8594; <span>~5 <span data-i18n="card_min">min</span></span></div>
 </a></div>
+</div>
+<!--/cats-->
   </section>
   
 <div class="ad-wrap">
@@ -296,7 +319,7 @@
     <h2 class="section-title" data-i18n="how_title">Cara Ia Berfungsi</h2>
     <p class="section-subtitle" data-i18n="how_sub">Tiga langkah mudah untuk menemui kebolehan anda</p>
     <div class="steps">
-    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Pilih Ujian</h4><p data-i18n="step1_desc">Pilih daripada 11 penilaian kognitif dan personaliti yang disokong sains.</p></div>
+    <div class="step observe"><div class="step-num">1</div><h4 data-i18n="step1_title">Pilih Ujian</h4><p data-i18n="step1_desc">Pilih ujian mengikut kategori: minda, kelajuan, personaliti, atau deria dan kesihatan.</p></div>
     <div class="step observe"><div class="step-num">2</div><h4 data-i18n="step2_title">Siapkan Ia</h4><p data-i18n="step2_desc">Ikut arahan dengan tumpuan penuh. Kebanyakan ujian mengambil masa 3–7 minit.</p></div>
     <div class="step observe"><div class="step-num">3</div><h4 data-i18n="step3_title">Lihat Skor Anda</h4><p data-i18n="step3_desc">Keputusan serta-merta dengan data persentil global. Kongsi skor anda dengan satu klik.</p></div>
     <div class="step observe"><div class="step-num">4</div><h4 data-i18n="step4_title">Kongsikan</h4><p data-i18n="step4_desc">Satu klik untuk berkongsi skor anda — kalahkan rakan-rakan anda.</p></div></div>
@@ -321,7 +344,7 @@
 </div>
 </div>
 
-<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Mengapa Perlu Menguji Kemahiran Kognitif Anda?</h2><p data-i18n="home_sci_body">Setiap satu daripada sebelas ujian di CoreSkillAI diadaptasi daripada instrumen yang digunakan dalam penyelidikan psikologi sebenar: ujian IQ berasaskan tradisi penaakulan matriks, ujian memori melaksanakan paradigma jangkauan digit klasik, ujian fokus menggunakan kesan Stroop berusia 90 tahun, dan ujian personaliti mengikut model Big Five yang dominan secara saintifik. Setiap halaman ujian menerangkan sains di sebalik tugasan itu, cara mentafsir skor anda, dan apa yang dikatakan penyelidikan tentang cara memperbaikinya. Semua ujian berjalan sepenuhnya dalam pelayar anda, mengambil masa antara 2 hingga 20 minit, dan membandingkan keputusan anda dengan persentil global — percuma, tanpa nama, tanpa perlu akaun.</p></section><footer>
+<section style="max-width:860px;margin:2.5rem auto;padding:0 1.25rem;line-height:1.65"><h2 data-i18n="home_sci_title">Mengapa Perlu Menguji Kemahiran Kognitif Anda?</h2><p data-i18n="home_sci_body">Setiap ujian di CoreSkillAI disesuaikan daripada kaedah yang digunakan dalam penyelidikan yang diterbitkan: ujian IQ daripada penaakulan matriks, ujian memori daripada tugasan rentang digit, ujian fokus daripada kesan Stroop, ujian personaliti daripada model Lima Besar dan ujian mata daripada carta mata klinikal. Setiap halaman ujian menerangkan sains di sebalik tugasan, cara membaca skor anda dan perkara yang tidak dapat diberitahunya. Semua ujian berjalan dalam pelayar anda, percuma dan tanpa nama, tanpa akaun.</p></section><footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Core<span>Skill</span>AI</div>
@@ -351,6 +374,6 @@
     <span data-i18n="footer_promise">Berasaskan penyelidikan • Percuma selamanya • Tanpa akaun</span>
   </div>
 </footer>
-<script>window.PAGE_LANG="ms";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=5e1f98b4"></script><script src="/js/i18n/ms.js?v=0af0ca45"></script>
+<script>window.PAGE_LANG="ms";</script><script src="/js/languages.js?v=d4146e62"></script><script src="/js/i18n/en.js?v=d65a4b2e"></script><script src="/js/i18n/ms.js?v=046b762a"></script>
 <script src="/js/main.js?v=8b8894ed"></script>
 </body></html>

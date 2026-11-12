@@ -2,6 +2,10 @@
    English (fallback) plus their own language, never all 43. */
 window.TRANSLATIONS = window.TRANSLATIONS || {};
 window.TRANSLATIONS.hu = {
+    cat_cog:"Gondolkodás és logika",
+    cat_pers:"Személyiség és pálya",
+    cat_sense:"Érzékek és egészség",
+    cat_speed:"Gyorsaság és készségek",
     rot_big_turn:"Nagy fordulatok",
     rot_desc:"20 téri feladat, amely azt méri, milyen jól forgat alakzatokat fejben. Se szavak, se számok.",
     rot_how1:"Fent megjelenik egy alakzat, alatta hat jelölt.",
@@ -77,7 +81,7 @@ window.TRANSLATIONS.hu = {
     rt_r_superior:"Kimagasló",
     typ_chars:"Karakterek",
     tests_badge:"11 ingyenes teszt elérhető",
-    home_sci_body:"A CoreSkillAI tizenegy tesztje mind olyan eszközökből származik, amelyeket ténylegesen használnak a pszichológiai kutatásban: az IQ-teszt a mátrixos következtetés hagyományába illeszkedik, a memóriateszt a klasszikus számterjedelmet valósítja meg, a figyelemteszt a kilencven éves Stroop-hatásra épül, a személyiségteszt pedig a tudományosan uralkodó Nagy Ötök modellt követi. Minden tesztoldal elmagyarázza a feladat mögötti tudományt, az eredmény értelmezését és azt, amit a kutatás a fejlesztéséről mond. Minden teszt teljes egészében a böngésződben fut, 2 és 20 perc között tart, és világszintű percentilisekhez méri az eredményed — ingyen, névtelenül, fiók nélkül.",
+    home_sci_body:"A CoreSkillAI minden tesztje publikált kutatásokban használt módszerekre épül: az IQ-teszt a mátrixos gondolkodásra, a memóriateszt a számterjedelem-feladatra, a koncentrációs teszt a Stroop-hatásra, a személyiségteszt a Big Five modellre, a látásteszt pedig a klinikai látásvizsgáló táblákra. Minden tesztoldal elmagyarázza a feladat mögötti tudományt, hogyan olvasd az eredményed, és mit nem árulhat el. Minden teszt a böngésződben fut, ingyen és névtelenül, fiók nélkül.",
     home_sci_title:"Miért érdemes felmérni a kognitív képességeidet?",
     step4_desc:"Egy kattintás, és megoszthatod az eredményed — hívd ki a barátaidat.",
     step4_title:"Megosztás",
@@ -145,7 +149,7 @@ window.TRANSLATIONS.hu = {
     nav_take:"Teszt kitöltése",
     hero_badge:"Ingyenes • Nincs fiók • Nincs fizetés",
     hero_title:"Fedezze fel, mire képes valójában az agya",
-    hero_sub:"11 ingyenes teszt publikált kutatás alapján. Világos eredmény percek alatt, 43 nyelven.",
+    hero_sub:"Publikált kutatásokra épülő ingyenes tesztek, aszerint csoportosítva, hogy mit mérnek. Világos eredmények percek alatt, 43 nyelven.",
     btn_iq:"Ingyenes IQ-teszt kitöltése",
     btn_start:"Teszt indítása",
     btn_view_all:"Összes teszt",
@@ -156,7 +160,7 @@ window.TRANSLATIONS.hu = {
     how_title:"Hogyan működik",
     how_sub:"Három egyszerű lépés a képességei megismeréséhez",
     step1_title:"Válasszon tesztet",
-    step1_desc:"Válasszon a 11 tudományosan megalapozott megismerési és személyiségteszt közül.",
+    step1_desc:"Válassz tesztet kategória szerint: gondolkodás, gyorsaság, személyiség vagy érzékek és egészség.",
     step2_title:"Töltse ki",
     step2_desc:"Kövesse az útmutatót zavaró tényezők nélkül. A legtöbb teszt 3–7 percig tart.",
     step3_title:"Nézze meg az eredményt",
