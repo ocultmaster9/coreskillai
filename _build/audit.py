@@ -6,8 +6,8 @@ import io, os, re, sys, glob, unicodedata
 PAGES = ['home','about','privacy','terms','contact','tests',
          'tests/iq','tests/reaction-time','tests/memory','tests/pattern',
          'tests/color-vision','tests/big-five','tests/eq','tests/focus','tests/typing',
-         'tests/rotation','tests/career','tests/hearing','tests/vision']
-TESTS = ['iq','reaction-time','memory','pattern','color-vision','big-five','eq','focus','typing','rotation','career','hearing','vision']
+         'tests/rotation','tests/career','tests/hearing','tests/vision','tests/cps']
+TESTS = ['iq','reaction-time','memory','pattern','color-vision','big-five','eq','focus','typing','rotation','career','hearing','vision','cps']
 SCRIPT_OF = {'ru':'CYRILLIC','uk':'CYRILLIC','bg':'CYRILLIC','sr':'CYRILLIC','mk':'CYRILLIC',
              'el':'GREEK','he':'HEBREW','ar':'ARABIC','fa':'ARABIC','hi':'DEVANAGARI','th':'THAI',
              'ja':'CJK','zh':'CJK','ko':'HANGUL'}

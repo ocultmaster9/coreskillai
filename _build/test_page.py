@@ -31,6 +31,9 @@ CONF = {
   'vision': dict(prefix='vis', icon='👁️', accent='#6366f1', minutes=5, template='career',
                  tpl_prefix='car', tpl_minutes=8, after='hearing', footer_after='hea_title',
                  diff='diff_easy'),
+  'cps': dict(prefix='cps', icon='🖱️', accent='#f43f5e', minutes=1, template='vision',
+              tpl_prefix='vis', tpl_minutes=5, after='typing', footer_after='typ_title',
+              diff='diff_easy'),
 }
 
 def structure(h):

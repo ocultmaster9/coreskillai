@@ -12,7 +12,7 @@ import tools
 
 CATS = [
     ('cog',   '\U0001F9E0', 'Mind & Reasoning',     ['iq', 'pattern', 'memory', 'rotation', 'focus']),
-    ('speed', '⚡',     'Speed & Skills',       ['reaction-time', 'typing']),
+    ('speed', '⚡',     'Speed & Skills',       ['reaction-time', 'typing', 'cps']),
     ('pers',  '\U0001F3AD', 'Personality & Career', ['big-five', 'eq', 'career']),
     ('sense', '\U0001F441️', 'Senses & Health', ['color-vision', 'hearing', 'vision']),
 ]
