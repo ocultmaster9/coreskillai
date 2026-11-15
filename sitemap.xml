@@ -101,6 +101,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/af/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/ar/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -197,6 +202,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/ar/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/ar/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -301,6 +311,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/bg/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/cs/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -397,6 +412,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/cs/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/cs/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -501,6 +521,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/da/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/de/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -597,6 +622,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/de/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/de/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -701,6 +731,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/el/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -797,6 +832,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -901,6 +941,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/es/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/et/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -997,6 +1042,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/et/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/et/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1101,6 +1151,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/fa/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/fi/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1197,6 +1252,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/fi/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/fi/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1301,6 +1361,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/fr/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/he/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1397,6 +1462,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/he/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/he/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1501,6 +1571,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/hi/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/hr/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1597,6 +1672,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/hr/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/hr/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1701,6 +1781,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/hu/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/id/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1797,6 +1882,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/id/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/id/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1901,6 +1991,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/it/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/ja/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -1997,6 +2092,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/ja/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/ja/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2101,6 +2201,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/ko/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/lt/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2197,6 +2302,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/lt/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/lt/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2301,6 +2411,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/lv/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/mk/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2397,6 +2512,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/mk/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/mk/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2501,6 +2621,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/ms/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/nl/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2597,6 +2722,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/nl/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/nl/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2701,6 +2831,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/no/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/pl/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2797,6 +2932,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/pl/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/pl/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2901,6 +3041,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/pt/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/ro/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -2997,6 +3142,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/ro/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/ro/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3101,6 +3251,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/ru/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/sk/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3197,6 +3352,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/sk/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/sk/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3301,6 +3461,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/sl/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/sq/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3397,6 +3562,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/sq/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/sq/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3501,6 +3671,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/sr/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/sv/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3597,6 +3772,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/sv/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/sv/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3701,6 +3881,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/sw/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/th/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3797,6 +3982,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/th/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/th/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3901,6 +4091,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/tl/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/tr/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -3997,6 +4192,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/tr/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/tr/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -4101,6 +4301,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/uk/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/vi/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -4201,6 +4406,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://coreskillai.com/vi/tests/personality-type/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://coreskillai.com/zh/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -4297,6 +4507,11 @@
   </url>
   <url>
     <loc>https://coreskillai.com/zh/tests/cps/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coreskillai.com/zh/tests/personality-type/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

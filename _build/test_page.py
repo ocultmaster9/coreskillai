@@ -34,6 +34,9 @@ CONF = {
   'cps': dict(prefix='cps', icon='🖱️', accent='#f43f5e', minutes=1, template='vision',
               tpl_prefix='vis', tpl_minutes=5, after='typing', footer_after='typ_title',
               diff='diff_easy'),
+  'personality-type': dict(prefix='p16', icon='🧩', accent='#a855f7', minutes=6, template='vision',
+              tpl_prefix='vis', tpl_minutes=5, after='career', footer_after='car_title',
+              diff='diff_easy'),
 }
 
 def structure(h):
