@@ -11,9 +11,9 @@ import io, os, re, sys, unicodedata
 PAGES = ['home','about','privacy','terms','contact','tests',
          'tests/iq','tests/reaction-time','tests/memory','tests/pattern',
          'tests/color-vision','tests/big-five','tests/eq','tests/focus','tests/typing',
-         'tests/rotation','tests/career','tests/hearing','tests/vision','tests/cps','tests/personality-type']
+         'tests/rotation','tests/career','tests/hearing','tests/vision','tests/cps','tests/personality-type','tests/love-language']
 TESTS = ['iq','reaction-time','memory','pattern','color-vision','big-five','eq','focus','typing',
-         'rotation','career','hearing','vision','cps','personality-type']
+         'rotation','career','hearing','vision','cps','personality-type','love-language']
 # A language may legitimately use more than one script - Japanese mixes hiragana,
 # katakana and kanji - so each entry is a tuple of acceptable prefixes.
 SCRIPT_OF = {'ru':('CYRILLIC',),'uk':('CYRILLIC',),'bg':('CYRILLIC',),

@@ -37,6 +37,9 @@ CONF = {
   'personality-type': dict(prefix='p16', icon='🧩', accent='#a855f7', minutes=6, template='vision',
               tpl_prefix='vis', tpl_minutes=5, after='career', footer_after='car_title',
               diff='diff_easy'),
+  'love-language': dict(prefix='lov', icon='💞', accent='#ec4899', minutes=3, template='vision',
+              tpl_prefix='vis', tpl_minutes=5, after='personality-type', footer_after='p16_title',
+              diff='diff_easy'),
 }
 
 def structure(h):
